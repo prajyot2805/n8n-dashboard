@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>n8n Production Analytics Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            card: '#18181b',
+            content: '#27272a',
+            border: '#3f3f46',
+            foreground: '#f4f4f5',
+            muted: '#a1a1aa'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --background: #09090b;
+      --card: #18181b;
+      --content: #27272a;
+      --border: #27272a;
+      --foreground: #f4f4f5;
+      --muted-foreground: #a1a1aa;
+    }
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+    }
+    .tab-active {
+      border-color: #f97316;
+      color: #f97316;
+      background: rgba(249, 115, 22, 0.1);
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8 font-sans antialiased text-sm min-h-screen">
+  <div class="max-w-7xl mx-auto space-y-6">
+
+    <!-- Header -->
+    <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[var(--border)]">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-orange-600 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20 text-white font-extrabold text-xl">
+          n8n
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-xl font-bold tracking-tight">n8n Instance Intelligence</h1>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              Live Sync
+            </span>
+          </div>
+          <p class="text-xs text-[var(--muted-foreground)] flex items-center gap-2 mt-0.5">
+            <span>Instance:</span>
+            <code class="px-1.5 py-0.5 rounded bg-[var(--card)] border border-[var(--border)] font-mono text-[11px] text-orange-400">n8n.srv992629.hstgr.cloud</code>
+            <span>•</span>
+            <span>Synced: <span class="font-mono text-emerald-400">2026-11-15 20:21:19 UTC</span></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <div class="text-right hidden sm:block">
+          <p class="text-[11px] text-[var(--muted-foreground)]">Auto-Refreshed via</p>
+          <p class="text-xs font-semibold text-orange-400">GitHub Actions (Hourly)</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Top KPIs -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm">
+        <span class="text-xs font-medium text-[var(--muted-foreground)]">Active Workflows</span>
+        <div class="flex items-baseline gap-2 mt-2">
+          <span class="text-2xl font-bold">3</span>
+          <span class="text-xs text-[var(--muted-foreground)]">/ 24 total</span>
+        </div>
+        <div class="w-full bg-[var(--content)] h-1.5 rounded-full mt-2 overflow-hidden">
+          <div class="bg-orange-500 h-full rounded-full" style="width: 12%"></div>
+        </div>
+        <p class="text-[11px] text-[var(--muted-foreground)] mt-2">21 inactive workflows</p>
+      </div>
+
+      <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm">
+        <span class="text-xs font-medium text-[var(--muted-foreground)]">Sample Executions</span>
+        <div class="flex items-baseline gap-2 mt-2">
+          <span class="text-2xl font-bold">400</span>
+          <span class="text-xs text-emerald-400 font-medium">Captured</span>
+        </div>
+        <div class="w-full bg-[var(--content)] h-1.5 rounded-full mt-2 overflow-hidden">
+          <div class="bg-blue-500 h-full rounded-full" style="width: 100%"></div>
+        </div>
+        <p class="text-[11px] text-[var(--muted-foreground)] mt-2">Latest execution history</p>
+      </div>
+
+      <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm">
+        <span class="text-xs font-medium text-[var(--muted-foreground)]">Success Rate</span>
+        <div class="flex items-baseline gap-2 mt-2">
+          <span class="text-2xl font-bold text-emerald-400">99.2%</span>
+          <span class="text-xs text-rose-400 font-medium">3 errors</span>
+        </div>
+        <div class="w-full bg-[var(--content)] h-1.5 rounded-full mt-2 overflow-hidden flex">
+          <div class="bg-emerald-500 h-full" style="width: 99.2%"></div>
+          <div class="bg-rose-500 h-full" style="width: 0.7999999999999972%"></div>
+        </div>
+        <p class="text-[11px] text-[var(--muted-foreground)] mt-2">397 successful executions</p>
+      </div>
+
+      <div class="p-4 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm">
+        <span class="text-xs font-medium text-[var(--muted-foreground)]">Avg Execution Duration</span>
+        <div class="flex items-baseline gap-2 mt-2">
+          <span class="text-2xl font-bold">3.49s</span>
+          <span class="text-xs text-purple-400 font-medium">per run</span>
+        </div>
+        <div class="w-full bg-[var(--content)] h-1.5 rounded-full mt-2 overflow-hidden">
+          <div class="bg-purple-500 h-full rounded-full" style="width: 70%"></div>
+        </div>
+        <p class="text-[11px] text-[var(--muted-foreground)] mt-2">Aggregated across all runs</p>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <h2 class="font-semibold text-base">Execution Activity by Hour</h2>
+            <div class="flex items-center gap-3 text-xs">
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-orange-500"></span> Success</span>
+              <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-sm bg-rose-500"></span> Error</span>
+            </div>
+          </div>
+          <p class="text-xs text-[var(--muted-foreground)] mb-4">Volume distribution across UTC hours</p>
+        </div>
+
+        <div class="h-48 w-full flex items-end gap-1.5 pt-6 pb-2 border-b border-[var(--border)] px-1 overflow-x-auto">
+          
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            00:00 • 5 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 8%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">00h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            01:00 • 29 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 36%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">01h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            02:00 • 30 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 38%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">02h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            03:00 • 29 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 36%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">03h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            04:00 • 29 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 36%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">04h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            05:00 • 7 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 9%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">05h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            06:00 • 7 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 9%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">06h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            07:00 • 7 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 9%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">07h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            08:00 • 7 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 9%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">08h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            09:00 • 7 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 9%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">09h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            10:00 • 7 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 9%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">10h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            11:00 • 7 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 9%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">11h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            12:00 • 8 runs (1 err)
+          </div>
+          <div class="w-full bg-rose-500 rounded-t mb-0.5" style="height: 4px;"></div>
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 10%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">12h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            13:00 • 6 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 8%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">13h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            14:00 • 7 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 9%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">14h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            15:00 • 15 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 19%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">15h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            16:00 • 18 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 22%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">16h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            17:00 • 18 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 22%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">17h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            18:00 • 62 runs (2 err)
+          </div>
+          <div class="w-full bg-rose-500 rounded-t mb-0.5" style="height: 4px;"></div>
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 78%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">18h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            19:00 • 80 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 100%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">19h</span>
+        </div>
+        
+        <div class="flex-1 flex flex-col items-center h-full justify-end group relative cursor-pointer min-w-[24px]">
+          <div class="absolute -top-7 opacity-0 group-hover:opacity-100 transition px-2 py-0.5 rounded bg-[var(--content)] border border-[var(--border)] text-[10px] font-mono pointer-events-none z-20 whitespace-nowrap shadow-md">
+            20:00 • 15 runs (0 err)
+          </div>
+          
+          <div class="w-full bg-orange-500/80 group-hover:bg-orange-500 rounded-t transition" style="height: 19%;"></div>
+          <span class="text-[9px] text-[var(--muted-foreground)] mt-1.5 truncate">20h</span>
+        </div>
+        
+        </div>
+        <div class="flex items-center justify-between text-[11px] text-[var(--muted-foreground)] mt-2">
+          <span>Baseline: Hourly automated triggers</span>
+          <span class="font-medium text-orange-400">Peak window: 18h - 20h UTC</span>
+        </div>
+      </div>
+
+      <!-- Execution Share -->
+      <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm flex flex-col justify-between">
+        <div>
+          <h2 class="font-semibold text-base">Execution Share</h2>
+          <p class="text-xs text-[var(--muted-foreground)] mb-4">Distribution across top workflows</p>
+          <div class="space-y-4">
+            <!-- Top Workflows -->
+            
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-medium truncate max-w-[170px]">PS5 Shorts Pipeline</span>
+                <span class="font-mono text-orange-400 font-semibold">299 runs (74.8%)</span>
+              </div>
+              <div class="w-full bg-[var(--content)] h-2 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-500 to-amber-500 h-full rounded-full" style="width: 75%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-medium truncate max-w-[170px]">PS5 Shorts - Issue Resolver</span>
+                <span class="font-mono text-orange-400 font-semibold">70 runs (17.5%)</span>
+              </div>
+              <div class="w-full bg-[var(--content)] h-2 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-500 to-amber-500 h-full rounded-full" style="width: 18%"></div>
+              </div>
+            </div>
+            
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="font-medium truncate max-w-[170px]">Shadow Legion Reels</span>
+                <span class="font-mono text-orange-400 font-semibold">16 runs (4.0%)</span>
+              </div>
+              <div class="w-full bg-[var(--content)] h-2 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-orange-500 to-amber-500 h-full rounded-full" style="width: 4%"></div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="p-3 rounded-lg bg-[var(--content)] border border-[var(--border)] mt-4 text-[11px] text-[var(--muted-foreground)]">
+          💡 The top active pipeline accounts for over <strong>75%</strong> of instance activity.
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Automated Pipelines Cards -->
+    <div class="space-y-4">
+      <h2 class="text-lg font-bold">Active Production Pipelines</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <div class="p-4 rounded-xl border border-orange-500/30 bg-[var(--card)] shadow-sm hover:border-orange-500/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between gap-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                ACTIVE
+              </span>
+              <span class="text-[11px] text-[var(--muted-foreground)] font-mono">299 runs logged</span>
+            </div>
+            <h3 class="font-bold text-base mt-2 text-[var(--foreground)] truncate" title="PS5 Shorts Pipeline">PS5 Shorts Pipeline</h3>
+            <p class="text-[11px] text-[var(--muted-foreground)] mt-1 font-mono">ID: NyqkzRSDWYbzusW8</p>
+
+            <div class="mt-4 pt-3 border-t border-[var(--border)] space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span class="text-[var(--muted-foreground)]">Success Rate:</span>
+                <span class="font-semibold text-emerald-400 font-mono">99.0% (296/299)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[var(--muted-foreground)]">Failures:</span>
+                <span class="font-mono text-rose-400 font-bold">3 errors</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[var(--muted-foreground)]">Avg Duration:</span>
+                <span class="font-mono">3.63s</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border)] flex items-center justify-between text-[11px] text-[var(--muted-foreground)]">
+            <span>Status: Running</span>
+            <span class="text-emerald-400">● Healthy</span>
+          </div>
+        </div>
+        
+        <div class="p-4 rounded-xl border border-orange-500/30 bg-[var(--card)] shadow-sm hover:border-orange-500/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between gap-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                ACTIVE
+              </span>
+              <span class="text-[11px] text-[var(--muted-foreground)] font-mono">70 runs logged</span>
+            </div>
+            <h3 class="font-bold text-base mt-2 text-[var(--foreground)] truncate" title="PS5 Shorts - Issue Resolver">PS5 Shorts - Issue Resolver</h3>
+            <p class="text-[11px] text-[var(--muted-foreground)] mt-1 font-mono">ID: WnWMAtnb8XPD91yd</p>
+
+            <div class="mt-4 pt-3 border-t border-[var(--border)] space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span class="text-[var(--muted-foreground)]">Success Rate:</span>
+                <span class="font-semibold text-emerald-400 font-mono">100.0% (70/70)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[var(--muted-foreground)]">Failures:</span>
+                <span class="font-mono text-[var(--muted-foreground)]">0 errors</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[var(--muted-foreground)]">Avg Duration:</span>
+                <span class="font-mono">4.21s</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border)] flex items-center justify-between text-[11px] text-[var(--muted-foreground)]">
+            <span>Status: Running</span>
+            <span class="text-emerald-400">● Healthy</span>
+          </div>
+        </div>
+        
+        <div class="p-4 rounded-xl border border-orange-500/30 bg-[var(--card)] shadow-sm hover:border-orange-500/60 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between gap-2">
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                ACTIVE
+              </span>
+              <span class="text-[11px] text-[var(--muted-foreground)] font-mono">16 runs logged</span>
+            </div>
+            <h3 class="font-bold text-base mt-2 text-[var(--foreground)] truncate" title="Shadow Legion Reels">Shadow Legion Reels</h3>
+            <p class="text-[11px] text-[var(--muted-foreground)] mt-1 font-mono">ID: rhOGUhnDmE2iaQgX</p>
+
+            <div class="mt-4 pt-3 border-t border-[var(--border)] space-y-2 text-xs">
+              <div class="flex justify-between">
+                <span class="text-[var(--muted-foreground)]">Success Rate:</span>
+                <span class="font-semibold text-emerald-400 font-mono">100.0% (16/16)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[var(--muted-foreground)]">Failures:</span>
+                <span class="font-mono text-[var(--muted-foreground)]">0 errors</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[var(--muted-foreground)]">Avg Duration:</span>
+                <span class="font-mono">0.30s</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border)] flex items-center justify-between text-[11px] text-[var(--muted-foreground)]">
+            <span>Status: Running</span>
+            <span class="text-emerald-400">● Healthy</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Incident Analysis -->
+    <div class="p-5 rounded-xl border border-rose-500/30 bg-[var(--card)] shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h2 class="text-base font-bold text-rose-400 flex items-center gap-2">
+          <span>⚠️</span> Error & Incident Diagnostics (3 Failures)
+        </h2>
+        <span class="text-xs text-[var(--muted-foreground)]">From latest execution window</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        
+            <div class="p-3.5 rounded-lg border border-[var(--border)] bg-[var(--content)] space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[11px] font-bold text-rose-400">Exec #1182</span>
+                <span class="text-[10px] text-[var(--muted-foreground)]">18:10:35 UTC</span>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-[var(--foreground)] truncate">Workflow: PS5 Shorts Pipeline</p>
+                <p class="text-xs text-amber-400 font-mono mt-0.5">Node: Haiku Metadata</p>
+                <p class="text-[11px] text-rose-300 font-mono mt-1 break-words line-clamp-2">Bad request - please check your parameters</p>
+              </div>
+              <div class="pt-2 border-t border-[var(--border)] text-[10px] text-[var(--muted-foreground)] line-clamp-2">Unable to download the file. Please verify the URL and try again.</div>
+            </div>
+            
+            <div class="p-3.5 rounded-lg border border-[var(--border)] bg-[var(--content)] space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[11px] font-bold text-rose-400">Exec #1174</span>
+                <span class="text-[10px] text-[var(--muted-foreground)]">18:00:35 UTC</span>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-[var(--foreground)] truncate">Workflow: PS5 Shorts Pipeline</p>
+                <p class="text-xs text-amber-400 font-mono mt-0.5">Node: Haiku Metadata</p>
+                <p class="text-[11px] text-rose-300 font-mono mt-1 break-words line-clamp-2">Bad request - please check your parameters</p>
+              </div>
+              <div class="pt-2 border-t border-[var(--border)] text-[10px] text-[var(--muted-foreground)] line-clamp-2">Unable to download the file. Please verify the URL and try again.</div>
+            </div>
+            
+            <div class="p-3.5 rounded-lg border border-[var(--border)] bg-[var(--content)] space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[11px] font-bold text-rose-400">Exec #1080</span>
+                <span class="text-[10px] text-[var(--muted-foreground)]">12:30:46 UTC</span>
+              </div>
+              <div>
+                <p class="text-xs font-semibold text-[var(--foreground)] truncate">Workflow: PS5 Shorts Pipeline</p>
+                <p class="text-xs text-amber-400 font-mono mt-0.5">Node: Notify Upload Issue</p>
+                <p class="text-[11px] text-rose-300 font-mono mt-1 break-words line-clamp-2">Bad request - please check your parameters</p>
+              </div>
+              <div class="pt-2 border-t border-[var(--border)] text-[10px] text-[var(--muted-foreground)] line-clamp-2">Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 428</div>
+            </div>
+            
+      </div>
+    </div>
+
+    <!-- Complete Inventory Table -->
+    <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--card)] shadow-sm space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h2 class="font-semibold text-base">Instance Workflow Inventory (24 Workflows)</h2>
+          <p class="text-xs text-[var(--muted-foreground)]">Filter by status or execution frequency</p>
+        </div>
+
+        <div class="flex items-center gap-1.5 p-1 rounded-lg bg-[var(--content)] border border-[var(--border)] text-xs">
+          <button onclick="filterTable('all')" id="btn-all" class="px-2.5 py-1 rounded font-medium transition tab-active">All (24)</button>
+          <button onclick="filterTable('active')" id="btn-active" class="px-2.5 py-1 rounded font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">Active (3)</button>
+          <button onclick="filterTable('recent')" id="btn-recent" class="px-2.5 py-1 rounded font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">Recent Runs</button>
+          <button onclick="filterTable('inactive')" id="btn-inactive" class="px-2.5 py-1 rounded font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition">Inactive (21)</button>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto rounded-lg border border-[var(--border)]">
+        <table class="w-full text-left text-xs" id="workflowTable">
+          <thead class="bg-[var(--content)] border-b border-[var(--border)] text-[var(--muted-foreground)] font-medium">
+            <tr>
+              <th class="py-2.5 px-3">Status</th>
+              <th class="py-2.5 px-3">Workflow Name</th>
+              <th class="py-2.5 px-3">Runs</th>
+              <th class="py-2.5 px-3">Success Rate</th>
+              <th class="py-2.5 px-3">Avg Duration</th>
+              <th class="py-2.5 px-3">Workflow ID</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--border)] font-mono text-[11px]">
+            
+        <tr class="hover:bg-[var(--content)] transition row-active row-recent font-semibold">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">ACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">PS5 Shorts Pipeline</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-orange-400 font-bold">299 runs</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-emerald-400 font-medium">99.0%</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">3.63s</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">NyqkzRSDWYbzusW8</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-active row-recent font-semibold">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">ACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">PS5 Shorts - Issue Resolver</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-orange-400 font-bold">70 runs</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-emerald-400 font-medium">100.0%</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">4.21s</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">WnWMAtnb8XPD91yd</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-active row-recent font-semibold">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">ACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Shadow Legion Reels</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-orange-400 font-bold">16 runs</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-emerald-400 font-medium">100.0%</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">0.30s</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">rhOGUhnDmE2iaQgX</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 row-recent font-semibold">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">PS5 Shorts - Telegram</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-orange-400 font-bold">15 runs</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-emerald-400 font-medium">100.0%</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">0.65s</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">C9QFNInmTXzFABNp</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Myth vs Fact channel</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">2VS0dtSxpkRTgDFr</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Idea automation</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">2fVl6ZSYOD0VWPnl</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">then vs now youtube shorts</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">6bpKi9SVQVENzhMY</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Hamster Shorts – Video Generator</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">80uijInUTXT5rwOg</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">YouTube Shorts Factory - Main</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">Gfq3MvuhdVCOVjQm</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">youtube search</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">GwzmhM1MJmvGDLzt</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Email creator basis Linkedin</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">LVpxxTvDnjbAlRPB</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">PS5 Shorts - image check (temp)</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">OS1ru8MUVJldX2dj</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">LinkedIn Job Apply Automation</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">WXgxLCa3FCb9hinG</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Linkedin review main</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">Y3qwDlqe59GSPKGT</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Complete Youtube</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">YIZtlmSYND3Yw4rd</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">AI Resume Optimizer & ATS Review Bot</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">ZLd1pgDc4kigrgjj</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">My workflow</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">ZntDqN9ADYHk1lQY</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Linkedin content automation 1</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">ZuazYp2P5gzyzB6U</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Meal and calorie tracker</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">dwjY15DGBkkZY0iv</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Viral horror video YT poster</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">ftObueSwgVDK54zm</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">DJI action 6 upload</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">io2duwscPrlYOdrE</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Action 6 backup</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">nQMoDdEWch7oy869</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">explainer video publishing</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">vwgRQED8CzxnJLxF</td>
+        </tr>
+        
+        <tr class="hover:bg-[var(--content)] transition row-inactive opacity-75 ">
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-sans font-medium bg-gray-500/10 text-gray-400 border border-gray-500/20">INACTIVE</span></td>
+          <td class="py-2.5 px-3 font-sans font-medium text-[var(--foreground)]">Explainer videos generation</td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">0</span></td>
+          <td class="py-2.5 px-3 font-mono"><span class="text-[var(--muted-foreground)]">—</span></td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">—</td>
+          <td class="py-2.5 px-3 font-mono text-[var(--muted-foreground)]">wzNxS152BQvPdGex</td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-4 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-[var(--muted-foreground)]">
+      <span>Auto-generated by Antigravity for <strong>prajyot2805</strong></span>
+      <span>Hosted freely via GitHub Pages</span>
+    </footer>
+
+  </div>
+
+  <script>
+    function filterTable(type) {
+      const rows = document.querySelectorAll('#workflowTable tbody tr');
+      const buttons = ['all', 'active', 'recent', 'inactive'];
+      buttons.forEach(b => {
+        const btn = document.getElementById('btn-' + b);
+        if (b === type) {
+          btn.className = 'px-2.5 py-1 rounded font-medium transition tab-active';
+        } else {
+          btn.className = 'px-2.5 py-1 rounded font-medium text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition';
+        }
+      });
+
+      rows.forEach(r => {
+        if (type === 'all') {
+          r.style.display = '';
+        } else if (type === 'active') {
+          r.style.display = r.classList.contains('row-active') ? '' : 'none';
+        } else if (type === 'recent') {
+          r.style.display = r.classList.contains('row-recent') ? '' : 'none';
+        } else if (type === 'inactive') {
+          r.style.display = r.classList.contains('row-inactive') ? '' : 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
