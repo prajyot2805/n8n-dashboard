@@ -194,7 +194,7 @@ def main():
 
     tg_runs = exec_counts.get("C9QFNInmTXzFABNp", 0)
 
-    # Context payload for Jarvis
+    # Telemetry data for Jarvis
     jarvis_context = {
         "user": "Prajyot",
         "n8n_url": BASE_URL,
@@ -300,27 +300,40 @@ def main():
       color: var(--foreground);
     }}
     @keyframes pulse-cyan {{
-      0%, 100% {{ box-shadow: 0 0 15px rgba(0, 229, 255, 0.4), inset 0 0 15px rgba(0, 229, 255, 0.2); }}
-      50% {{ box-shadow: 0 0 30px rgba(0, 229, 255, 0.7), inset 0 0 25px rgba(0, 229, 255, 0.4); }}
+      0%, 100% {{ box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), inset 0 0 20px rgba(0, 229, 255, 0.2); }}
+      50% {{ box-shadow: 0 0 45px rgba(0, 229, 255, 0.8), inset 0 0 35px rgba(0, 229, 255, 0.5); }}
     }}
     .arc-glow {{
       animation: pulse-cyan 3s infinite ease-in-out;
+    }}
+    @keyframes pulse-speaking {{
+      0%, 100% {{ box-shadow: 0 0 25px rgba(245, 158, 11, 0.5), inset 0 0 20px rgba(245, 158, 11, 0.3); }}
+      50% {{ box-shadow: 0 0 55px rgba(245, 158, 11, 0.9), inset 0 0 40px rgba(245, 158, 11, 0.6); }}
+    }}
+    .speaking-glow {{
+      animation: pulse-speaking 1.5s infinite ease-in-out;
     }}
     @keyframes rotate-slow {{
       from {{ transform: rotate(0deg); }}
       to {{ transform: rotate(360deg); }}
     }}
+    @keyframes rotate-reverse {{
+      from {{ transform: rotate(360deg); }}
+      to {{ transform: rotate(0deg); }}
+    }}
     .spin-slow {{
-      animation: rotate-slow 20s linear infinite;
+      animation: rotate-slow 18s linear infinite;
+    }}
+    .spin-reverse {{
+      animation: rotate-reverse 12s linear infinite;
     }}
   </style>
 </head>
 <body class="p-4 md:p-8 font-sans antialiased text-sm min-h-screen relative">
 
-  <!-- ==================== STARK SECURITY PIN LOCK OVERLAY ==================== -->
+  <!-- ==================== STARK SECURITY PIN LOCK OVERLAY (2805) ==================== -->
   <div id="lockScreen" class="fixed inset-0 z-50 bg-[#07070a]/95 backdrop-blur-2xl flex items-center justify-center p-4 transition-all duration-500">
     <div class="max-w-sm w-full bg-[#121217] border border-[#00e5ff]/40 rounded-3xl p-6 sm:p-8 shadow-2xl shadow-cyan-950/60 text-center relative overflow-hidden">
-      <!-- Glow effect -->
       <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <!-- Arc Reactor Icon -->
@@ -390,9 +403,9 @@ def main():
       </div>
 
       <div class="flex items-center gap-3">
-        <button onclick="toggleJarvis()" class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 hover:border-cyan-400 text-cyan-300 font-semibold text-xs shadow-sm transition active:scale-95">
+        <button onclick="openJarvisConsole()" class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-cyan-600/30 to-blue-600/30 border border-cyan-500/50 hover:border-cyan-400 text-cyan-300 font-semibold text-xs shadow-sm transition active:scale-95">
           <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-          Voice Assistant
+          Speak to J.A.R.V.I.S.
         </button>
         <button onclick="lockScreen()" class="px-3 py-1.5 rounded-xl border border-[var(--border)] bg-[var(--card)] hover:bg-[var(--content)] text-xs text-[var(--muted-foreground)] transition" title="Lock Console">
           🔒 Lock
@@ -870,8 +883,8 @@ def main():
 
   </div>
 
-  <!-- ==================== FLOATING J.A.R.V.I.S. ARC REACTOR CONSOLE ==================== -->
-  <div id="jarvisTrigger" onclick="toggleJarvis()" class="fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full bg-slate-950 border-2 border-cyan-400 arc-glow cursor-pointer flex items-center justify-center shadow-2xl shadow-cyan-500/50 hover:scale-105 active:scale-95 transition-all group">
+  <!-- ==================== FLOATING J.A.R.V.I.S. ARC REACTOR TRIGGER ==================== -->
+  <div id="jarvisTrigger" onclick="openJarvisConsole()" class="fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full bg-slate-950 border-2 border-cyan-400 arc-glow cursor-pointer flex items-center justify-center shadow-2xl shadow-cyan-500/50 hover:scale-105 active:scale-95 transition-all group">
     <div class="w-12 h-12 rounded-full border border-cyan-300/60 flex items-center justify-center spin-slow">
       <div class="w-8 h-8 rounded-full border border-dashed border-cyan-400 flex items-center justify-center">
         <div class="w-3.5 h-3.5 rounded-full bg-cyan-400 group-hover:scale-125 transition"></div>
@@ -882,101 +895,104 @@ def main():
     </span>
   </div>
 
-  <!-- ==================== J.A.R.V.I.S. INTERACTIVE MODAL ==================== -->
-  <div id="jarvisModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl hidden flex items-center justify-center p-3 sm:p-6 transition-all">
-    <div class="max-w-2xl w-full bg-[#0d0e14] border border-cyan-500/50 rounded-3xl shadow-2xl shadow-cyan-950 flex flex-col overflow-hidden relative">
+  <!-- ==================== IMMERSIVE J.A.R.V.I.S. VOICE CONSOLE (ALWAYS-ON MIC) ==================== -->
+  <div id="jarvisConsoleOverlay" class="fixed inset-0 z-50 bg-[#07070d]/95 backdrop-blur-2xl hidden flex flex-col items-center justify-between p-6 sm:p-10 transition-all duration-300">
 
-      <!-- Modal Header -->
-      <div class="p-4 sm:p-5 border-b border-cyan-900/40 bg-gradient-to-r from-cyan-950/40 via-transparent to-transparent flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full border border-cyan-400 flex items-center justify-center arc-glow">
-            <div class="w-3 h-3 rounded-full bg-cyan-400 animate-ping"></div>
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <h3 class="font-extrabold text-base tracking-wider text-cyan-300 font-mono">J.A.R.V.I.S.</h3>
-              <span id="jarvisStateBadge" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-                READY
-              </span>
-            </div>
-            <p class="text-[11px] text-slate-400">At your service, Sir.</p>
-          </div>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <button onclick="openApiKeyModal()" class="px-2.5 py-1 rounded-lg border border-slate-700 bg-slate-900 text-xs text-slate-300 hover:text-cyan-300 transition" title="Gemini API Key Settings">
-            ⚙️ Key
-          </button>
-          <button onclick="toggleJarvis()" class="w-8 h-8 rounded-full border border-slate-700 bg-slate-900 text-slate-400 hover:text-white flex items-center justify-center transition">
-            ✕
-          </button>
+    <!-- Top Status Bar -->
+    <div class="w-full max-w-4xl flex items-center justify-between border-b border-cyan-900/30 pb-4">
+      <div class="flex items-center gap-3">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+        <div>
+          <span class="text-xs font-mono font-bold tracking-[0.2em] text-cyan-400 uppercase">J.A.R.V.I.S. Live Voice Protocol</span>
+          <p class="text-[11px] text-slate-400">Continuous Hands-Free Conversation Active</p>
         </div>
       </div>
+      <div class="flex items-center gap-3">
+        <button onclick="openApiKeyModal()" class="px-2.5 py-1.5 rounded-xl border border-slate-700 bg-slate-900 hover:border-cyan-400 text-xs text-slate-300 transition" title="Settings & Gemini Key">
+          ⚙️ Key / Voice
+        </button>
+        <button onclick="closeJarvisConsole()" class="w-9 h-9 rounded-full border border-slate-700 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white flex items-center justify-center transition text-sm">
+          ✕
+        </button>
+      </div>
+    </div>
 
-      <!-- Holographic Soundwave / Visualizer Canvas -->
-      <div class="p-6 bg-slate-950/70 border-b border-cyan-950 flex flex-col items-center justify-center relative overflow-hidden">
-        <canvas id="waveformCanvas" width="400" height="90" class="w-full max-w-md h-20"></canvas>
-        <div id="jarvisStatusText" class="text-xs font-mono text-cyan-400 mt-2 font-medium tracking-wide text-center">
-          Tap the microphone or say "Jarvis" to begin.
+    <!-- Centerpiece: Giant Holographic Arc Reactor & Pulsing Aura -->
+    <div class="flex-1 flex flex-col items-center justify-center w-full max-w-2xl text-center my-4 relative">
+      
+      <!-- Multi-ring Holographic Arc Reactor -->
+      <div id="arcReactorGlow" class="w-44 h-44 sm:w-56 sm:h-56 rounded-full border border-cyan-400/40 flex items-center justify-center relative arc-glow transition-all duration-500">
+        <!-- Outer dashed ring spinning clockwise -->
+        <div class="absolute inset-2 rounded-full border border-dashed border-cyan-300/40 spin-slow pointer-events-none"></div>
+        <!-- Middle segmented ring spinning counter-clockwise -->
+        <div class="absolute inset-5 rounded-full border border-dotted border-cyan-400/60 spin-reverse pointer-events-none"></div>
+        <!-- Inner glow ring -->
+        <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full border-2 border-cyan-300/80 bg-cyan-950/20 backdrop-blur-md flex items-center justify-center shadow-inner shadow-cyan-400/40">
+          <div id="reactorCore" class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-cyan-400 shadow-2xl shadow-cyan-400 transition-all duration-300"></div>
         </div>
       </div>
 
-      <!-- Dialogue History / Transcript -->
-      <div id="transcriptBox" class="p-4 sm:p-5 max-h-64 overflow-y-auto space-y-3 font-sans text-xs">
-        <div class="flex gap-2.5 items-start">
-          <div class="w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center text-[10px] font-mono text-cyan-300 shrink-0 font-bold">J</div>
-          <div class="p-3 rounded-2xl bg-cyan-950/20 border border-cyan-900/30 text-slate-200 leading-relaxed">
-            Good evening, Sir. All 3 active automation pipelines are operational. The PS5 Shorts Pipeline is running at 98.5% reliability with 201 executions. How may I assist you with your workflows or repositories today?
-          </div>
-        </div>
+      <!-- State Indicator Pill -->
+      <div class="mt-8 flex items-center gap-2">
+        <span id="jarvisStateDot" class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span id="jarvisStateText" class="text-xs font-mono font-bold tracking-[0.2em] text-cyan-300 uppercase">
+          LISTENING CONTINUOUSLY...
+        </span>
       </div>
 
-      <!-- Quick Action Prompt Pills -->
-      <div class="px-4 py-2 border-t border-slate-800/80 bg-slate-950/50 flex items-center gap-2 overflow-x-auto text-[11px]">
-        <button onclick="askPreset('Status report on all active workflows')" class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/40 text-slate-300 whitespace-nowrap transition">
-          📊 Status Report
-        </button>
-        <button onclick="askPreset('Why did execution 1080 error out?')" class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/40 text-slate-300 whitespace-nowrap transition">
-          ⚠️ Investigate Error #1080
-        </button>
-        <button onclick="askPreset('Tell me about the Shadow Legion Reels pipeline')" class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/40 text-slate-300 whitespace-nowrap transition">
-          🎬 Shadow Legion
-        </button>
-        <button onclick="askPreset('What GitHub repositories are connected?')" class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/40 text-slate-300 whitespace-nowrap transition">
-          📁 Repositories
-        </button>
-      </div>
-
-      <!-- Bottom Voice & Text Input Bar -->
-      <div class="p-4 border-t border-cyan-900/40 bg-slate-950 flex items-center gap-3">
-        <!-- Mic Button -->
-        <button id="micBtn" onclick="toggleVoiceRecording()" class="w-12 h-12 rounded-2xl bg-cyan-500 hover:bg-cyan-400 active:scale-95 text-slate-950 flex items-center justify-center font-bold shadow-lg shadow-cyan-500/30 transition shrink-0">
-          <svg id="micIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 02-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
-        </button>
-
-        <input type="text" id="textPromptInput" onkeydown="if(event.key==='Enter') sendTextPrompt()" placeholder="Ask Jarvis anything about your workflows or repos..." class="flex-1 bg-slate-900 border border-slate-800 focus:border-cyan-500 rounded-xl px-4 py-3 text-xs text-slate-100 placeholder-slate-500 outline-none transition font-sans">
-
-        <button onclick="sendTextPrompt()" class="px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-cyan-400 transition active:scale-95 shrink-0">
-          Send
-        </button>
+      <!-- Live Voice Subtitles Readout -->
+      <div class="mt-4 min-h-[70px] max-w-lg px-4 flex flex-col items-center justify-center">
+        <p id="liveUserInput" class="text-sm sm:text-base font-medium text-slate-100 transition-all text-center">
+          "Speak naturally, Sir. I am listening..."
+        </p>
+        <p id="liveJarvisOutput" class="text-xs sm:text-sm text-cyan-300/90 font-mono mt-2 text-center max-w-md transition-all">
+          Ready for your command.
+        </p>
       </div>
 
     </div>
+
+    <!-- Bottom Audio Waveform & Guidance -->
+    <div class="w-full max-w-2xl flex flex-col items-center gap-3">
+      <canvas id="waveformCanvas" width="480" height="70" class="w-full max-w-md h-16"></canvas>
+      <div class="flex items-center gap-4 text-[11px] text-slate-500 font-mono">
+        <span>Mic is always on</span>
+        <span>•</span>
+        <span>Speak anytime</span>
+        <span>•</span>
+        <button onclick="toggleMute()" id="muteBtn" class="text-cyan-400 hover:underline">Pause Mic</button>
+      </div>
+    </div>
+
   </div>
 
-  <!-- ==================== GEMINI API KEY MODAL ==================== -->
-  <div id="apiKeyModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+  <!-- ==================== GEMINI API KEY & VOICE SETTINGS MODAL ==================== -->
+  <div id="apiKeyModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
     <div class="max-w-md w-full bg-[#121217] border border-cyan-500/40 rounded-2xl p-6 space-y-4 shadow-2xl">
-      <h3 class="text-base font-bold text-cyan-300">⚙️ J.A.R.V.I.S. Neural Settings</h3>
-      <p class="text-xs text-slate-400 leading-relaxed">
-        To enable deep reasoning via Gemini API, paste your free Google Gemini API key below. It is stored <strong>only in your local browser's storage</strong> and is never sent to GitHub.
-      </p>
-      <input type="password" id="geminiApiKeyInput" placeholder="AIzaSy..." class="w-full bg-slate-900 border border-slate-700 focus:border-cyan-400 rounded-xl px-3.5 py-2.5 text-xs text-slate-100 outline-none font-mono">
-      <div class="flex items-center justify-between text-[11px] text-slate-400 pt-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-base font-bold text-cyan-300">⚙️ J.A.R.V.I.S. Neural Settings</h3>
+        <button onclick="closeApiKeyModal()" class="text-slate-400 hover:text-white text-xs">✕</button>
+      </div>
+      
+      <div>
+        <label class="text-xs text-slate-400 block mb-1">Google Gemini API Key (Free tier supported)</label>
+        <input type="password" id="geminiApiKeyInput" placeholder="AIzaSy..." class="w-full bg-slate-900 border border-slate-700 focus:border-cyan-400 rounded-xl px-3.5 py-2.5 text-xs text-slate-100 outline-none font-mono">
+        <p class="text-[10px] text-slate-500 mt-1">Stored only in your browser storage. Never sent to GitHub.</p>
+      </div>
+
+      <div>
+        <label class="text-xs text-slate-400 block mb-1">Voice Selection</label>
+        <select id="voiceSelect" onchange="changeVoice(this.value)" class="w-full bg-slate-900 border border-slate-700 focus:border-cyan-400 rounded-xl px-3 py-2 text-xs text-slate-200 outline-none">
+          <option value="auto">Auto-Select Best British/Natural Voice</option>
+        </select>
+        <p class="text-[10px] text-slate-500 mt-1">Selects from system voices installed on your device.</p>
+      </div>
+
+      <div class="flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-800">
         <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-cyan-400 hover:underline">Get a free Gemini API Key ↗</a>
         <div class="flex gap-2">
           <button onclick="closeApiKeyModal()" class="px-3 py-1.5 rounded-lg border border-slate-700 text-xs text-slate-300">Cancel</button>
-          <button onclick="saveApiKey()" class="px-3 py-1.5 rounded-lg bg-cyan-500 text-slate-950 font-bold text-xs">Save Key</button>
+          <button onclick="saveApiKey()" class="px-3 py-1.5 rounded-lg bg-cyan-500 text-slate-950 font-bold text-xs">Save Settings</button>
         </div>
       </div>
     </div>
@@ -987,7 +1003,7 @@ def main():
     window.JARVIS_TELEMETRY = {jarvis_context_json};
   </script>
 
-  <!-- JARVIS Core Logic & Voice Engine -->
+  <!-- J.A.R.V.I.S. Core Engine & Continuous Voice Interaction -->
   <script>
     // ---------- PIN AUTHENTICATION (2805) ----------
     let enteredPin = "";
@@ -1050,6 +1066,7 @@ def main():
 
     function lockScreen() {{
       sessionStorage.removeItem("stark_auth");
+      closeJarvisConsole();
       enteredPin = "";
       updatePinDots();
       document.getElementById("lockError").innerText = "";
@@ -1059,7 +1076,6 @@ def main():
       document.getElementById("mainDashboard").style.opacity = "0";
     }}
 
-    // Check if already authenticated in this session
     window.addEventListener("DOMContentLoaded", () => {{
       if (sessionStorage.getItem("stark_auth") === "unlocked") {{
         document.getElementById("lockScreen").style.display = "none";
@@ -1069,9 +1085,9 @@ def main():
       }}
       initWaveform();
       loadApiKey();
+      populateVoiceList();
     }});
 
-    // Listen to physical keyboard for PIN
     window.addEventListener("keydown", (e) => {{
       const lock = document.getElementById("lockScreen");
       if (lock.style.display !== "none" && lock.style.opacity !== "0") {{
@@ -1085,153 +1101,250 @@ def main():
       }}
     }});
 
-    // ---------- J.A.R.V.I.S. VOICE & MODAL ----------
-    let isRecording = false;
+    // ---------- J.A.R.V.I.S. DUPLEX CONTINUOUS VOICE ENGINE ----------
+    let isConsoleOpen = false;
+    let isJarvisSpeaking = false;
     let recognition = null;
-    let isSpeaking = false;
+    let silenceTimer = null;
+    let isMuted = false;
+    let selectedVoiceIndex = localStorage.getItem("jarvis_voice_idx") || "auto";
 
-    function toggleJarvis() {{
-      const modal = document.getElementById("jarvisModal");
-      if (modal.classList.contains("hidden")) {{
-        modal.classList.remove("hidden");
-        speakJarvis("At your service, Sir. What would you like to know?");
-      }} else {{
-        modal.classList.add("hidden");
-        if (window.speechSynthesis) window.speechSynthesis.cancel();
+    function setJarvisVisualState(state) {{
+      const dot = document.getElementById("jarvisStateDot");
+      const text = document.getElementById("jarvisStateText");
+      const glow = document.getElementById("arcReactorGlow");
+      const core = document.getElementById("reactorCore");
+
+      if (state === "LISTENING") {{
+        dot.className = "w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse";
+        text.className = "text-xs font-mono font-bold tracking-[0.2em] text-cyan-300 uppercase";
+        text.innerText = isMuted ? "MIC MUTED (TAP TO RESUME)" : "LISTENING CONTINUOUSLY...";
+        glow.className = "w-44 h-44 sm:w-56 sm:h-56 rounded-full border border-cyan-400/50 flex items-center justify-center relative arc-glow transition-all duration-500";
+        core.className = "w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-cyan-400 shadow-2xl shadow-cyan-400 transition-all duration-300";
+      }} else if (state === "THINKING") {{
+        dot.className = "w-2.5 h-2.5 rounded-full bg-purple-400 animate-ping";
+        text.className = "text-xs font-mono font-bold tracking-[0.2em] text-purple-300 uppercase";
+        text.innerText = "ANALYZING TELEMETRY...";
+        glow.className = "w-44 h-44 sm:w-56 sm:h-56 rounded-full border border-purple-400/50 flex items-center justify-center relative transition-all duration-500";
+        core.className = "w-14 h-14 sm:w-18 sm:h-18 rounded-full bg-purple-400 shadow-2xl shadow-purple-400 animate-pulse transition-all duration-300";
+      }} else if (state === "SPEAKING") {{
+        dot.className = "w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse";
+        text.className = "text-xs font-mono font-bold tracking-[0.2em] text-amber-300 uppercase";
+        text.innerText = "J.A.R.V.I.S. SPEAKING...";
+        glow.className = "w-44 h-44 sm:w-56 sm:h-56 rounded-full border border-amber-400/60 flex items-center justify-center relative speaking-glow transition-all duration-500";
+        core.className = "w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-amber-500 to-yellow-300 shadow-2xl shadow-amber-400 transition-all duration-300";
       }}
     }}
 
-    // Speech Recognition (Whisper / Web Speech)
-    if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {{
-      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-      recognition = new SpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = false;
-      recognition.lang = 'en-US';
-
-      recognition.onstart = () => {{
-        isRecording = true;
-        document.getElementById("jarvisStateBadge").innerText = "LISTENING";
-        document.getElementById("jarvisStateBadge").className = "px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-rose-500/20 text-rose-400 border border-rose-500/30 animate-pulse";
-        document.getElementById("jarvisStatusText").innerText = "Listening to your voice...";
-        document.getElementById("micBtn").className = "w-12 h-12 rounded-2xl bg-rose-500 hover:bg-rose-400 text-white flex items-center justify-center font-bold shadow-lg shadow-rose-500/40 animate-pulse transition shrink-0";
-      }};
-
-      recognition.onresult = (event) => {{
-        const text = event.results[0][0].transcript;
-        document.getElementById("textPromptInput").value = text;
-        processUserQuery(text);
-      }};
-
-      recognition.onerror = (event) => {{
-        console.error("Speech error:", event.error);
-        stopListening();
-        document.getElementById("jarvisStatusText").innerText = "Audio capture interrupted. Tap mic to retry.";
-      }};
-
-      recognition.onend = () => {{
-        stopListening();
-      }};
+    function openJarvisConsole() {{
+      isConsoleOpen = true;
+      document.getElementById("jarvisConsoleOverlay").classList.remove("hidden");
+      setJarvisVisualState("LISTENING");
+      startContinuousSpeechRecognition();
+      speakJarvis("At your service, Sir. What would you like to know?");
     }}
 
-    function toggleVoiceRecording() {{
-      if (!recognition) {{
-        alert("Speech recognition is not supported in this browser. Please type your query.");
-        return;
-      }}
-      if (isRecording) {{
-        recognition.stop();
+    function closeJarvisConsole() {{
+      isConsoleOpen = false;
+      document.getElementById("jarvisConsoleOverlay").classList.add("hidden");
+      stopContinuousSpeechRecognition();
+      if (window.speechSynthesis) window.speechSynthesis.cancel();
+    }}
+
+    function toggleMute() {{
+      isMuted = !isMuted;
+      document.getElementById("muteBtn").innerText = isMuted ? "Resume Mic" : "Pause Mic";
+      if (isMuted) {{
+        stopContinuousSpeechRecognition();
+        document.getElementById("liveUserInput").innerText = "Mic paused. Tap Resume to speak.";
+        setJarvisVisualState("LISTENING");
       }} else {{
-        try {{
-          recognition.start();
-        }} catch(e) {{
-          console.error(e);
+        startContinuousSpeechRecognition();
+        setJarvisVisualState("LISTENING");
+      }}
+    }}
+
+    // ---------- SPEECH RECOGNITION (CONTINUOUS LOOP) ----------
+    function initSpeechRecognition() {{
+      if (!('webkitSpeechRecognition' in window || 'SpeechRecognition' in window)) {{
+        console.warn("Speech Recognition not supported in this browser.");
+        return null;
+      }}
+      const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const rec = new SpeechRec();
+      rec.continuous = true;
+      rec.interimResults = true;
+      rec.lang = 'en-US';
+
+      let accumulatedQuery = "";
+
+      rec.onstart = () => {{
+        if (!isJarvisSpeaking) setJarvisVisualState("LISTENING");
+      }};
+
+      rec.onresult = (event) => {{
+        if (isJarvisSpeaking) return; // Do not transcribe Jarvis's own voice!
+
+        let interim = "";
+        for (let i = event.resultIndex; i < event.results.length; ++i) {{
+          if (event.results[i].isFinal) {{
+            accumulatedQuery += " " + event.results[i][0].transcript;
+          }} else {{
+            interim += event.results[i][0].transcript;
+          }}
         }}
+
+        const spokenNow = (accumulatedQuery + " " + interim).trim();
+        if (spokenNow) {{
+          document.getElementById("liveUserInput").innerText = '"' + spokenNow + '"';
+          
+          // Debounce: when speaker pauses for 1100ms, immediately send to Jarvis!
+          clearTimeout(silenceTimer);
+          silenceTimer = setTimeout(() => {{
+            if (spokenNow.length > 2 && !isJarvisSpeaking && isConsoleOpen) {{
+              const queryToSend = spokenNow;
+              accumulatedQuery = "";
+              processJarvisTurn(queryToSend);
+            }}
+          }}, 1100);
+        }}
+      }};
+
+      rec.onend = () => {{
+        // Auto-restart if console is open and Jarvis is not speaking
+        if (isConsoleOpen && !isJarvisSpeaking && !isMuted) {{
+          try {{ rec.start(); }} catch(e) {{}}
+        }}
+      }};
+
+      rec.onerror = (e) => {{
+        if (e.error === 'not-allowed') {{
+          document.getElementById("liveUserInput").innerText = "Microphone permission denied in browser.";
+        }} else if (isConsoleOpen && !isJarvisSpeaking && !isMuted) {{
+          setTimeout(() => {{
+            if (isConsoleOpen && !isJarvisSpeaking && !isMuted) {{
+              try {{ rec.start(); }} catch(err) {{}}
+            }}
+          }}, 300);
+        }}
+      }};
+
+      return rec;
+    }}
+
+    function startContinuousSpeechRecognition() {{
+      if (isMuted) return;
+      if (!recognition) recognition = initSpeechRecognition();
+      if (recognition) {{
+        try {{ recognition.start(); }} catch(e) {{}}
       }}
     }}
 
-    function stopListening() {{
-      isRecording = false;
-      document.getElementById("jarvisStateBadge").innerText = "READY";
-      document.getElementById("jarvisStateBadge").className = "px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20";
-      document.getElementById("micBtn").className = "w-12 h-12 rounded-2xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 flex items-center justify-center font-bold shadow-lg shadow-cyan-500/30 transition shrink-0";
+    function stopContinuousSpeechRecognition() {{
+      if (recognition) {{
+        try {{ recognition.stop(); }} catch(e) {{}}
+      }}
     }}
 
-    // Text-to-Speech (Jarvis British Voice)
+    // ---------- NATURAL VOICE SYNTHESIS (JARVIS) ----------
+    function getBestNaturalJarvisVoice() {{
+      if (!window.speechSynthesis) return null;
+      const voices = window.speechSynthesis.getVoices();
+      if (!voices || voices.length === 0) return null;
+
+      if (selectedVoiceIndex !== "auto" && voices[selectedVoiceIndex]) {{
+        return voices[selectedVoiceIndex];
+      }}
+
+      // Priority 1: Google UK English Male (Chrome's natural neural voice)
+      const googleUkMale = voices.find(v => v.name.includes("Google UK English Male") || v.name.includes("en-GB-Wavenet") || v.name.includes("en-GB-Neural2"));
+      if (googleUkMale) return googleUkMale;
+
+      // Priority 2: macOS Enhanced / Natural British voices (Oliver, Daniel Enhanced, Arthur, Serena)
+      const enhancedUk = voices.find(v => 
+        (v.lang === "en-GB" || v.lang.startsWith("en_GB")) && 
+        (v.name.includes("Enhanced") || v.name.includes("Natural") || v.name.includes("Oliver") || v.name.includes("Daniel") || v.name.includes("Siri"))
+      );
+      if (enhancedUk) return enhancedUk;
+
+      // Priority 3: Any British voice
+      const anyUk = voices.find(v => v.lang === "en-GB" || v.lang.startsWith("en_GB"));
+      if (anyUk) return anyUk;
+
+      // Priority 4: Any Enhanced natural English voice
+      const anyEnhanced = voices.find(v => v.lang.startsWith("en") && (v.name.includes("Enhanced") || v.name.includes("Natural")));
+      if (anyEnhanced) return anyEnhanced;
+
+      return voices.find(v => v.lang.startsWith("en")) || voices[0];
+    }}
+
+    function populateVoiceList() {{
+      if (!window.speechSynthesis) return;
+      const voices = window.speechSynthesis.getVoices();
+      const sel = document.getElementById("voiceSelect");
+      if (!sel || !voices || voices.length === 0) return;
+
+      sel.innerHTML = '<option value="auto">Auto-Select Best British/Natural Voice</option>';
+      voices.forEach((v, idx) => {{
+        if (v.lang.startsWith("en")) {{
+          const opt = document.createElement("option");
+          opt.value = idx;
+          opt.text = `${{v.name}} (${{v.lang}})${{v.default ? ' [Default]' : ''}}`;
+          if (idx.toString() === selectedVoiceIndex) opt.selected = true;
+          sel.appendChild(opt);
+        }}
+      }});
+    }}
+
+    if ('speechSynthesis' in window) {{
+      window.speechSynthesis.onvoiceschanged = populateVoiceList;
+    }}
+
+    function changeVoice(val) {{
+      selectedVoiceIndex = val;
+      localStorage.setItem("jarvis_voice_idx", val);
+      speakJarvis("Voice updated, Sir. How does this sound?");
+    }}
+
     function speakJarvis(text) {{
       if (!('speechSynthesis' in window)) return;
       window.speechSynthesis.cancel();
 
+      // Temporarily pause speech recognition while Jarvis speaks
+      isJarvisSpeaking = true;
+      setJarvisVisualState("SPEAKING");
+      document.getElementById("liveJarvisOutput").innerText = text;
+      stopContinuousSpeechRecognition();
+
       const utterance = new SpeechSynthesisUtterance(text);
-      utterance.pitch = 0.92; // Slightly deeper, sophisticated Jarvis tone
-      utterance.rate = 1.03;  // Measured British cadence
-
-      // Look for a British male voice or Google UK English Male
-      const voices = window.speechSynthesis.getVoices();
-      const britishVoice = voices.find(v => (v.name.includes("UK") && v.name.includes("Male")) || v.lang === "en-GB" || v.name.includes("Daniel") || v.name.includes("Arthur") || v.name.includes("George"));
-      if (britishVoice) {{
-        utterance.voice = britishVoice;
-      }}
-
-      utterance.onstart = () => {{
-        isSpeaking = true;
-        document.getElementById("jarvisStateBadge").innerText = "SPEAKING";
-        document.getElementById("jarvisStateBadge").className = "px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-amber-500/20 text-amber-400 border border-amber-500/30 animate-pulse";
-        document.getElementById("jarvisStatusText").innerText = "J.A.R.V.I.S. is speaking...";
-      }};
+      utterance.voice = getBestNaturalJarvisVoice();
+      utterance.pitch = 0.96; // Slightly deeper, refined British cadence
+      utterance.rate = 1.0;   // Natural human conversational tempo
 
       utterance.onend = () => {{
-        isSpeaking = false;
-        document.getElementById("jarvisStateBadge").innerText = "READY";
-        document.getElementById("jarvisStateBadge").className = "px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20";
-        document.getElementById("jarvisStatusText").innerText = "Ready for your next command, Sir.";
+        isJarvisSpeaking = false;
+        setJarvisVisualState("LISTENING");
+        // Automatically resume microphone listening for hands-free conversation!
+        if (isConsoleOpen && !isMuted) {{
+          setTimeout(startContinuousSpeechRecognition, 150);
+        }}
+      }};
+
+      utterance.onerror = () => {{
+        isJarvisSpeaking = false;
+        setJarvisVisualState("LISTENING");
+        if (isConsoleOpen && !isMuted) {{
+          setTimeout(startContinuousSpeechRecognition, 150);
+        }}
       }};
 
       window.speechSynthesis.speak(utterance);
     }}
 
-    // Pre-populate speech voices
-    if ('speechSynthesis' in window) {{
-      window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
-    }}
-
-    function askPreset(prompt) {{
-      document.getElementById("textPromptInput").value = prompt;
-      processUserQuery(prompt);
-    }}
-
-    function sendTextPrompt() {{
-      const inp = document.getElementById("textPromptInput");
-      const val = inp.value.trim();
-      if (val) {{
-        processUserQuery(val);
-        inp.value = "";
-      }}
-    }}
-
-    function appendMessage(sender, text) {{
-      const box = document.getElementById("transcriptBox");
-      const div = document.createElement("div");
-      div.className = "flex gap-2.5 items-start";
-      if (sender === "user") {{
-        div.innerHTML = `
-          <div class="w-6 h-6 rounded-full bg-slate-700 flex items-center justify-center text-[10px] font-mono text-slate-300 shrink-0 font-bold">P</div>
-          <div class="p-3 rounded-2xl bg-slate-800 text-slate-200 leading-relaxed max-w-[85%]">${{text}}</div>
-        `;
-      }} else {{
-        div.innerHTML = `
-          <div class="w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center text-[10px] font-mono text-cyan-300 shrink-0 font-bold">J</div>
-          <div class="p-3 rounded-2xl bg-cyan-950/20 border border-cyan-900/30 text-slate-200 leading-relaxed max-w-[85%]">${{text}}</div>
-        `;
-      }}
-      box.appendChild(div);
-      box.scrollTop = box.scrollHeight;
-    }}
-
-    // Query Processor (Gemini API with Telemetry Grounding + Local Heuristics)
-    async function processUserQuery(query) {{
-      appendMessage("user", query);
-      document.getElementById("jarvisStatusText").innerText = "Analyzing telemetry...";
+    // ---------- QUERY PROCESSING (GEMINI + TELEMETRY GROUNDING) ----------
+    async function processJarvisTurn(query) {{
+      setJarvisVisualState("THINKING");
+      document.getElementById("liveJarvisOutput").innerText = "Consulting telemetry data...";
 
       const apiKey = localStorage.getItem("gemini_api_key");
 
@@ -1243,8 +1356,8 @@ TELEMETRY DATA:
 ${{JSON.stringify(window.JARVIS_TELEMETRY)}}
 
 Instructions:
-- Speak authoritatively, politely, and analytically in Tony Stark's JARVIS persona.
-- Keep spoken answers concise (2 to 4 sentences maximum) so it is clean when read aloud.
+- Speak authoritatively, politely, and analytically in Tony Stark's authentic JARVIS persona.
+- Keep spoken answers concise (2 to 4 sentences maximum) so it is clean, punchy, and conversational when spoken aloud.
 - Use exact workflow metrics, error causes, and lane names from the telemetry data when answering.`;
 
           const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${{apiKey}}`, {{
@@ -1260,7 +1373,6 @@ Instructions:
           const data = await response.json();
           if (data.candidates && data.candidates[0].content.parts[0].text) {{
             const reply = data.candidates[0].content.parts[0].text.trim();
-            appendMessage("jarvis", reply);
             speakJarvis(reply);
             return;
           }}
@@ -1269,7 +1381,7 @@ Instructions:
         }}
       }}
 
-      // Local heuristic fallback for common questions if no key or offline
+      // Instant heuristic response if no key or offline
       const q = query.toLowerCase();
       let fallbackReply = "";
 
@@ -1284,10 +1396,9 @@ Instructions:
       }} else if (q.includes("ps5") || q.includes("shorts")) {{
         fallbackReply = "The PS5 Shorts Pipeline contains 131 nodes divided across 5 lanes, handling video detection, Telegram voice brief approval, SupoClip Mac rendering, and scheduled publishing at 8 PM, 3 AM, and 6 AM IST.";
       }} else {{
-        fallbackReply = "Telemetry confirmed, Sir. " + (apiKey ? "All systems are nominal across your 3 production pipelines." : "For deeper conversational inquiries, you may tap Key at the top to save your Gemini API key.");
+        fallbackReply = "Telemetry confirmed, Sir. " + (apiKey ? "All systems are nominal across your 3 production pipelines." : "For deeper conversational inquiries, you may tap Settings at the top to save your Gemini API key.");
       }}
 
-      appendMessage("jarvis", fallbackReply);
       speakJarvis(fallbackReply);
     }}
 
@@ -1300,17 +1411,23 @@ Instructions:
 
       function draw() {{
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 2.5;
 
-        const isLive = isRecording || isSpeaking;
-        const color = isRecording ? "rgba(244, 63, 94, " : isSpeaking ? "rgba(245, 158, 11, " : "rgba(0, 229, 255, ";
+        const isSpeakingState = isJarvisSpeaking;
+        const isListeningState = isConsoleOpen && !isJarvisSpeaking && !isMuted;
+
+        const color = isSpeakingState 
+          ? "rgba(245, 158, 11, " 
+          : isListeningState 
+            ? "rgba(0, 229, 255, " 
+            : "rgba(100, 116, 139, ";
 
         for (let j = 0; j < 3; j++) {{
           ctx.beginPath();
           ctx.strokeStyle = color + (0.8 - j * 0.25) + ")";
           for (let x = 0; x < canvas.width; x++) {{
-            const amp = isLive ? (j === 0 ? 22 : 12) : 3;
-            const freq = isLive ? 0.04 : 0.02;
+            const amp = isSpeakingState ? (j === 0 ? 24 : 14) : isListeningState ? 10 : 2;
+            const freq = isSpeakingState ? 0.045 : 0.025;
             const y = canvas.height / 2 + Math.sin(x * freq + phase + j) * amp * Math.sin(x / canvas.width * Math.PI);
             if (x === 0) ctx.moveTo(x, y);
             else ctx.lineTo(x, y);
@@ -1318,7 +1435,7 @@ Instructions:
           ctx.stroke();
         }}
 
-        phase += isLive ? 0.12 : 0.03;
+        phase += isSpeakingState ? 0.14 : isListeningState ? 0.06 : 0.02;
         requestAnimationFrame(draw);
       }}
       draw();
@@ -1328,6 +1445,7 @@ Instructions:
     function openApiKeyModal() {{
       document.getElementById("apiKeyModal").classList.remove("hidden");
       document.getElementById("geminiApiKeyInput").value = localStorage.getItem("gemini_api_key") || "";
+      populateVoiceList();
     }}
     function closeApiKeyModal() {{
       document.getElementById("apiKeyModal").classList.add("hidden");
@@ -1356,7 +1474,7 @@ Instructions:
     with open("index.html", "w") as f:
         f.write(html_content)
 
-    print("index.html successfully updated with JARVIS & PIN 2805!")
+    print("index.html successfully updated with continuous hands-free JARVIS voice engine!")
 
 if __name__ == "__main__":
     main()
