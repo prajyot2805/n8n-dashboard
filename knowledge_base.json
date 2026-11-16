@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-15 21:05:04 UTC",
+  "generated_at": "2026-11-16 00:27:02 UTC",
   "n8n_instance_url": "https://n8n.srv992629.hstgr.cloud",
   "summary": {
     "total_videos_processed": 9,
     "videos_beautified_count": 9,
     "total_unique_shorts_created": 33,
-    "total_shorts_posted_to_youtube": 10,
-    "total_shorts_queued_in_buffer": 23,
+    "total_shorts_posted_to_youtube": 11,
+    "total_shorts_queued_in_buffer": 22,
     "top_virality_score": 88,
     "average_virality_score": 50.0,
     "total_workflow_executions": 400,
@@ -358,15 +358,15 @@
       "new_title": "Helldivers 2 keeps crashing on PS5, and the issues are real",
       "metadata_changed": true,
       "shorts_made": 5,
-      "shorts_posted": 0,
+      "shorts_posted": 1,
       "shorts": [
         {
           "id": "9fAiHB6V3pw_01",
           "title": "Helldivers 2: will Pelican One make it to extraction?",
           "score": 88,
-          "status": "queued",
+          "status": "posted",
           "duration": 28.4,
-          "url": "",
+          "url": "https://youtube.com/shorts/qpcaqb9wPhE",
           "hook": "Landing now, countdown starts soon"
         },
         {
@@ -425,8 +425,8 @@
       "id": "NyqkzRSDWYbzusW8",
       "status": "ACTIVE",
       "nodes_count": 131,
-      "runs": 274,
-      "success_rate": "98.5%",
+      "runs": 227,
+      "success_rate": "98.2%",
       "errors": 4
     },
     {
@@ -434,7 +434,7 @@
       "id": "WnWMAtnb8XPD91yd",
       "status": "ACTIVE",
       "nodes_count": 46,
-      "runs": 83,
+      "runs": 124,
       "success_rate": "100%",
       "errors": 0
     },
@@ -443,7 +443,7 @@
       "id": "rhOGUhnDmE2iaQgX",
       "status": "ACTIVE",
       "nodes_count": 18,
-      "runs": 17,
+      "runs": 20,
       "success_rate": "100%",
       "errors": 0
     }
