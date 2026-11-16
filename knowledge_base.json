@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-16 05:42:36 UTC",
-  "current_time_ist": "16 Nov 2026, 11:12 AM IST",
+  "generated_at": "2026-11-16 06:25:57 UTC",
+  "current_time_ist": "16 Nov 2026, 11:55 AM IST",
   "n8n_instance_url": "https://n8n.srv992629.hstgr.cloud",
   "summary": {
     "total_videos_processed": 9,
@@ -278,7 +278,7 @@
       "shorts": [
         {
           "id": "YiFseOnuyq4_01",
-          "title": "Helldivers 2: Signal gun to orbital call, what comes next?",
+          "title": "Laser guard dog and Bugs go hand in hand",
           "score": 56,
           "status": "queued",
           "duration": 20.9,
@@ -339,7 +339,7 @@
       "shorts": [
         {
           "id": "TckgvttyfL4_01",
-          "title": "If your arm breaks, keep calling eagles in Helldivers 2",
+          "title": "When your entire team is down and you just keep running",
           "score": 59,
           "status": "queued",
           "duration": 26.4,
@@ -794,7 +794,7 @@
       "id": "NyqkzRSDWYbzusW8",
       "status": "ACTIVE",
       "nodes_count": 131,
-      "runs": 167,
+      "runs": 168,
       "success_rate": "98.2%",
       "errors": 3
     },
@@ -803,7 +803,7 @@
       "id": "WnWMAtnb8XPD91yd",
       "status": "ACTIVE",
       "nodes_count": 46,
-      "runs": 171,
+      "runs": 166,
       "success_rate": "100%",
       "errors": 0
     },
