@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-16 18:03:21 UTC",
-  "current_time_ist": "16 Nov 2026, 11:33 PM IST",
+  "generated_at": "2026-11-16 18:04:38 UTC",
+  "current_time_ist": "16 Nov 2026, 11:34 PM IST",
   "n8n_instance_url": "https://n8n.srv992629.hstgr.cloud",
   "summary": {
     "total_videos_processed": 9,
@@ -17,7 +17,7 @@
         "duration": 28.4,
         "url": "https://youtube.com/shorts/qpcaqb9wPhE",
         "video_id": "qpcaqb9wPhE",
-        "views": 879,
+        "views": 878,
         "thumbnail": "https://i.ytimg.com/vi/qpcaqb9wPhE/mqdefault.jpg",
         "hook": "Landing now, countdown starts soon",
         "source_video_id": "9fAiHB6V3pw",
@@ -38,7 +38,7 @@
         "duration": 26.9,
         "url": "https://youtube.com/shorts/0fm5Jqik_gU",
         "video_id": "0fm5Jqik_gU",
-        "views": 68,
+        "views": 33,
         "thumbnail": "https://i.ytimg.com/vi/0fm5Jqik_gU/mqdefault.jpg",
         "hook": "Flanked and reloading, nowhere to hide",
         "source_video_id": "9fAiHB6V3pw",
@@ -59,7 +59,7 @@
         "duration": 25.4,
         "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
         "video_id": "YTVhAYM3Ftg",
-        "views": 480,
+        "views": 481,
         "thumbnail": "https://i.ytimg.com/vi/YTVhAYM3Ftg/mqdefault.jpg",
         "hook": "Heavies coming from southwest, sentry exposed",
         "source_video_id": "9fAiHB6V3pw",
@@ -104,7 +104,7 @@
         "duration": 23.4,
         "url": "https://youtube.com/shorts/j10vRhfmPiI",
         "video_id": "j10vRhfmPiI",
-        "views": 1224,
+        "views": 1226,
         "thumbnail": "https://i.ytimg.com/vi/j10vRhfmPiI/mqdefault.jpg",
         "hook": "They said you will never die",
         "source_video_id": "7OeDe1RP5LE",
@@ -125,7 +125,7 @@
         "duration": 34.4,
         "url": "https://youtube.com/shorts/_bnDIO6ZOeo",
         "video_id": "_bnDIO6ZOeo",
-        "views": 1346,
+        "views": 1347,
         "thumbnail": "https://i.ytimg.com/vi/_bnDIO6ZOeo/mqdefault.jpg",
         "hook": "Taste the parade of fire.",
         "source_video_id": "7OeDe1RP5LE",
@@ -146,7 +146,7 @@
         "duration": 21.2,
         "url": "https://youtube.com/shorts/k3aeGtTL464",
         "video_id": "k3aeGtTL464",
-        "views": 598,
+        "views": 618,
         "thumbnail": "https://i.ytimg.com/vi/k3aeGtTL464/mqdefault.jpg",
         "hook": "Package dropped mid-firefight. Watch this.",
         "source_video_id": "7OeDe1RP5LE",
@@ -188,7 +188,7 @@
         "duration": 32.7,
         "url": "https://youtube.com/shorts/S1yxC6H_lnE",
         "video_id": "S1yxC6H_lnE",
-        "views": 396,
+        "views": 398,
         "thumbnail": "https://i.ytimg.com/vi/S1yxC6H_lnE/mqdefault.jpg",
         "hook": "Get down, the eagle is incoming",
         "source_video_id": "qIsrqx0nCrg",
@@ -209,7 +209,7 @@
         "duration": 27.6,
         "url": "https://youtube.com/shorts/hLD165HKOws",
         "video_id": "hLD165HKOws",
-        "views": 707,
+        "views": 708,
         "thumbnail": "https://i.ytimg.com/vi/hLD165HKOws/mqdefault.jpg",
         "hook": "Eagles arrive while the horde pushes",
         "source_video_id": "qIsrqx0nCrg",
@@ -272,7 +272,7 @@
         "duration": 27.4,
         "url": "https://youtube.com/shorts/YM7R8U3VR9o",
         "video_id": "YM7R8U3VR9o",
-        "views": 626,
+        "views": 627,
         "thumbnail": "https://i.ytimg.com/vi/YM7R8U3VR9o/mqdefault.jpg",
         "hook": "Watch the sentry go down",
         "source_video_id": "ghHKWZuBD24",
@@ -292,11 +292,11 @@
     "total_workflow_executions": 400,
     "global_success_rate": "100.0%",
     "total_errors": 0,
-    "total_youtube_views": 8738,
+    "total_youtube_views": 8730,
     "total_instagram_views": 134
   },
   "youtube_stats": {
-    "total_views": 8738,
+    "total_views": 8730,
     "total_shorts": 13,
     "average_views_per_short": 672,
     "top_performer": {
@@ -307,18 +307,18 @@
     },
     "live_views": {
       "VZkMukyJZh4": 1358,
-      "j10vRhfmPiI": 1224,
-      "_bnDIO6ZOeo": 1346,
-      "k3aeGtTL464": 598,
+      "j10vRhfmPiI": 1226,
+      "_bnDIO6ZOeo": 1347,
+      "k3aeGtTL464": 618,
       "6oNpggoXkXc": 473,
-      "S1yxC6H_lnE": 396,
-      "hLD165HKOws": 707,
+      "S1yxC6H_lnE": 398,
+      "hLD165HKOws": 708,
       "Gt-k2NPMMQA": 368,
       "6fQH2crY_UE": 215,
-      "YM7R8U3VR9o": 626,
-      "qpcaqb9wPhE": 879,
-      "0fm5Jqik_gU": 68,
-      "YTVhAYM3Ftg": 480
+      "YM7R8U3VR9o": 627,
+      "qpcaqb9wPhE": 878,
+      "0fm5Jqik_gU": 33,
+      "YTVhAYM3Ftg": 481
     }
   },
   "shadow_legion": {
@@ -336,9 +336,7 @@
       "skip_rate": 56.5,
       "view_rate": 43.5,
       "post_id": "18190674400418640",
-      "ig_url": "https://www.instagram.com/reel/Dfw87JDEZXG/",
-      "id": "r01",
-      "ig_id": "18190674400418640"
+      "ig_url": "https://www.instagram.com/reel/Dfw87JDEZXG/"
     },
     "views": 134,
     "reach": 119,
@@ -394,7 +392,7 @@
       "views_cumulative": [
         1358,
         8127,
-        8738
+        8730
       ],
       "uploads_daily": [
         1,
@@ -433,7 +431,7 @@
         0,
         1358,
         8127,
-        8738
+        8730
       ],
       "uploads_daily": [
         0,
@@ -467,14 +465,14 @@
         0,
         0,
         0,
-        8738
+        8730
       ],
       "views_cumulative": [
         0,
         0,
         0,
         0,
-        8738
+        8730
       ],
       "uploads_daily": [
         0,
@@ -498,7 +496,7 @@
         "title": "Don't leave your sentry alone when Heavies close in",
         "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
         "thumbnail": "https://i.ytimg.com/vi/YTVhAYM3Ftg/mqdefault.jpg",
-        "views": 480,
+        "views": 481,
         "score": 66,
         "posted_at_ist": "16 Nov 2026, 08:00 PM IST",
         "timestamp": "2026-11-16T14:30:13.010Z"
@@ -509,7 +507,7 @@
         "title": "Reloading mid-flank in Helldivers 2: Left, left, right!",
         "url": "https://youtube.com/shorts/0fm5Jqik_gU",
         "thumbnail": "https://i.ytimg.com/vi/0fm5Jqik_gU/mqdefault.jpg",
-        "views": 68,
+        "views": 33,
         "score": 78,
         "posted_at_ist": "16 Nov 2026, 06:00 AM IST",
         "timestamp": "2026-11-16T00:30:09.657Z"
@@ -520,7 +518,7 @@
         "title": "Helldivers 2: will Pelican One make it to extraction?",
         "url": "https://youtube.com/shorts/qpcaqb9wPhE",
         "thumbnail": "https://i.ytimg.com/vi/qpcaqb9wPhE/mqdefault.jpg",
-        "views": 879,
+        "views": 878,
         "score": 88,
         "posted_at_ist": "16 Nov 2026, 03:00 AM IST",
         "timestamp": "2026-11-15T21:30:08.579Z"
@@ -543,7 +541,7 @@
         "title": "Pressing attack vs eagle strikes in Helldivers 2 chaos",
         "url": "https://youtube.com/shorts/hLD165HKOws",
         "thumbnail": "https://i.ytimg.com/vi/hLD165HKOws/mqdefault.jpg",
-        "views": 707,
+        "views": 708,
         "score": 62,
         "posted_at_ist": "15 Nov 2026, 05:00 PM IST",
         "timestamp": "2026-11-15T11:30:54.949Z"
@@ -554,7 +552,7 @@
         "title": "I called reinforcements mid-firefight in Helldivers 2",
         "url": "https://youtube.com/shorts/k3aeGtTL464",
         "thumbnail": "https://i.ytimg.com/vi/k3aeGtTL464/mqdefault.jpg",
-        "views": 598,
+        "views": 618,
         "score": 62,
         "posted_at_ist": "15 Nov 2026, 04:00 PM IST",
         "timestamp": "2026-11-15T10:30:55.313Z"
@@ -565,7 +563,7 @@
         "title": "Don't wait on the sentry! Call air support now",
         "url": "https://youtube.com/shorts/YM7R8U3VR9o",
         "thumbnail": "https://i.ytimg.com/vi/YM7R8U3VR9o/mqdefault.jpg",
-        "views": 626,
+        "views": 627,
         "score": 66,
         "posted_at_ist": "15 Nov 2026, 03:00 PM IST",
         "timestamp": "2026-11-15T09:30:53.978Z"
@@ -576,7 +574,7 @@
         "title": "Can one eagle strike save a Helldivers 2 squad?",
         "url": "https://youtube.com/shorts/S1yxC6H_lnE",
         "thumbnail": "https://i.ytimg.com/vi/S1yxC6H_lnE/mqdefault.jpg",
-        "views": 396,
+        "views": 398,
         "score": 70,
         "posted_at_ist": "15 Nov 2026, 02:00 PM IST",
         "timestamp": "2026-11-15T08:30:55.235Z"
@@ -620,7 +618,7 @@
         "title": "If bugs swarm your west flank in Helldivers 2",
         "url": "https://youtube.com/shorts/_bnDIO6ZOeo",
         "thumbnail": "https://i.ytimg.com/vi/_bnDIO6ZOeo/mqdefault.jpg",
-        "views": 1346,
+        "views": 1347,
         "score": 72,
         "posted_at_ist": "15 Nov 2026, 10:00 AM IST",
         "timestamp": "2026-11-15T04:30:53.830Z"
@@ -631,7 +629,7 @@
         "title": "Don't quit Helldivers 2 before reinforcements land",
         "url": "https://youtube.com/shorts/j10vRhfmPiI",
         "thumbnail": "https://i.ytimg.com/vi/j10vRhfmPiI/mqdefault.jpg",
-        "views": 1224,
+        "views": 1226,
         "score": 78,
         "posted_at_ist": "15 Nov 2026, 09:36 AM IST",
         "timestamp": "2026-11-15T04:06:30.847Z"
@@ -691,7 +689,7 @@
           "duration": 23.4,
           "url": "https://youtube.com/shorts/j10vRhfmPiI",
           "video_id": "j10vRhfmPiI",
-          "views": 1224,
+          "views": 1226,
           "thumbnail": "https://i.ytimg.com/vi/j10vRhfmPiI/mqdefault.jpg",
           "hook": "They said you will never die",
           "source_video_id": "7OeDe1RP5LE",
@@ -712,7 +710,7 @@
           "duration": 34.4,
           "url": "https://youtube.com/shorts/_bnDIO6ZOeo",
           "video_id": "_bnDIO6ZOeo",
-          "views": 1346,
+          "views": 1347,
           "thumbnail": "https://i.ytimg.com/vi/_bnDIO6ZOeo/mqdefault.jpg",
           "hook": "Taste the parade of fire.",
           "source_video_id": "7OeDe1RP5LE",
@@ -733,7 +731,7 @@
           "duration": 21.2,
           "url": "https://youtube.com/shorts/k3aeGtTL464",
           "video_id": "k3aeGtTL464",
-          "views": 598,
+          "views": 618,
           "thumbnail": "https://i.ytimg.com/vi/k3aeGtTL464/mqdefault.jpg",
           "hook": "Package dropped mid-firefight. Watch this.",
           "source_video_id": "7OeDe1RP5LE",
@@ -1002,7 +1000,7 @@
           "duration": 32.7,
           "url": "https://youtube.com/shorts/S1yxC6H_lnE",
           "video_id": "S1yxC6H_lnE",
-          "views": 396,
+          "views": 398,
           "thumbnail": "https://i.ytimg.com/vi/S1yxC6H_lnE/mqdefault.jpg",
           "hook": "Get down, the eagle is incoming",
           "source_video_id": "qIsrqx0nCrg",
@@ -1023,7 +1021,7 @@
           "duration": 27.6,
           "url": "https://youtube.com/shorts/hLD165HKOws",
           "video_id": "hLD165HKOws",
-          "views": 707,
+          "views": 708,
           "thumbnail": "https://i.ytimg.com/vi/hLD165HKOws/mqdefault.jpg",
           "hook": "Eagles arrive while the horde pushes",
           "source_video_id": "qIsrqx0nCrg",
@@ -1138,7 +1136,7 @@
           "duration": 27.4,
           "url": "https://youtube.com/shorts/YM7R8U3VR9o",
           "video_id": "YM7R8U3VR9o",
-          "views": 626,
+          "views": 627,
           "thumbnail": "https://i.ytimg.com/vi/YM7R8U3VR9o/mqdefault.jpg",
           "hook": "Watch the sentry go down",
           "source_video_id": "ghHKWZuBD24",
@@ -1320,7 +1318,7 @@
           "duration": 28.4,
           "url": "https://youtube.com/shorts/qpcaqb9wPhE",
           "video_id": "qpcaqb9wPhE",
-          "views": 879,
+          "views": 878,
           "thumbnail": "https://i.ytimg.com/vi/qpcaqb9wPhE/mqdefault.jpg",
           "hook": "Landing now, countdown starts soon",
           "source_video_id": "9fAiHB6V3pw",
@@ -1341,7 +1339,7 @@
           "duration": 26.9,
           "url": "https://youtube.com/shorts/0fm5Jqik_gU",
           "video_id": "0fm5Jqik_gU",
-          "views": 68,
+          "views": 33,
           "thumbnail": "https://i.ytimg.com/vi/0fm5Jqik_gU/mqdefault.jpg",
           "hook": "Flanked and reloading, nowhere to hide",
           "source_video_id": "9fAiHB6V3pw",
@@ -1362,7 +1360,7 @@
           "duration": 25.4,
           "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
           "video_id": "YTVhAYM3Ftg",
-          "views": 480,
+          "views": 481,
           "thumbnail": "https://i.ytimg.com/vi/YTVhAYM3Ftg/mqdefault.jpg",
           "hook": "Heavies coming from southwest, sentry exposed",
           "source_video_id": "9fAiHB6V3pw",
