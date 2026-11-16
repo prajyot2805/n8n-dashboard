@@ -1,14 +1,22 @@
 {
-  "generated_at": "2026-11-16 07:23:13 UTC",
-  "current_time_ist": "16 Nov 2026, 12:53 PM IST",
+  "generated_at": "2026-11-16 17:31:39 UTC",
+  "current_time_ist": "16 Nov 2026, 11:01 PM IST",
   "n8n_instance_url": "https://n8n.srv992629.hstgr.cloud",
   "summary": {
     "total_videos_processed": 9,
     "videos_beautified_count": 9,
     "total_unique_shorts_created": 33,
-    "total_shorts_posted_to_youtube": 12,
-    "shorts_posted_today_count": 2,
+    "total_shorts_posted_to_youtube": 13,
+    "shorts_posted_today_count": 3,
     "shorts_posted_today": [
+      {
+        "id": "9fAiHB6V3pw_03",
+        "title": "Don't leave your sentry alone when Heavies close in",
+        "time_ist": "08:00 PM IST",
+        "relative_time": "Today at 08:00 PM IST",
+        "score": 66,
+        "url": "https://youtube.com/shorts/YTVhAYM3Ftg"
+      },
       {
         "id": "9fAiHB6V3pw_02",
         "title": "Reloading mid-flank in Helldivers 2: Left, left, right!",
@@ -109,14 +117,14 @@
         "url": "https://youtube.com/shorts/VZkMukyJZh4"
       }
     ],
-    "total_shorts_queued_in_buffer": 21,
+    "total_shorts_queued_in_buffer": 20,
     "next_scheduled_slot_ist": "08:00 PM IST (20:00)",
     "today_date_ist": "16 Nov 2026",
     "top_virality_score": 88,
     "average_virality_score": 50.0,
     "total_workflow_executions": 400,
-    "global_success_rate": "99.8%",
-    "total_errors": 1
+    "global_success_rate": "100.0%",
+    "total_errors": 0
   },
   "videos": [
     {
@@ -687,7 +695,7 @@
       "detected_at": "2026-11-15T18:21:25.923Z",
       "metadata_changed": true,
       "shorts_made": 5,
-      "shorts_posted": 2,
+      "shorts_posted": 3,
       "shorts": [
         {
           "id": "9fAiHB6V3pw_01",
@@ -729,17 +737,19 @@
           "id": "9fAiHB6V3pw_03",
           "title": "Don't leave your sentry alone when Heavies close in",
           "score": 66,
-          "status": "queued",
+          "status": "posted",
           "duration": 25.4,
-          "url": "",
+          "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
           "hook": "Heavies coming from southwest, sentry exposed",
           "source_video_id": "9fAiHB6V3pw",
           "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real",
-          "posted_at": "",
+          "posted_at": "2026-11-16T14:30:13.010Z",
           "queued_at": "2026-11-15T19:13:43.424Z",
-          "relative_time": "Queued 16 Nov, 12:43 AM",
-          "period": "queued",
-          "queued_at_ist": "16 Nov 2026, 12:43 AM IST"
+          "relative_time": "Today at 08:00 PM IST",
+          "period": "today",
+          "posted_dt": "2026-11-16T20:00:13.010000+05:30",
+          "posted_at_ist": "16 Nov 2026, 08:00 PM IST",
+          "time_ist": "08:00 PM IST"
         },
         {
           "id": "9fAiHB6V3pw_04",
@@ -794,16 +804,16 @@
       "id": "NyqkzRSDWYbzusW8",
       "status": "ACTIVE",
       "nodes_count": 131,
-      "runs": 168,
-      "success_rate": "99.4%",
-      "errors": 1
+      "runs": 128,
+      "success_rate": "100.0%",
+      "errors": 0
     },
     {
       "name": "PS5 Shorts - Issue Resolver",
       "id": "WnWMAtnb8XPD91yd",
       "status": "ACTIVE",
       "nodes_count": 46,
-      "runs": 167,
+      "runs": 232,
       "success_rate": "100%",
       "errors": 0
     },
@@ -812,7 +822,7 @@
       "id": "rhOGUhnDmE2iaQgX",
       "status": "ACTIVE",
       "nodes_count": 18,
-      "runs": 26,
+      "runs": 28,
       "success_rate": "100%",
       "errors": 0
     }
@@ -854,14 +864,5 @@
       "visibility": "public"
     }
   ],
-  "incidents": [
-    {
-      "id": "1375",
-      "workflowName": "PS5 Shorts Pipeline",
-      "startedAt": "2026-11-15T20:42:56.652Z",
-      "node": "Get Voice File",
-      "message": "Bad request - please check your parameters",
-      "description": "Bad Request: file_id not specified"
-    }
-  ]
+  "incidents": []
 }
