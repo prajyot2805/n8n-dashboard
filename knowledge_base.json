@@ -1,17 +1,122 @@
 {
-  "generated_at": "2026-11-16 00:27:02 UTC",
+  "generated_at": "2026-11-16 05:41:38 UTC",
+  "current_time_ist": "16 Nov 2026, 11:11 AM IST",
   "n8n_instance_url": "https://n8n.srv992629.hstgr.cloud",
   "summary": {
     "total_videos_processed": 9,
     "videos_beautified_count": 9,
     "total_unique_shorts_created": 33,
-    "total_shorts_posted_to_youtube": 11,
-    "total_shorts_queued_in_buffer": 22,
+    "total_shorts_posted_to_youtube": 12,
+    "shorts_posted_today_count": 2,
+    "shorts_posted_today": [
+      {
+        "id": "9fAiHB6V3pw_02",
+        "title": "Reloading mid-flank in Helldivers 2: Left, left, right!",
+        "time_ist": "06:00 AM IST",
+        "relative_time": "Today at 06:00 AM IST",
+        "score": 78,
+        "url": "https://youtube.com/shorts/0fm5Jqik_gU"
+      },
+      {
+        "id": "9fAiHB6V3pw_01",
+        "title": "Helldivers 2: will Pelican One make it to extraction?",
+        "time_ist": "03:00 AM IST",
+        "relative_time": "Today at 03:00 AM IST",
+        "score": 88,
+        "url": "https://youtube.com/shorts/qpcaqb9wPhE"
+      }
+    ],
+    "shorts_posted_yesterday_count": 10,
+    "shorts_posted_yesterday": [
+      {
+        "id": "qIsrqx0nCrg_03",
+        "title": "Pressing attack vs eagle strikes in Helldivers 2 chaos",
+        "time_ist": "05:00 PM IST",
+        "relative_time": "Yesterday at 05:00 PM IST",
+        "score": 62,
+        "url": "https://youtube.com/shorts/hLD165HKOws"
+      },
+      {
+        "id": "7OeDe1RP5LE_04",
+        "title": "I called reinforcements mid-firefight in Helldivers 2",
+        "time_ist": "04:00 PM IST",
+        "relative_time": "Yesterday at 04:00 PM IST",
+        "score": 62,
+        "url": "https://youtube.com/shorts/k3aeGtTL464"
+      },
+      {
+        "id": "ghHKWZuBD24_03",
+        "title": "Don't wait on the sentry! Call air support now",
+        "time_ist": "03:00 PM IST",
+        "relative_time": "Yesterday at 03:00 PM IST",
+        "score": 66,
+        "url": "https://youtube.com/shorts/YM7R8U3VR9o"
+      },
+      {
+        "id": "qIsrqx0nCrg_02",
+        "title": "Can one eagle strike save a Helldivers 2 squad?",
+        "time_ist": "02:00 PM IST",
+        "relative_time": "Yesterday at 02:00 PM IST",
+        "score": 70,
+        "url": "https://youtube.com/shorts/S1yxC6H_lnE"
+      },
+      {
+        "id": "ghHKWZuBD24_02",
+        "title": "20 seconds to extract! Helldivers 2 Pelican 1",
+        "time_ist": "01:00 PM IST",
+        "relative_time": "Yesterday at 01:00 PM IST",
+        "score": 72,
+        "url": "https://youtube.com/shorts/6fQH2crY_UE"
+      },
+      {
+        "id": "qIsrqx0nCrg_01",
+        "title": "If you call stratagems under fire, this is what happens",
+        "time_ist": "12:00 PM IST",
+        "relative_time": "Yesterday at 12:00 PM IST",
+        "score": 72,
+        "url": "https://youtube.com/shorts/6oNpggoXkXc"
+      },
+      {
+        "id": "ghHKWZuBD24_01",
+        "title": "Out of ammo and still holding? Helldivers 2",
+        "time_ist": "11:00 AM IST",
+        "relative_time": "Yesterday at 11:00 AM IST",
+        "score": 84,
+        "url": "https://youtube.com/shorts/Gt-k2NPMMQA"
+      },
+      {
+        "id": "7OeDe1RP5LE_03",
+        "title": "If bugs swarm your west flank in Helldivers 2",
+        "time_ist": "10:00 AM IST",
+        "relative_time": "Yesterday at 10:00 AM IST",
+        "score": 72,
+        "url": "https://youtube.com/shorts/_bnDIO6ZOeo"
+      },
+      {
+        "id": "7OeDe1RP5LE_02",
+        "title": "Don't quit Helldivers 2 before reinforcements land",
+        "time_ist": "09:36 AM IST",
+        "relative_time": "Yesterday at 09:36 AM IST",
+        "score": 78,
+        "url": "https://youtube.com/shorts/j10vRhfmPiI"
+      },
+      {
+        "id": "7OeDe1RP5LE_01",
+        "title": "Helldivers 2: Can we hold out until extraction?",
+        "time_ist": "02:57 AM IST",
+        "relative_time": "Yesterday at 02:57 AM IST",
+        "score": 88,
+        "url": "https://youtube.com/shorts/VZkMukyJZh4"
+      }
+    ],
+    "total_shorts_queued_in_buffer": 21,
+    "next_scheduled_slot_ist": "08:00 PM IST (20:00)",
+    "today_date_ist": "16 Nov 2026",
     "top_virality_score": 88,
     "average_virality_score": 50.0,
     "total_workflow_executions": 400,
-    "global_success_rate": "99.0%",
-    "total_errors": 4
+    "global_success_rate": "99.2%",
+    "total_errors": 3
   },
   "videos": [
     {
@@ -20,6 +125,7 @@
       "game": "Helldivers 2",
       "old_title": "the new green bug strain is tough",
       "new_title": "Helldivers 2: the new green bug strain is tough",
+      "detected_at": "2026-11-14T20:39:55.263Z",
       "metadata_changed": true,
       "shorts_made": 6,
       "shorts_posted": 4,
@@ -31,7 +137,16 @@
           "status": "posted",
           "duration": 38.2,
           "url": "https://youtube.com/shorts/VZkMukyJZh4",
-          "hook": "Will the squad survive the countdown?"
+          "hook": "Will the squad survive the countdown?",
+          "source_video_id": "7OeDe1RP5LE",
+          "source_video_title": "Helldivers 2: the new green bug strain is tough",
+          "posted_at": "2026-11-14T21:27:40.975Z",
+          "queued_at": "2026-11-14T21:27:18.919Z",
+          "relative_time": "Yesterday at 02:57 AM IST",
+          "period": "yesterday",
+          "posted_dt": "2026-11-15T02:57:40.975000+05:30",
+          "posted_at_ist": "15 Nov 2026, 02:57 AM IST",
+          "time_ist": "02:57 AM IST"
         },
         {
           "id": "7OeDe1RP5LE_02",
@@ -40,7 +155,16 @@
           "status": "posted",
           "duration": 23.4,
           "url": "https://youtube.com/shorts/j10vRhfmPiI",
-          "hook": "They said you will never die"
+          "hook": "They said you will never die",
+          "source_video_id": "7OeDe1RP5LE",
+          "source_video_title": "Helldivers 2: the new green bug strain is tough",
+          "posted_at": "2026-11-15T04:06:30.847Z",
+          "queued_at": "2026-11-14T21:27:18.919Z",
+          "relative_time": "Yesterday at 09:36 AM IST",
+          "period": "yesterday",
+          "posted_dt": "2026-11-15T09:36:30.847000+05:30",
+          "posted_at_ist": "15 Nov 2026, 09:36 AM IST",
+          "time_ist": "09:36 AM IST"
         },
         {
           "id": "7OeDe1RP5LE_03",
@@ -49,7 +173,16 @@
           "status": "posted",
           "duration": 34.4,
           "url": "https://youtube.com/shorts/_bnDIO6ZOeo",
-          "hook": "Taste the parade of fire."
+          "hook": "Taste the parade of fire.",
+          "source_video_id": "7OeDe1RP5LE",
+          "source_video_title": "Helldivers 2: the new green bug strain is tough",
+          "posted_at": "2026-11-15T04:30:53.830Z",
+          "queued_at": "2026-11-14T21:27:18.919Z",
+          "relative_time": "Yesterday at 10:00 AM IST",
+          "period": "yesterday",
+          "posted_dt": "2026-11-15T10:00:53.830000+05:30",
+          "posted_at_ist": "15 Nov 2026, 10:00 AM IST",
+          "time_ist": "10:00 AM IST"
         },
         {
           "id": "7OeDe1RP5LE_04",
@@ -58,7 +191,16 @@
           "status": "posted",
           "duration": 21.2,
           "url": "https://youtube.com/shorts/k3aeGtTL464",
-          "hook": "Package dropped mid-firefight. Watch this."
+          "hook": "Package dropped mid-firefight. Watch this.",
+          "source_video_id": "7OeDe1RP5LE",
+          "source_video_title": "Helldivers 2: the new green bug strain is tough",
+          "posted_at": "2026-11-15T10:30:55.313Z",
+          "queued_at": "2026-11-14T21:27:18.919Z",
+          "relative_time": "Yesterday at 04:00 PM IST",
+          "period": "yesterday",
+          "posted_dt": "2026-11-15T16:00:55.313000+05:30",
+          "posted_at_ist": "15 Nov 2026, 04:00 PM IST",
+          "time_ist": "04:00 PM IST"
         },
         {
           "id": "7OeDe1RP5LE_05",
@@ -67,7 +209,14 @@
           "status": "queued",
           "duration": 32.3,
           "url": "",
-          "hook": "Broken arm. No quitting allowed."
+          "hook": "Broken arm. No quitting allowed.",
+          "source_video_id": "7OeDe1RP5LE",
+          "source_video_title": "Helldivers 2: the new green bug strain is tough",
+          "posted_at": "",
+          "queued_at": "2026-11-14T21:27:18.919Z",
+          "relative_time": "Queued 15 Nov, 02:57 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 02:57 AM IST"
         },
         {
           "id": "7OeDe1RP5LE_06",
@@ -76,7 +225,14 @@
           "status": "queued",
           "duration": 30.4,
           "url": "",
-          "hook": "Freedom calls, reinforcements answer fast."
+          "hook": "Freedom calls, reinforcements answer fast.",
+          "source_video_id": "7OeDe1RP5LE",
+          "source_video_title": "Helldivers 2: the new green bug strain is tough",
+          "posted_at": "",
+          "queued_at": "2026-11-14T21:27:18.919Z",
+          "relative_time": "Queued 15 Nov, 02:57 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 02:57 AM IST"
         }
       ]
     },
@@ -86,6 +242,7 @@
       "game": "Helldivers 2",
       "old_title": "HELLDIVERS 2 starts",
       "new_title": "Helldivers 2 PS5 Mission Start: Squad Dropship Run",
+      "detected_at": "2026-11-14T21:40:17.075Z",
       "metadata_changed": true,
       "shorts_made": 1,
       "shorts_posted": 0,
@@ -97,7 +254,14 @@
           "status": "queued",
           "duration": 15.4,
           "url": "",
-          "hook": "Strap in. Drop starts now."
+          "hook": "Strap in. Drop starts now.",
+          "source_video_id": "GULKBJ4BwHM",
+          "source_video_title": "Helldivers 2 PS5 Mission Start: Squad Dropship Run",
+          "posted_at": "",
+          "queued_at": "2026-11-14T21:42:14.311Z",
+          "relative_time": "Queued 15 Nov, 03:12 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 03:12 AM IST"
         }
       ]
     },
@@ -107,6 +271,7 @@
       "game": "Helldivers 2",
       "old_title": "HELLDIVERS 2 bug annihilation #helldivers2 #ps5 #onlinegaming",
       "new_title": "Helldivers 2 Bug Annihilation: Orbital Gatling Barrage",
+      "detected_at": "2026-11-14T21:41:02.233Z",
       "metadata_changed": true,
       "shorts_made": 3,
       "shorts_posted": 0,
@@ -118,7 +283,14 @@
           "status": "queued",
           "duration": 20.9,
           "url": "",
-          "hook": "One pickup, then an orbital request"
+          "hook": "One pickup, then an orbital request",
+          "source_video_id": "YiFseOnuyq4",
+          "source_video_title": "Helldivers 2 Bug Annihilation: Orbital Gatling Barrage",
+          "posted_at": "",
+          "queued_at": "2026-11-14T21:51:21.485Z",
+          "relative_time": "Queued 15 Nov, 03:21 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 03:21 AM IST"
         },
         {
           "id": "YiFseOnuyq4_02",
@@ -127,7 +299,14 @@
           "status": "queued",
           "duration": 22.2,
           "url": "",
-          "hook": "Friendly fire ends this one fast"
+          "hook": "Friendly fire ends this one fast",
+          "source_video_id": "YiFseOnuyq4",
+          "source_video_title": "Helldivers 2 Bug Annihilation: Orbital Gatling Barrage",
+          "posted_at": "",
+          "queued_at": "2026-11-14T21:51:21.485Z",
+          "relative_time": "Queued 15 Nov, 03:21 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 03:21 AM IST"
         },
         {
           "id": "YiFseOnuyq4_03",
@@ -136,7 +315,14 @@
           "status": "queued",
           "duration": 20.3,
           "url": "",
-          "hook": "Three requests, then the extraction call"
+          "hook": "Three requests, then the extraction call",
+          "source_video_id": "YiFseOnuyq4",
+          "source_video_title": "Helldivers 2 Bug Annihilation: Orbital Gatling Barrage",
+          "posted_at": "",
+          "queued_at": "2026-11-14T21:51:21.485Z",
+          "relative_time": "Queued 15 Nov, 03:21 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 03:21 AM IST"
         }
       ]
     },
@@ -146,6 +332,7 @@
       "game": "Helldivers 2",
       "old_title": "HELLDIVERS 2 extraction frenzy #helldivers2 #ps5  #onlinegaming ",
       "new_title": "Helldivers 2 Extraction Frenzy: Team Keeps Dying",
+      "detected_at": "2026-11-14T21:51:03.880Z",
       "metadata_changed": true,
       "shorts_made": 3,
       "shorts_posted": 0,
@@ -157,7 +344,14 @@
           "status": "queued",
           "duration": 26.4,
           "url": "",
-          "hook": "Who needs two working arms?"
+          "hook": "Who needs two working arms?",
+          "source_video_id": "TckgvttyfL4",
+          "source_video_title": "Helldivers 2 Extraction Frenzy: Team Keeps Dying",
+          "posted_at": "",
+          "queued_at": "2026-11-14T21:57:30.069Z",
+          "relative_time": "Queued 15 Nov, 03:27 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 03:27 AM IST"
         },
         {
           "id": "TckgvttyfL4_02",
@@ -166,7 +360,14 @@
           "status": "queued",
           "duration": 31.5,
           "url": "",
-          "hook": "Reinforcements land mid-firefight, no warning"
+          "hook": "Reinforcements land mid-firefight, no warning",
+          "source_video_id": "TckgvttyfL4",
+          "source_video_title": "Helldivers 2 Extraction Frenzy: Team Keeps Dying",
+          "posted_at": "",
+          "queued_at": "2026-11-14T21:57:30.069Z",
+          "relative_time": "Queued 15 Nov, 03:27 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 03:27 AM IST"
         },
         {
           "id": "TckgvttyfL4_03",
@@ -175,7 +376,14 @@
           "status": "queued",
           "duration": 19.5,
           "url": "",
-          "hook": "Sixty seconds to extract, sentries pending"
+          "hook": "Sixty seconds to extract, sentries pending",
+          "source_video_id": "TckgvttyfL4",
+          "source_video_title": "Helldivers 2 Extraction Frenzy: Team Keeps Dying",
+          "posted_at": "",
+          "queued_at": "2026-11-14T21:57:30.069Z",
+          "relative_time": "Queued 15 Nov, 03:27 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 03:27 AM IST"
         }
       ]
     },
@@ -185,6 +393,7 @@
       "game": "Helldivers 2",
       "old_title": "Helldivers 2: Airburst Launcher Gameplay on PS5",
       "new_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5",
+      "detected_at": "2026-11-14T22:14:21.488Z",
       "metadata_changed": true,
       "shorts_made": 5,
       "shorts_posted": 3,
@@ -196,7 +405,16 @@
           "status": "posted",
           "duration": 42.4,
           "url": "https://youtube.com/shorts/6oNpggoXkXc",
-          "hook": "Stratagem call under fire goes wrong"
+          "hook": "Stratagem call under fire goes wrong",
+          "source_video_id": "qIsrqx0nCrg",
+          "source_video_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5",
+          "posted_at": "2026-11-15T06:30:54.346Z",
+          "queued_at": "2026-11-14T22:43:28.275Z",
+          "relative_time": "Yesterday at 12:00 PM IST",
+          "period": "yesterday",
+          "posted_dt": "2026-11-15T12:00:54.346000+05:30",
+          "posted_at_ist": "15 Nov 2026, 12:00 PM IST",
+          "time_ist": "12:00 PM IST"
         },
         {
           "id": "qIsrqx0nCrg_02",
@@ -205,7 +423,16 @@
           "status": "posted",
           "duration": 32.7,
           "url": "https://youtube.com/shorts/S1yxC6H_lnE",
-          "hook": "Get down, the eagle is incoming"
+          "hook": "Get down, the eagle is incoming",
+          "source_video_id": "qIsrqx0nCrg",
+          "source_video_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5",
+          "posted_at": "2026-11-15T08:30:55.235Z",
+          "queued_at": "2026-11-14T22:43:28.275Z",
+          "relative_time": "Yesterday at 02:00 PM IST",
+          "period": "yesterday",
+          "posted_dt": "2026-11-15T14:00:55.235000+05:30",
+          "posted_at_ist": "15 Nov 2026, 02:00 PM IST",
+          "time_ist": "02:00 PM IST"
         },
         {
           "id": "qIsrqx0nCrg_03",
@@ -214,7 +441,16 @@
           "status": "posted",
           "duration": 27.6,
           "url": "https://youtube.com/shorts/hLD165HKOws",
-          "hook": "Eagles arrive while the horde pushes"
+          "hook": "Eagles arrive while the horde pushes",
+          "source_video_id": "qIsrqx0nCrg",
+          "source_video_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5",
+          "posted_at": "2026-11-15T11:30:54.949Z",
+          "queued_at": "2026-11-14T22:43:28.275Z",
+          "relative_time": "Yesterday at 05:00 PM IST",
+          "period": "yesterday",
+          "posted_dt": "2026-11-15T17:00:54.949000+05:30",
+          "posted_at_ist": "15 Nov 2026, 05:00 PM IST",
+          "time_ist": "05:00 PM IST"
         },
         {
           "id": "qIsrqx0nCrg_04",
@@ -223,7 +459,14 @@
           "status": "queued",
           "duration": 21.1,
           "url": "",
-          "hook": "One second left before extraction"
+          "hook": "One second left before extraction",
+          "source_video_id": "qIsrqx0nCrg",
+          "source_video_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5",
+          "posted_at": "",
+          "queued_at": "2026-11-14T22:43:28.275Z",
+          "relative_time": "Queued 15 Nov, 04:13 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 04:13 AM IST"
         },
         {
           "id": "qIsrqx0nCrg_05",
@@ -232,7 +475,14 @@
           "status": "queued",
           "duration": 18,
           "url": "",
-          "hook": "Watch the drop land on the horde"
+          "hook": "Watch the drop land on the horde",
+          "source_video_id": "qIsrqx0nCrg",
+          "source_video_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5",
+          "posted_at": "",
+          "queued_at": "2026-11-14T22:43:28.275Z",
+          "relative_time": "Queued 15 Nov, 04:13 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 04:13 AM IST"
         }
       ]
     },
@@ -242,6 +492,7 @@
       "game": "Helldivers 2",
       "old_title": "Airburst Launcher is OP",
       "new_title": "Helldivers 2 Airburst Launcher Blasts a Bug",
+      "detected_at": "2026-11-15T04:11:07.262Z",
       "metadata_changed": true,
       "shorts_made": 5,
       "shorts_posted": 3,
@@ -253,7 +504,16 @@
           "status": "posted",
           "duration": 30.6,
           "url": "https://youtube.com/shorts/Gt-k2NPMMQA",
-          "hook": "Ammo gone, but still fighting"
+          "hook": "Ammo gone, but still fighting",
+          "source_video_id": "ghHKWZuBD24",
+          "source_video_title": "Helldivers 2 Airburst Launcher Blasts a Bug",
+          "posted_at": "2026-11-15T05:30:53.977Z",
+          "queued_at": "2026-11-15T04:44:04.360Z",
+          "relative_time": "Yesterday at 11:00 AM IST",
+          "period": "yesterday",
+          "posted_dt": "2026-11-15T11:00:53.977000+05:30",
+          "posted_at_ist": "15 Nov 2026, 11:00 AM IST",
+          "time_ist": "11:00 AM IST"
         },
         {
           "id": "ghHKWZuBD24_02",
@@ -262,7 +522,16 @@
           "status": "posted",
           "duration": 56.3,
           "url": "https://youtube.com/shorts/6fQH2crY_UE",
-          "hook": "Extraction is a 20-second countdown"
+          "hook": "Extraction is a 20-second countdown",
+          "source_video_id": "ghHKWZuBD24",
+          "source_video_title": "Helldivers 2 Airburst Launcher Blasts a Bug",
+          "posted_at": "2026-11-15T07:30:55.518Z",
+          "queued_at": "2026-11-15T04:44:04.360Z",
+          "relative_time": "Yesterday at 01:00 PM IST",
+          "period": "yesterday",
+          "posted_dt": "2026-11-15T13:00:55.518000+05:30",
+          "posted_at_ist": "15 Nov 2026, 01:00 PM IST",
+          "time_ist": "01:00 PM IST"
         },
         {
           "id": "ghHKWZuBD24_03",
@@ -271,7 +540,16 @@
           "status": "posted",
           "duration": 27.4,
           "url": "https://youtube.com/shorts/YM7R8U3VR9o",
-          "hook": "Watch the sentry go down"
+          "hook": "Watch the sentry go down",
+          "source_video_id": "ghHKWZuBD24",
+          "source_video_title": "Helldivers 2 Airburst Launcher Blasts a Bug",
+          "posted_at": "2026-11-15T09:30:53.978Z",
+          "queued_at": "2026-11-15T04:44:04.360Z",
+          "relative_time": "Yesterday at 03:00 PM IST",
+          "period": "yesterday",
+          "posted_dt": "2026-11-15T15:00:53.978000+05:30",
+          "posted_at_ist": "15 Nov 2026, 03:00 PM IST",
+          "time_ist": "03:00 PM IST"
         },
         {
           "id": "ghHKWZuBD24_04",
@@ -280,7 +558,14 @@
           "status": "queued",
           "duration": 27.7,
           "url": "",
-          "hook": "Nobody knows where support is"
+          "hook": "Nobody knows where support is",
+          "source_video_id": "ghHKWZuBD24",
+          "source_video_title": "Helldivers 2 Airburst Launcher Blasts a Bug",
+          "posted_at": "",
+          "queued_at": "2026-11-15T04:44:04.360Z",
+          "relative_time": "Queued 15 Nov, 10:14 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 10:14 AM IST"
         },
         {
           "id": "ghHKWZuBD24_05",
@@ -289,7 +574,14 @@
           "status": "queued",
           "duration": 17.5,
           "url": "",
-          "hook": "Reinforcements on the way, hold on"
+          "hook": "Reinforcements on the way, hold on",
+          "source_video_id": "ghHKWZuBD24",
+          "source_video_title": "Helldivers 2 Airburst Launcher Blasts a Bug",
+          "posted_at": "",
+          "queued_at": "2026-11-15T04:44:04.360Z",
+          "relative_time": "Queued 15 Nov, 10:14 AM",
+          "period": "queued",
+          "queued_at_ist": "15 Nov 2026, 10:14 AM IST"
         }
       ]
     },
@@ -299,6 +591,7 @@
       "game": "Helldivers 2",
       "old_title": "Helldivers 2 Not all wars are meant to be won",
       "new_title": "Helldivers 2: Reinforce Called While Destroying Eggs",
+      "detected_at": "2026-11-15T18:19:33.856Z",
       "metadata_changed": true,
       "shorts_made": 5,
       "shorts_posted": 0,
@@ -310,7 +603,14 @@
           "status": "queued",
           "duration": 45.4,
           "url": "",
-          "hook": "Three launches, and I never pressed anything"
+          "hook": "Three launches, and I never pressed anything",
+          "source_video_id": "onO8PXEPUSw",
+          "source_video_title": "Helldivers 2: Reinforce Called While Destroying Eggs",
+          "posted_at": "",
+          "queued_at": "2026-11-15T19:02:23.871Z",
+          "relative_time": "Queued 16 Nov, 12:32 AM",
+          "period": "queued",
+          "queued_at_ist": "16 Nov 2026, 12:32 AM IST"
         },
         {
           "id": "onO8PXEPUSw_02",
@@ -319,7 +619,14 @@
           "status": "queued",
           "duration": 54.9,
           "url": "",
-          "hook": "Orbital strikes won't stop calling in"
+          "hook": "Orbital strikes won't stop calling in",
+          "source_video_id": "onO8PXEPUSw",
+          "source_video_title": "Helldivers 2: Reinforce Called While Destroying Eggs",
+          "posted_at": "",
+          "queued_at": "2026-11-15T19:02:23.871Z",
+          "relative_time": "Queued 16 Nov, 12:32 AM",
+          "period": "queued",
+          "queued_at_ist": "16 Nov 2026, 12:32 AM IST"
         },
         {
           "id": "onO8PXEPUSw_03",
@@ -328,7 +635,14 @@
           "status": "queued",
           "duration": 56.7,
           "url": "",
-          "hook": "Stuck in the loop, again and again"
+          "hook": "Stuck in the loop, again and again",
+          "source_video_id": "onO8PXEPUSw",
+          "source_video_title": "Helldivers 2: Reinforce Called While Destroying Eggs",
+          "posted_at": "",
+          "queued_at": "2026-11-15T19:02:23.871Z",
+          "relative_time": "Queued 16 Nov, 12:32 AM",
+          "period": "queued",
+          "queued_at_ist": "16 Nov 2026, 12:32 AM IST"
         },
         {
           "id": "onO8PXEPUSw_04",
@@ -337,7 +651,14 @@
           "status": "queued",
           "duration": 28.3,
           "url": "",
-          "hook": "One line, playing on repeat forever"
+          "hook": "One line, playing on repeat forever",
+          "source_video_id": "onO8PXEPUSw",
+          "source_video_title": "Helldivers 2: Reinforce Called While Destroying Eggs",
+          "posted_at": "",
+          "queued_at": "2026-11-15T19:02:23.871Z",
+          "relative_time": "Queued 16 Nov, 12:32 AM",
+          "period": "queued",
+          "queued_at_ist": "16 Nov 2026, 12:32 AM IST"
         },
         {
           "id": "onO8PXEPUSw_05",
@@ -346,7 +667,14 @@
           "status": "queued",
           "duration": 52.9,
           "url": "",
-          "hook": "Not every war is meant to be won"
+          "hook": "Not every war is meant to be won",
+          "source_video_id": "onO8PXEPUSw",
+          "source_video_title": "Helldivers 2: Reinforce Called While Destroying Eggs",
+          "posted_at": "",
+          "queued_at": "2026-11-15T19:02:23.871Z",
+          "relative_time": "Queued 16 Nov, 12:32 AM",
+          "period": "queued",
+          "queued_at_ist": "16 Nov 2026, 12:32 AM IST"
         }
       ]
     },
@@ -356,9 +684,10 @@
       "game": "Helldivers 2",
       "old_title": "HELLDIVERS 2 The game just keeps crashing.And the issues are real.",
       "new_title": "Helldivers 2 keeps crashing on PS5, and the issues are real",
+      "detected_at": "2026-11-15T18:21:25.923Z",
       "metadata_changed": true,
       "shorts_made": 5,
-      "shorts_posted": 1,
+      "shorts_posted": 2,
       "shorts": [
         {
           "id": "9fAiHB6V3pw_01",
@@ -367,16 +696,34 @@
           "status": "posted",
           "duration": 28.4,
           "url": "https://youtube.com/shorts/qpcaqb9wPhE",
-          "hook": "Landing now, countdown starts soon"
+          "hook": "Landing now, countdown starts soon",
+          "source_video_id": "9fAiHB6V3pw",
+          "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real",
+          "posted_at": "2026-11-15T21:30:08.579Z",
+          "queued_at": "2026-11-15T19:13:43.424Z",
+          "relative_time": "Today at 03:00 AM IST",
+          "period": "today",
+          "posted_dt": "2026-11-16T03:00:08.579000+05:30",
+          "posted_at_ist": "16 Nov 2026, 03:00 AM IST",
+          "time_ist": "03:00 AM IST"
         },
         {
           "id": "9fAiHB6V3pw_02",
           "title": "Reloading mid-flank in Helldivers 2: Left, left, right!",
           "score": 78,
-          "status": "queued",
+          "status": "posted",
           "duration": 26.9,
-          "url": "",
-          "hook": "Flanked and reloading, nowhere to hide"
+          "url": "https://youtube.com/shorts/0fm5Jqik_gU",
+          "hook": "Flanked and reloading, nowhere to hide",
+          "source_video_id": "9fAiHB6V3pw",
+          "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real",
+          "posted_at": "2026-11-16T00:30:09.657Z",
+          "queued_at": "2026-11-15T19:13:43.424Z",
+          "relative_time": "Today at 06:00 AM IST",
+          "period": "today",
+          "posted_dt": "2026-11-16T06:00:09.657000+05:30",
+          "posted_at_ist": "16 Nov 2026, 06:00 AM IST",
+          "time_ist": "06:00 AM IST"
         },
         {
           "id": "9fAiHB6V3pw_03",
@@ -385,7 +732,14 @@
           "status": "queued",
           "duration": 25.4,
           "url": "",
-          "hook": "Heavies coming from southwest, sentry exposed"
+          "hook": "Heavies coming from southwest, sentry exposed",
+          "source_video_id": "9fAiHB6V3pw",
+          "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real",
+          "posted_at": "",
+          "queued_at": "2026-11-15T19:13:43.424Z",
+          "relative_time": "Queued 16 Nov, 12:43 AM",
+          "period": "queued",
+          "queued_at_ist": "16 Nov 2026, 12:43 AM IST"
         },
         {
           "id": "9fAiHB6V3pw_04",
@@ -394,7 +748,14 @@
           "status": "queued",
           "duration": 19.9,
           "url": "",
-          "hook": "Spotted enemies ahead, prepare to exterminate"
+          "hook": "Spotted enemies ahead, prepare to exterminate",
+          "source_video_id": "9fAiHB6V3pw",
+          "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real",
+          "posted_at": "",
+          "queued_at": "2026-11-15T19:13:43.424Z",
+          "relative_time": "Queued 16 Nov, 12:43 AM",
+          "period": "queued",
+          "queued_at_ist": "16 Nov 2026, 12:43 AM IST"
         },
         {
           "id": "9fAiHB6V3pw_05",
@@ -403,7 +764,14 @@
           "status": "queued",
           "duration": 19.4,
           "url": "",
-          "hook": "Nothing left, then a sample appears"
+          "hook": "Nothing left, then a sample appears",
+          "source_video_id": "9fAiHB6V3pw",
+          "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real",
+          "posted_at": "",
+          "queued_at": "2026-11-15T19:13:43.424Z",
+          "relative_time": "Queued 16 Nov, 12:43 AM",
+          "period": "queued",
+          "queued_at_ist": "16 Nov 2026, 12:43 AM IST"
         }
       ]
     },
@@ -413,6 +781,7 @@
       "game": "Helldivers 2",
       "old_title": "HELLDIVERS 2 What happens when you get a good squad in the game",
       "new_title": "Helldivers 2 good squad gameplay: what teamwork looks like",
+      "detected_at": "2026-11-15T20:00:45.646Z",
       "metadata_changed": true,
       "shorts_made": 0,
       "shorts_posted": 0,
@@ -425,16 +794,16 @@
       "id": "NyqkzRSDWYbzusW8",
       "status": "ACTIVE",
       "nodes_count": 131,
-      "runs": 227,
+      "runs": 167,
       "success_rate": "98.2%",
-      "errors": 4
+      "errors": 3
     },
     {
       "name": "PS5 Shorts - Issue Resolver",
       "id": "WnWMAtnb8XPD91yd",
       "status": "ACTIVE",
       "nodes_count": 46,
-      "runs": 124,
+      "runs": 171,
       "success_rate": "100%",
       "errors": 0
     },
@@ -443,7 +812,7 @@
       "id": "rhOGUhnDmE2iaQgX",
       "status": "ACTIVE",
       "nodes_count": 18,
-      "runs": 20,
+      "runs": 27,
       "success_rate": "100%",
       "errors": 0
     }
@@ -509,14 +878,6 @@
       "node": "Haiku Metadata",
       "message": "Bad request - please check your parameters",
       "description": "Unable to download the file. Please verify the URL and try again."
-    },
-    {
-      "id": "1080",
-      "workflowName": "PS5 Shorts Pipeline",
-      "startedAt": "2026-11-15T12:30:46.117Z",
-      "node": "Notify Upload Issue",
-      "message": "Bad request - please check your parameters",
-      "description": "Bad Request: can't parse entities: Can't find end of the entity starting at byte offset 428"
     }
   ]
 }
