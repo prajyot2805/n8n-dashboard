@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-16 06:25:57 UTC",
-  "current_time_ist": "16 Nov 2026, 11:55 AM IST",
+  "generated_at": "2026-11-16 07:23:13 UTC",
+  "current_time_ist": "16 Nov 2026, 12:53 PM IST",
   "n8n_instance_url": "https://n8n.srv992629.hstgr.cloud",
   "summary": {
     "total_videos_processed": 9,
@@ -115,8 +115,8 @@
     "top_virality_score": 88,
     "average_virality_score": 50.0,
     "total_workflow_executions": 400,
-    "global_success_rate": "99.2%",
-    "total_errors": 3
+    "global_success_rate": "99.8%",
+    "total_errors": 1
   },
   "videos": [
     {
@@ -795,15 +795,15 @@
       "status": "ACTIVE",
       "nodes_count": 131,
       "runs": 168,
-      "success_rate": "98.2%",
-      "errors": 3
+      "success_rate": "99.4%",
+      "errors": 1
     },
     {
       "name": "PS5 Shorts - Issue Resolver",
       "id": "WnWMAtnb8XPD91yd",
       "status": "ACTIVE",
       "nodes_count": 46,
-      "runs": 166,
+      "runs": 167,
       "success_rate": "100%",
       "errors": 0
     },
@@ -812,7 +812,7 @@
       "id": "rhOGUhnDmE2iaQgX",
       "status": "ACTIVE",
       "nodes_count": 18,
-      "runs": 27,
+      "runs": 26,
       "success_rate": "100%",
       "errors": 0
     }
@@ -862,22 +862,6 @@
       "node": "Get Voice File",
       "message": "Bad request - please check your parameters",
       "description": "Bad Request: file_id not specified"
-    },
-    {
-      "id": "1182",
-      "workflowName": "PS5 Shorts Pipeline",
-      "startedAt": "2026-11-15T18:10:35.036Z",
-      "node": "Haiku Metadata",
-      "message": "Bad request - please check your parameters",
-      "description": "Unable to download the file. Please verify the URL and try again."
-    },
-    {
-      "id": "1174",
-      "workflowName": "PS5 Shorts Pipeline",
-      "startedAt": "2026-11-15T18:00:35.042Z",
-      "node": "Haiku Metadata",
-      "message": "Bad request - please check your parameters",
-      "description": "Unable to download the file. Please verify the URL and try again."
     }
   ]
 }
