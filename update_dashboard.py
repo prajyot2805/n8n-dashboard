@@ -1020,6 +1020,9 @@ def main():
         </div>
       </div>
       <div class="flex items-center gap-3">
+        <button onclick="toggleJarvisTextInput()" id="btnToggleKeyboard" class="px-2.5 py-1.5 rounded-xl border border-slate-700 bg-slate-900 hover:border-cyan-400 text-xs text-slate-400 hover:text-cyan-300 transition" title="Type message fallback">
+          ⌨️ Text
+        </button>
         <button onclick="openApiKeyModal()" class="px-2.5 py-1.5 rounded-xl border border-slate-700 bg-slate-900 hover:border-cyan-400 text-xs text-slate-300 transition" title="Settings & Gemini Key">
           ⚙️ Key / Voice
         </button>
@@ -1047,33 +1050,18 @@ def main():
       </div>
 
       <!-- Live Voice Subtitles Readout -->
-      <div class="mt-4 min-h-[85px] max-w-xl px-4 flex flex-col items-center justify-center">
-        <p id="liveUserInput" class="text-sm sm:text-base font-medium text-slate-100 transition-all text-center">
+      <div class="mt-6 min-h-[100px] max-w-xl px-4 flex flex-col items-center justify-center">
+        <p id="liveUserInput" class="text-base sm:text-lg font-medium text-slate-100 transition-all text-center tracking-wide">
           "Speak naturally, Sir. I am listening..."
         </p>
-        <p id="liveJarvisOutput" class="text-xs sm:text-sm text-cyan-300/90 font-mono mt-2 text-center max-w-lg transition-all leading-relaxed">
+        <p id="liveJarvisOutput" class="text-xs sm:text-sm text-cyan-300/90 font-mono mt-3 text-center max-w-lg transition-all leading-relaxed">
           Knowledge Base loaded. Ask anything about your videos, shorts, or pipelines.
         </p>
       </div>
 
-      <!-- Quick Query Suggestions & Text Input -->
-      <div class="mt-3 w-full max-w-xl flex flex-wrap justify-center gap-2">
-        <button onclick="processJarvisTurn('how many shorts got uploaded today since midnight')" class="px-2.5 py-1 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/60 border border-cyan-800/50 text-[11px] text-cyan-300 font-mono transition">
-          📅 2 Shorts Uploaded Today
-        </button>
-        <button onclick="processJarvisTurn('how many main videos were cleaned up and how many shorts created and posted')" class="px-2.5 py-1 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/60 border border-cyan-800/50 text-[11px] text-cyan-300 font-mono transition">
-          🧹 9 Cleaned & 12 Posted Summary
-        </button>
-        <button onclick="processJarvisTurn('which shorts were uploaded today and what are their names')" class="px-2.5 py-1 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/60 border border-cyan-800/50 text-[11px] text-cyan-300 font-mono transition">
-          🎬 Today's Released Shorts
-        </button>
-        <button onclick="processJarvisTurn('what is the next scheduled posting slot and how many in buffer')" class="px-2.5 py-1 rounded-lg bg-cyan-950/40 hover:bg-cyan-900/60 border border-cyan-800/50 text-[11px] text-cyan-300 font-mono transition">
-          ⏳ Buffer & 8 PM Slot
-        </button>
-      </div>
-
-      <div class="mt-3 w-full max-w-md flex items-center gap-2">
-        <input id="jarvisTextInput" type="text" placeholder="Or type a question for Jarvis..." onkeydown="if(event.key==='Enter') sendJarvisTextQuery()" class="flex-1 bg-slate-900/80 border border-slate-700/80 focus:border-cyan-400 rounded-xl px-3.5 py-2 text-xs text-slate-100 outline-none font-mono placeholder:text-slate-500">
+      <!-- Optional Keyboard Fallback (Hidden by default, toggled via top bar ⌨️ button) -->
+      <div id="jarvisTextFallbackBox" class="mt-4 w-full max-w-md hidden items-center gap-2">
+        <input id="jarvisTextInput" type="text" placeholder="Type a question for Jarvis..." onkeydown="if(event.key==='Enter') sendJarvisTextQuery()" class="flex-1 bg-slate-900/80 border border-slate-700/80 focus:border-cyan-400 rounded-xl px-3.5 py-2 text-xs text-slate-100 outline-none font-mono placeholder:text-slate-500">
         <button onclick="sendJarvisTextQuery()" class="px-3.5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition">Ask</button>
       </div>
     </div>
@@ -1504,6 +1492,18 @@ def main():
       const drawer = document.getElementById('stageDetailDrawer');
       if (drawer) {{
         drawer.scrollIntoView({{ behavior: 'smooth', block: 'nearest' }});
+      }}
+    }}
+
+    function toggleJarvisTextInput() {{
+      const box = document.getElementById("jarvisTextFallbackBox");
+      if (box) {{
+        box.classList.toggle("hidden");
+        box.classList.toggle("flex");
+        if (!box.classList.contains("hidden")) {{
+          const inp = document.getElementById("jarvisTextInput");
+          if (inp) inp.focus();
+        }}
       }}
     }}
 
