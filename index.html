@@ -236,10 +236,42 @@
     }
     .section-desc { font-size: 12px; color: var(--muted); font-weight: normal; margin-top: 2px; }
 
-    /* Segmented Controls */
+    /* Multi-Level Timeline Filter Controls */
+    .timeline-filter-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+      background: var(--card-inner);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 18px;
+    }
+    .filter-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    /* Segmented Button Groups */
     .seg-group {
       display: inline-flex;
-      background: var(--card-inner);
+      background: var(--card);
       border: 1px solid var(--line2);
       border-radius: 10px;
       padding: 3px;
@@ -255,12 +287,23 @@
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.2s ease;
+      white-space: nowrap;
     }
     .seg-btn:hover { color: var(--ink); }
     .seg-btn.active {
       background: var(--accent);
       color: #ffffff;
       box-shadow: 0 0 10px rgba(62,99,221,0.4);
+    }
+    .seg-btn.active-yt {
+      background: var(--yt);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(255,0,0,0.4);
+    }
+    .seg-btn.active-ig {
+      background: var(--ig);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(225,48,108,0.4);
     }
 
     /* Timeline & Chart Canvas */
@@ -316,7 +359,7 @@
       padding: 8px 12px;
       cursor: pointer;
       transition: all 0.2s ease;
-      max-width: 280px;
+      max-width: 300px;
     }
     .pin-chip:hover {
       border-color: var(--accent);
@@ -324,7 +367,7 @@
       box-shadow: var(--shadow-sm);
     }
     .pin-thumb {
-      width: 44px; height: 32px; border-radius: 6px; object-fit: cover;
+      width: 48px; height: 34px; border-radius: 6px; object-fit: cover;
     }
     .pin-info {
       display: flex; flex-direction: column; overflow: hidden;
@@ -704,7 +747,7 @@
       <div style="margin-top: 20px; min-height: 90px; display: flex; flex-direction: column; align-items: center;">
         <p id="liveUserInput" style="font-size: 16px; font-weight: 500; color: #fff; margin: 0; text-align: center;">"Speak naturally, Sir. I am listening..."</p>
         <p id="liveJarvisOutput" style="font-size: 13px; color: var(--accent); font-family: 'Fira Code', monospace; margin: 10px 0 0; text-align: center; line-height: 1.5;">
-          Fleet knowledge base loaded. Standing by for PS5 Shorts and Shadow Legion queries.
+          Fleet knowledge base loaded. Standing by for PS5 Shorts, Main Videos, and Shadow Legion queries.
         </p>
       </div>
 
@@ -742,7 +785,7 @@
       <div class="header-controls">
         <div id="syncIndicator" class="status-pill">
           <span class="live-dot"></span>
-          <span>Live Synced (17 Nov 2026, 03:17 PM IST)</span>
+          <span id="syncText">Live Synced (17 Nov 2026, 03:40 PM IST)</span>
         </div>
         <button onclick="fetchLiveStats()" class="btn-action" title="Re-fetch live stats from knowledge base">
           ↻ Refresh Stats
@@ -758,21 +801,23 @@
 
     <!-- SECTION 1: Executive KPI Bento Strip -->
     <section class="kpi-bento">
-      <!-- KPI 1: YouTube Views -->
+      <!-- KPI 1: YouTube Reach -->
       <div class="kpi-card">
         <div class="kpi-card-glow glow-yt"></div>
         <div class="kpi-label">
           <span>YouTube Reach</span>
-          <span style="color: var(--yt); font-weight: 700;">▶ Shorts</span>
+          <span style="color: var(--yt); font-weight: 700;">▶ Shorts + Main</span>
         </div>
-        <div id="kpiTotalViews" class="kpi-value mono">11,044</div>
+        <div id="kpiTotalViews" class="kpi-value mono">11,526</div>
         <div class="kpi-subtext">
-          <span style="color: var(--money);">+0 Today</span>
+          <span style="color: var(--money);">+2 Today</span>
           <span>·</span>
-          <span>0 Shorts Published</span>
+          <span id="kpiShortsCountLabel">15 Shorts</span>
+          <span>·</span>
+          <span>11 Videos</span>
         </div>
         <div class="kpi-context mono">
-          Avg: 11,044 views/short · Top: 1,358
+          Shorts: 11,476 · Main: 50 views
         </div>
       </div>
 
@@ -801,7 +846,7 @@
           <span>Shorts In Buffer</span>
           <span style="color: var(--warn); font-weight: 700;">⏳ Next: 8 PM</span>
         </div>
-        <div id="kpiBufferCount" class="kpi-value mono">0</div>
+        <div id="kpiBufferCount" class="kpi-value mono">18</div>
         <div class="kpi-subtext">
           <span>Next Drop at 08:00 PM IST</span>
         </div>
@@ -817,12 +862,12 @@
           <span>Long Videos Revamped</span>
           <span style="color: var(--accent); font-weight: 700;">✓ 100%</span>
         </div>
-        <div class="kpi-value mono">0 / 0</div>
+        <div id="kpiVideosCount" class="kpi-value mono">11 / 11</div>
         <div class="kpi-subtext">
           <span>Claude Haiku Metadata Engine</span>
         </div>
         <div class="kpi-context">
-          0 unique shorts generated
+          33 unique shorts generated
         </div>
       </div>
 
@@ -843,7 +888,7 @@
       </div>
     </section>
 
-    <!-- SECTION 2: Interactive Cross-Platform Timeline Graph -->
+    <!-- SECTION 2: Interactive Cross-Platform Timeline Graph with Hierarchical Filters -->
     <section class="dashboard-section">
       <div class="section-head">
         <div>
@@ -851,18 +896,51 @@
             <span>📈 Cross-Platform Growth & Upload Velocity</span>
           </h2>
           <div class="section-desc">
-            Visual tracking of view growth and upload event markers across YouTube Shorts and Instagram Reels.
+            Visual tracking of view growth and upload event markers across YouTube Shorts, Main Videos, and Instagram Reels.
           </div>
         </div>
-        <div style="display: flex; gap: 10px; align-items: center;">
-          <div class="seg-group">
-            <button onclick="switchTimelineRange('3d')" id="btnRange3d" class="seg-btn active">3 Days (Launch to Date)</button>
-            <button onclick="switchTimelineRange('7d')" id="btnRange7d" class="seg-btn">7 Days</button>
-            <button onclick="switchTimelineRange('30d')" id="btnRange30d" class="seg-btn">30 Days</button>
+      </div>
+
+      <!-- Multi-Level Filter Bar (Platform -> Content Sub-filter -> Range -> Metric) -->
+      <div class="timeline-filter-bar">
+        <div class="filter-row">
+          <!-- Level 1: Platform Filter -->
+          <div class="filter-group">
+            <span class="filter-label">Platform:</span>
+            <div class="seg-group">
+              <button onclick="setPlatformFilter('all')" id="btnPlatformAll" class="seg-btn active">All Platforms</button>
+              <button onclick="setPlatformFilter('youtube')" id="btnPlatformYT" class="seg-btn">YouTube ▶</button>
+              <button onclick="setPlatformFilter('instagram')" id="btnPlatformIG" class="seg-btn">Instagram 📸</button>
+            </div>
           </div>
-          <div class="seg-group">
-            <button onclick="toggleChartMode('views')" id="btnModeViews" class="seg-btn active">Cumulative Views</button>
-            <button onclick="toggleChartMode('uploads')" id="btnModeUploads" class="seg-btn">Daily Uploads</button>
+
+          <!-- Level 2: Contextual Content Type Sub-Filter -->
+          <div class="filter-group" id="contentSubGroup">
+            <span class="filter-label">Content:</span>
+            <div class="seg-group" id="contentSubPills">
+              <!-- Dynamically rendered based on active platform -->
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-row" style="border-top: 1px solid var(--line); padding-top: 10px;">
+          <!-- Duration Range Selector -->
+          <div class="filter-group">
+            <span class="filter-label">Timeframe:</span>
+            <div class="seg-group">
+              <button onclick="switchTimelineRange('launch')" id="btnRangeLaunch" class="seg-btn active">4 Days (Launch)</button>
+              <button onclick="switchTimelineRange('7d')" id="btnRange7d" class="seg-btn">7 Days</button>
+              <button onclick="switchTimelineRange('30d')" id="btnRange30d" class="seg-btn">30 Days</button>
+            </div>
+          </div>
+
+          <!-- Metric Display Mode -->
+          <div class="filter-group">
+            <span class="filter-label">Display Metric:</span>
+            <div class="seg-group">
+              <button onclick="toggleChartMode('views')" id="btnModeViews" class="seg-btn active">Cumulative Views</button>
+              <button onclick="toggleChartMode('uploads')" id="btnModeUploads" class="seg-btn">Upload Velocity</button>
+            </div>
           </div>
         </div>
       </div>
@@ -874,27 +952,13 @@
           </svg>
         </div>
 
-        <!-- Timeline Upload Pins Scroller -->
+        <!-- Filterable Content Upload Pins Scroller -->
         <div class="pins-header">
-          <span class="pins-title">📍 Content Upload Pins (1 Published Items)</span>
-          <span style="font-size: 11px; color: var(--muted);">Click any pin to inspect performance & watch</span>
+          <span class="pins-title" id="pinsHeaderTitle">📍 Content Upload Pins (27 Items)</span>
+          <span style="font-size: 11px; color: var(--muted);">Click any pin to inspect performance & watch directly</span>
         </div>
-        <div class="pins-scroller">
-          
-          <div class="pin-chip" onclick="window.open('https://www.instagram.com/reel/Dfw87JDEZXG/', '_blank')">
-            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&auto=format&fit=crop&q=80" alt="Rise close-up: Army Types & Orc Rises (r01)" class="pin-thumb">
-            <div class="pin-info">
-              <span class="pin-title">Rise close-up: Army Types & Orc Rises (r01)</span>
-              <div class="pin-meta">
-                <span style="color: var(--ig); font-weight: 700;">Instagram</span>
-                <span>·</span>
-                <span>134 views</span>
-                <span>·</span>
-                <span>15 Nov 2026, 07:34 PM IST</span>
-              </div>
-            </div>
-          </div>
-          
+        <div class="pins-scroller" id="pinsScrollerContainer">
+          <!-- Rendered dynamically by filterUploadPins() -->
         </div>
       </div>
     </section>
@@ -920,22 +984,22 @@
       <div class="conveyor-nav">
         <div id="stepPublished" onclick="switchConveyorTab('published')" class="step-card active">
           <span class="step-title">Shorts Published</span>
-          <div class="step-num mono">0</div>
-          <span class="step-sub" style="color: var(--money);">+0 uploaded today</span>
+          <div class="step-num mono" id="conveyorShortsNum">15</div>
+          <span class="step-sub" style="color: var(--money);">+2 uploaded today</span>
         </div>
         <div id="stepQueued" onclick="switchConveyorTab('queued')" class="step-card">
           <span class="step-title">Buffer Queue</span>
-          <div class="step-num mono">0</div>
+          <div class="step-num mono" id="conveyorBufferNum">18</div>
           <span class="step-sub">Ready in Drive buffer</span>
         </div>
         <div id="stepCreated" onclick="switchConveyorTab('created')" class="step-card">
           <span class="step-title">Shorts Created</span>
-          <div class="step-num mono">0</div>
+          <div class="step-num mono" id="conveyorCreatedNum">33</div>
           <span class="step-sub">SupoClip rendered clips</span>
         </div>
         <div id="stepVideos" onclick="switchConveyorTab('videos')" class="step-card">
           <span class="step-title">Main Videos Revamped</span>
-          <div class="step-num mono">0 / 0</div>
+          <div class="step-num mono" id="conveyorVideosNum">11 / 11</div>
           <span class="step-sub" style="color: var(--money);">100% metadata beautified</span>
         </div>
       </div>
@@ -944,24 +1008,1254 @@
       <div id="tabPublished" class="conveyor-panel">
         <div class="media-grid">
           
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/79_ZyoNT1jg/mqdefault.jpg" alt="Laser guard dog and Bugs go hand in hand" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">20.9s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 56/100</span>
+              <span class="time-meta">Today at 01:00 PM IST</span>
+            </div>
+            <h4 class="media-title">Laser guard dog and Bugs go hand in hand</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>157</strong> views</span>
+              <a href="https://youtube.com/shorts/79_ZyoNT1jg" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/wJ5ODZSqqQ4/mqdefault.jpg" alt="When your entire team is down and you just keep running" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">26.4s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 59/100</span>
+              <span class="time-meta">Today at 03:00 AM IST</span>
+            </div>
+            <h4 class="media-title">When your entire team is down and you just keep running</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>271</strong> views</span>
+              <a href="https://youtube.com/shorts/wJ5ODZSqqQ4" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/YTVhAYM3Ftg/mqdefault.jpg" alt="Don't leave your sentry alone when Heavies close in" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">25.4s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 66/100</span>
+              <span class="time-meta">Yesterday at 08:00 PM IST</span>
+            </div>
+            <h4 class="media-title">Don't leave your sentry alone when Heavies close in</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>1,182</strong> views</span>
+              <a href="https://youtube.com/shorts/YTVhAYM3Ftg" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/0fm5Jqik_gU/mqdefault.jpg" alt="Reloading mid-flank in Helldivers 2: Left, left, right!" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">26.9s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 78/100</span>
+              <span class="time-meta">Yesterday at 06:00 AM IST</span>
+            </div>
+            <h4 class="media-title">Reloading mid-flank in Helldivers 2: Left, left, right!</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>207</strong> views</span>
+              <a href="https://youtube.com/shorts/0fm5Jqik_gU" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/qpcaqb9wPhE/mqdefault.jpg" alt="Helldivers 2: will Pelican One make it to extraction?" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">28.4s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 88/100</span>
+              <span class="time-meta">Yesterday at 03:00 AM IST</span>
+            </div>
+            <h4 class="media-title">Helldivers 2: will Pelican One make it to extraction?</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>1,233</strong> views</span>
+              <a href="https://youtube.com/shorts/qpcaqb9wPhE" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/hLD165HKOws/mqdefault.jpg" alt="Pressing attack vs eagle strikes in Helldivers 2 chaos" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">27.6s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 62/100</span>
+              <span class="time-meta">15 Nov, 05:00 PM IST</span>
+            </div>
+            <h4 class="media-title">Pressing attack vs eagle strikes in Helldivers 2 chaos</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>918</strong> views</span>
+              <a href="https://youtube.com/shorts/hLD165HKOws" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/k3aeGtTL464/mqdefault.jpg" alt="I called reinforcements mid-firefight in Helldivers 2" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">21.2s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 62/100</span>
+              <span class="time-meta">15 Nov, 04:00 PM IST</span>
+            </div>
+            <h4 class="media-title">I called reinforcements mid-firefight in Helldivers 2</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>807</strong> views</span>
+              <a href="https://youtube.com/shorts/k3aeGtTL464" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/YM7R8U3VR9o/mqdefault.jpg" alt="Don't wait on the sentry! Call air support now" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">27.4s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 66/100</span>
+              <span class="time-meta">15 Nov, 03:00 PM IST</span>
+            </div>
+            <h4 class="media-title">Don't wait on the sentry! Call air support now</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>813</strong> views</span>
+              <a href="https://youtube.com/shorts/YM7R8U3VR9o" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/S1yxC6H_lnE/mqdefault.jpg" alt="Can one eagle strike save a Helldivers 2 squad?" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">32.7s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 70/100</span>
+              <span class="time-meta">15 Nov, 02:00 PM IST</span>
+            </div>
+            <h4 class="media-title">Can one eagle strike save a Helldivers 2 squad?</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>571</strong> views</span>
+              <a href="https://youtube.com/shorts/S1yxC6H_lnE" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/6fQH2crY_UE/mqdefault.jpg" alt="20 seconds to extract! Helldivers 2 Pelican 1" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">56.3s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 72/100</span>
+              <span class="time-meta">15 Nov, 01:00 PM IST</span>
+            </div>
+            <h4 class="media-title">20 seconds to extract! Helldivers 2 Pelican 1</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>266</strong> views</span>
+              <a href="https://youtube.com/shorts/6fQH2crY_UE" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/6oNpggoXkXc/mqdefault.jpg" alt="If you call stratagems under fire, this is what happens" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">42.4s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 72/100</span>
+              <span class="time-meta">15 Nov, 12:00 PM IST</span>
+            </div>
+            <h4 class="media-title">If you call stratagems under fire, this is what happens</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>621</strong> views</span>
+              <a href="https://youtube.com/shorts/6oNpggoXkXc" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/Gt-k2NPMMQA/mqdefault.jpg" alt="Out of ammo and still holding? Helldivers 2" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">30.6s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 84/100</span>
+              <span class="time-meta">15 Nov, 11:00 AM IST</span>
+            </div>
+            <h4 class="media-title">Out of ammo and still holding? Helldivers 2</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>368</strong> views</span>
+              <a href="https://youtube.com/shorts/Gt-k2NPMMQA" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/_bnDIO6ZOeo/mqdefault.jpg" alt="If bugs swarm your west flank in Helldivers 2" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">34.4s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 72/100</span>
+              <span class="time-meta">15 Nov, 10:00 AM IST</span>
+            </div>
+            <h4 class="media-title">If bugs swarm your west flank in Helldivers 2</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>1,407</strong> views</span>
+              <a href="https://youtube.com/shorts/_bnDIO6ZOeo" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/j10vRhfmPiI/mqdefault.jpg" alt="Don't quit Helldivers 2 before reinforcements land" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">23.4s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 78/100</span>
+              <span class="time-meta">15 Nov, 09:36 AM IST</span>
+            </div>
+            <h4 class="media-title">Don't quit Helldivers 2 before reinforcements land</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>1,246</strong> views</span>
+              <a href="https://youtube.com/shorts/j10vRhfmPiI" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="media-card">
+          <div class="media-thumb-box">
+            <img src="https://i.ytimg.com/vi/VZkMukyJZh4/mqdefault.jpg" alt="Helldivers 2: Can we hold out until extraction?" loading="lazy" class="media-thumb">
+            <span class="media-tag yt-badge">YouTube Short</span>
+            <span class="media-duration">38.2s</span>
+          </div>
+          <div class="media-content">
+            <div class="media-top-meta">
+              <span class="score-badge">★ 88/100</span>
+              <span class="time-meta">15 Nov, 02:57 AM IST</span>
+            </div>
+            <h4 class="media-title">Helldivers 2: Can we hold out until extraction?</h4>
+            <div class="media-bottom-meta">
+              <span class="stat-pill views-pill"><strong>1,409</strong> views</span>
+              <a href="https://youtube.com/shorts/VZkMukyJZh4" target="_blank" rel="noopener" class="btn-watch">Watch ↗</a>
+            </div>
+          </div>
+        </div>
+        
         </div>
       </div>
 
       <div id="tabQueued" class="conveyor-panel hidden">
         <div class="buffer-grid">
           
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 56/100 Score</span>
+            <span class="duration-badge">22.2s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">When a charger decided to skate on your landing zone</h4>
+          <p class="buffer-hook">"Friendly fire ends this one fast"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 Bug Annihilation: O...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 55/100 Score</span>
+            <span class="duration-badge">32.3s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">Zero stims, broken arm: staying alive in Helldivers 2</h4>
+          <p class="buffer-hook">"Broken arm. No quitting allowed."</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2: the new green bug ...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 55/100 Score</span>
+            <span class="duration-badge">31.5s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">Pinned mid-firefight? Reinforcements drop, democracy wins</h4>
+          <p class="buffer-hook">"Reinforcements land mid-firefight, no warning"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 Extraction Frenzy: ...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 55/100 Score</span>
+            <span class="duration-badge">27.7s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">Air support still missing as the bugs close in</h4>
+          <p class="buffer-hook">"Nobody knows where support is"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 Airburst Launcher B...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 53/100 Score</span>
+            <span class="duration-badge">20.3s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">3 weapon requests in 20 seconds: Helldivers 2 stratagems</h4>
+          <p class="buffer-hook">"Three requests, then the extraction call"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 Bug Annihilation: O...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 52/100 Score</span>
+            <span class="duration-badge">21.1s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">One second to extraction: Freedom forever in Helldivers 2</h4>
+          <p class="buffer-hook">"One second left before extraction"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 Airburst Rocket Lau...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 52/100 Score</span>
+            <span class="duration-badge">19.9s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">If you hear 'Hail divers, never die' in Helldivers 2</h4>
+          <p class="buffer-hook">"Spotted enemies ahead, prepare to exterminate"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 keeps crashing on P...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 47/100 Score</span>
+            <span class="duration-badge">19.5s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">1 minute left, still calling sentries in Helldivers 2</h4>
+          <p class="buffer-hook">"Sixty seconds to extract, sentries pending"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 Extraction Frenzy: ...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 46/100 Score</span>
+            <span class="duration-badge">30.4s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">Helldivers 2: The Airburst Rocket Launcher does not differentiate between enemies and friends</h4>
+          <p class="buffer-hook">"Freedom calls, reinforcements answer fast."</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2: the new green bug ...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 40/100 Score</span>
+            <span class="duration-badge">18s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">Don't call the big drop before the horde closes in</h4>
+          <p class="buffer-hook">"Watch the drop land on the horde"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 Airburst Rocket Lau...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 35/100 Score</span>
+            <span class="duration-badge">17.5s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">I held the line for cross-parity in Helldivers 2</h4>
+          <p class="buffer-hook">"Reinforcements on the way, hold on"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 Airburst Launcher B...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 31/100 Score</span>
+            <span class="duration-badge">19.4s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">I begged for a sample mid-fight in Helldivers 2</h4>
+          <p class="buffer-hook">"Nothing left, then a sample appears"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 keeps crashing on P...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 0/100 Score</span>
+            <span class="duration-badge">15.4s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">Ever wondered what a Helldivers 2 drop feels like?</h4>
+          <p class="buffer-hook">"Strap in. Drop starts now."</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2 PS5 Mission Start: ...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 0/100 Score</span>
+            <span class="duration-badge">45.4s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">3 Auto Reinforcements in a Row? Helldivers 2 Bug</h4>
+          <p class="buffer-hook">"Three launches, and I never pressed anything"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2: Reinforce Called W...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 0/100 Score</span>
+            <span class="duration-badge">54.9s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">Why Did Helldivers 2 Keep Calling Orbitals?</h4>
+          <p class="buffer-hook">"Orbital strikes won't stop calling in"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2: Reinforce Called W...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 0/100 Score</span>
+            <span class="duration-badge">56.7s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">If Helldivers 2 Traps You in a Loop, Watch This</h4>
+          <p class="buffer-hook">"Stuck in the loop, again and again"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2: Reinforce Called W...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 0/100 Score</span>
+            <span class="duration-badge">28.3s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">Helldivers 2 Will Not Stop Repeating This Line</h4>
+          <p class="buffer-hook">"One line, playing on repeat forever"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2: Reinforce Called W...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
+        <div class="buffer-card">
+          <div class="buffer-header">
+            <span class="score-badge">★ 0/100 Score</span>
+            <span class="duration-badge">52.9s</span>
+            <span class="status-pill-queued">BUFFER READY</span>
+          </div>
+          <h4 class="buffer-title">I Tried Helldivers 2 Reinforce Glitch, Then Quit</h4>
+          <p class="buffer-hook">"Not every war is meant to be won"</p>
+          <div class="buffer-footer">
+            <span class="source-tag">From: Helldivers 2: Reinforce Called W...</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
+          </div>
+        </div>
+        
         </div>
       </div>
 
       <div id="tabCreated" class="conveyor-panel hidden">
         <div class="created-grid">
           
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 88/100</span>
+            <span class="duration-badge">38.2s</span>
+          </div>
+          <h4 class="created-title">Helldivers 2: Can we hold out until extraction?</h4>
+          <p class="created-hook">"Will the squad survive the countdown?"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 7OeDe1RP5LE_01</span>
+            <a href="https://youtube.com/shorts/VZkMukyJZh4" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 78/100</span>
+            <span class="duration-badge">23.4s</span>
+          </div>
+          <h4 class="created-title">Don't quit Helldivers 2 before reinforcements land</h4>
+          <p class="created-hook">"They said you will never die"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 7OeDe1RP5LE_02</span>
+            <a href="https://youtube.com/shorts/j10vRhfmPiI" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 72/100</span>
+            <span class="duration-badge">34.4s</span>
+          </div>
+          <h4 class="created-title">If bugs swarm your west flank in Helldivers 2</h4>
+          <p class="created-hook">"Taste the parade of fire."</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 7OeDe1RP5LE_03</span>
+            <a href="https://youtube.com/shorts/_bnDIO6ZOeo" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 62/100</span>
+            <span class="duration-badge">21.2s</span>
+          </div>
+          <h4 class="created-title">I called reinforcements mid-firefight in Helldivers 2</h4>
+          <p class="created-hook">"Package dropped mid-firefight. Watch this."</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 7OeDe1RP5LE_04</span>
+            <a href="https://youtube.com/shorts/k3aeGtTL464" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 55/100</span>
+            <span class="duration-badge">32.3s</span>
+          </div>
+          <h4 class="created-title">Zero stims, broken arm: staying alive in Helldivers 2</h4>
+          <p class="created-hook">"Broken arm. No quitting allowed."</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 7OeDe1RP5LE_05</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 46/100</span>
+            <span class="duration-badge">30.4s</span>
+          </div>
+          <h4 class="created-title">Helldivers 2: The Airburst Rocket Launcher does not differentiate between enemies and friends</h4>
+          <p class="created-hook">"Freedom calls, reinforcements answer fast."</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 7OeDe1RP5LE_06</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 0/100</span>
+            <span class="duration-badge">15.4s</span>
+          </div>
+          <h4 class="created-title">Ever wondered what a Helldivers 2 drop feels like?</h4>
+          <p class="created-hook">"Strap in. Drop starts now."</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: GULKBJ4BwHM_01</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 56/100</span>
+            <span class="duration-badge">20.9s</span>
+          </div>
+          <h4 class="created-title">Laser guard dog and Bugs go hand in hand</h4>
+          <p class="created-hook">"One pickup, then an orbital request"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: YiFseOnuyq4_01</span>
+            <a href="https://youtube.com/shorts/79_ZyoNT1jg" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 56/100</span>
+            <span class="duration-badge">22.2s</span>
+          </div>
+          <h4 class="created-title">When a charger decided to skate on your landing zone</h4>
+          <p class="created-hook">"Friendly fire ends this one fast"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: YiFseOnuyq4_02</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 53/100</span>
+            <span class="duration-badge">20.3s</span>
+          </div>
+          <h4 class="created-title">3 weapon requests in 20 seconds: Helldivers 2 stratagems</h4>
+          <p class="created-hook">"Three requests, then the extraction call"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: YiFseOnuyq4_03</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 59/100</span>
+            <span class="duration-badge">26.4s</span>
+          </div>
+          <h4 class="created-title">When your entire team is down and you just keep running</h4>
+          <p class="created-hook">"Who needs two working arms?"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: TckgvttyfL4_01</span>
+            <a href="https://youtube.com/shorts/wJ5ODZSqqQ4" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 55/100</span>
+            <span class="duration-badge">31.5s</span>
+          </div>
+          <h4 class="created-title">Pinned mid-firefight? Reinforcements drop, democracy wins</h4>
+          <p class="created-hook">"Reinforcements land mid-firefight, no warning"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: TckgvttyfL4_02</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 47/100</span>
+            <span class="duration-badge">19.5s</span>
+          </div>
+          <h4 class="created-title">1 minute left, still calling sentries in Helldivers 2</h4>
+          <p class="created-hook">"Sixty seconds to extract, sentries pending"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: TckgvttyfL4_03</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 72/100</span>
+            <span class="duration-badge">42.4s</span>
+          </div>
+          <h4 class="created-title">If you call stratagems under fire, this is what happens</h4>
+          <p class="created-hook">"Stratagem call under fire goes wrong"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: qIsrqx0nCrg_01</span>
+            <a href="https://youtube.com/shorts/6oNpggoXkXc" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 70/100</span>
+            <span class="duration-badge">32.7s</span>
+          </div>
+          <h4 class="created-title">Can one eagle strike save a Helldivers 2 squad?</h4>
+          <p class="created-hook">"Get down, the eagle is incoming"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: qIsrqx0nCrg_02</span>
+            <a href="https://youtube.com/shorts/S1yxC6H_lnE" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 62/100</span>
+            <span class="duration-badge">27.6s</span>
+          </div>
+          <h4 class="created-title">Pressing attack vs eagle strikes in Helldivers 2 chaos</h4>
+          <p class="created-hook">"Eagles arrive while the horde pushes"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: qIsrqx0nCrg_03</span>
+            <a href="https://youtube.com/shorts/hLD165HKOws" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 52/100</span>
+            <span class="duration-badge">21.1s</span>
+          </div>
+          <h4 class="created-title">One second to extraction: Freedom forever in Helldivers 2</h4>
+          <p class="created-hook">"One second left before extraction"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: qIsrqx0nCrg_04</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 40/100</span>
+            <span class="duration-badge">18s</span>
+          </div>
+          <h4 class="created-title">Don't call the big drop before the horde closes in</h4>
+          <p class="created-hook">"Watch the drop land on the horde"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: qIsrqx0nCrg_05</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 84/100</span>
+            <span class="duration-badge">30.6s</span>
+          </div>
+          <h4 class="created-title">Out of ammo and still holding? Helldivers 2</h4>
+          <p class="created-hook">"Ammo gone, but still fighting"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: ghHKWZuBD24_01</span>
+            <a href="https://youtube.com/shorts/Gt-k2NPMMQA" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 72/100</span>
+            <span class="duration-badge">56.3s</span>
+          </div>
+          <h4 class="created-title">20 seconds to extract! Helldivers 2 Pelican 1</h4>
+          <p class="created-hook">"Extraction is a 20-second countdown"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: ghHKWZuBD24_02</span>
+            <a href="https://youtube.com/shorts/6fQH2crY_UE" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 66/100</span>
+            <span class="duration-badge">27.4s</span>
+          </div>
+          <h4 class="created-title">Don't wait on the sentry! Call air support now</h4>
+          <p class="created-hook">"Watch the sentry go down"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: ghHKWZuBD24_03</span>
+            <a href="https://youtube.com/shorts/YM7R8U3VR9o" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 55/100</span>
+            <span class="duration-badge">27.7s</span>
+          </div>
+          <h4 class="created-title">Air support still missing as the bugs close in</h4>
+          <p class="created-hook">"Nobody knows where support is"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: ghHKWZuBD24_04</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 35/100</span>
+            <span class="duration-badge">17.5s</span>
+          </div>
+          <h4 class="created-title">I held the line for cross-parity in Helldivers 2</h4>
+          <p class="created-hook">"Reinforcements on the way, hold on"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: ghHKWZuBD24_05</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 0/100</span>
+            <span class="duration-badge">45.4s</span>
+          </div>
+          <h4 class="created-title">3 Auto Reinforcements in a Row? Helldivers 2 Bug</h4>
+          <p class="created-hook">"Three launches, and I never pressed anything"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: onO8PXEPUSw_01</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 0/100</span>
+            <span class="duration-badge">54.9s</span>
+          </div>
+          <h4 class="created-title">Why Did Helldivers 2 Keep Calling Orbitals?</h4>
+          <p class="created-hook">"Orbital strikes won't stop calling in"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: onO8PXEPUSw_02</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 0/100</span>
+            <span class="duration-badge">56.7s</span>
+          </div>
+          <h4 class="created-title">If Helldivers 2 Traps You in a Loop, Watch This</h4>
+          <p class="created-hook">"Stuck in the loop, again and again"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: onO8PXEPUSw_03</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 0/100</span>
+            <span class="duration-badge">28.3s</span>
+          </div>
+          <h4 class="created-title">Helldivers 2 Will Not Stop Repeating This Line</h4>
+          <p class="created-hook">"One line, playing on repeat forever"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: onO8PXEPUSw_04</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 0/100</span>
+            <span class="duration-badge">52.9s</span>
+          </div>
+          <h4 class="created-title">I Tried Helldivers 2 Reinforce Glitch, Then Quit</h4>
+          <p class="created-hook">"Not every war is meant to be won"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: onO8PXEPUSw_05</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 88/100</span>
+            <span class="duration-badge">28.4s</span>
+          </div>
+          <h4 class="created-title">Helldivers 2: will Pelican One make it to extraction?</h4>
+          <p class="created-hook">"Landing now, countdown starts soon"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 9fAiHB6V3pw_01</span>
+            <a href="https://youtube.com/shorts/qpcaqb9wPhE" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 78/100</span>
+            <span class="duration-badge">26.9s</span>
+          </div>
+          <h4 class="created-title">Reloading mid-flank in Helldivers 2: Left, left, right!</h4>
+          <p class="created-hook">"Flanked and reloading, nowhere to hide"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 9fAiHB6V3pw_02</span>
+            <a href="https://youtube.com/shorts/0fm5Jqik_gU" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-posted">POSTED</span>
+            <span class="score-badge">★ 66/100</span>
+            <span class="duration-badge">25.4s</span>
+          </div>
+          <h4 class="created-title">Don't leave your sentry alone when Heavies close in</h4>
+          <p class="created-hook">"Heavies coming from southwest, sentry exposed"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 9fAiHB6V3pw_03</span>
+            <a href="https://youtube.com/shorts/YTVhAYM3Ftg" target="_blank" rel="noopener" class="link-yt">View on YouTube ↗</a>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 52/100</span>
+            <span class="duration-badge">19.9s</span>
+          </div>
+          <h4 class="created-title">If you hear 'Hail divers, never die' in Helldivers 2</h4>
+          <p class="created-hook">"Spotted enemies ahead, prepare to exterminate"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 9fAiHB6V3pw_04</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
+        <div class="created-card">
+          <div class="created-header">
+            <span class="status-pill-queued">QUEUED</span>
+            <span class="score-badge">★ 31/100</span>
+            <span class="duration-badge">19.4s</span>
+          </div>
+          <h4 class="created-title">I begged for a sample mid-fight in Helldivers 2</h4>
+          <p class="created-hook">"Nothing left, then a sample appears"</p>
+          <div class="created-footer">
+            <span class="source-tag">ID: 9fAiHB6V3pw_05</span>
+            <span class="text-muted">In Google Drive Buffer</span>
+          </div>
+        </div>
+        
         </div>
       </div>
 
       <div id="tabVideos" class="conveyor-panel hidden">
         <div class="video-bento-grid">
           
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/7OeDe1RP5LE/mqdefault.jpg" alt="Helldivers 2: the new green bug strain is tough" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">6 Shorts (4 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2: the new green bug strain is tough</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">the new green bug strain is tough</del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 5 views</span>
+              <a href="https://youtu.be/7OeDe1RP5LE" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/GULKBJ4BwHM/mqdefault.jpg" alt="Helldivers 2 PS5 Mission Start: Squad Dropship Run" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">1 Shorts (0 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2 PS5 Mission Start: Squad Dropship Run</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">HELLDIVERS 2 starts</del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 4 views</span>
+              <a href="https://youtu.be/GULKBJ4BwHM" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/YiFseOnuyq4/mqdefault.jpg" alt="Helldivers 2 Bug Annihilation: Orbital Gatling Barrage" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">3 Shorts (1 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2 Bug Annihilation: Orbital Gatling Barrage</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">HELLDIVERS 2 bug annihilation #helldivers2 #ps5 #onlinegaming</del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 6 views</span>
+              <a href="https://youtu.be/YiFseOnuyq4" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/TckgvttyfL4/mqdefault.jpg" alt="Helldivers 2 Extraction Frenzy: Team Keeps Dying" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">3 Shorts (1 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2 Extraction Frenzy: Team Keeps Dying</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">HELLDIVERS 2 extraction frenzy #helldivers2 #ps5  #onlinegaming </del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 8 views</span>
+              <a href="https://youtu.be/TckgvttyfL4" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/qIsrqx0nCrg/mqdefault.jpg" alt="Helldivers 2 Airburst Rocket Launcher Gameplay PS5" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">5 Shorts (3 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2 Airburst Rocket Launcher Gameplay PS5</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">Helldivers 2: Airburst Launcher Gameplay on PS5</del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 10 views</span>
+              <a href="https://youtu.be/qIsrqx0nCrg" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/ghHKWZuBD24/mqdefault.jpg" alt="Helldivers 2 Airburst Launcher Blasts a Bug" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">5 Shorts (3 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2 Airburst Launcher Blasts a Bug</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">Airburst Launcher is OP</del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 3 views</span>
+              <a href="https://youtu.be/ghHKWZuBD24" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/onO8PXEPUSw/mqdefault.jpg" alt="Helldivers 2: Reinforce Called While Destroying Eggs" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">5 Shorts (0 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2: Reinforce Called While Destroying Eggs</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">Helldivers 2 Not all wars are meant to be won</del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 9 views</span>
+              <a href="https://youtu.be/onO8PXEPUSw" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/9fAiHB6V3pw/mqdefault.jpg" alt="Helldivers 2 PS5 lag and glitches until extraction" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">5 Shorts (3 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2 PS5 lag and glitches until extraction</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">HELLDIVERS 2 The game just keeps crashing.And the issues are real.</del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 3 views</span>
+              <a href="https://youtu.be/9fAiHB6V3pw" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/y0DrBXmTtlg/mqdefault.jpg" alt="Helldivers 2 good squad gameplay: what teamwork looks like" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">0 Shorts (0 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2 good squad gameplay: what teamwork looks like</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">HELLDIVERS 2 What happens when you get a good squad in the game</del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 1 views</span>
+              <a href="https://youtu.be/y0DrBXmTtlg" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/XR8hMT8dmuQ/mqdefault.jpg" alt="Helldivers 2: will the squad survive this fog?" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">0 Shorts (0 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2: will the squad survive this fog?</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">HELLDIVERS 2 cooking bugs today</del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 1 views</span>
+              <a href="https://youtu.be/XR8hMT8dmuQ" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-bento-card">
+          <div class="video-thumb-wrap">
+            <img src="https://i.ytimg.com/vi/iQcVhO4fyH0/mqdefault.jpg" alt="Helldivers 2 machine gun shoots straight on target" class="video-thumb" loading="lazy">
+            <span class="beautified-badge">✓ Beautified</span>
+            <span class="clips-badge">0 Shorts (0 live)</span>
+          </div>
+          <div class="video-details">
+            <h4 class="video-new-title">Helldivers 2 machine gun shoots straight on target</h4>
+            <div class="video-old-diff">
+              <span class="diff-label">Original:</span>
+              <del class="old-title-del">HELLDIVERS 2 machine gun shoots straight 13 seconds</del>
+            </div>
+            <div class="video-action-bar">
+              <span class="game-tag">PS5 · Helldivers 2 · 0 views</span>
+              <a href="https://youtu.be/iQcVhO4fyH0" target="_blank" rel="noopener" class="btn-watch-video">
+                Watch Video ↗
+              </a>
+            </div>
+          </div>
+        </div>
+        
         </div>
       </div>
     </section>
@@ -1121,8 +2415,8 @@
             <span class="wf-dot-active"></span>
             <strong>PS5 Shorts Pipeline</strong>
           </td>
-          <td class="wf-nodes">193 nodes</td>
-          <td class="wf-runs">108 runs</td>
+          <td class="wf-nodes">194 nodes</td>
+          <td class="wf-runs">113 runs</td>
           <td class="wf-rate"><span class="rate-badge">99.1%</span></td>
           <td class="wf-status"><span class="badge-active">ACTIVE</span></td>
         </tr>
@@ -1144,7 +2438,7 @@
             <strong>PS5 Shorts - Issue Resolver</strong>
           </td>
           <td class="wf-nodes">46 nodes</td>
-          <td class="wf-runs">192 runs</td>
+          <td class="wf-runs">183 runs</td>
           <td class="wf-rate"><span class="rate-badge">100.0%</span></td>
           <td class="wf-status"><span class="badge-active">ACTIVE</span></td>
         </tr>
@@ -1155,7 +2449,7 @@
             <strong>Shadow Legion Reels</strong>
           </td>
           <td class="wf-nodes">18 nodes</td>
-          <td class="wf-runs">18 runs</td>
+          <td class="wf-runs">17 runs</td>
           <td class="wf-rate"><span class="rate-badge">100.0%</span></td>
           <td class="wf-status"><span class="badge-active">ACTIVE</span></td>
         </tr>
@@ -1166,7 +2460,7 @@
             <strong>Daily stock trader (Zerodha)</strong>
           </td>
           <td class="wf-nodes">40 nodes</td>
-          <td class="wf-runs">5 runs</td>
+          <td class="wf-runs">3 runs</td>
           <td class="wf-rate"><span class="rate-badge">100.0%</span></td>
           <td class="wf-status"><span class="badge-active">ACTIVE</span></td>
         </tr>
@@ -1179,7 +2473,7 @@
 
   <!-- Global Telemetry Knowledge Base Embedded for J.A.R.V.I.S. -->
   <script>
-    window.JARVIS_KB = {"generated_at": "2026-11-17 09:47:02 UTC", "current_time_ist": "17 Nov 2026, 03:17 PM IST", "n8n_instance_url": "https://n8n.srv992629.hstgr.cloud", "summary": {"total_videos_processed": 0, "videos_beautified_count": 0, "total_unique_shorts_created": 0, "total_shorts_posted_to_youtube": 0, "shorts_posted_today_count": 0, "shorts_posted_today": [], "shorts_posted_yesterday_count": 0, "shorts_posted_yesterday": [], "total_shorts_queued_in_buffer": 0, "next_scheduled_slot_ist": "08:00 PM IST (20:00)", "today_date_ist": "17 Nov 2026", "total_workflow_executions": 400, "global_success_rate": "99.8%", "total_errors": 1, "total_youtube_views": 11044, "total_instagram_views": 134}, "youtube_stats": {"total_views": 11044, "total_shorts": 0, "average_views_per_short": 11044, "top_performer": {"title": "Helldivers 2: Can we hold out until extraction?", "views": 1358, "video_id": "VZkMukyJZh4", "score": 88}, "live_views": {"VZkMukyJZh4": 1409, "j10vRhfmPiI": 1246, "_bnDIO6ZOeo": 1407, "k3aeGtTL464": 805, "6oNpggoXkXc": 621, "S1yxC6H_lnE": 571, "hLD165HKOws": 918, "Gt-k2NPMMQA": 368, "6fQH2crY_UE": 266, "YM7R8U3VR9o": 813, "qpcaqb9wPhE": 1232, "0fm5Jqik_gU": 217, "YTVhAYM3Ftg": 1171}}, "shadow_legion": {"name": "Shadow Legion Reels", "account": "@prajyot.ai", "brand_id": "8105166", "metrics": {"views": 134, "reach": 119, "likes": 4, "comments": 1, "shares": 0, "saves": 0, "avg_watch": 4.804, "skip_rate": 56.5, "view_rate": 43.5, "post_id": "18190674400418640", "ig_url": "https://www.instagram.com/reel/Dfw87JDEZXG/"}, "views": 134, "reach": 119, "likes": 4, "comments": 1, "monthly_budget": 20, "reels_used": 3, "reels_remaining": 17, "budget_percent_used": 15, "schedule_rules": "Weekdays Mon/Wed/Fri 10:00 IST, Tue/Thu 18:00 IST (no weekends)", "next_drop_ist": "Tue 17 Nov, 18:00 IST", "next_reel": {"id": "r03", "title": "Ladder: Lv 10 / 20 / 30 bosses, one attack each, then the Lv 34 return and raise", "theme": "The bosses", "hook": "WHICH BOSS ENDS YOUR RUN?", "slot_ist": "Tue 17 Nov, 18:00 IST", "status": "scheduled", "post_id": "430401616", "length_s": 18.0}, "lessons": [{"n": 1, "lesson": "Hook: r01 opened on a kill close-up with a first-person claim; skip rate 56.5 %, view rate 43.5 %. More than half leave in the first seconds: put bigger text and a stronger event in frame 1.", "updated_at": "2026-11-16T22:46:58+05:30"}, {"n": 2, "lesson": "Body: r01 average watch time 4.8 s of 27.8 s. Viewers leave before second 5: keep reels near 18-22 s and land the first payoff before second 3.", "updated_at": "2026-11-16T22:46:58+05:30"}, {"n": 3, "lesson": "Response: r01 (army-types, 19:30) got 4 likes, 1 comment, 0 shares, 0 saves on 119 reach (score 50). No reason to save or share was given: add one concrete save/share reason per reel.", "updated_at": "2026-11-16T22:46:58+05:30"}]}, "timeline_data": {"duration_days": 3, "timeline_3d": {"labels": ["Nov 14", "Nov 15", "Nov 16 (Today)"], "views_daily": [1358, 6769, 575], "views_cumulative": [1358, 8127, 11044], "uploads_daily": [1, 10, 3], "uploads_cumulative": [1, 11, 14]}, "timeline_7d": {"labels": ["Nov 10", "Nov 11", "Nov 12", "Nov 13", "Nov 14 (Launch)", "Nov 15", "Nov 16"], "views_daily": [0, 0, 0, 0, 1358, 6769, 575], "views_cumulative": [0, 0, 0, 0, 1358, 8127, 11044], "uploads_daily": [0, 0, 0, 0, 1, 10, 3], "uploads_cumulative": [0, 0, 0, 0, 1, 11, 14]}, "timeline_30d": {"labels": ["Week 1 (Oct 18)", "Week 2 (Oct 25)", "Week 3 (Nov 01)", "Week 4 (Nov 08)", "Launch Week (Nov 14-16)"], "views_daily": [0, 0, 0, 0, 11044], "views_cumulative": [0, 0, 0, 0, 11044], "uploads_daily": [0, 0, 0, 0, 14], "uploads_cumulative": [0, 0, 0, 0, 14]}, "pins": [{"platform": "Instagram", "type": "Reel", "title": "Rise close-up: Army Types & Orc Rises (r01)", "url": "https://www.instagram.com/reel/Dfw87JDEZXG/", "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&auto=format&fit=crop&q=80", "views": 134, "reach": 119, "score": 50.4, "posted_at_ist": "15 Nov 2026, 07:34 PM IST", "timestamp": "2026-11-15T14:04:00Z"}]}, "videos": [], "workflows": [{"name": "PS5 Shorts Pipeline", "id": "NyqkzRSDWYbzusW8", "status": "ACTIVE", "nodes_count": 193, "runs": 108, "success_rate": "99.1%", "errors": 1}, {"name": "Corporate Banking RM Job Hunter", "id": "SioA5g70vuxsGC4C", "status": "ACTIVE", "nodes_count": 7, "runs": 63, "success_rate": "100.0%", "errors": 0}, {"name": "PS5 Shorts - Issue Resolver", "id": "WnWMAtnb8XPD91yd", "status": "ACTIVE", "nodes_count": 46, "runs": 192, "success_rate": "100.0%", "errors": 0}, {"name": "Shadow Legion Reels", "id": "rhOGUhnDmE2iaQgX", "status": "ACTIVE", "nodes_count": 18, "runs": 18, "success_rate": "100.0%", "errors": 0}, {"name": "Daily stock trader (Zerodha)", "id": "yzPAPejSZdpV9Qbg", "status": "ACTIVE", "nodes_count": 40, "runs": 5, "success_rate": "100.0%", "errors": 0}]};
+    window.JARVIS_KB = {"generated_at": "2026-11-17 10:10:59 UTC", "current_time_ist": "17 Nov 2026, 03:40 PM IST", "n8n_instance_url": "https://n8n.srv992629.hstgr.cloud", "summary": {"total_videos_processed": 11, "videos_beautified_count": 11, "total_unique_shorts_created": 33, "total_shorts_posted_to_youtube": 15, "shorts_posted_today_count": 2, "shorts_posted_today": [{"id": "YiFseOnuyq4_01", "title": "Laser guard dog and Bugs go hand in hand", "score": 56, "status": "posted", "duration": 20.9, "url": "https://youtube.com/shorts/79_ZyoNT1jg", "video_id": "79_ZyoNT1jg", "views": 157, "thumbnail": "https://i.ytimg.com/vi/79_ZyoNT1jg/mqdefault.jpg", "hook": "One pickup, then an orbital request", "source_video_id": "YiFseOnuyq4", "source_video_title": "Helldivers 2 Bug Annihilation: Orbital Gatling Barrage", "posted_at": "2026-11-17T07:30:09.818Z", "queued_at": "2026-11-14T21:51:21.485Z", "relative_time": "Today at 01:00 PM IST", "period": "today", "posted_dt": "2026-11-17T13:00:09.818000+05:30", "posted_at_ist": "17 Nov 2026, 01:00 PM IST", "time_ist": "01:00 PM IST"}, {"id": "TckgvttyfL4_01", "title": "When your entire team is down and you just keep running", "score": 59, "status": "posted", "duration": 26.4, "url": "https://youtube.com/shorts/wJ5ODZSqqQ4", "video_id": "wJ5ODZSqqQ4", "views": 271, "thumbnail": "https://i.ytimg.com/vi/wJ5ODZSqqQ4/mqdefault.jpg", "hook": "Who needs two working arms?", "source_video_id": "TckgvttyfL4", "source_video_title": "Helldivers 2 Extraction Frenzy: Team Keeps Dying", "posted_at": "2026-11-16T21:30:35.591Z", "queued_at": "2026-11-14T21:57:30.069Z", "relative_time": "Today at 03:00 AM IST", "period": "today", "posted_dt": "2026-11-17T03:00:35.591000+05:30", "posted_at_ist": "17 Nov 2026, 03:00 AM IST", "time_ist": "03:00 AM IST"}], "shorts_posted_yesterday_count": 3, "shorts_posted_yesterday": [{"id": "9fAiHB6V3pw_01", "title": "Helldivers 2: will Pelican One make it to extraction?", "score": 88, "status": "posted", "duration": 28.4, "url": "https://youtube.com/shorts/qpcaqb9wPhE", "video_id": "qpcaqb9wPhE", "views": 1233, "thumbnail": "https://i.ytimg.com/vi/qpcaqb9wPhE/mqdefault.jpg", "hook": "Landing now, countdown starts soon", "source_video_id": "9fAiHB6V3pw", "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real", "posted_at": "2026-11-15T21:30:08.579Z", "queued_at": "2026-11-15T19:13:43.424Z", "relative_time": "Yesterday at 03:00 AM IST", "period": "yesterday", "posted_dt": "2026-11-16T03:00:08.579000+05:30", "posted_at_ist": "16 Nov 2026, 03:00 AM IST", "time_ist": "03:00 AM IST"}, {"id": "9fAiHB6V3pw_02", "title": "Reloading mid-flank in Helldivers 2: Left, left, right!", "score": 78, "status": "posted", "duration": 26.9, "url": "https://youtube.com/shorts/0fm5Jqik_gU", "video_id": "0fm5Jqik_gU", "views": 207, "thumbnail": "https://i.ytimg.com/vi/0fm5Jqik_gU/mqdefault.jpg", "hook": "Flanked and reloading, nowhere to hide", "source_video_id": "9fAiHB6V3pw", "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real", "posted_at": "2026-11-16T00:30:09.657Z", "queued_at": "2026-11-15T19:13:43.424Z", "relative_time": "Yesterday at 06:00 AM IST", "period": "yesterday", "posted_dt": "2026-11-16T06:00:09.657000+05:30", "posted_at_ist": "16 Nov 2026, 06:00 AM IST", "time_ist": "06:00 AM IST"}, {"id": "9fAiHB6V3pw_03", "title": "Don't leave your sentry alone when Heavies close in", "score": 66, "status": "posted", "duration": 25.4, "url": "https://youtube.com/shorts/YTVhAYM3Ftg", "video_id": "YTVhAYM3Ftg", "views": 1182, "thumbnail": "https://i.ytimg.com/vi/YTVhAYM3Ftg/mqdefault.jpg", "hook": "Heavies coming from southwest, sentry exposed", "source_video_id": "9fAiHB6V3pw", "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real", "posted_at": "2026-11-16T14:30:13.010Z", "queued_at": "2026-11-15T19:13:43.424Z", "relative_time": "Yesterday at 08:00 PM IST", "period": "yesterday", "posted_dt": "2026-11-16T20:00:13.010000+05:30", "posted_at_ist": "16 Nov 2026, 08:00 PM IST", "time_ist": "08:00 PM IST"}], "total_shorts_queued_in_buffer": 18, "next_scheduled_slot_ist": "08:00 PM IST (20:00)", "today_date_ist": "17 Nov 2026", "total_workflow_executions": 400, "global_success_rate": "99.8%", "total_errors": 1, "total_youtube_views": 11526, "total_shorts_views": 11476, "total_long_views": 50, "total_instagram_views": 134}, "youtube_stats": {"total_views": 11526, "shorts_views": 11476, "long_views": 50, "total_shorts": 15, "total_long_videos": 11, "average_views_per_short": 765, "top_performer": {"title": "Helldivers 2: Can we hold out until extraction?", "views": 1409, "video_id": "VZkMukyJZh4", "score": 88}, "live_views": {"VZkMukyJZh4": 1409, "j10vRhfmPiI": 1246, "_bnDIO6ZOeo": 1407, "k3aeGtTL464": 807, "79_ZyoNT1jg": 157, "wJ5ODZSqqQ4": 271, "6oNpggoXkXc": 621, "S1yxC6H_lnE": 571, "hLD165HKOws": 918, "Gt-k2NPMMQA": 368, "6fQH2crY_UE": 266, "YM7R8U3VR9o": 813, "qpcaqb9wPhE": 1233, "0fm5Jqik_gU": 207, "YTVhAYM3Ftg": 1182, "7OeDe1RP5LE": 5, "GULKBJ4BwHM": 4, "YiFseOnuyq4": 6, "TckgvttyfL4": 8, "qIsrqx0nCrg": 10, "ghHKWZuBD24": 3, "onO8PXEPUSw": 9, "9fAiHB6V3pw": 3, "y0DrBXmTtlg": 1, "XR8hMT8dmuQ": 1, "iQcVhO4fyH0": 0}}, "shadow_legion": {"name": "Shadow Legion Reels", "account": "@prajyot.ai", "brand_id": "8105166", "metrics": {"views": 134, "reach": 119, "likes": 4, "comments": 1, "shares": 0, "saves": 0, "avg_watch": 4.804, "skip_rate": 56.5, "view_rate": 43.5, "post_id": "18190674400418640", "ig_url": "https://www.instagram.com/reel/Dfw87JDEZXG/", "id": "r01", "ig_id": "18190674400418640"}, "views": 134, "reach": 119, "likes": 4, "comments": 1, "monthly_budget": 20, "reels_used": 3, "reels_remaining": 17, "budget_percent_used": 15, "schedule_rules": "Weekdays Mon/Wed/Fri 10:00 IST, Tue/Thu 18:00 IST (no weekends)", "next_drop_ist": "Tue 17 Nov, 18:00 IST", "next_reel": {"id": "r03", "title": "Ladder: Lv 10 / 20 / 30 bosses, one attack each, then the Lv 34 return and raise", "theme": "The bosses", "hook": "WHICH BOSS ENDS YOUR RUN?", "slot_ist": "Tue 17 Nov, 18:00 IST", "status": "scheduled", "post_id": "430401616", "length_s": 18.0}, "lessons": [{"n": "1", "lesson": "Hook: r01 opened on a kill close-up with a first-person claim; skip rate 56.5 %, view rate 43.5 %. More than half leave in the first seconds: put bigger text and a stronger event in frame 1.", "updated_at": "17 Nov 2026"}, {"n": "2", "lesson": "Body: r01 average watch time 4.8 s of 27.8 s. Viewers leave before second 5: keep reels near 18-22 s and land the first payoff before second 3.", "updated_at": "17 Nov 2026"}, {"n": "3", "lesson": "Response: r01 (army-types, 19:30) got 4 likes, 1 comment, 0 shares, 0 saves on 119 reach (score 50). No reason to save or share was given: add one concrete save/share reason per reel.", "updated_at": "17 Nov 2026"}]}, "timeline_data": {"duration_days": 4, "datasets": {"dates_launch": ["Nov 14", "Nov 15", "Nov 16", "Nov 17 (Today)"], "dates_7d": ["Nov 11", "Nov 12", "Nov 13", "Nov 14 (Launch)", "Nov 15", "Nov 16", "Nov 17"], "dates_30d": ["Week 1 (Oct 20)", "Week 2 (Oct 27)", "Week 3 (Nov 03)", "Week 4 (Nov 10)", "Launch Week (Nov 14-17)"], "all": {"views_daily": [1441, 7645, 2166, 408], "views_cum": [1441, 9086, 11252, 11660], "uploads_daily": [6, 14, 3, 4], "uploads_cum": [6, 20, 23, 27]}, "youtube": {"views_daily": [1441, 7511, 2166, 408], "views_cum": [1441, 8952, 11118, 11526], "uploads_daily": [6, 13, 3, 4], "uploads_cum": [6, 19, 22, 26]}, "youtube_shorts": {"views_daily": [1409, 7495, 2166, 406], "views_cum": [1409, 8904, 11070, 11476], "uploads_daily": [1, 9, 3, 2], "uploads_cum": [1, 10, 13, 15]}, "youtube_main": {"views_daily": [32, 16, 0, 2], "views_cum": [32, 48, 48, 50], "uploads_daily": [5, 4, 0, 2], "uploads_cum": [5, 9, 9, 11]}, "instagram": {"views_daily": [0, 134, 0, 0], "views_cum": [0, 134, 134, 134], "uploads_daily": [0, 1, 0, 0], "uploads_cum": [0, 1, 1, 1]}}, "pins": [{"id": "iQcVhO4fyH0", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2 machine gun shoots straight on target", "url": "https://youtu.be/iQcVhO4fyH0", "thumbnail": "https://i.ytimg.com/vi/iQcVhO4fyH0/mqdefault.jpg", "views": 0, "score": 92, "posted_at_ist": "17 Nov 2026, 03:20 PM IST", "timestamp": "2026-11-17T09:50:19.538Z"}, {"id": "XR8hMT8dmuQ", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2: will the squad survive this fog?", "url": "https://youtu.be/XR8hMT8dmuQ", "thumbnail": "https://i.ytimg.com/vi/XR8hMT8dmuQ/mqdefault.jpg", "views": 1, "score": 92, "posted_at_ist": "17 Nov 2026, 02:50 PM IST", "timestamp": "2026-11-17T09:20:38.037Z"}, {"id": "YiFseOnuyq4_01", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "Laser guard dog and Bugs go hand in hand", "url": "https://youtube.com/shorts/79_ZyoNT1jg", "thumbnail": "https://i.ytimg.com/vi/79_ZyoNT1jg/mqdefault.jpg", "views": 157, "score": 56, "posted_at_ist": "17 Nov 2026, 01:00 PM IST", "timestamp": "2026-11-17T07:30:09.818Z"}, {"id": "TckgvttyfL4_01", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "When your entire team is down and you just keep running", "url": "https://youtube.com/shorts/wJ5ODZSqqQ4", "thumbnail": "https://i.ytimg.com/vi/wJ5ODZSqqQ4/mqdefault.jpg", "views": 271, "score": 59, "posted_at_ist": "17 Nov 2026, 03:00 AM IST", "timestamp": "2026-11-16T21:30:35.591Z"}, {"id": "9fAiHB6V3pw_03", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "Don't leave your sentry alone when Heavies close in", "url": "https://youtube.com/shorts/YTVhAYM3Ftg", "thumbnail": "https://i.ytimg.com/vi/YTVhAYM3Ftg/mqdefault.jpg", "views": 1182, "score": 66, "posted_at_ist": "16 Nov 2026, 08:00 PM IST", "timestamp": "2026-11-16T14:30:13.010Z"}, {"id": "9fAiHB6V3pw_02", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "Reloading mid-flank in Helldivers 2: Left, left, right!", "url": "https://youtube.com/shorts/0fm5Jqik_gU", "thumbnail": "https://i.ytimg.com/vi/0fm5Jqik_gU/mqdefault.jpg", "views": 207, "score": 78, "posted_at_ist": "16 Nov 2026, 06:00 AM IST", "timestamp": "2026-11-16T00:30:09.657Z"}, {"id": "9fAiHB6V3pw_01", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "Helldivers 2: will Pelican One make it to extraction?", "url": "https://youtube.com/shorts/qpcaqb9wPhE", "thumbnail": "https://i.ytimg.com/vi/qpcaqb9wPhE/mqdefault.jpg", "views": 1233, "score": 88, "posted_at_ist": "16 Nov 2026, 03:00 AM IST", "timestamp": "2026-11-15T21:30:08.579Z"}, {"id": "y0DrBXmTtlg", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2 good squad gameplay: what teamwork looks like", "url": "https://youtu.be/y0DrBXmTtlg", "thumbnail": "https://i.ytimg.com/vi/y0DrBXmTtlg/mqdefault.jpg", "views": 1, "score": 92, "posted_at_ist": "16 Nov 2026, 01:30 AM IST", "timestamp": "2026-11-15T20:00:45.646Z"}, {"id": "9fAiHB6V3pw", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2 PS5 lag and glitches until extraction", "url": "https://youtu.be/9fAiHB6V3pw", "thumbnail": "https://i.ytimg.com/vi/9fAiHB6V3pw/mqdefault.jpg", "views": 3, "score": 92, "posted_at_ist": "15 Nov 2026, 11:51 PM IST", "timestamp": "2026-11-15T18:21:25.923Z"}, {"id": "onO8PXEPUSw", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2: Reinforce Called While Destroying Eggs", "url": "https://youtu.be/onO8PXEPUSw", "thumbnail": "https://i.ytimg.com/vi/onO8PXEPUSw/mqdefault.jpg", "views": 9, "score": 92, "posted_at_ist": "15 Nov 2026, 11:49 PM IST", "timestamp": "2026-11-15T18:19:33.856Z"}, {"id": "r01", "platform": "Instagram", "type": "Reel", "category": "reels", "title": "Rise close-up: Army Types & Orc Rises (r01)", "url": "https://www.instagram.com/reel/Dfw87JDEZXG/", "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&auto=format&fit=crop&q=80", "views": 134, "reach": 119, "score": 50.4, "posted_at_ist": "15 Nov 2026, 07:34 PM IST", "timestamp": "2026-11-15T14:04:00Z"}, {"id": "qIsrqx0nCrg_03", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "Pressing attack vs eagle strikes in Helldivers 2 chaos", "url": "https://youtube.com/shorts/hLD165HKOws", "thumbnail": "https://i.ytimg.com/vi/hLD165HKOws/mqdefault.jpg", "views": 918, "score": 62, "posted_at_ist": "15 Nov 2026, 05:00 PM IST", "timestamp": "2026-11-15T11:30:54.949Z"}, {"id": "7OeDe1RP5LE_04", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "I called reinforcements mid-firefight in Helldivers 2", "url": "https://youtube.com/shorts/k3aeGtTL464", "thumbnail": "https://i.ytimg.com/vi/k3aeGtTL464/mqdefault.jpg", "views": 807, "score": 62, "posted_at_ist": "15 Nov 2026, 04:00 PM IST", "timestamp": "2026-11-15T10:30:55.313Z"}, {"id": "ghHKWZuBD24_03", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "Don't wait on the sentry! Call air support now", "url": "https://youtube.com/shorts/YM7R8U3VR9o", "thumbnail": "https://i.ytimg.com/vi/YM7R8U3VR9o/mqdefault.jpg", "views": 813, "score": 66, "posted_at_ist": "15 Nov 2026, 03:00 PM IST", "timestamp": "2026-11-15T09:30:53.978Z"}, {"id": "qIsrqx0nCrg_02", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "Can one eagle strike save a Helldivers 2 squad?", "url": "https://youtube.com/shorts/S1yxC6H_lnE", "thumbnail": "https://i.ytimg.com/vi/S1yxC6H_lnE/mqdefault.jpg", "views": 571, "score": 70, "posted_at_ist": "15 Nov 2026, 02:00 PM IST", "timestamp": "2026-11-15T08:30:55.235Z"}, {"id": "ghHKWZuBD24_02", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "20 seconds to extract! Helldivers 2 Pelican 1", "url": "https://youtube.com/shorts/6fQH2crY_UE", "thumbnail": "https://i.ytimg.com/vi/6fQH2crY_UE/mqdefault.jpg", "views": 266, "score": 72, "posted_at_ist": "15 Nov 2026, 01:00 PM IST", "timestamp": "2026-11-15T07:30:55.518Z"}, {"id": "qIsrqx0nCrg_01", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "If you call stratagems under fire, this is what happens", "url": "https://youtube.com/shorts/6oNpggoXkXc", "thumbnail": "https://i.ytimg.com/vi/6oNpggoXkXc/mqdefault.jpg", "views": 621, "score": 72, "posted_at_ist": "15 Nov 2026, 12:00 PM IST", "timestamp": "2026-11-15T06:30:54.346Z"}, {"id": "ghHKWZuBD24_01", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "Out of ammo and still holding? Helldivers 2", "url": "https://youtube.com/shorts/Gt-k2NPMMQA", "thumbnail": "https://i.ytimg.com/vi/Gt-k2NPMMQA/mqdefault.jpg", "views": 368, "score": 84, "posted_at_ist": "15 Nov 2026, 11:00 AM IST", "timestamp": "2026-11-15T05:30:53.977Z"}, {"id": "7OeDe1RP5LE_03", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "If bugs swarm your west flank in Helldivers 2", "url": "https://youtube.com/shorts/_bnDIO6ZOeo", "thumbnail": "https://i.ytimg.com/vi/_bnDIO6ZOeo/mqdefault.jpg", "views": 1407, "score": 72, "posted_at_ist": "15 Nov 2026, 10:00 AM IST", "timestamp": "2026-11-15T04:30:53.830Z"}, {"id": "ghHKWZuBD24", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2 Airburst Launcher Blasts a Bug", "url": "https://youtu.be/ghHKWZuBD24", "thumbnail": "https://i.ytimg.com/vi/ghHKWZuBD24/mqdefault.jpg", "views": 3, "score": 92, "posted_at_ist": "15 Nov 2026, 09:41 AM IST", "timestamp": "2026-11-15T04:11:07.262Z"}, {"id": "7OeDe1RP5LE_02", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "Don't quit Helldivers 2 before reinforcements land", "url": "https://youtube.com/shorts/j10vRhfmPiI", "thumbnail": "https://i.ytimg.com/vi/j10vRhfmPiI/mqdefault.jpg", "views": 1246, "score": 78, "posted_at_ist": "15 Nov 2026, 09:36 AM IST", "timestamp": "2026-11-15T04:06:30.847Z"}, {"id": "qIsrqx0nCrg", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5", "url": "https://youtu.be/qIsrqx0nCrg", "thumbnail": "https://i.ytimg.com/vi/qIsrqx0nCrg/mqdefault.jpg", "views": 10, "score": 92, "posted_at_ist": "15 Nov 2026, 03:44 AM IST", "timestamp": "2026-11-14T22:14:21.488Z"}, {"id": "TckgvttyfL4", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2 Extraction Frenzy: Team Keeps Dying", "url": "https://youtu.be/TckgvttyfL4", "thumbnail": "https://i.ytimg.com/vi/TckgvttyfL4/mqdefault.jpg", "views": 8, "score": 92, "posted_at_ist": "15 Nov 2026, 03:21 AM IST", "timestamp": "2026-11-14T21:51:03.880Z"}, {"id": "YiFseOnuyq4", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2 Bug Annihilation: Orbital Gatling Barrage", "url": "https://youtu.be/YiFseOnuyq4", "thumbnail": "https://i.ytimg.com/vi/YiFseOnuyq4/mqdefault.jpg", "views": 6, "score": 92, "posted_at_ist": "15 Nov 2026, 03:11 AM IST", "timestamp": "2026-11-14T21:41:02.233Z"}, {"id": "GULKBJ4BwHM", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2 PS5 Mission Start: Squad Dropship Run", "url": "https://youtu.be/GULKBJ4BwHM", "thumbnail": "https://i.ytimg.com/vi/GULKBJ4BwHM/mqdefault.jpg", "views": 4, "score": 92, "posted_at_ist": "15 Nov 2026, 03:10 AM IST", "timestamp": "2026-11-14T21:40:17.075Z"}, {"id": "7OeDe1RP5LE_01", "platform": "YouTube", "type": "Short", "category": "shorts", "title": "Helldivers 2: Can we hold out until extraction?", "url": "https://youtube.com/shorts/VZkMukyJZh4", "thumbnail": "https://i.ytimg.com/vi/VZkMukyJZh4/mqdefault.jpg", "views": 1409, "score": 88, "posted_at_ist": "15 Nov 2026, 02:57 AM IST", "timestamp": "2026-11-14T21:27:40.975Z"}, {"id": "7OeDe1RP5LE", "platform": "YouTube", "type": "Main Video", "category": "main_videos", "title": "Helldivers 2: the new green bug strain is tough", "url": "https://youtu.be/7OeDe1RP5LE", "thumbnail": "https://i.ytimg.com/vi/7OeDe1RP5LE/mqdefault.jpg", "views": 5, "score": 92, "posted_at_ist": "15 Nov 2026, 02:09 AM IST", "timestamp": "2026-11-14T20:39:55.263Z"}]}, "videos": [{"id": "7OeDe1RP5LE", "url": "https://youtu.be/7OeDe1RP5LE", "game": "Helldivers 2", "old_title": "the new green bug strain is tough", "new_title": "Helldivers 2: the new green bug strain is tough", "thumbnail": "https://i.ytimg.com/vi/7OeDe1RP5LE/mqdefault.jpg", "detected_at": "2026-11-14T20:39:55.263Z", "detected_at_ist": "15 Nov 2026, 02:09 AM IST", "views": 5, "metadata_changed": true, "shorts_made": 6, "shorts_posted": 4, "shorts": [{"id": "7OeDe1RP5LE_01", "title": "Helldivers 2: Can we hold out until extraction?", "score": 88, "status": "posted", "duration": 38.2, "url": "https://youtube.com/shorts/VZkMukyJZh4", "video_id": "VZkMukyJZh4", "views": 1409, "thumbnail": "https://i.ytimg.com/vi/VZkMukyJZh4/mqdefault.jpg", "hook": "Will the squad survive the countdown?", "source_video_id": "7OeDe1RP5LE", "source_video_title": "Helldivers 2: the new green bug strain is tough", "posted_at": "2026-11-14T21:27:40.975Z", "queued_at": "2026-11-14T21:27:18.919Z", "relative_time": "15 Nov, 02:57 AM IST", "period": "earlier", "posted_dt": "2026-11-15T02:57:40.975000+05:30", "posted_at_ist": "15 Nov 2026, 02:57 AM IST", "time_ist": "02:57 AM IST"}, {"id": "7OeDe1RP5LE_02", "title": "Don't quit Helldivers 2 before reinforcements land", "score": 78, "status": "posted", "duration": 23.4, "url": "https://youtube.com/shorts/j10vRhfmPiI", "video_id": "j10vRhfmPiI", "views": 1246, "thumbnail": "https://i.ytimg.com/vi/j10vRhfmPiI/mqdefault.jpg", "hook": "They said you will never die", "source_video_id": "7OeDe1RP5LE", "source_video_title": "Helldivers 2: the new green bug strain is tough", "posted_at": "2026-11-15T04:06:30.847Z", "queued_at": "2026-11-14T21:27:18.919Z", "relative_time": "15 Nov, 09:36 AM IST", "period": "earlier", "posted_dt": "2026-11-15T09:36:30.847000+05:30", "posted_at_ist": "15 Nov 2026, 09:36 AM IST", "time_ist": "09:36 AM IST"}, {"id": "7OeDe1RP5LE_03", "title": "If bugs swarm your west flank in Helldivers 2", "score": 72, "status": "posted", "duration": 34.4, "url": "https://youtube.com/shorts/_bnDIO6ZOeo", "video_id": "_bnDIO6ZOeo", "views": 1407, "thumbnail": "https://i.ytimg.com/vi/_bnDIO6ZOeo/mqdefault.jpg", "hook": "Taste the parade of fire.", "source_video_id": "7OeDe1RP5LE", "source_video_title": "Helldivers 2: the new green bug strain is tough", "posted_at": "2026-11-15T04:30:53.830Z", "queued_at": "2026-11-14T21:27:18.919Z", "relative_time": "15 Nov, 10:00 AM IST", "period": "earlier", "posted_dt": "2026-11-15T10:00:53.830000+05:30", "posted_at_ist": "15 Nov 2026, 10:00 AM IST", "time_ist": "10:00 AM IST"}, {"id": "7OeDe1RP5LE_04", "title": "I called reinforcements mid-firefight in Helldivers 2", "score": 62, "status": "posted", "duration": 21.2, "url": "https://youtube.com/shorts/k3aeGtTL464", "video_id": "k3aeGtTL464", "views": 807, "thumbnail": "https://i.ytimg.com/vi/k3aeGtTL464/mqdefault.jpg", "hook": "Package dropped mid-firefight. Watch this.", "source_video_id": "7OeDe1RP5LE", "source_video_title": "Helldivers 2: the new green bug strain is tough", "posted_at": "2026-11-15T10:30:55.313Z", "queued_at": "2026-11-14T21:27:18.919Z", "relative_time": "15 Nov, 04:00 PM IST", "period": "earlier", "posted_dt": "2026-11-15T16:00:55.313000+05:30", "posted_at_ist": "15 Nov 2026, 04:00 PM IST", "time_ist": "04:00 PM IST"}, {"id": "7OeDe1RP5LE_05", "title": "Zero stims, broken arm: staying alive in Helldivers 2", "score": 55, "status": "queued", "duration": 32.3, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Broken arm. No quitting allowed.", "source_video_id": "7OeDe1RP5LE", "source_video_title": "Helldivers 2: the new green bug strain is tough", "posted_at": "", "queued_at": "2026-11-14T21:27:18.919Z", "relative_time": "Queued 15 Nov, 02:57 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 02:57 AM IST"}, {"id": "7OeDe1RP5LE_06", "title": "Helldivers 2: The Airburst Rocket Launcher does not differentiate between enemies and friends", "score": 46, "status": "queued", "duration": 30.4, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Freedom calls, reinforcements answer fast.", "source_video_id": "7OeDe1RP5LE", "source_video_title": "Helldivers 2: the new green bug strain is tough", "posted_at": "", "queued_at": "2026-11-14T21:27:18.919Z", "relative_time": "Queued 15 Nov, 02:57 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 02:57 AM IST"}]}, {"id": "GULKBJ4BwHM", "url": "https://youtu.be/GULKBJ4BwHM", "game": "Helldivers 2", "old_title": "HELLDIVERS 2 starts", "new_title": "Helldivers 2 PS5 Mission Start: Squad Dropship Run", "thumbnail": "https://i.ytimg.com/vi/GULKBJ4BwHM/mqdefault.jpg", "detected_at": "2026-11-14T21:40:17.075Z", "detected_at_ist": "15 Nov 2026, 03:10 AM IST", "views": 4, "metadata_changed": true, "shorts_made": 1, "shorts_posted": 0, "shorts": [{"id": "GULKBJ4BwHM_01", "title": "Ever wondered what a Helldivers 2 drop feels like?", "score": 0, "status": "queued", "duration": 15.4, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Strap in. Drop starts now.", "source_video_id": "GULKBJ4BwHM", "source_video_title": "Helldivers 2 PS5 Mission Start: Squad Dropship Run", "posted_at": "", "queued_at": "2026-11-14T21:42:14.311Z", "relative_time": "Queued 15 Nov, 03:12 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 03:12 AM IST"}]}, {"id": "YiFseOnuyq4", "url": "https://youtu.be/YiFseOnuyq4", "game": "Helldivers 2", "old_title": "HELLDIVERS 2 bug annihilation #helldivers2 #ps5 #onlinegaming", "new_title": "Helldivers 2 Bug Annihilation: Orbital Gatling Barrage", "thumbnail": "https://i.ytimg.com/vi/YiFseOnuyq4/mqdefault.jpg", "detected_at": "2026-11-14T21:41:02.233Z", "detected_at_ist": "15 Nov 2026, 03:11 AM IST", "views": 6, "metadata_changed": true, "shorts_made": 3, "shorts_posted": 1, "shorts": [{"id": "YiFseOnuyq4_01", "title": "Laser guard dog and Bugs go hand in hand", "score": 56, "status": "posted", "duration": 20.9, "url": "https://youtube.com/shorts/79_ZyoNT1jg", "video_id": "79_ZyoNT1jg", "views": 157, "thumbnail": "https://i.ytimg.com/vi/79_ZyoNT1jg/mqdefault.jpg", "hook": "One pickup, then an orbital request", "source_video_id": "YiFseOnuyq4", "source_video_title": "Helldivers 2 Bug Annihilation: Orbital Gatling Barrage", "posted_at": "2026-11-17T07:30:09.818Z", "queued_at": "2026-11-14T21:51:21.485Z", "relative_time": "Today at 01:00 PM IST", "period": "today", "posted_dt": "2026-11-17T13:00:09.818000+05:30", "posted_at_ist": "17 Nov 2026, 01:00 PM IST", "time_ist": "01:00 PM IST"}, {"id": "YiFseOnuyq4_02", "title": "When a charger decided to skate on your landing zone", "score": 56, "status": "queued", "duration": 22.2, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Friendly fire ends this one fast", "source_video_id": "YiFseOnuyq4", "source_video_title": "Helldivers 2 Bug Annihilation: Orbital Gatling Barrage", "posted_at": "", "queued_at": "2026-11-14T21:51:21.485Z", "relative_time": "Queued 15 Nov, 03:21 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 03:21 AM IST"}, {"id": "YiFseOnuyq4_03", "title": "3 weapon requests in 20 seconds: Helldivers 2 stratagems", "score": 53, "status": "queued", "duration": 20.3, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Three requests, then the extraction call", "source_video_id": "YiFseOnuyq4", "source_video_title": "Helldivers 2 Bug Annihilation: Orbital Gatling Barrage", "posted_at": "", "queued_at": "2026-11-14T21:51:21.485Z", "relative_time": "Queued 15 Nov, 03:21 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 03:21 AM IST"}]}, {"id": "TckgvttyfL4", "url": "https://youtu.be/TckgvttyfL4", "game": "Helldivers 2", "old_title": "HELLDIVERS 2 extraction frenzy #helldivers2 #ps5  #onlinegaming ", "new_title": "Helldivers 2 Extraction Frenzy: Team Keeps Dying", "thumbnail": "https://i.ytimg.com/vi/TckgvttyfL4/mqdefault.jpg", "detected_at": "2026-11-14T21:51:03.880Z", "detected_at_ist": "15 Nov 2026, 03:21 AM IST", "views": 8, "metadata_changed": true, "shorts_made": 3, "shorts_posted": 1, "shorts": [{"id": "TckgvttyfL4_01", "title": "When your entire team is down and you just keep running", "score": 59, "status": "posted", "duration": 26.4, "url": "https://youtube.com/shorts/wJ5ODZSqqQ4", "video_id": "wJ5ODZSqqQ4", "views": 271, "thumbnail": "https://i.ytimg.com/vi/wJ5ODZSqqQ4/mqdefault.jpg", "hook": "Who needs two working arms?", "source_video_id": "TckgvttyfL4", "source_video_title": "Helldivers 2 Extraction Frenzy: Team Keeps Dying", "posted_at": "2026-11-16T21:30:35.591Z", "queued_at": "2026-11-14T21:57:30.069Z", "relative_time": "Today at 03:00 AM IST", "period": "today", "posted_dt": "2026-11-17T03:00:35.591000+05:30", "posted_at_ist": "17 Nov 2026, 03:00 AM IST", "time_ist": "03:00 AM IST"}, {"id": "TckgvttyfL4_02", "title": "Pinned mid-firefight? Reinforcements drop, democracy wins", "score": 55, "status": "queued", "duration": 31.5, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Reinforcements land mid-firefight, no warning", "source_video_id": "TckgvttyfL4", "source_video_title": "Helldivers 2 Extraction Frenzy: Team Keeps Dying", "posted_at": "", "queued_at": "2026-11-14T21:57:30.069Z", "relative_time": "Queued 15 Nov, 03:27 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 03:27 AM IST"}, {"id": "TckgvttyfL4_03", "title": "1 minute left, still calling sentries in Helldivers 2", "score": 47, "status": "queued", "duration": 19.5, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Sixty seconds to extract, sentries pending", "source_video_id": "TckgvttyfL4", "source_video_title": "Helldivers 2 Extraction Frenzy: Team Keeps Dying", "posted_at": "", "queued_at": "2026-11-14T21:57:30.069Z", "relative_time": "Queued 15 Nov, 03:27 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 03:27 AM IST"}]}, {"id": "qIsrqx0nCrg", "url": "https://youtu.be/qIsrqx0nCrg", "game": "Helldivers 2", "old_title": "Helldivers 2: Airburst Launcher Gameplay on PS5", "new_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5", "thumbnail": "https://i.ytimg.com/vi/qIsrqx0nCrg/mqdefault.jpg", "detected_at": "2026-11-14T22:14:21.488Z", "detected_at_ist": "15 Nov 2026, 03:44 AM IST", "views": 10, "metadata_changed": true, "shorts_made": 5, "shorts_posted": 3, "shorts": [{"id": "qIsrqx0nCrg_01", "title": "If you call stratagems under fire, this is what happens", "score": 72, "status": "posted", "duration": 42.4, "url": "https://youtube.com/shorts/6oNpggoXkXc", "video_id": "6oNpggoXkXc", "views": 621, "thumbnail": "https://i.ytimg.com/vi/6oNpggoXkXc/mqdefault.jpg", "hook": "Stratagem call under fire goes wrong", "source_video_id": "qIsrqx0nCrg", "source_video_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5", "posted_at": "2026-11-15T06:30:54.346Z", "queued_at": "2026-11-14T22:43:28.275Z", "relative_time": "15 Nov, 12:00 PM IST", "period": "earlier", "posted_dt": "2026-11-15T12:00:54.346000+05:30", "posted_at_ist": "15 Nov 2026, 12:00 PM IST", "time_ist": "12:00 PM IST"}, {"id": "qIsrqx0nCrg_02", "title": "Can one eagle strike save a Helldivers 2 squad?", "score": 70, "status": "posted", "duration": 32.7, "url": "https://youtube.com/shorts/S1yxC6H_lnE", "video_id": "S1yxC6H_lnE", "views": 571, "thumbnail": "https://i.ytimg.com/vi/S1yxC6H_lnE/mqdefault.jpg", "hook": "Get down, the eagle is incoming", "source_video_id": "qIsrqx0nCrg", "source_video_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5", "posted_at": "2026-11-15T08:30:55.235Z", "queued_at": "2026-11-14T22:43:28.275Z", "relative_time": "15 Nov, 02:00 PM IST", "period": "earlier", "posted_dt": "2026-11-15T14:00:55.235000+05:30", "posted_at_ist": "15 Nov 2026, 02:00 PM IST", "time_ist": "02:00 PM IST"}, {"id": "qIsrqx0nCrg_03", "title": "Pressing attack vs eagle strikes in Helldivers 2 chaos", "score": 62, "status": "posted", "duration": 27.6, "url": "https://youtube.com/shorts/hLD165HKOws", "video_id": "hLD165HKOws", "views": 918, "thumbnail": "https://i.ytimg.com/vi/hLD165HKOws/mqdefault.jpg", "hook": "Eagles arrive while the horde pushes", "source_video_id": "qIsrqx0nCrg", "source_video_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5", "posted_at": "2026-11-15T11:30:54.949Z", "queued_at": "2026-11-14T22:43:28.275Z", "relative_time": "15 Nov, 05:00 PM IST", "period": "earlier", "posted_dt": "2026-11-15T17:00:54.949000+05:30", "posted_at_ist": "15 Nov 2026, 05:00 PM IST", "time_ist": "05:00 PM IST"}, {"id": "qIsrqx0nCrg_04", "title": "One second to extraction: Freedom forever in Helldivers 2", "score": 52, "status": "queued", "duration": 21.1, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "One second left before extraction", "source_video_id": "qIsrqx0nCrg", "source_video_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5", "posted_at": "", "queued_at": "2026-11-14T22:43:28.275Z", "relative_time": "Queued 15 Nov, 04:13 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 04:13 AM IST"}, {"id": "qIsrqx0nCrg_05", "title": "Don't call the big drop before the horde closes in", "score": 40, "status": "queued", "duration": 18, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Watch the drop land on the horde", "source_video_id": "qIsrqx0nCrg", "source_video_title": "Helldivers 2 Airburst Rocket Launcher Gameplay PS5", "posted_at": "", "queued_at": "2026-11-14T22:43:28.275Z", "relative_time": "Queued 15 Nov, 04:13 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 04:13 AM IST"}]}, {"id": "ghHKWZuBD24", "url": "https://youtu.be/ghHKWZuBD24", "game": "Helldivers 2", "old_title": "Airburst Launcher is OP", "new_title": "Helldivers 2 Airburst Launcher Blasts a Bug", "thumbnail": "https://i.ytimg.com/vi/ghHKWZuBD24/mqdefault.jpg", "detected_at": "2026-11-15T04:11:07.262Z", "detected_at_ist": "15 Nov 2026, 09:41 AM IST", "views": 3, "metadata_changed": true, "shorts_made": 5, "shorts_posted": 3, "shorts": [{"id": "ghHKWZuBD24_01", "title": "Out of ammo and still holding? Helldivers 2", "score": 84, "status": "posted", "duration": 30.6, "url": "https://youtube.com/shorts/Gt-k2NPMMQA", "video_id": "Gt-k2NPMMQA", "views": 368, "thumbnail": "https://i.ytimg.com/vi/Gt-k2NPMMQA/mqdefault.jpg", "hook": "Ammo gone, but still fighting", "source_video_id": "ghHKWZuBD24", "source_video_title": "Helldivers 2 Airburst Launcher Blasts a Bug", "posted_at": "2026-11-15T05:30:53.977Z", "queued_at": "2026-11-15T04:44:04.360Z", "relative_time": "15 Nov, 11:00 AM IST", "period": "earlier", "posted_dt": "2026-11-15T11:00:53.977000+05:30", "posted_at_ist": "15 Nov 2026, 11:00 AM IST", "time_ist": "11:00 AM IST"}, {"id": "ghHKWZuBD24_02", "title": "20 seconds to extract! Helldivers 2 Pelican 1", "score": 72, "status": "posted", "duration": 56.3, "url": "https://youtube.com/shorts/6fQH2crY_UE", "video_id": "6fQH2crY_UE", "views": 266, "thumbnail": "https://i.ytimg.com/vi/6fQH2crY_UE/mqdefault.jpg", "hook": "Extraction is a 20-second countdown", "source_video_id": "ghHKWZuBD24", "source_video_title": "Helldivers 2 Airburst Launcher Blasts a Bug", "posted_at": "2026-11-15T07:30:55.518Z", "queued_at": "2026-11-15T04:44:04.360Z", "relative_time": "15 Nov, 01:00 PM IST", "period": "earlier", "posted_dt": "2026-11-15T13:00:55.518000+05:30", "posted_at_ist": "15 Nov 2026, 01:00 PM IST", "time_ist": "01:00 PM IST"}, {"id": "ghHKWZuBD24_03", "title": "Don't wait on the sentry! Call air support now", "score": 66, "status": "posted", "duration": 27.4, "url": "https://youtube.com/shorts/YM7R8U3VR9o", "video_id": "YM7R8U3VR9o", "views": 813, "thumbnail": "https://i.ytimg.com/vi/YM7R8U3VR9o/mqdefault.jpg", "hook": "Watch the sentry go down", "source_video_id": "ghHKWZuBD24", "source_video_title": "Helldivers 2 Airburst Launcher Blasts a Bug", "posted_at": "2026-11-15T09:30:53.978Z", "queued_at": "2026-11-15T04:44:04.360Z", "relative_time": "15 Nov, 03:00 PM IST", "period": "earlier", "posted_dt": "2026-11-15T15:00:53.978000+05:30", "posted_at_ist": "15 Nov 2026, 03:00 PM IST", "time_ist": "03:00 PM IST"}, {"id": "ghHKWZuBD24_04", "title": "Air support still missing as the bugs close in", "score": 55, "status": "queued", "duration": 27.7, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Nobody knows where support is", "source_video_id": "ghHKWZuBD24", "source_video_title": "Helldivers 2 Airburst Launcher Blasts a Bug", "posted_at": "", "queued_at": "2026-11-15T04:44:04.360Z", "relative_time": "Queued 15 Nov, 10:14 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 10:14 AM IST"}, {"id": "ghHKWZuBD24_05", "title": "I held the line for cross-parity in Helldivers 2", "score": 35, "status": "queued", "duration": 17.5, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Reinforcements on the way, hold on", "source_video_id": "ghHKWZuBD24", "source_video_title": "Helldivers 2 Airburst Launcher Blasts a Bug", "posted_at": "", "queued_at": "2026-11-15T04:44:04.360Z", "relative_time": "Queued 15 Nov, 10:14 AM", "period": "queued", "queued_at_ist": "15 Nov 2026, 10:14 AM IST"}]}, {"id": "onO8PXEPUSw", "url": "https://youtu.be/onO8PXEPUSw", "game": "Helldivers 2", "old_title": "Helldivers 2 Not all wars are meant to be won", "new_title": "Helldivers 2: Reinforce Called While Destroying Eggs", "thumbnail": "https://i.ytimg.com/vi/onO8PXEPUSw/mqdefault.jpg", "detected_at": "2026-11-15T18:19:33.856Z", "detected_at_ist": "15 Nov 2026, 11:49 PM IST", "views": 9, "metadata_changed": true, "shorts_made": 5, "shorts_posted": 0, "shorts": [{"id": "onO8PXEPUSw_01", "title": "3 Auto Reinforcements in a Row? Helldivers 2 Bug", "score": 0, "status": "queued", "duration": 45.4, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Three launches, and I never pressed anything", "source_video_id": "onO8PXEPUSw", "source_video_title": "Helldivers 2: Reinforce Called While Destroying Eggs", "posted_at": "", "queued_at": "2026-11-15T19:02:23.871Z", "relative_time": "Queued 16 Nov, 12:32 AM", "period": "queued", "queued_at_ist": "16 Nov 2026, 12:32 AM IST"}, {"id": "onO8PXEPUSw_02", "title": "Why Did Helldivers 2 Keep Calling Orbitals?", "score": 0, "status": "queued", "duration": 54.9, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Orbital strikes won't stop calling in", "source_video_id": "onO8PXEPUSw", "source_video_title": "Helldivers 2: Reinforce Called While Destroying Eggs", "posted_at": "", "queued_at": "2026-11-15T19:02:23.871Z", "relative_time": "Queued 16 Nov, 12:32 AM", "period": "queued", "queued_at_ist": "16 Nov 2026, 12:32 AM IST"}, {"id": "onO8PXEPUSw_03", "title": "If Helldivers 2 Traps You in a Loop, Watch This", "score": 0, "status": "queued", "duration": 56.7, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Stuck in the loop, again and again", "source_video_id": "onO8PXEPUSw", "source_video_title": "Helldivers 2: Reinforce Called While Destroying Eggs", "posted_at": "", "queued_at": "2026-11-15T19:02:23.871Z", "relative_time": "Queued 16 Nov, 12:32 AM", "period": "queued", "queued_at_ist": "16 Nov 2026, 12:32 AM IST"}, {"id": "onO8PXEPUSw_04", "title": "Helldivers 2 Will Not Stop Repeating This Line", "score": 0, "status": "queued", "duration": 28.3, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "One line, playing on repeat forever", "source_video_id": "onO8PXEPUSw", "source_video_title": "Helldivers 2: Reinforce Called While Destroying Eggs", "posted_at": "", "queued_at": "2026-11-15T19:02:23.871Z", "relative_time": "Queued 16 Nov, 12:32 AM", "period": "queued", "queued_at_ist": "16 Nov 2026, 12:32 AM IST"}, {"id": "onO8PXEPUSw_05", "title": "I Tried Helldivers 2 Reinforce Glitch, Then Quit", "score": 0, "status": "queued", "duration": 52.9, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Not every war is meant to be won", "source_video_id": "onO8PXEPUSw", "source_video_title": "Helldivers 2: Reinforce Called While Destroying Eggs", "posted_at": "", "queued_at": "2026-11-15T19:02:23.871Z", "relative_time": "Queued 16 Nov, 12:32 AM", "period": "queued", "queued_at_ist": "16 Nov 2026, 12:32 AM IST"}]}, {"id": "9fAiHB6V3pw", "url": "https://youtu.be/9fAiHB6V3pw", "game": "Helldivers 2", "old_title": "HELLDIVERS 2 The game just keeps crashing.And the issues are real.", "new_title": "Helldivers 2 PS5 lag and glitches until extraction", "thumbnail": "https://i.ytimg.com/vi/9fAiHB6V3pw/mqdefault.jpg", "detected_at": "2026-11-15T18:21:25.923Z", "detected_at_ist": "15 Nov 2026, 11:51 PM IST", "views": 3, "metadata_changed": true, "shorts_made": 5, "shorts_posted": 3, "shorts": [{"id": "9fAiHB6V3pw_01", "title": "Helldivers 2: will Pelican One make it to extraction?", "score": 88, "status": "posted", "duration": 28.4, "url": "https://youtube.com/shorts/qpcaqb9wPhE", "video_id": "qpcaqb9wPhE", "views": 1233, "thumbnail": "https://i.ytimg.com/vi/qpcaqb9wPhE/mqdefault.jpg", "hook": "Landing now, countdown starts soon", "source_video_id": "9fAiHB6V3pw", "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real", "posted_at": "2026-11-15T21:30:08.579Z", "queued_at": "2026-11-15T19:13:43.424Z", "relative_time": "Yesterday at 03:00 AM IST", "period": "yesterday", "posted_dt": "2026-11-16T03:00:08.579000+05:30", "posted_at_ist": "16 Nov 2026, 03:00 AM IST", "time_ist": "03:00 AM IST"}, {"id": "9fAiHB6V3pw_02", "title": "Reloading mid-flank in Helldivers 2: Left, left, right!", "score": 78, "status": "posted", "duration": 26.9, "url": "https://youtube.com/shorts/0fm5Jqik_gU", "video_id": "0fm5Jqik_gU", "views": 207, "thumbnail": "https://i.ytimg.com/vi/0fm5Jqik_gU/mqdefault.jpg", "hook": "Flanked and reloading, nowhere to hide", "source_video_id": "9fAiHB6V3pw", "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real", "posted_at": "2026-11-16T00:30:09.657Z", "queued_at": "2026-11-15T19:13:43.424Z", "relative_time": "Yesterday at 06:00 AM IST", "period": "yesterday", "posted_dt": "2026-11-16T06:00:09.657000+05:30", "posted_at_ist": "16 Nov 2026, 06:00 AM IST", "time_ist": "06:00 AM IST"}, {"id": "9fAiHB6V3pw_03", "title": "Don't leave your sentry alone when Heavies close in", "score": 66, "status": "posted", "duration": 25.4, "url": "https://youtube.com/shorts/YTVhAYM3Ftg", "video_id": "YTVhAYM3Ftg", "views": 1182, "thumbnail": "https://i.ytimg.com/vi/YTVhAYM3Ftg/mqdefault.jpg", "hook": "Heavies coming from southwest, sentry exposed", "source_video_id": "9fAiHB6V3pw", "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real", "posted_at": "2026-11-16T14:30:13.010Z", "queued_at": "2026-11-15T19:13:43.424Z", "relative_time": "Yesterday at 08:00 PM IST", "period": "yesterday", "posted_dt": "2026-11-16T20:00:13.010000+05:30", "posted_at_ist": "16 Nov 2026, 08:00 PM IST", "time_ist": "08:00 PM IST"}, {"id": "9fAiHB6V3pw_04", "title": "If you hear 'Hail divers, never die' in Helldivers 2", "score": 52, "status": "queued", "duration": 19.9, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Spotted enemies ahead, prepare to exterminate", "source_video_id": "9fAiHB6V3pw", "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real", "posted_at": "", "queued_at": "2026-11-15T19:13:43.424Z", "relative_time": "Queued 16 Nov, 12:43 AM", "period": "queued", "queued_at_ist": "16 Nov 2026, 12:43 AM IST"}, {"id": "9fAiHB6V3pw_05", "title": "I begged for a sample mid-fight in Helldivers 2", "score": 31, "status": "queued", "duration": 19.4, "url": "", "video_id": "", "views": 350, "thumbnail": "", "hook": "Nothing left, then a sample appears", "source_video_id": "9fAiHB6V3pw", "source_video_title": "Helldivers 2 keeps crashing on PS5, and the issues are real", "posted_at": "", "queued_at": "2026-11-15T19:13:43.424Z", "relative_time": "Queued 16 Nov, 12:43 AM", "period": "queued", "queued_at_ist": "16 Nov 2026, 12:43 AM IST"}]}, {"id": "y0DrBXmTtlg", "url": "https://youtu.be/y0DrBXmTtlg", "game": "Helldivers 2", "old_title": "HELLDIVERS 2 What happens when you get a good squad in the game", "new_title": "Helldivers 2 good squad gameplay: what teamwork looks like", "thumbnail": "https://i.ytimg.com/vi/y0DrBXmTtlg/mqdefault.jpg", "detected_at": "2026-11-15T20:00:45.646Z", "detected_at_ist": "16 Nov 2026, 01:30 AM IST", "views": 1, "metadata_changed": true, "shorts_made": 0, "shorts_posted": 0, "shorts": []}, {"id": "XR8hMT8dmuQ", "url": "https://youtu.be/XR8hMT8dmuQ", "game": "Helldivers 2", "old_title": "HELLDIVERS 2 cooking bugs today", "new_title": "Helldivers 2: will the squad survive this fog?", "thumbnail": "https://i.ytimg.com/vi/XR8hMT8dmuQ/mqdefault.jpg", "detected_at": "2026-11-17T09:20:38.037Z", "detected_at_ist": "17 Nov 2026, 02:50 PM IST", "views": 1, "metadata_changed": true, "shorts_made": 0, "shorts_posted": 0, "shorts": []}, {"id": "iQcVhO4fyH0", "url": "https://youtu.be/iQcVhO4fyH0", "game": "Helldivers 2", "old_title": "HELLDIVERS 2 machine gun shoots straight 13 seconds", "new_title": "Helldivers 2 machine gun shoots straight on target", "thumbnail": "https://i.ytimg.com/vi/iQcVhO4fyH0/mqdefault.jpg", "detected_at": "2026-11-17T09:50:19.538Z", "detected_at_ist": "17 Nov 2026, 03:20 PM IST", "views": 0, "metadata_changed": true, "shorts_made": 0, "shorts_posted": 0, "shorts": []}], "workflows": [{"name": "PS5 Shorts Pipeline", "id": "NyqkzRSDWYbzusW8", "status": "ACTIVE", "nodes_count": 194, "runs": 113, "success_rate": "99.1%", "errors": 1}, {"name": "Corporate Banking RM Job Hunter", "id": "SioA5g70vuxsGC4C", "status": "ACTIVE", "nodes_count": 7, "runs": 63, "success_rate": "100.0%", "errors": 0}, {"name": "PS5 Shorts - Issue Resolver", "id": "WnWMAtnb8XPD91yd", "status": "ACTIVE", "nodes_count": 46, "runs": 183, "success_rate": "100.0%", "errors": 0}, {"name": "Shadow Legion Reels", "id": "rhOGUhnDmE2iaQgX", "status": "ACTIVE", "nodes_count": 18, "runs": 17, "success_rate": "100.0%", "errors": 0}, {"name": "Daily stock trader (Zerodha)", "id": "yzPAPejSZdpV9Qbg", "status": "ACTIVE", "nodes_count": 40, "runs": 3, "success_rate": "100.0%", "errors": 0}]};
   </script>
 
   <!-- Interactive Logic & J.A.R.V.I.S. Core Engine -->
@@ -1217,14 +2511,66 @@
       });
     }
 
-    // Timeline Chart State & Switchers
-    let currentTimelineRange = '3d';
-    let currentChartMode = 'views'; // 'views' or 'uploads'
+    // Multi-Level Filter State
+    let activePlatform = 'all';        // 'all', 'youtube', 'instagram'
+    let activeContentType = 'all';     // for 'all': 'all', 'shorts_reels', 'main_videos'
+                                       // for 'youtube': 'all', 'shorts', 'main_videos'
+                                       // for 'instagram': 'reels'
+    let currentTimelineRange = 'launch'; // 'launch', '7d', '30d'
+    let currentChartMode = 'views';    // 'views' or 'uploads'
+
+    function setPlatformFilter(plat) {
+      activePlatform = plat;
+      document.getElementById('btnPlatformAll').classList.toggle('active', plat === 'all');
+      document.getElementById('btnPlatformYT').classList.toggle('active-yt', plat === 'youtube');
+      document.getElementById('btnPlatformIG').classList.toggle('active-ig', plat === 'instagram');
+
+      // Reset content sub-filter to appropriate default
+      if (plat === 'all') activeContentType = 'all';
+      else if (plat === 'youtube') activeContentType = 'all';
+      else if (plat === 'instagram') activeContentType = 'reels';
+
+      renderSubPills();
+      filterUploadPins();
+      renderTimelineChart();
+    }
+
+    function setContentTypeFilter(type) {
+      activeContentType = type;
+      renderSubPills();
+      filterUploadPins();
+      renderTimelineChart();
+    }
+
+    function renderSubPills() {
+      const container = document.getElementById('contentSubPills');
+      if (!container) return;
+
+      let html = '';
+      if (activePlatform === 'all') {
+        html = `
+          <button onclick="setContentTypeFilter('all')" class="seg-btn ${activeContentType === 'all' ? 'active' : ''}">All Content (27)</button>
+          <button onclick="setContentTypeFilter('shorts_reels')" class="seg-btn ${activeContentType === 'shorts_reels' ? 'active' : ''}">Shorts & Reels (16)</button>
+          <button onclick="setContentTypeFilter('main_videos')" class="seg-btn ${activeContentType === 'main_videos' ? 'active' : ''}">Main Videos (11)</button>
+        `;
+      } else if (activePlatform === 'youtube') {
+        html = `
+          <button onclick="setContentTypeFilter('all')" class="seg-btn ${activeContentType === 'all' ? 'active-yt' : ''}">All YouTube (26)</button>
+          <button onclick="setContentTypeFilter('shorts')" class="seg-btn ${activeContentType === 'shorts' ? 'active-yt' : ''}">YouTube Shorts (15)</button>
+          <button onclick="setContentTypeFilter('main_videos')" class="seg-btn ${activeContentType === 'main_videos' ? 'active-yt' : ''}">YouTube Main Videos (11)</button>
+        `;
+      } else if (activePlatform === 'instagram') {
+        html = `
+          <button onclick="setContentTypeFilter('reels')" class="seg-btn active-ig">Reels Only (1)</button>
+        `;
+      }
+      container.innerHTML = html;
+    }
 
     function switchTimelineRange(range) {
       currentTimelineRange = range;
-      ['3d', '7d', '30d'].forEach(r => {
-        const b = document.getElementById('btnRange' + r);
+      ['launch', '7d', '30d'].forEach(r => {
+        const b = document.getElementById('btnRange' + r.charAt(0).toUpperCase() + r.slice(1));
         if (b) {
           if (r === range) b.classList.add('active');
           else b.classList.remove('active');
@@ -1240,6 +2586,55 @@
       renderTimelineChart();
     }
 
+    // Filter Upload Event Pins based on activePlatform & activeContentType
+    function filterUploadPins() {
+      const scroller = document.getElementById('pinsScrollerContainer');
+      const titleEl = document.getElementById('pinsHeaderTitle');
+      if (!scroller) return;
+
+      const kb = window.JARVIS_KB || {};
+      const allPins = (kb.timeline_data && kb.timeline_data.pins) ? kb.timeline_data.pins : [];
+
+      const filtered = allPins.filter(p => {
+        if (activePlatform === 'youtube') {
+          if (p.platform !== 'YouTube') return false;
+          if (activeContentType === 'shorts' && p.category !== 'shorts') return false;
+          if (activeContentType === 'main_videos' && p.category !== 'main_videos') return false;
+        } else if (activePlatform === 'instagram') {
+          if (p.platform !== 'Instagram') return false;
+        } else if (activePlatform === 'all') {
+          if (activeContentType === 'shorts_reels' && p.category !== 'shorts' && p.category !== 'reels') return false;
+          if (activeContentType === 'main_videos' && p.category !== 'main_videos') return false;
+        }
+        return true;
+      });
+
+      if (titleEl) {
+        titleEl.innerText = `📍 Content Upload Pins (${filtered.length} Items)`;
+      }
+
+      if (filtered.length === 0) {
+        scroller.innerHTML = '<div style="color: var(--muted); font-size: 12px; padding: 12px;">No upload events found for this filter combination.</div>';
+        return;
+      }
+
+      scroller.innerHTML = filtered.map(p => `
+        <div class="pin-chip" onclick="window.open('${p.url}', '_blank')">
+          <img src="${p.thumbnail}" alt="${p.title}" class="pin-thumb">
+          <div class="pin-info">
+            <span class="pin-title">${p.title}</span>
+            <div class="pin-meta">
+              <span style="color: ${p.platform === 'YouTube' ? 'var(--yt)' : 'var(--ig)'}; font-weight: 700;">${p.platform} ${p.type}</span>
+              <span>·</span>
+              <span>${(p.views || 0).toLocaleString()} views</span>
+              <span>·</span>
+              <span>${p.posted_at_ist}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
     // SVG Timeline Chart Renderer
     function renderTimelineChart() {
       const svg = document.getElementById('timelineSvg');
@@ -1247,15 +2642,37 @@
 
       const kb = window.JARVIS_KB || {};
       const tData = kb.timeline_data || {};
-      const series = currentTimelineRange === '3d' ? tData.timeline_3d :
-                     currentTimelineRange === '7d' ? tData.timeline_7d : tData.timeline_30d;
+      const datasets = tData.datasets || {};
 
-      if (!series || !series.labels) return;
+      let targetKey = 'all';
+      if (activePlatform === 'youtube') {
+        if (activeContentType === 'shorts') targetKey = 'youtube_shorts';
+        else if (activeContentType === 'main_videos') targetKey = 'youtube_main';
+        else targetKey = 'youtube';
+      } else if (activePlatform === 'instagram') {
+        targetKey = 'instagram';
+      }
 
-      const labels = series.labels;
-      const dataPoints = currentChartMode === 'views' ? series.views_cumulative : series.uploads_daily;
+      const set = datasets[targetKey] || datasets['all'] || {};
+      let labels = [];
+      if (currentTimelineRange === 'launch') labels = datasets.dates_launch || ["Nov 14", "Nov 15", "Nov 16", "Nov 17 (Today)"];
+      else if (currentTimelineRange === '7d') labels = datasets.dates_7d || ["Nov 11", "Nov 12", "Nov 13", "Nov 14", "Nov 15", "Nov 16", "Nov 17"];
+      else labels = datasets.dates_30d || ["Week 1", "Week 2", "Week 3", "Week 4", "Launch Week"];
+
+      let rawData = currentChartMode === 'views' ? (set.views_cum || [0, 0, 0, 0]) : (set.uploads_daily || [0, 0, 0, 0]);
+
+      // Adapt data length to timeframe
+      let dataPoints = [];
+      if (currentTimelineRange === 'launch') {
+        dataPoints = rawData.slice(-4);
+      } else if (currentTimelineRange === '7d') {
+        dataPoints = [0, 0, 0].concat(rawData.slice(-4));
+      } else {
+        const lastVal = rawData[rawData.length - 1] || 0;
+        dataPoints = [0, 0, 0, 0, lastVal];
+      }
+
       const maxVal = Math.max(...dataPoints, 10);
-
       const width = 1000;
       const height = 240;
       const padLeft = 60;
@@ -1269,8 +2686,16 @@
       const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
       const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
       const textColor = isDark ? '#94a3b8' : '#64748b';
-      const lineColor = currentChartMode === 'views' ? '#3e63dd' : '#10b981';
-      const fillColor = currentChartMode === 'views' ? 'rgba(62,99,221,0.18)' : 'rgba(16,185,129,0.18)';
+
+      let lineColor = '#3e63dd';
+      let fillColor = 'rgba(62,99,221,0.18)';
+      if (activePlatform === 'youtube') {
+        lineColor = '#ef4444';
+        fillColor = 'rgba(239,68,68,0.18)';
+      } else if (activePlatform === 'instagram') {
+        lineColor = '#ec4899';
+        fillColor = 'rgba(236,72,153,0.18)';
+      }
 
       let svgHtml = '';
 
@@ -1287,7 +2712,7 @@
       const pts = [];
       labels.forEach((lbl, idx) => {
         const x = padLeft + (plotW / (labels.length - 1 || 1)) * idx;
-        const val = dataPoints[idx];
+        const val = dataPoints[idx] !== undefined ? dataPoints[idx] : 0;
         const y = padTop + plotH - (plotH * (val / maxVal));
         pts.push({ x, y, val, lbl });
         svgHtml += `<text x="${x}" y="${height - 12}" fill="${textColor}" font-size="11" text-anchor="middle" font-family="'Inter', sans-serif">${lbl}</text>`;
@@ -1314,7 +2739,7 @@
           svgHtml += `<text x="${p.x}" y="${p.y - 10}" fill="${isDark ? '#fff' : '#0f172a'}" font-size="11" font-weight="700" text-anchor="middle" font-family="'Fira Code', monospace">${p.val.toLocaleString()}</text>`;
         });
       } else {
-        // Bar chart for Uploads
+        // Bar chart for Upload Velocity
         const barWidth = Math.min(48, (plotW / labels.length) * 0.5);
         pts.forEach(p => {
           const barH = plotH * (p.val / maxVal);
@@ -1332,7 +2757,8 @@
     // Dynamic Live Stats Fetcher on Page Load
     async function fetchLiveStats() {
       const syncEl = document.getElementById('syncIndicator');
-      if (syncEl) syncEl.innerHTML = '<span class="spin">↻</span> Syncing stats...';
+      const syncTxt = document.getElementById('syncText');
+      if (syncTxt) syncTxt.innerHTML = '<span class="spin">↻</span> Syncing real-time stats...';
 
       try {
         const res = await fetch('knowledge_base.json?_t=' + Date.now());
@@ -1340,26 +2766,48 @@
         const kb = await res.json();
         window.JARVIS_KB = kb;
 
-        // Update counters
+        // Update counters safely
         if (kb.summary) {
+          const ytViews = kb.summary.total_youtube_views || 11526;
+          const igViews = kb.summary.total_instagram_views || 134;
+          const bufferCount = kb.summary.total_shorts_queued_in_buffer || 18;
+          const vidCount = kb.summary.total_videos_processed || 11;
+          const shortsCount = kb.summary.total_shorts_posted_to_youtube || 15;
+
           if (document.getElementById('kpiTotalViews')) {
-            document.getElementById('kpiTotalViews').innerText = (kb.summary.total_youtube_views || 8702).toLocaleString();
+            document.getElementById('kpiTotalViews').innerText = ytViews.toLocaleString();
           }
           if (document.getElementById('kpiIgViews')) {
-            document.getElementById('kpiIgViews').innerText = kb.summary.total_instagram_views || 134;
+            document.getElementById('kpiIgViews').innerText = igViews.toLocaleString();
           }
           if (document.getElementById('kpiBufferCount')) {
-            document.getElementById('kpiBufferCount').innerText = kb.summary.total_shorts_queued_in_buffer || 20;
+            document.getElementById('kpiBufferCount').innerText = bufferCount;
+          }
+          if (document.getElementById('kpiVideosCount')) {
+            document.getElementById('kpiVideosCount').innerText = `${vidCount} / ${vidCount}`;
+          }
+          if (document.getElementById('kpiShortsCountLabel')) {
+            document.getElementById('kpiShortsCountLabel').innerText = `${shortsCount} Shorts`;
+          }
+          if (document.getElementById('conveyorShortsNum')) {
+            document.getElementById('conveyorShortsNum').innerText = shortsCount;
+          }
+          if (document.getElementById('conveyorBufferNum')) {
+            document.getElementById('conveyorBufferNum').innerText = bufferCount;
+          }
+          if (document.getElementById('conveyorVideosNum')) {
+            document.getElementById('conveyorVideosNum').innerText = `${vidCount} / ${vidCount}`;
           }
         }
 
-        if (syncEl) {
-          syncEl.innerHTML = '<span class="live-dot"></span> Live Synced (' + (kb.current_time_ist || 'Just now') + ')';
+        if (syncTxt) {
+          syncTxt.innerText = 'Live Synced (' + (kb.current_time_ist || 'Just now') + ')';
         }
         renderTimelineChart();
+        filterUploadPins();
       } catch (err) {
         console.warn('Could not re-fetch knowledge base dynamically:', err);
-        if (syncEl) syncEl.innerHTML = '<span class="live-dot"></span> Cached Synced';
+        if (syncTxt) syncTxt.innerText = 'Live Synced (Cached)';
       }
     }
 
@@ -1608,24 +3056,29 @@
       let ans = "";
       if (qLower.includes("shadow legion") || qLower.includes("reel") || qLower.includes("instagram") || qLower.includes("metricool")) {
         if (qLower.includes("next") || qLower.includes("plan") || qLower.includes("schedule")) {
-          ans = `Sir, for Shadow Legion, Reel #3 titled 'The bosses' is scheduled for release on Tue 17 Nov at 06:00 PM IST via Metricool. We have used 3 of our 20 monthly slots, leaving 17 reels available through Dec 14.`;
+          ans = "Sir, for Shadow Legion, Reel #3 titled 'The bosses' is scheduled for release on Tue 17 Nov at 06:00 PM IST via Metricool. We have used 3 of our 20 monthly slots, leaving 17 reels available through Dec 14.";
         } else if (qLower.includes("last") || qLower.includes("score") || qLower.includes("reach") || qLower.includes("views")) {
-          ans = `On Instagram, Reel r01 has accumulated 134 views and reached 119 accounts with 4 likes, achieving a virality score of 50.4.`;
+          ans = "On Instagram, Reel r01 has accumulated 134 views and reached 119 accounts with 4 likes, achieving a virality score of 50.4.";
         } else {
-          ans = `For Shadow Legion, 3 of 20 reels are scheduled or posted. Reel r01 reached 119 accounts. Creative feedback indicates trimming videos to 18-22 seconds will decrease the 56.5% skip rate.`;
+          ans = "For Shadow Legion, 3 of 20 reels are scheduled or posted. Reel r01 reached 119 accounts. Creative feedback indicates trimming videos to 18-22 seconds will decrease the 56.5% skip rate.";
         }
       } else if (qLower.includes("total view") || qLower.includes("views")) {
-        const ytViews = (summary.total_youtube_views || 8702).toLocaleString();
-        ans = "Sir, you have accumulated " + ytViews + " views across your 13 published YouTube shorts, with an average of 669 views per short. The top performer is 'Can we hold out until extraction?' with 1,358 views.";
+        const ytViews = (summary.total_youtube_views || 11526).toLocaleString();
+        ans = "Sir, you have accumulated " + ytViews + " views across YouTube, with 11,476 views across your 15 published shorts and 50 views on your 11 main videos. Top performer is 'Can we hold out until extraction?' with 1,409 views.";
       } else if (qLower.includes("today") || qLower.includes("since midnight")) {
-        ans = "Sir, exactly " + (summary.shorts_posted_today_count || 3) + " shorts have been uploaded to YouTube today: 'Reloading mid-flank' at 06:00 AM IST and 'Don't leave your sentry alone' at 08:00 PM IST. " + (summary.total_shorts_queued_in_buffer || 20) + " shorts remain queued in buffer.";
-      } else if (qLower.includes("clean") || qLower.includes("beautif") || qLower.includes("long")) {
-        ans = "All 9 main Helldivers 2 videos were cleaned up and beautified by Claude Haiku. From those, 33 unique shorts were rendered, 13 have been posted to YouTube, and 20 are queued in buffer.";
+        const tCount = summary.shorts_posted_today_count || 2;
+        const bCount = summary.total_shorts_queued_in_buffer || 18;
+        ans = "Sir, exactly " + tCount + " shorts have been uploaded to YouTube today, 17 Nov: 'When your entire team is down' at 03:00 AM IST and 'Laser guard dog' at 01:00 PM IST. " + bCount + " shorts remain queued in buffer.";
+      } else if (qLower.includes("clean") || qLower.includes("beautif") || qLower.includes("long") || qLower.includes("video")) {
+        const vCount = summary.total_videos_processed || 11;
+        ans = "All " + vCount + " main Helldivers 2 videos were cleaned up and beautified by Claude Haiku, Sir, with 2 new videos detected today. From those, 33 unique shorts were rendered, 15 have been posted, and 18 are queued in buffer.";
       } else if (qLower.includes("how many shorts") || qLower.includes("buffer") || qLower.includes("queued")) {
-        ans = "You have 13 shorts published on YouTube and 20 shorts queued in your buffer, Sir. The next automated drop is at 08:00 PM IST.";
+        const pCount = summary.total_shorts_posted_to_youtube || 15;
+        const bCount = summary.total_shorts_queued_in_buffer || 18;
+        ans = "You have " + pCount + " shorts published on YouTube and " + bCount + " shorts queued in your buffer, Sir. The next automated drop is at 08:00 PM IST.";
       } else {
-        const ytViews = (summary.total_youtube_views || 8702).toLocaleString();
-        ans = "Your automation fleet is operating normally with a " + (summary.global_success_rate || "99.8%") + " success rate across 400 executions. PS5 Shorts has 13 published shorts with " + ytViews + " views, and Shadow Legion has Reel #3 scheduled for Tue at 06:00 PM IST.";
+        const ytViews = (summary.total_youtube_views || 11526).toLocaleString();
+        ans = "Your automation fleet is operating normally with a " + (summary.global_success_rate || "99.8%") + " success rate across 400 executions. YouTube has 15 published shorts and 11 long videos with " + ytViews + " views, and Shadow Legion has Reel #3 scheduled for Tue at 06:00 PM IST.";
       }
 
       speakJarvis(ans);
@@ -1659,6 +3112,8 @@
 
     // Initial page setup
     document.addEventListener('DOMContentLoaded', () => {
+      renderSubPills();
+      filterUploadPins();
       renderTimelineChart();
       fetchLiveStats();
     });

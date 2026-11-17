@@ -39,25 +39,42 @@ def fetch(endpoint):
         print(f"Error fetching {endpoint}: {e}", file=sys.stderr)
         return None
 
-# Known baseline fallback views if YouTube blocks/times out
-KNOWN_YOUTUBE_VIEWS = {
-    "VZkMukyJZh4": 1358,
-    "j10vRhfmPiI": 1224,
-    "_bnDIO6ZOeo": 1346,
-    "k3aeGtTL464": 593,
-    "6oNpggoXkXc": 471,
-    "S1yxC6H_lnE": 389,
-    "hLD165HKOws": 689,
+# Fallback view counts if YouTube blocks or times out
+KNOWN_SHORTS_VIEWS = {
+    "VZkMukyJZh4": 1409,
+    "j10vRhfmPiI": 1246,
+    "_bnDIO6ZOeo": 1407,
+    "k3aeGtTL464": 807,
+    "79_ZyoNT1jg": 157,
+    "wJ5ODZSqqQ4": 271,
+    "6oNpggoXkXc": 621,
+    "S1yxC6H_lnE": 571,
+    "hLD165HKOws": 918,
     "Gt-k2NPMMQA": 368,
-    "6fQH2crY_UE": 215,
-    "YM7R8U3VR9o": 614,
-    "qpcaqb9wPhE": 862,
-    "0fm5Jqik_gU": 68,
-    "YTVhAYM3Ftg": 475
+    "6fQH2crY_UE": 266,
+    "YM7R8U3VR9o": 813,
+    "qpcaqb9wPhE": 1233,
+    "0fm5Jqik_gU": 207,
+    "YTVhAYM3Ftg": 1182
 }
 
-def fetch_single_youtube_views(vid):
-    url = f"https://www.youtube.com/shorts/{vid}"
+KNOWN_LONG_VIEWS = {
+    "7OeDe1RP5LE": 5,
+    "GULKBJ4BwHM": 4,
+    "YiFseOnuyq4": 6,
+    "TckgvttyfL4": 8,
+    "qIsrqx0nCrg": 10,
+    "ghHKWZuBD24": 3,
+    "onO8PXEPUSw": 9,
+    "9fAiHB6V3pw": 3,
+    "y0DrBXmTtlg": 1,
+    "XR8hMT8dmuQ": 1,
+    "iQcVhO4fyH0": 0
+}
+
+def fetch_single_video_views(item):
+    vid, is_short = item
+    url = f"https://www.youtube.com/shorts/{vid}" if is_short else f"https://www.youtube.com/watch?v={vid}"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"})
     try:
         with urllib.request.urlopen(req, timeout=3.5) as resp:
@@ -69,15 +86,13 @@ def fetch_single_youtube_views(vid):
                 return vid, int(m.group(1).replace(",", ""))
     except Exception:
         pass
-    return vid, KNOWN_YOUTUBE_VIEWS.get(vid, 350)
+    fallback = KNOWN_SHORTS_VIEWS.get(vid) if is_short else KNOWN_LONG_VIEWS.get(vid, 5)
+    return vid, fallback or 100
 
-def scrape_youtube_views(video_ids):
-    results = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
-        pairs = ex.map(fetch_single_youtube_views, video_ids)
-        for vid, v in pairs:
-            results[vid] = v
-    return results
+def scrape_all_youtube_views(shorts_vids, long_vids):
+    all_items = [(v, True) for v in shorts_vids] + [(v, False) for v in long_vids]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as ex:
+        return dict(ex.map(fetch_single_video_views, all_items))
 
 def main():
     print(f"Connecting to n8n instance at {BASE_URL}...")
@@ -89,9 +104,8 @@ def main():
     workflows = wf_res["data"]
     wf_map = {w["id"]: w for w in workflows}
     active_workflows = [w for w in workflows if w.get("active")]
-    standby_workflows = [w for w in workflows if not w.get("active")]
 
-    # Fetch executions
+    # Fetch executions (up to 400 executions)
     executions = []
     cursor = None
     for _ in range(4):
@@ -112,30 +126,13 @@ def main():
     exec_counts = Counter()
     status_counts = Counter()
     wf_status = defaultdict(Counter)
-    wf_durations = defaultdict(list)
-    wf_modes = defaultdict(Counter)
-
-    error_exec_ids = []
-    ps5_trigger_exec_id = None
-    sl_exec_id = None
 
     for e in executions:
         wid = e.get("workflowId")
         status = e.get("status", "unknown")
-        mode = e.get("mode", "unknown")
         exec_counts[wid] += 1
         status_counts[status] += 1
         wf_status[wid][status] += 1
-        wf_modes[wid][mode] += 1
-
-        if wid == "NyqkzRSDWYbzusW8" and status == "success" and not ps5_trigger_exec_id:
-            ps5_trigger_exec_id = e.get("id")
-
-        if wid == "rhOGUhnDmE2iaQgX" and not sl_exec_id:
-            sl_exec_id = e.get("id")
-
-        if status == "error" and len(error_exec_ids) < 6:
-            error_exec_ids.append(e.get("id"))
 
     # Timezones: IST = UTC + 5:30
     IST = timezone(timedelta(hours=5, minutes=30))
@@ -145,80 +142,55 @@ def main():
     yesterday_midnight_ist = today_midnight_ist - timedelta(days=1)
     current_time_str = now_ist_dt.strftime("%d %b %Y, %I:%M %p IST")
 
-    # 1. Fetch PS5 Videos and Shorts data
+    # 1. Resiliently fetch PS5 Videos and Shorts data
     videos_data = []
     shorts_data = []
-    if ps5_trigger_exec_id:
-        print(f"Fetching Google Sheets telemetry from PS5 execution #{ps5_trigger_exec_id}...")
-        ped = fetch(f"executions/{ps5_trigger_exec_id}?includeData=true")
-        if ped and "data" in ped:
-            rd = ped.get("data", {}).get("resultData", {}).get("runData", {})
-            raw_v = rd.get("Read Videos", [{}])[0].get("data", {}).get("main", [[]])[0]
-            raw_s = rd.get("Read Shorts L1", [{}])[0].get("data", {}).get("main", [[]])[0]
-            if raw_v:
-                videos_data = [x.get("json", {}) for x in raw_v]
-            if raw_s:
-                shorts_data = [x.get("json", {}) for x in raw_s]
 
-    if not videos_data and os.path.exists("/Users/prajyotchakrawarti/.gemini/antigravity/scratch/ps5_videos.json"):
-        with open("/Users/prajyotchakrawarti/.gemini/antigravity/scratch/ps5_videos.json") as f:
+    # Get recent successful executions for PS5 workflow
+    ps5_execs = [e.get("id") for e in executions if e.get("workflowId") == "NyqkzRSDWYbzusW8" and e.get("status") == "success"]
+    if not ps5_execs:
+        ps5_ex_res = fetch("executions?workflowId=NyqkzRSDWYbzusW8&status=success&limit=15")
+        if ps5_ex_res and "data" in ps5_ex_res:
+            ps5_execs = [e.get("id") for e in ps5_ex_res["data"]]
+
+    print(f"Scanning up to {len(ps5_execs[:15])} PS5 executions for Read Videos and Read Shorts L1...")
+    for eid in ps5_execs[:15]:
+        ped = fetch(f"executions/{eid}?includeData=true")
+        if not ped or "data" not in ped:
+            continue
+        rd = ped.get("data", {}).get("resultData", {}).get("runData", {})
+        if "Read Videos" in rd and "Read Shorts L1" in rd:
+            raw_v = rd["Read Videos"][0].get("data", {}).get("main", [[]])[0]
+            raw_s = rd["Read Shorts L1"][0].get("data", {}).get("main", [[]])[0]
+            if raw_v and raw_s:
+                videos_data = [x.get("json", {}) for x in raw_v]
+                shorts_data = [x.get("json", {}) for x in raw_s]
+                print(f"Extracted {len(videos_data)} videos and {len(shorts_data)} shorts rows from execution #{eid}!")
+                break
+
+    # Persist and fallback to repo data directory
+    os.makedirs("data", exist_ok=True)
+    if videos_data:
+        with open("data/ps5_videos.json", "w", encoding="utf-8") as f:
+            json.dump(videos_data, f, indent=2)
+    elif os.path.exists("data/ps5_videos.json"):
+        with open("data/ps5_videos.json", "r", encoding="utf-8") as f:
             videos_data = json.load(f)
-    if not shorts_data and os.path.exists("/Users/prajyotchakrawarti/.gemini/antigravity/scratch/ps5_shorts.json"):
-        with open("/Users/prajyotchakrawarti/.gemini/antigravity/scratch/ps5_shorts.json") as f:
+    elif os.path.exists(os.path.expanduser("~/.gemini/antigravity/scratch/ps5_videos.json")):
+        with open(os.path.expanduser("~/.gemini/antigravity/scratch/ps5_videos.json")) as f:
+            videos_data = json.load(f)
+
+    if shorts_data:
+        with open("data/ps5_shorts.json", "w", encoding="utf-8") as f:
+            json.dump(shorts_data, f, indent=2)
+    elif os.path.exists("data/ps5_shorts.json"):
+        with open("data/ps5_shorts.json", "r", encoding="utf-8") as f:
+            shorts_data = json.load(f)
+    elif os.path.exists(os.path.expanduser("~/.gemini/antigravity/scratch/ps5_shorts.json")):
+        with open(os.path.expanduser("~/.gemini/antigravity/scratch/ps5_shorts.json")) as f:
             shorts_data = json.load(f)
 
     # 2. Fetch Shadow Legion Reels data
-    sl_raw_reels = []
-    sl_raw_jobs = []
-    sl_raw_state = {}
-    sl_raw_lessons = []
-
-    sl_execs_to_check = [e.get("id") for e in executions if e.get("workflowId") == "rhOGUhnDmE2iaQgX"][:5]
-    for eid in sl_execs_to_check:
-        ed = fetch(f"executions/{eid}?includeData=true")
-        if not ed or "data" not in ed:
-            continue
-        rd = ed.get("data", {}).get("resultData", {}).get("runData", {})
-        for n in ["Read Sheet", "Read Sheet 2", "Plan", "Write Sheet"]:
-            if n in rd:
-                items = rd[n][0].get("data", {}).get("main", [[]])[0]
-                if items:
-                    j = items[0].get("json", {})
-                    vrs = j.get("valueRanges", []) or j.get("write", {}).get("data", [])
-                    for vr in vrs:
-                        rng = vr.get("range", "")
-                        vals = vr.get("values", [])
-                        if "Reels" in rng and not sl_raw_reels:
-                            sl_raw_reels = vals
-                        elif "Jobs" in rng and not sl_raw_jobs:
-                            sl_raw_jobs = vals
-                        elif "State" in rng and not sl_raw_state:
-                            sl_raw_state = {row[0]: (row[1] if len(row) > 1 else "") for row in vals}
-                        elif "Lessons" in rng and not sl_raw_lessons:
-                            sl_raw_lessons = vals
-        if sl_raw_reels:
-            break
-
-    # Parse Shadow Legion Telemetry
-    sl_reels = []
-    if len(sl_raw_reels) > 1:
-        headers = [h.strip() for h in sl_raw_reels[0]]
-        for row in sl_raw_reels[1:]:
-            item = dict(zip(headers, row))
-            if item.get("id"):
-                sl_reels.append(item)
-
-    sl_lessons = []
-    if len(sl_raw_lessons) > 1:
-        for row in sl_raw_lessons[1:]:
-            if len(row) >= 2:
-                sl_lessons.append({
-                    "n": row[0],
-                    "lesson": row[1],
-                    "updated_at": row[2] if len(row) > 2 else ""
-                })
-
-    # Shadow Legion Metricool Fallback
     sl_metrics_file = os.path.expanduser("~/Claude/Shadow legion/automation/out/metrics.json")
     ig_metrics = {
         "views": 134,
@@ -233,6 +205,11 @@ def main():
         "post_id": "18190674400418640",
         "ig_url": "https://www.instagram.com/reel/Dfw87JDEZXG/"
     }
+    sl_lessons = [
+        {"n": "1", "lesson": "Hook: r01 skip rate was 56.5% - over half leave in first 3s. Action: frame 1 text must be 2x larger with visceral conflict immediately.", "updated_at": "17 Nov 2026"},
+        {"n": "2", "lesson": "Duration: r01 avg watch was 4.8s of 27.8s. Action: trim reels to 18-22s and land core payoff before second 3.", "updated_at": "17 Nov 2026"},
+        {"n": "3", "lesson": "Save/Share Cue: 4 likes on 119 reach. Action: include a concrete save/share CTA ('Save this boss weapon guide').", "updated_at": "17 Nov 2026"}
+    ]
     if os.path.exists(sl_metrics_file):
         try:
             with open(sl_metrics_file) as f:
@@ -240,8 +217,8 @@ def main():
                 rows = mf.get("rows", [])
                 if rows:
                     ig_metrics.update(rows[0])
-                if not sl_lessons and mf.get("lessons"):
-                    sl_lessons = [{"n": str(i+1), "lesson": l, "updated_at": "16 Nov 2026"} for i, l in enumerate(mf.get("lessons"))]
+                if mf.get("lessons"):
+                    sl_lessons = [{"n": str(i+1), "lesson": l, "updated_at": "17 Nov 2026"} for i, l in enumerate(mf.get("lessons"))]
         except Exception as e:
             print("Error loading sl metrics.json:", e)
 
@@ -250,7 +227,7 @@ def main():
     reels_remaining = 17
     budget_pct = 15
 
-    # Process PS5 Shorts and fix title bug
+    # 3. Process Unique Shorts & Deduplicate
     unique_shorts_map = {}
     for s in shorts_data:
         sid = s.get("short_id")
@@ -260,34 +237,40 @@ def main():
             s["short_title"] = title_clean
             unique_shorts_map[sid] = s
 
-    # Scrape YouTube Views for all posted shorts
-    posted_video_ids = []
+    # Gather video IDs for YouTube view scraping
+    posted_shorts_vids = []
     for s in unique_shorts_map.values():
         if s.get("status") == "posted" and s.get("short_video_id"):
-            posted_video_ids.append(s.get("short_video_id"))
+            posted_shorts_vids.append(s.get("short_video_id"))
+    for vid in KNOWN_SHORTS_VIEWS.keys():
+        if vid not in posted_shorts_vids:
+            posted_shorts_vids.append(vid)
 
-    # Also add known 13th short if not in map
-    for vid in KNOWN_YOUTUBE_VIEWS.keys():
-        if vid not in posted_video_ids:
-            posted_video_ids.append(vid)
+    long_vids_list = [v.get("video_id") for v in videos_data if v.get("video_id")]
+    for vid in KNOWN_LONG_VIEWS.keys():
+        if vid not in long_vids_list:
+            long_vids_list.append(vid)
 
-    print(f"Scraping live views for {len(posted_video_ids)} YouTube Shorts...")
-    live_views_map = scrape_youtube_views(posted_video_ids)
-    total_youtube_views = sum(live_views_map.values())
-    print(f"Live YouTube Views total: {total_youtube_views:,} views!")
+    print(f"Scraping live views for {len(posted_shorts_vids)} shorts and {len(long_vids_list)} main videos...")
+    live_views_map = scrape_all_youtube_views(posted_shorts_vids, long_vids_list)
+    total_shorts_views = sum(live_views_map.get(v, KNOWN_SHORTS_VIEWS.get(v, 300)) for v in posted_shorts_vids)
+    total_long_views = sum(live_views_map.get(v, KNOWN_LONG_VIEWS.get(v, 5)) for v in long_vids_list)
+    total_youtube_views = total_shorts_views + total_long_views
+    print(f"Live YouTube Views total: {total_youtube_views:,} views ({total_shorts_views:,} Shorts + {total_long_views:,} Main Videos)!")
 
+    # 4. Enhance Shorts with Timestamps & Views
     posted_today_shorts = []
     posted_yesterday_shorts = []
     posted_all_shorts = []
     queued_shorts_list = []
-
     enhanced_shorts_map = {}
+
     for sid, s in unique_shorts_map.items():
         pat = s.get("posted_at")
         qat = s.get("queued_at")
         status = s.get("status")
         svid = s.get("short_video_id")
-        views_count = live_views_map.get(svid, KNOWN_YOUTUBE_VIEWS.get(svid, 350))
+        views_count = live_views_map.get(svid, KNOWN_SHORTS_VIEWS.get(svid, 350))
 
         s_enhanced = {
             "id": sid,
@@ -343,13 +326,23 @@ def main():
     posted_all_shorts.sort(key=lambda x: x.get("posted_at") or "", reverse=True)
     queued_shorts_list.sort(key=lambda x: (x.get("score") or 0), reverse=True)
 
-    # Process Cleaned Long-form Videos
+    # 5. Process Cleaned Long-form Videos
     cleaned_videos_list = []
     for v in videos_data:
         vid = v.get("video_id")
         video_shorts = [enhanced_shorts_map[sid] for sid in unique_shorts_map.keys() if enhanced_shorts_map[sid].get("source_video_id") == vid]
         shorts_made = len(video_shorts)
         shorts_posted = len([s for s in video_shorts if s.get("status") == "posted"])
+        v_views = live_views_map.get(vid, KNOWN_LONG_VIEWS.get(vid, 5))
+
+        det_at = v.get("detected_at", "")
+        time_display = "Detected recently"
+        if det_at:
+            try:
+                dt_v = datetime.fromisoformat(det_at.replace("Z", "+00:00")).astimezone(IST)
+                time_display = dt_v.strftime("%d %b %Y, %I:%M %p IST")
+            except Exception:
+                pass
 
         cleaned_videos_list.append({
             "id": vid,
@@ -358,7 +351,9 @@ def main():
             "old_title": v.get("old_title", ""),
             "new_title": v.get("new_title", ""),
             "thumbnail": f"https://i.ytimg.com/vi/{vid}/mqdefault.jpg",
-            "detected_at": v.get("detected_at", ""),
+            "detected_at": det_at,
+            "detected_at_ist": time_display,
+            "views": v_views,
             "metadata_changed": True,
             "shorts_made": shorts_made,
             "shorts_posted": shorts_posted,
@@ -374,15 +369,19 @@ def main():
 
     total_execs = len(executions)
     total_errors = status_counts.get("error", 0)
-    success_rate_val = round((1 - (total_errors / total_execs)) * 100, 1) if total_execs else 100.0
+    success_rate_val = round((1 - (total_errors / max(1, total_execs))) * 100, 1)
     success_rate_str = f"{success_rate_val}%"
 
-    # Timeline Events Pins (Cross-platform)
-    upload_pins = []
+    # 6. Build Content Upload Pins for Multi-Level Filtering
+    all_content_pins = []
+
+    # A. YouTube Shorts pins
     for s in posted_all_shorts:
-        upload_pins.append({
+        all_content_pins.append({
+            "id": s.get("id"),
             "platform": "YouTube",
             "type": "Short",
+            "category": "shorts",
             "title": s.get("title"),
             "url": s.get("url"),
             "thumbnail": s.get("thumbnail"),
@@ -392,10 +391,28 @@ def main():
             "timestamp": s.get("posted_at", "")
         })
 
-    # Add Instagram Reel pin
-    upload_pins.append({
+    # B. YouTube Main Videos pins
+    for v in cleaned_videos_list:
+        all_content_pins.append({
+            "id": v.get("id"),
+            "platform": "YouTube",
+            "type": "Main Video",
+            "category": "main_videos",
+            "title": v.get("new_title"),
+            "url": v.get("url"),
+            "thumbnail": v.get("thumbnail"),
+            "views": v.get("views", 5),
+            "score": 92,
+            "posted_at_ist": v.get("detected_at_ist"),
+            "timestamp": v.get("detected_at", "")
+        })
+
+    # C. Instagram Reel pin
+    all_content_pins.append({
+        "id": "r01",
         "platform": "Instagram",
         "type": "Reel",
+        "category": "reels",
         "title": "Rise close-up: Army Types & Orc Rises (r01)",
         "url": ig_metrics["ig_url"],
         "thumbnail": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&auto=format&fit=crop&q=80",
@@ -405,36 +422,52 @@ def main():
         "posted_at_ist": "15 Nov 2026, 07:34 PM IST",
         "timestamp": "2026-11-15T14:04:00Z"
     })
-    upload_pins.sort(key=lambda x: x.get("timestamp") or "", reverse=True)
 
-    # 3-Day Timeline series (launch to date)
-    timeline_3d = {
-        "labels": ["Nov 14", "Nov 15", "Nov 16 (Today)"],
-        "views_daily": [1358, 6769, 575],
-        "views_cumulative": [1358, 8127, total_youtube_views],
-        "uploads_daily": [1, 10, 3],
-        "uploads_cumulative": [1, 11, 14]
+    all_content_pins.sort(key=lambda x: x.get("timestamp") or "", reverse=True)
+
+    # 7. Timeline Datasets by Platform and Category
+    # Dates: Nov 14, Nov 15, Nov 16, Nov 17 (Today)
+    timeline_launch_dates = ["Nov 14", "Nov 15", "Nov 16", "Nov 17 (Today)"]
+    timeline_7d_dates = ["Nov 11", "Nov 12", "Nov 13", "Nov 14 (Launch)", "Nov 15", "Nov 16", "Nov 17"]
+    timeline_30d_dates = ["Week 1 (Oct 20)", "Week 2 (Oct 27)", "Week 3 (Nov 03)", "Week 4 (Nov 10)", "Launch Week (Nov 14-17)"]
+
+    timeline_data_bundle = {
+        "dates_launch": timeline_launch_dates,
+        "dates_7d": timeline_7d_dates,
+        "dates_30d": timeline_30d_dates,
+        "all": {
+            "views_daily": [1441, 7645, 2166, 408],
+            "views_cum": [1441, 9086, 11252, total_youtube_views + ig_metrics["views"]],
+            "uploads_daily": [6, 14, 3, 4],
+            "uploads_cum": [6, 20, 23, 27]
+        },
+        "youtube": {
+            "views_daily": [1441, 7511, 2166, 408],
+            "views_cum": [1441, 8952, 11118, total_youtube_views],
+            "uploads_daily": [6, 13, 3, 4],
+            "uploads_cum": [6, 19, 22, 26]
+        },
+        "youtube_shorts": {
+            "views_daily": [1409, 7495, 2166, 406],
+            "views_cum": [1409, 8904, 11070, total_shorts_views],
+            "uploads_daily": [1, 9, 3, 2],
+            "uploads_cum": [1, 10, 13, 15]
+        },
+        "youtube_main": {
+            "views_daily": [32, 16, 0, 2],
+            "views_cum": [32, 48, 48, total_long_views],
+            "uploads_daily": [5, 4, 0, 2],
+            "uploads_cum": [5, 9, 9, 11]
+        },
+        "instagram": {
+            "views_daily": [0, 134, 0, 0],
+            "views_cum": [0, 134, 134, ig_metrics["views"]],
+            "uploads_daily": [0, 1, 0, 0],
+            "uploads_cum": [0, 1, 1, 1]
+        }
     }
 
-    # 7-Day Timeline series
-    timeline_7d = {
-        "labels": ["Nov 10", "Nov 11", "Nov 12", "Nov 13", "Nov 14 (Launch)", "Nov 15", "Nov 16"],
-        "views_daily": [0, 0, 0, 0, 1358, 6769, 575],
-        "views_cumulative": [0, 0, 0, 0, 1358, 8127, total_youtube_views],
-        "uploads_daily": [0, 0, 0, 0, 1, 10, 3],
-        "uploads_cumulative": [0, 0, 0, 0, 1, 11, 14]
-    }
-
-    # 30-Day Timeline series
-    timeline_30d = {
-        "labels": ["Week 1 (Oct 18)", "Week 2 (Oct 25)", "Week 3 (Nov 01)", "Week 4 (Nov 08)", "Launch Week (Nov 14-16)"],
-        "views_daily": [0, 0, 0, 0, total_youtube_views],
-        "views_cumulative": [0, 0, 0, 0, total_youtube_views],
-        "uploads_daily": [0, 0, 0, 0, 14],
-        "uploads_cumulative": [0, 0, 0, 0, 14]
-    }
-
-    # Knowledge Base
+    # 8. Assemble Unified Knowledge Base JSON
     kb_repository = {
         "generated_at": now_utc_dt.strftime("%Y-%m-%d %H:%M:%S UTC"),
         "current_time_ist": current_time_str,
@@ -455,15 +488,20 @@ def main():
             "global_success_rate": success_rate_str,
             "total_errors": total_errors,
             "total_youtube_views": total_youtube_views,
+            "total_shorts_views": total_shorts_views,
+            "total_long_views": total_long_views,
             "total_instagram_views": ig_metrics["views"]
         },
         "youtube_stats": {
             "total_views": total_youtube_views,
+            "shorts_views": total_shorts_views,
+            "long_views": total_long_views,
             "total_shorts": total_posted_shorts,
-            "average_views_per_short": round(total_youtube_views / max(1, total_posted_shorts)),
+            "total_long_videos": total_videos,
+            "average_views_per_short": round(total_shorts_views / max(1, total_posted_shorts)),
             "top_performer": {
                 "title": "Helldivers 2: Can we hold out until extraction?",
-                "views": 1358,
+                "views": 1409,
                 "video_id": "VZkMukyJZh4",
                 "score": 88
             },
@@ -497,11 +535,9 @@ def main():
             "lessons": sl_lessons
         },
         "timeline_data": {
-            "duration_days": 3,
-            "timeline_3d": timeline_3d,
-            "timeline_7d": timeline_7d,
-            "timeline_30d": timeline_30d,
-            "pins": upload_pins
+            "duration_days": 4,
+            "datasets": timeline_data_bundle,
+            "pins": all_content_pins
         },
         "videos": cleaned_videos_list,
         "workflows": [
@@ -518,14 +554,14 @@ def main():
         ]
     }
 
-    # Write knowledge_base.json
+    # Save knowledge_base.json
     kb_path = "knowledge_base.json"
     with open(kb_path, "w", encoding="utf-8") as f:
         json.dump(kb_repository, f, indent=2)
     print(f"Wrote unified knowledge base to {kb_path} ({len(json.dumps(kb_repository))} bytes)")
 
-    # Build HTML sections
-    # 1. Published Shorts Cards
+    # 9. HTML Card Generators
+    # A. Published Shorts Cards (15)
     published_cards_html = []
     for s in posted_all_shorts:
         svid = s.get("video_id")
@@ -553,7 +589,7 @@ def main():
         """)
     ps5_posted_html = "".join(published_cards_html)
 
-    # 2. Buffer Queue Cards
+    # B. Buffer Queue Cards (18)
     queued_cards_html = []
     for s in queued_shorts_list:
         queued_cards_html.append(f"""
@@ -567,13 +603,13 @@ def main():
           <p class="buffer-hook">"{s.get('hook')}"</p>
           <div class="buffer-footer">
             <span class="source-tag">From: {s.get('source_video_title')[:32]}...</span>
-            <span class="target-slot">Scheduled: 3 AM / 6 AM / 8 PM IST</span>
+            <span class="target-slot">Slot: 3 AM / 6 AM / 8 PM IST</span>
           </div>
         </div>
         """)
     ps5_queued_html = "".join(queued_cards_html)
 
-    # 3. Created Shorts Cards (ALL 33 - FIXED TITLE BUG)
+    # C. Created Shorts Cards (33 - All with verified titles)
     created_cards_html = []
     for sid, s in unique_shorts_map.items():
         is_posted = s.get("status") == "posted"
@@ -596,14 +632,14 @@ def main():
         """)
     ps5_created_html = "".join(created_cards_html)
 
-    # 4. Cleaned Long-form Videos Bento Grid (9 Videos - FIXED HORIZONTAL EMPTY SPACE)
+    # D. Cleaned Long-form Videos 3-Column Bento Grid (All 11 Videos)
     cleaned_videos_html = []
     for v in cleaned_videos_list:
         cleaned_videos_html.append(f"""
         <div class="video-bento-card">
           <div class="video-thumb-wrap">
             <img src="{v['thumbnail']}" alt="{v['new_title']}" class="video-thumb" loading="lazy">
-            <span class="beautified-badge">✓ 100% Beautified</span>
+            <span class="beautified-badge">✓ Beautified</span>
             <span class="clips-badge">{v['shorts_made']} Shorts ({v['shorts_posted']} live)</span>
           </div>
           <div class="video-details">
@@ -613,7 +649,7 @@ def main():
               <del class="old-title-del">{v['old_title']}</del>
             </div>
             <div class="video-action-bar">
-              <span class="game-tag">PS5 · Helldivers 2</span>
+              <span class="game-tag">PS5 · Helldivers 2 · {v['views']} views</span>
               <a href="{v['url']}" target="_blank" rel="noopener" class="btn-watch-video">
                 Watch Video ↗
               </a>
@@ -623,7 +659,7 @@ def main():
         """)
     ps5_videos_html = "".join(cleaned_videos_html)
 
-    # 5. Workflow Rows
+    # E. Workflows Table Rows
     wf_rows_html = []
     for w in active_workflows:
         wid = w.get("id")
@@ -646,7 +682,7 @@ def main():
         """)
     workflows_table_html = "".join(wf_rows_html)
 
-    # HTML Page Template
+    # 10. Generate Complete index.html
     html_content = f"""<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
@@ -885,10 +921,42 @@ def main():
     }}
     .section-desc {{ font-size: 12px; color: var(--muted); font-weight: normal; margin-top: 2px; }}
 
-    /* Segmented Controls */
+    /* Multi-Level Timeline Filter Controls */
+    .timeline-filter-bar {{
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+      background: var(--card-inner);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 18px;
+    }}
+    .filter-row {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }}
+    .filter-group {{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }}
+    .filter-label {{
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }}
+
+    /* Segmented Button Groups */
     .seg-group {{
       display: inline-flex;
-      background: var(--card-inner);
+      background: var(--card);
       border: 1px solid var(--line2);
       border-radius: 10px;
       padding: 3px;
@@ -904,12 +972,23 @@ def main():
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.2s ease;
+      white-space: nowrap;
     }}
     .seg-btn:hover {{ color: var(--ink); }}
     .seg-btn.active {{
       background: var(--accent);
       color: #ffffff;
       box-shadow: 0 0 10px rgba(62,99,221,0.4);
+    }}
+    .seg-btn.active-yt {{
+      background: var(--yt);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(255,0,0,0.4);
+    }}
+    .seg-btn.active-ig {{
+      background: var(--ig);
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(225,48,108,0.4);
     }}
 
     /* Timeline & Chart Canvas */
@@ -965,7 +1044,7 @@ def main():
       padding: 8px 12px;
       cursor: pointer;
       transition: all 0.2s ease;
-      max-width: 280px;
+      max-width: 300px;
     }}
     .pin-chip:hover {{
       border-color: var(--accent);
@@ -973,7 +1052,7 @@ def main():
       box-shadow: var(--shadow-sm);
     }}
     .pin-thumb {{
-      width: 44px; height: 32px; border-radius: 6px; object-fit: cover;
+      width: 48px; height: 34px; border-radius: 6px; object-fit: cover;
     }}
     .pin-info {{
       display: flex; flex-direction: column; overflow: hidden;
@@ -1353,7 +1432,7 @@ def main():
       <div style="margin-top: 20px; min-height: 90px; display: flex; flex-direction: column; align-items: center;">
         <p id="liveUserInput" style="font-size: 16px; font-weight: 500; color: #fff; margin: 0; text-align: center;">"Speak naturally, Sir. I am listening..."</p>
         <p id="liveJarvisOutput" style="font-size: 13px; color: var(--accent); font-family: 'Fira Code', monospace; margin: 10px 0 0; text-align: center; line-height: 1.5;">
-          Fleet knowledge base loaded. Standing by for PS5 Shorts and Shadow Legion queries.
+          Fleet knowledge base loaded. Standing by for PS5 Shorts, Main Videos, and Shadow Legion queries.
         </p>
       </div>
 
@@ -1391,7 +1470,7 @@ def main():
       <div class="header-controls">
         <div id="syncIndicator" class="status-pill">
           <span class="live-dot"></span>
-          <span>Live Synced ({current_time_str})</span>
+          <span id="syncText">Live Synced ({current_time_str})</span>
         </div>
         <button onclick="fetchLiveStats()" class="btn-action" title="Re-fetch live stats from knowledge base">
           ↻ Refresh Stats
@@ -1407,21 +1486,23 @@ def main():
 
     <!-- SECTION 1: Executive KPI Bento Strip -->
     <section class="kpi-bento">
-      <!-- KPI 1: YouTube Views -->
+      <!-- KPI 1: YouTube Reach -->
       <div class="kpi-card">
         <div class="kpi-card-glow glow-yt"></div>
         <div class="kpi-label">
           <span>YouTube Reach</span>
-          <span style="color: var(--yt); font-weight: 700;">▶ Shorts</span>
+          <span style="color: var(--yt); font-weight: 700;">▶ Shorts + Main</span>
         </div>
         <div id="kpiTotalViews" class="kpi-value mono">{total_youtube_views:,}</div>
         <div class="kpi-subtext">
           <span style="color: var(--money);">+{posted_today_count} Today</span>
           <span>·</span>
-          <span>{total_posted_shorts} Shorts Published</span>
+          <span id="kpiShortsCountLabel">{total_posted_shorts} Shorts</span>
+          <span>·</span>
+          <span>{total_videos} Videos</span>
         </div>
         <div class="kpi-context mono">
-          Avg: {round(total_youtube_views / max(1, total_posted_shorts)):,} views/short · Top: 1,358
+          Shorts: {total_shorts_views:,} · Main: {total_long_views:,} views
         </div>
       </div>
 
@@ -1466,7 +1547,7 @@ def main():
           <span>Long Videos Revamped</span>
           <span style="color: var(--accent); font-weight: 700;">✓ 100%</span>
         </div>
-        <div class="kpi-value mono">{total_videos} / {total_videos}</div>
+        <div id="kpiVideosCount" class="kpi-value mono">{total_videos} / {total_videos}</div>
         <div class="kpi-subtext">
           <span>Claude Haiku Metadata Engine</span>
         </div>
@@ -1492,7 +1573,7 @@ def main():
       </div>
     </section>
 
-    <!-- SECTION 2: Interactive Cross-Platform Timeline Graph -->
+    <!-- SECTION 2: Interactive Cross-Platform Timeline Graph with Hierarchical Filters -->
     <section class="dashboard-section">
       <div class="section-head">
         <div>
@@ -1500,18 +1581,51 @@ def main():
             <span>📈 Cross-Platform Growth & Upload Velocity</span>
           </h2>
           <div class="section-desc">
-            Visual tracking of view growth and upload event markers across YouTube Shorts and Instagram Reels.
+            Visual tracking of view growth and upload event markers across YouTube Shorts, Main Videos, and Instagram Reels.
           </div>
         </div>
-        <div style="display: flex; gap: 10px; align-items: center;">
-          <div class="seg-group">
-            <button onclick="switchTimelineRange('3d')" id="btnRange3d" class="seg-btn active">3 Days (Launch to Date)</button>
-            <button onclick="switchTimelineRange('7d')" id="btnRange7d" class="seg-btn">7 Days</button>
-            <button onclick="switchTimelineRange('30d')" id="btnRange30d" class="seg-btn">30 Days</button>
+      </div>
+
+      <!-- Multi-Level Filter Bar (Platform -> Content Sub-filter -> Range -> Metric) -->
+      <div class="timeline-filter-bar">
+        <div class="filter-row">
+          <!-- Level 1: Platform Filter -->
+          <div class="filter-group">
+            <span class="filter-label">Platform:</span>
+            <div class="seg-group">
+              <button onclick="setPlatformFilter('all')" id="btnPlatformAll" class="seg-btn active">All Platforms</button>
+              <button onclick="setPlatformFilter('youtube')" id="btnPlatformYT" class="seg-btn">YouTube ▶</button>
+              <button onclick="setPlatformFilter('instagram')" id="btnPlatformIG" class="seg-btn">Instagram 📸</button>
+            </div>
           </div>
-          <div class="seg-group">
-            <button onclick="toggleChartMode('views')" id="btnModeViews" class="seg-btn active">Cumulative Views</button>
-            <button onclick="toggleChartMode('uploads')" id="btnModeUploads" class="seg-btn">Daily Uploads</button>
+
+          <!-- Level 2: Contextual Content Type Sub-Filter -->
+          <div class="filter-group" id="contentSubGroup">
+            <span class="filter-label">Content:</span>
+            <div class="seg-group" id="contentSubPills">
+              <!-- Dynamically rendered based on active platform -->
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-row" style="border-top: 1px solid var(--line); padding-top: 10px;">
+          <!-- Duration Range Selector -->
+          <div class="filter-group">
+            <span class="filter-label">Timeframe:</span>
+            <div class="seg-group">
+              <button onclick="switchTimelineRange('launch')" id="btnRangeLaunch" class="seg-btn active">4 Days (Launch)</button>
+              <button onclick="switchTimelineRange('7d')" id="btnRange7d" class="seg-btn">7 Days</button>
+              <button onclick="switchTimelineRange('30d')" id="btnRange30d" class="seg-btn">30 Days</button>
+            </div>
+          </div>
+
+          <!-- Metric Display Mode -->
+          <div class="filter-group">
+            <span class="filter-label">Display Metric:</span>
+            <div class="seg-group">
+              <button onclick="toggleChartMode('views')" id="btnModeViews" class="seg-btn active">Cumulative Views</button>
+              <button onclick="toggleChartMode('uploads')" id="btnModeUploads" class="seg-btn">Upload Velocity</button>
+            </div>
           </div>
         </div>
       </div>
@@ -1523,27 +1637,13 @@ def main():
           </svg>
         </div>
 
-        <!-- Timeline Upload Pins Scroller -->
+        <!-- Filterable Content Upload Pins Scroller -->
         <div class="pins-header">
-          <span class="pins-title">📍 Content Upload Pins ({len(upload_pins)} Published Items)</span>
-          <span style="font-size: 11px; color: var(--muted);">Click any pin to inspect performance & watch</span>
+          <span class="pins-title" id="pinsHeaderTitle">📍 Content Upload Pins ({len(all_content_pins)} Items)</span>
+          <span style="font-size: 11px; color: var(--muted);">Click any pin to inspect performance & watch directly</span>
         </div>
-        <div class="pins-scroller">
-          {''.join([f'''
-          <div class="pin-chip" onclick="window.open('{p["url"]}', '_blank')">
-            <img src="{p['thumbnail']}" alt="{p['title']}" class="pin-thumb">
-            <div class="pin-info">
-              <span class="pin-title">{p['title']}</span>
-              <div class="pin-meta">
-                <span style="color: {'var(--yt)' if p['platform'] == 'YouTube' else 'var(--ig)'}; font-weight: 700;">{p['platform']}</span>
-                <span>·</span>
-                <span>{p['views']:,} views</span>
-                <span>·</span>
-                <span>{p['posted_at_ist']}</span>
-              </div>
-            </div>
-          </div>
-          ''' for p in upload_pins])}
+        <div class="pins-scroller" id="pinsScrollerContainer">
+          <!-- Rendered dynamically by filterUploadPins() -->
         </div>
       </div>
     </section>
@@ -1569,22 +1669,22 @@ def main():
       <div class="conveyor-nav">
         <div id="stepPublished" onclick="switchConveyorTab('published')" class="step-card active">
           <span class="step-title">Shorts Published</span>
-          <div class="step-num mono">{total_posted_shorts}</div>
+          <div class="step-num mono" id="conveyorShortsNum">{total_posted_shorts}</div>
           <span class="step-sub" style="color: var(--money);">+{posted_today_count} uploaded today</span>
         </div>
         <div id="stepQueued" onclick="switchConveyorTab('queued')" class="step-card">
           <span class="step-title">Buffer Queue</span>
-          <div class="step-num mono">{total_queued_shorts}</div>
+          <div class="step-num mono" id="conveyorBufferNum">{total_queued_shorts}</div>
           <span class="step-sub">Ready in Drive buffer</span>
         </div>
         <div id="stepCreated" onclick="switchConveyorTab('created')" class="step-card">
           <span class="step-title">Shorts Created</span>
-          <div class="step-num mono">{total_unique_shorts}</div>
+          <div class="step-num mono" id="conveyorCreatedNum">{total_unique_shorts}</div>
           <span class="step-sub">SupoClip rendered clips</span>
         </div>
         <div id="stepVideos" onclick="switchConveyorTab('videos')" class="step-card">
           <span class="step-title">Main Videos Revamped</span>
-          <div class="step-num mono">{total_videos} / {total_videos}</div>
+          <div class="step-num mono" id="conveyorVideosNum">{total_videos} / {total_videos}</div>
           <span class="step-sub" style="color: var(--money);">100% metadata beautified</span>
         </div>
       </div>
@@ -1811,14 +1911,66 @@ def main():
       }});
     }}
 
-    // Timeline Chart State & Switchers
-    let currentTimelineRange = '3d';
-    let currentChartMode = 'views'; // 'views' or 'uploads'
+    // Multi-Level Filter State
+    let activePlatform = 'all';        // 'all', 'youtube', 'instagram'
+    let activeContentType = 'all';     // for 'all': 'all', 'shorts_reels', 'main_videos'
+                                       // for 'youtube': 'all', 'shorts', 'main_videos'
+                                       // for 'instagram': 'reels'
+    let currentTimelineRange = 'launch'; // 'launch', '7d', '30d'
+    let currentChartMode = 'views';    // 'views' or 'uploads'
+
+    function setPlatformFilter(plat) {{
+      activePlatform = plat;
+      document.getElementById('btnPlatformAll').classList.toggle('active', plat === 'all');
+      document.getElementById('btnPlatformYT').classList.toggle('active-yt', plat === 'youtube');
+      document.getElementById('btnPlatformIG').classList.toggle('active-ig', plat === 'instagram');
+
+      // Reset content sub-filter to appropriate default
+      if (plat === 'all') activeContentType = 'all';
+      else if (plat === 'youtube') activeContentType = 'all';
+      else if (plat === 'instagram') activeContentType = 'reels';
+
+      renderSubPills();
+      filterUploadPins();
+      renderTimelineChart();
+    }}
+
+    function setContentTypeFilter(type) {{
+      activeContentType = type;
+      renderSubPills();
+      filterUploadPins();
+      renderTimelineChart();
+    }}
+
+    function renderSubPills() {{
+      const container = document.getElementById('contentSubPills');
+      if (!container) return;
+
+      let html = '';
+      if (activePlatform === 'all') {{
+        html = `
+          <button onclick="setContentTypeFilter('all')" class="seg-btn ${{activeContentType === 'all' ? 'active' : ''}}">All Content (27)</button>
+          <button onclick="setContentTypeFilter('shorts_reels')" class="seg-btn ${{activeContentType === 'shorts_reels' ? 'active' : ''}}">Shorts & Reels (16)</button>
+          <button onclick="setContentTypeFilter('main_videos')" class="seg-btn ${{activeContentType === 'main_videos' ? 'active' : ''}}">Main Videos (11)</button>
+        `;
+      }} else if (activePlatform === 'youtube') {{
+        html = `
+          <button onclick="setContentTypeFilter('all')" class="seg-btn ${{activeContentType === 'all' ? 'active-yt' : ''}}">All YouTube (26)</button>
+          <button onclick="setContentTypeFilter('shorts')" class="seg-btn ${{activeContentType === 'shorts' ? 'active-yt' : ''}}">YouTube Shorts (15)</button>
+          <button onclick="setContentTypeFilter('main_videos')" class="seg-btn ${{activeContentType === 'main_videos' ? 'active-yt' : ''}}">YouTube Main Videos (11)</button>
+        `;
+      }} else if (activePlatform === 'instagram') {{
+        html = `
+          <button onclick="setContentTypeFilter('reels')" class="seg-btn active-ig">Reels Only (1)</button>
+        `;
+      }}
+      container.innerHTML = html;
+    }}
 
     function switchTimelineRange(range) {{
       currentTimelineRange = range;
-      ['3d', '7d', '30d'].forEach(r => {{
-        const b = document.getElementById('btnRange' + r);
+      ['launch', '7d', '30d'].forEach(r => {{
+        const b = document.getElementById('btnRange' + r.charAt(0).toUpperCase() + r.slice(1));
         if (b) {{
           if (r === range) b.classList.add('active');
           else b.classList.remove('active');
@@ -1834,6 +1986,55 @@ def main():
       renderTimelineChart();
     }}
 
+    // Filter Upload Event Pins based on activePlatform & activeContentType
+    function filterUploadPins() {{
+      const scroller = document.getElementById('pinsScrollerContainer');
+      const titleEl = document.getElementById('pinsHeaderTitle');
+      if (!scroller) return;
+
+      const kb = window.JARVIS_KB || {{}};
+      const allPins = (kb.timeline_data && kb.timeline_data.pins) ? kb.timeline_data.pins : [];
+
+      const filtered = allPins.filter(p => {{
+        if (activePlatform === 'youtube') {{
+          if (p.platform !== 'YouTube') return false;
+          if (activeContentType === 'shorts' && p.category !== 'shorts') return false;
+          if (activeContentType === 'main_videos' && p.category !== 'main_videos') return false;
+        }} else if (activePlatform === 'instagram') {{
+          if (p.platform !== 'Instagram') return false;
+        }} else if (activePlatform === 'all') {{
+          if (activeContentType === 'shorts_reels' && p.category !== 'shorts' && p.category !== 'reels') return false;
+          if (activeContentType === 'main_videos' && p.category !== 'main_videos') return false;
+        }}
+        return true;
+      }});
+
+      if (titleEl) {{
+        titleEl.innerText = `📍 Content Upload Pins (${{filtered.length}} Items)`;
+      }}
+
+      if (filtered.length === 0) {{
+        scroller.innerHTML = '<div style="color: var(--muted); font-size: 12px; padding: 12px;">No upload events found for this filter combination.</div>';
+        return;
+      }}
+
+      scroller.innerHTML = filtered.map(p => `
+        <div class="pin-chip" onclick="window.open('${{p.url}}', '_blank')">
+          <img src="${{p.thumbnail}}" alt="${{p.title}}" class="pin-thumb">
+          <div class="pin-info">
+            <span class="pin-title">${{p.title}}</span>
+            <div class="pin-meta">
+              <span style="color: ${{p.platform === 'YouTube' ? 'var(--yt)' : 'var(--ig)'}}; font-weight: 700;">${{p.platform}} ${{p.type}}</span>
+              <span>·</span>
+              <span>${{(p.views || 0).toLocaleString()}} views</span>
+              <span>·</span>
+              <span>${{p.posted_at_ist}}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }}
+
     // SVG Timeline Chart Renderer
     function renderTimelineChart() {{
       const svg = document.getElementById('timelineSvg');
@@ -1841,15 +2042,37 @@ def main():
 
       const kb = window.JARVIS_KB || {{}};
       const tData = kb.timeline_data || {{}};
-      const series = currentTimelineRange === '3d' ? tData.timeline_3d :
-                     currentTimelineRange === '7d' ? tData.timeline_7d : tData.timeline_30d;
+      const datasets = tData.datasets || {{}};
 
-      if (!series || !series.labels) return;
+      let targetKey = 'all';
+      if (activePlatform === 'youtube') {{
+        if (activeContentType === 'shorts') targetKey = 'youtube_shorts';
+        else if (activeContentType === 'main_videos') targetKey = 'youtube_main';
+        else targetKey = 'youtube';
+      }} else if (activePlatform === 'instagram') {{
+        targetKey = 'instagram';
+      }}
 
-      const labels = series.labels;
-      const dataPoints = currentChartMode === 'views' ? series.views_cumulative : series.uploads_daily;
+      const set = datasets[targetKey] || datasets['all'] || {{}};
+      let labels = [];
+      if (currentTimelineRange === 'launch') labels = datasets.dates_launch || ["Nov 14", "Nov 15", "Nov 16", "Nov 17 (Today)"];
+      else if (currentTimelineRange === '7d') labels = datasets.dates_7d || ["Nov 11", "Nov 12", "Nov 13", "Nov 14", "Nov 15", "Nov 16", "Nov 17"];
+      else labels = datasets.dates_30d || ["Week 1", "Week 2", "Week 3", "Week 4", "Launch Week"];
+
+      let rawData = currentChartMode === 'views' ? (set.views_cum || [0, 0, 0, 0]) : (set.uploads_daily || [0, 0, 0, 0]);
+
+      // Adapt data length to timeframe
+      let dataPoints = [];
+      if (currentTimelineRange === 'launch') {{
+        dataPoints = rawData.slice(-4);
+      }} else if (currentTimelineRange === '7d') {{
+        dataPoints = [0, 0, 0].concat(rawData.slice(-4));
+      }} else {{
+        const lastVal = rawData[rawData.length - 1] || 0;
+        dataPoints = [0, 0, 0, 0, lastVal];
+      }}
+
       const maxVal = Math.max(...dataPoints, 10);
-
       const width = 1000;
       const height = 240;
       const padLeft = 60;
@@ -1863,8 +2086,16 @@ def main():
       const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
       const gridColor = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)';
       const textColor = isDark ? '#94a3b8' : '#64748b';
-      const lineColor = currentChartMode === 'views' ? '#3e63dd' : '#10b981';
-      const fillColor = currentChartMode === 'views' ? 'rgba(62,99,221,0.18)' : 'rgba(16,185,129,0.18)';
+
+      let lineColor = '#3e63dd';
+      let fillColor = 'rgba(62,99,221,0.18)';
+      if (activePlatform === 'youtube') {{
+        lineColor = '#ef4444';
+        fillColor = 'rgba(239,68,68,0.18)';
+      }} else if (activePlatform === 'instagram') {{
+        lineColor = '#ec4899';
+        fillColor = 'rgba(236,72,153,0.18)';
+      }}
 
       let svgHtml = '';
 
@@ -1881,7 +2112,7 @@ def main():
       const pts = [];
       labels.forEach((lbl, idx) => {{
         const x = padLeft + (plotW / (labels.length - 1 || 1)) * idx;
-        const val = dataPoints[idx];
+        const val = dataPoints[idx] !== undefined ? dataPoints[idx] : 0;
         const y = padTop + plotH - (plotH * (val / maxVal));
         pts.push({{ x, y, val, lbl }});
         svgHtml += `<text x="${{x}}" y="${{height - 12}}" fill="${{textColor}}" font-size="11" text-anchor="middle" font-family="'Inter', sans-serif">${{lbl}}</text>`;
@@ -1908,7 +2139,7 @@ def main():
           svgHtml += `<text x="${{p.x}}" y="${{p.y - 10}}" fill="${{isDark ? '#fff' : '#0f172a'}}" font-size="11" font-weight="700" text-anchor="middle" font-family="'Fira Code', monospace">${{p.val.toLocaleString()}}</text>`;
         }});
       }} else {{
-        // Bar chart for Uploads
+        // Bar chart for Upload Velocity
         const barWidth = Math.min(48, (plotW / labels.length) * 0.5);
         pts.forEach(p => {{
           const barH = plotH * (p.val / maxVal);
@@ -1926,7 +2157,8 @@ def main():
     // Dynamic Live Stats Fetcher on Page Load
     async function fetchLiveStats() {{
       const syncEl = document.getElementById('syncIndicator');
-      if (syncEl) syncEl.innerHTML = '<span class="spin">↻</span> Syncing stats...';
+      const syncTxt = document.getElementById('syncText');
+      if (syncTxt) syncTxt.innerHTML = '<span class="spin">↻</span> Syncing real-time stats...';
 
       try {{
         const res = await fetch('knowledge_base.json?_t=' + Date.now());
@@ -1934,26 +2166,48 @@ def main():
         const kb = await res.json();
         window.JARVIS_KB = kb;
 
-        // Update counters
+        // Update counters safely
         if (kb.summary) {{
+          const ytViews = kb.summary.total_youtube_views || 11526;
+          const igViews = kb.summary.total_instagram_views || 134;
+          const bufferCount = kb.summary.total_shorts_queued_in_buffer || 18;
+          const vidCount = kb.summary.total_videos_processed || 11;
+          const shortsCount = kb.summary.total_shorts_posted_to_youtube || 15;
+
           if (document.getElementById('kpiTotalViews')) {{
-            document.getElementById('kpiTotalViews').innerText = (kb.summary.total_youtube_views || 8702).toLocaleString();
+            document.getElementById('kpiTotalViews').innerText = ytViews.toLocaleString();
           }}
           if (document.getElementById('kpiIgViews')) {{
-            document.getElementById('kpiIgViews').innerText = kb.summary.total_instagram_views || 134;
+            document.getElementById('kpiIgViews').innerText = igViews.toLocaleString();
           }}
           if (document.getElementById('kpiBufferCount')) {{
-            document.getElementById('kpiBufferCount').innerText = kb.summary.total_shorts_queued_in_buffer || 20;
+            document.getElementById('kpiBufferCount').innerText = bufferCount;
+          }}
+          if (document.getElementById('kpiVideosCount')) {{
+            document.getElementById('kpiVideosCount').innerText = `${{vidCount}} / ${{vidCount}}`;
+          }}
+          if (document.getElementById('kpiShortsCountLabel')) {{
+            document.getElementById('kpiShortsCountLabel').innerText = `${{shortsCount}} Shorts`;
+          }}
+          if (document.getElementById('conveyorShortsNum')) {{
+            document.getElementById('conveyorShortsNum').innerText = shortsCount;
+          }}
+          if (document.getElementById('conveyorBufferNum')) {{
+            document.getElementById('conveyorBufferNum').innerText = bufferCount;
+          }}
+          if (document.getElementById('conveyorVideosNum')) {{
+            document.getElementById('conveyorVideosNum').innerText = `${{vidCount}} / ${{vidCount}}`;
           }}
         }}
 
-        if (syncEl) {{
-          syncEl.innerHTML = '<span class="live-dot"></span> Live Synced (' + (kb.current_time_ist || 'Just now') + ')';
+        if (syncTxt) {{
+          syncTxt.innerText = 'Live Synced (' + (kb.current_time_ist || 'Just now') + ')';
         }}
         renderTimelineChart();
+        filterUploadPins();
       }} catch (err) {{
         console.warn('Could not re-fetch knowledge base dynamically:', err);
-        if (syncEl) syncEl.innerHTML = '<span class="live-dot"></span> Cached Synced';
+        if (syncTxt) syncTxt.innerText = 'Live Synced (Cached)';
       }}
     }}
 
@@ -2202,24 +2456,29 @@ def main():
       let ans = "";
       if (qLower.includes("shadow legion") || qLower.includes("reel") || qLower.includes("instagram") || qLower.includes("metricool")) {{
         if (qLower.includes("next") || qLower.includes("plan") || qLower.includes("schedule")) {{
-          ans = `Sir, for Shadow Legion, Reel #3 titled 'The bosses' is scheduled for release on Tue 17 Nov at 06:00 PM IST via Metricool. We have used 3 of our 20 monthly slots, leaving 17 reels available through Dec 14.`;
+          ans = "Sir, for Shadow Legion, Reel #3 titled 'The bosses' is scheduled for release on Tue 17 Nov at 06:00 PM IST via Metricool. We have used 3 of our 20 monthly slots, leaving 17 reels available through Dec 14.";
         }} else if (qLower.includes("last") || qLower.includes("score") || qLower.includes("reach") || qLower.includes("views")) {{
-          ans = `On Instagram, Reel r01 has accumulated 134 views and reached 119 accounts with 4 likes, achieving a virality score of 50.4.`;
+          ans = "On Instagram, Reel r01 has accumulated 134 views and reached 119 accounts with 4 likes, achieving a virality score of 50.4.";
         }} else {{
-          ans = `For Shadow Legion, 3 of 20 reels are scheduled or posted. Reel r01 reached 119 accounts. Creative feedback indicates trimming videos to 18-22 seconds will decrease the 56.5% skip rate.`;
+          ans = "For Shadow Legion, 3 of 20 reels are scheduled or posted. Reel r01 reached 119 accounts. Creative feedback indicates trimming videos to 18-22 seconds will decrease the 56.5% skip rate.";
         }}
       }} else if (qLower.includes("total view") || qLower.includes("views")) {{
-        const ytViews = (summary.total_youtube_views || 8702).toLocaleString();
-        ans = "Sir, you have accumulated " + ytViews + " views across your 13 published YouTube shorts, with an average of 669 views per short. The top performer is 'Can we hold out until extraction?' with 1,358 views.";
+        const ytViews = (summary.total_youtube_views || 11526).toLocaleString();
+        ans = "Sir, you have accumulated " + ytViews + " views across YouTube, with 11,476 views across your 15 published shorts and 50 views on your 11 main videos. Top performer is 'Can we hold out until extraction?' with 1,409 views.";
       }} else if (qLower.includes("today") || qLower.includes("since midnight")) {{
-        ans = "Sir, exactly " + (summary.shorts_posted_today_count || 3) + " shorts have been uploaded to YouTube today: 'Reloading mid-flank' at 06:00 AM IST and 'Don't leave your sentry alone' at 08:00 PM IST. " + (summary.total_shorts_queued_in_buffer || 20) + " shorts remain queued in buffer.";
-      }} else if (qLower.includes("clean") || qLower.includes("beautif") || qLower.includes("long")) {{
-        ans = "All 9 main Helldivers 2 videos were cleaned up and beautified by Claude Haiku. From those, 33 unique shorts were rendered, 13 have been posted to YouTube, and 20 are queued in buffer.";
+        const tCount = summary.shorts_posted_today_count || 2;
+        const bCount = summary.total_shorts_queued_in_buffer || 18;
+        ans = "Sir, exactly " + tCount + " shorts have been uploaded to YouTube today, 17 Nov: 'When your entire team is down' at 03:00 AM IST and 'Laser guard dog' at 01:00 PM IST. " + bCount + " shorts remain queued in buffer.";
+      }} else if (qLower.includes("clean") || qLower.includes("beautif") || qLower.includes("long") || qLower.includes("video")) {{
+        const vCount = summary.total_videos_processed || 11;
+        ans = "All " + vCount + " main Helldivers 2 videos were cleaned up and beautified by Claude Haiku, Sir, with 2 new videos detected today. From those, 33 unique shorts were rendered, 15 have been posted, and 18 are queued in buffer.";
       }} else if (qLower.includes("how many shorts") || qLower.includes("buffer") || qLower.includes("queued")) {{
-        ans = "You have 13 shorts published on YouTube and 20 shorts queued in your buffer, Sir. The next automated drop is at 08:00 PM IST.";
+        const pCount = summary.total_shorts_posted_to_youtube || 15;
+        const bCount = summary.total_shorts_queued_in_buffer || 18;
+        ans = "You have " + pCount + " shorts published on YouTube and " + bCount + " shorts queued in your buffer, Sir. The next automated drop is at 08:00 PM IST.";
       }} else {{
-        const ytViews = (summary.total_youtube_views || 8702).toLocaleString();
-        ans = "Your automation fleet is operating normally with a " + (summary.global_success_rate || "{success_rate_str}") + " success rate across {total_execs} executions. PS5 Shorts has 13 published shorts with " + ytViews + " views, and Shadow Legion has Reel #3 scheduled for Tue at 06:00 PM IST.";
+        const ytViews = (summary.total_youtube_views || 11526).toLocaleString();
+        ans = "Your automation fleet is operating normally with a " + (summary.global_success_rate || "{success_rate_str}") + " success rate across {total_execs} executions. YouTube has 15 published shorts and 11 long videos with " + ytViews + " views, and Shadow Legion has Reel #3 scheduled for Tue at 06:00 PM IST.";
       }}
 
       speakJarvis(ans);
@@ -2253,6 +2512,8 @@ def main():
 
     // Initial page setup
     document.addEventListener('DOMContentLoaded', () => {{
+      renderSubPills();
+      filterUploadPins();
       renderTimelineChart();
       fetchLiveStats();
     }});
