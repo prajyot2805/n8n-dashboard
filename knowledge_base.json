@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-17 10:10:59 UTC",
-  "current_time_ist": "17 Nov 2026, 03:40 PM IST",
+  "generated_at": "2026-11-17 10:12:23 UTC",
+  "current_time_ist": "17 Nov 2026, 03:42 PM IST",
   "n8n_instance_url": "https://n8n.srv992629.hstgr.cloud",
   "summary": {
     "total_videos_processed": 11,
@@ -17,7 +17,7 @@
         "duration": 20.9,
         "url": "https://youtube.com/shorts/79_ZyoNT1jg",
         "video_id": "79_ZyoNT1jg",
-        "views": 157,
+        "views": 145,
         "thumbnail": "https://i.ytimg.com/vi/79_ZyoNT1jg/mqdefault.jpg",
         "hook": "One pickup, then an orbital request",
         "source_video_id": "YiFseOnuyq4",
@@ -62,7 +62,7 @@
         "duration": 28.4,
         "url": "https://youtube.com/shorts/qpcaqb9wPhE",
         "video_id": "qpcaqb9wPhE",
-        "views": 1233,
+        "views": 1232,
         "thumbnail": "https://i.ytimg.com/vi/qpcaqb9wPhE/mqdefault.jpg",
         "hook": "Landing now, countdown starts soon",
         "source_video_id": "9fAiHB6V3pw",
@@ -83,7 +83,7 @@
         "duration": 26.9,
         "url": "https://youtube.com/shorts/0fm5Jqik_gU",
         "video_id": "0fm5Jqik_gU",
-        "views": 207,
+        "views": 217,
         "thumbnail": "https://i.ytimg.com/vi/0fm5Jqik_gU/mqdefault.jpg",
         "hook": "Flanked and reloading, nowhere to hide",
         "source_video_id": "9fAiHB6V3pw",
@@ -104,7 +104,7 @@
         "duration": 25.4,
         "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
         "video_id": "YTVhAYM3Ftg",
-        "views": 1182,
+        "views": 1181,
         "thumbnail": "https://i.ytimg.com/vi/YTVhAYM3Ftg/mqdefault.jpg",
         "hook": "Heavies coming from southwest, sentry exposed",
         "source_video_id": "9fAiHB6V3pw",
@@ -124,15 +124,15 @@
     "total_workflow_executions": 400,
     "global_success_rate": "99.8%",
     "total_errors": 1,
-    "total_youtube_views": 11526,
-    "total_shorts_views": 11476,
-    "total_long_views": 50,
+    "total_youtube_views": 11621,
+    "total_shorts_views": 11471,
+    "total_long_views": 150,
     "total_instagram_views": 134
   },
   "youtube_stats": {
-    "total_views": 11526,
-    "shorts_views": 11476,
-    "long_views": 50,
+    "total_views": 11621,
+    "shorts_views": 11471,
+    "long_views": 150,
     "total_shorts": 15,
     "total_long_videos": 11,
     "average_views_per_short": 765,
@@ -146,18 +146,18 @@
       "VZkMukyJZh4": 1409,
       "j10vRhfmPiI": 1246,
       "_bnDIO6ZOeo": 1407,
-      "k3aeGtTL464": 807,
-      "79_ZyoNT1jg": 157,
+      "k3aeGtTL464": 805,
+      "79_ZyoNT1jg": 145,
       "wJ5ODZSqqQ4": 271,
       "6oNpggoXkXc": 621,
-      "S1yxC6H_lnE": 571,
+      "S1yxC6H_lnE": 572,
       "hLD165HKOws": 918,
       "Gt-k2NPMMQA": 368,
       "6fQH2crY_UE": 266,
       "YM7R8U3VR9o": 813,
-      "qpcaqb9wPhE": 1233,
-      "0fm5Jqik_gU": 207,
-      "YTVhAYM3Ftg": 1182,
+      "qpcaqb9wPhE": 1232,
+      "0fm5Jqik_gU": 217,
+      "YTVhAYM3Ftg": 1181,
       "7OeDe1RP5LE": 5,
       "GULKBJ4BwHM": 4,
       "YiFseOnuyq4": 6,
@@ -168,7 +168,7 @@
       "9fAiHB6V3pw": 3,
       "y0DrBXmTtlg": 1,
       "XR8hMT8dmuQ": 1,
-      "iQcVhO4fyH0": 0
+      "iQcVhO4fyH0": 100
     }
   },
   "shadow_legion": {
@@ -186,9 +186,7 @@
       "skip_rate": 56.5,
       "view_rate": 43.5,
       "post_id": "18190674400418640",
-      "ig_url": "https://www.instagram.com/reel/Dfw87JDEZXG/",
-      "id": "r01",
-      "ig_id": "18190674400418640"
+      "ig_url": "https://www.instagram.com/reel/Dfw87JDEZXG/"
     },
     "views": 134,
     "reach": 119,
@@ -213,17 +211,17 @@
     "lessons": [
       {
         "n": "1",
-        "lesson": "Hook: r01 opened on a kill close-up with a first-person claim; skip rate 56.5 %, view rate 43.5 %. More than half leave in the first seconds: put bigger text and a stronger event in frame 1.",
+        "lesson": "Hook: r01 skip rate was 56.5% - over half leave in first 3s. Action: frame 1 text must be 2x larger with visceral conflict immediately.",
         "updated_at": "17 Nov 2026"
       },
       {
         "n": "2",
-        "lesson": "Body: r01 average watch time 4.8 s of 27.8 s. Viewers leave before second 5: keep reels near 18-22 s and land the first payoff before second 3.",
+        "lesson": "Duration: r01 avg watch was 4.8s of 27.8s. Action: trim reels to 18-22s and land core payoff before second 3.",
         "updated_at": "17 Nov 2026"
       },
       {
         "n": "3",
-        "lesson": "Response: r01 (army-types, 19:30) got 4 likes, 1 comment, 0 shares, 0 saves on 119 reach (score 50). No reason to save or share was given: add one concrete save/share reason per reel.",
+        "lesson": "Save/Share Cue: 4 likes on 119 reach. Action: include a concrete save/share CTA ('Save this boss weapon guide').",
         "updated_at": "17 Nov 2026"
       }
     ]
@@ -264,7 +262,7 @@
           1441,
           9086,
           11252,
-          11660
+          11755
         ],
         "uploads_daily": [
           6,
@@ -290,7 +288,7 @@
           1441,
           8952,
           11118,
-          11526
+          11621
         ],
         "uploads_daily": [
           6,
@@ -316,7 +314,7 @@
           1409,
           8904,
           11070,
-          11476
+          11471
         ],
         "uploads_daily": [
           1,
@@ -342,7 +340,7 @@
           32,
           48,
           48,
-          50
+          150
         ],
         "uploads_daily": [
           5,
@@ -393,7 +391,7 @@
         "title": "Helldivers 2 machine gun shoots straight on target",
         "url": "https://youtu.be/iQcVhO4fyH0",
         "thumbnail": "https://i.ytimg.com/vi/iQcVhO4fyH0/mqdefault.jpg",
-        "views": 0,
+        "views": 100,
         "score": 92,
         "posted_at_ist": "17 Nov 2026, 03:20 PM IST",
         "timestamp": "2026-11-17T09:50:19.538Z"
@@ -419,7 +417,7 @@
         "title": "Laser guard dog and Bugs go hand in hand",
         "url": "https://youtube.com/shorts/79_ZyoNT1jg",
         "thumbnail": "https://i.ytimg.com/vi/79_ZyoNT1jg/mqdefault.jpg",
-        "views": 157,
+        "views": 145,
         "score": 56,
         "posted_at_ist": "17 Nov 2026, 01:00 PM IST",
         "timestamp": "2026-11-17T07:30:09.818Z"
@@ -445,7 +443,7 @@
         "title": "Don't leave your sentry alone when Heavies close in",
         "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
         "thumbnail": "https://i.ytimg.com/vi/YTVhAYM3Ftg/mqdefault.jpg",
-        "views": 1182,
+        "views": 1181,
         "score": 66,
         "posted_at_ist": "16 Nov 2026, 08:00 PM IST",
         "timestamp": "2026-11-16T14:30:13.010Z"
@@ -458,7 +456,7 @@
         "title": "Reloading mid-flank in Helldivers 2: Left, left, right!",
         "url": "https://youtube.com/shorts/0fm5Jqik_gU",
         "thumbnail": "https://i.ytimg.com/vi/0fm5Jqik_gU/mqdefault.jpg",
-        "views": 207,
+        "views": 217,
         "score": 78,
         "posted_at_ist": "16 Nov 2026, 06:00 AM IST",
         "timestamp": "2026-11-16T00:30:09.657Z"
@@ -471,7 +469,7 @@
         "title": "Helldivers 2: will Pelican One make it to extraction?",
         "url": "https://youtube.com/shorts/qpcaqb9wPhE",
         "thumbnail": "https://i.ytimg.com/vi/qpcaqb9wPhE/mqdefault.jpg",
-        "views": 1233,
+        "views": 1232,
         "score": 88,
         "posted_at_ist": "16 Nov 2026, 03:00 AM IST",
         "timestamp": "2026-11-15T21:30:08.579Z"
@@ -550,7 +548,7 @@
         "title": "I called reinforcements mid-firefight in Helldivers 2",
         "url": "https://youtube.com/shorts/k3aeGtTL464",
         "thumbnail": "https://i.ytimg.com/vi/k3aeGtTL464/mqdefault.jpg",
-        "views": 807,
+        "views": 805,
         "score": 62,
         "posted_at_ist": "15 Nov 2026, 04:00 PM IST",
         "timestamp": "2026-11-15T10:30:55.313Z"
@@ -576,7 +574,7 @@
         "title": "Can one eagle strike save a Helldivers 2 squad?",
         "url": "https://youtube.com/shorts/S1yxC6H_lnE",
         "thumbnail": "https://i.ytimg.com/vi/S1yxC6H_lnE/mqdefault.jpg",
-        "views": 571,
+        "views": 572,
         "score": 70,
         "posted_at_ist": "15 Nov 2026, 02:00 PM IST",
         "timestamp": "2026-11-15T08:30:55.235Z"
@@ -825,7 +823,7 @@
           "duration": 21.2,
           "url": "https://youtube.com/shorts/k3aeGtTL464",
           "video_id": "k3aeGtTL464",
-          "views": 807,
+          "views": 805,
           "thumbnail": "https://i.ytimg.com/vi/k3aeGtTL464/mqdefault.jpg",
           "hook": "Package dropped mid-firefight. Watch this.",
           "source_video_id": "7OeDe1RP5LE",
@@ -935,7 +933,7 @@
           "duration": 20.9,
           "url": "https://youtube.com/shorts/79_ZyoNT1jg",
           "video_id": "79_ZyoNT1jg",
-          "views": 157,
+          "views": 145,
           "thumbnail": "https://i.ytimg.com/vi/79_ZyoNT1jg/mqdefault.jpg",
           "hook": "One pickup, then an orbital request",
           "source_video_id": "YiFseOnuyq4",
@@ -1106,7 +1104,7 @@
           "duration": 32.7,
           "url": "https://youtube.com/shorts/S1yxC6H_lnE",
           "video_id": "S1yxC6H_lnE",
-          "views": 571,
+          "views": 572,
           "thumbnail": "https://i.ytimg.com/vi/S1yxC6H_lnE/mqdefault.jpg",
           "hook": "Get down, the eagle is incoming",
           "source_video_id": "qIsrqx0nCrg",
@@ -1430,7 +1428,7 @@
           "duration": 28.4,
           "url": "https://youtube.com/shorts/qpcaqb9wPhE",
           "video_id": "qpcaqb9wPhE",
-          "views": 1233,
+          "views": 1232,
           "thumbnail": "https://i.ytimg.com/vi/qpcaqb9wPhE/mqdefault.jpg",
           "hook": "Landing now, countdown starts soon",
           "source_video_id": "9fAiHB6V3pw",
@@ -1451,7 +1449,7 @@
           "duration": 26.9,
           "url": "https://youtube.com/shorts/0fm5Jqik_gU",
           "video_id": "0fm5Jqik_gU",
-          "views": 207,
+          "views": 217,
           "thumbnail": "https://i.ytimg.com/vi/0fm5Jqik_gU/mqdefault.jpg",
           "hook": "Flanked and reloading, nowhere to hide",
           "source_video_id": "9fAiHB6V3pw",
@@ -1472,7 +1470,7 @@
           "duration": 25.4,
           "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
           "video_id": "YTVhAYM3Ftg",
-          "views": 1182,
+          "views": 1181,
           "thumbnail": "https://i.ytimg.com/vi/YTVhAYM3Ftg/mqdefault.jpg",
           "hook": "Heavies coming from southwest, sentry exposed",
           "source_video_id": "9fAiHB6V3pw",
@@ -1564,7 +1562,7 @@
       "thumbnail": "https://i.ytimg.com/vi/iQcVhO4fyH0/mqdefault.jpg",
       "detected_at": "2026-11-17T09:50:19.538Z",
       "detected_at_ist": "17 Nov 2026, 03:20 PM IST",
-      "views": 0,
+      "views": 100,
       "metadata_changed": true,
       "shorts_made": 0,
       "shorts_posted": 0,
