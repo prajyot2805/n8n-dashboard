@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-19T17:22:04.463782Z",
+ "generated_at": "2026-11-19T17:25:03.116184Z",
  "ps5": {
   "now": [],
   "today": {
@@ -21,7 +21,7 @@
      "game": "Helldivers 2",
      "at": "2026-11-19T00:30:21.682000Z",
      "url": "https://youtube.com/shorts/2-wNg1d5mvU",
-     "views": 266,
+     "views": 268,
      "score": 72,
      "duration": 30,
      "from": "Helldivers 2 machine gun shoots straight on target"
@@ -32,7 +32,7 @@
      "game": "Helldivers 2",
      "at": "2026-11-19T07:30:20.821000Z",
      "url": "https://youtube.com/shorts/d2dqCcDgHDo",
-     "views": 209,
+     "views": 202,
      "score": 82,
      "duration": 22,
      "from": "Helldivers 2: alone against Terminids, can I hold?"
@@ -43,7 +43,7 @@
      "game": "GTA 6",
      "at": "2026-11-19T11:30:21.124000Z",
      "url": "https://youtube.com/shorts/MC4y5ZYRO3w",
-     "views": 270,
+     "views": 380,
      "score": 88,
      "duration": 26,
      "from": "Scuba diver checks how accurate GTA 6's dive mission is"
@@ -54,7 +54,7 @@
      "game": "GTA 6",
      "at": "2026-11-19T14:30:20.536000Z",
      "url": "https://youtube.com/shorts/6_EZFFO1cc0",
-     "views": 141,
+     "views": 140,
      "score": 80,
      "duration": 23,
      "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6"
@@ -303,7 +303,7 @@
     "status": "clipped",
     "shorts_made": 5,
     "shorts_posted": "",
-    "views": 4
+    "views": 13
    },
    {
     "title": "Scuba diver checks how accurate GTA 6's dive mission is",
@@ -369,9 +369,9 @@
   "issues": [],
   "totals": {
    "shorts_posted": 25,
-   "shorts_views": 16378,
+   "shorts_views": 16532,
    "videos": 18,
-   "video_views": 115
+   "video_views": 124
   },
   "per_day": [
    {
@@ -660,7 +660,7 @@
   "j10vRhfmPiI": 1241,
   "_bnDIO6ZOeo": 1409,
   "k3aeGtTL464": 815,
-  "U8i6h36yVDY": 169,
+  "U8i6h36yVDY": 167,
   "79_ZyoNT1jg": 925,
   "CrveKG32kqA": 599,
   "wJ5ODZSqqQ4": 296,
@@ -674,13 +674,13 @@
   "0fm5Jqik_gU": 328,
   "YTVhAYM3Ftg": 1286,
   "lfx64AWbC9s": 272,
-  "8I9h6Bq48vY": 590,
-  "VNBRgawVmE8": 865,
-  "JY5Gays_MfQ": 414,
-  "2-wNg1d5mvU": 266,
-  "d2dqCcDgHDo": 209,
-  "6_EZFFO1cc0": 141,
-  "MC4y5ZYRO3w": 270,
+  "8I9h6Bq48vY": 620,
+  "VNBRgawVmE8": 871,
+  "JY5Gays_MfQ": 430,
+  "2-wNg1d5mvU": 268,
+  "d2dqCcDgHDo": 202,
+  "6_EZFFO1cc0": 140,
+  "MC4y5ZYRO3w": 380,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -697,7 +697,7 @@
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 4,
   "IVZI7UfJkH4": 15,
-  "Kpe0srbAOZc": 4,
+  "Kpe0srbAOZc": 13,
   "x6tnvdd_BCg": 8
  }
 }
