@@ -44,6 +44,9 @@ header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-
 header h1 { font-size: 18px; margin: 0; font-weight: 700; letter-spacing: -.01em; }
 .updated { color: var(--ink-3); font-size: 13px; }
 .updated.stale { color: var(--you); }
+.pull { font-size: 13px; color: var(--accent); font-weight: 600; text-decoration: none; }
+.pull:hover { text-decoration: underline; }
+.icon-btn:disabled { opacity: .6; cursor: progress; }
 .spacer { flex: 1; }
 .icon-btn { border: 1px solid var(--line); background: var(--surface); color: var(--ink-2); border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px; cursor: pointer; }
 .tabs { display: flex; gap: 4px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 12px; padding: 4px; margin-bottom: 20px; width: fit-content; max-width: 100%; }
@@ -113,7 +116,9 @@ tr:last-child td { border-bottom: 0; }
   <header>
     <h1>Creator Ops</h1>
     <span class="updated" id="updated">Loading…</span>
+    <a class="pull hidden" id="pull" href="https://github.com/prajyot2805/n8n-dashboard/actions/workflows/update.yml" target="_blank" rel="noopener">Pull new data on GitHub ↗</a>
     <span class="spacer"></span>
+    <button class="icon-btn" id="refresh" type="button">↻ Refresh</button>
     <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">◐ Theme</button>
   </header>
 
@@ -280,8 +285,10 @@ function render() {
   if (!data) return;
   const age = (Date.now() - new Date(data.generated_at)) / 6e4;
   const u = $('#updated');
-  u.textContent = 'Updated ' + ago(data.generated_at) + (age > 90 ? ' · data is old' : '');
-  u.classList.toggle('stale', age > 90);
+  u.textContent = watching ? 'Waiting for new data (GitHub takes about a minute)…' : 'Updated ' + ago(data.generated_at) + (age > 90 ? ' · data is old' : '');
+  u.classList.toggle('stale', age > 90 && !watching);
+  // A static page cannot start a pull itself (that needs a token); when the data is old, offer GitHub's Run workflow button.
+  $('#pull').classList.toggle('hidden', age <= 30 || watching);
   $('#ps5').innerHTML = renderPS5(data.ps5);
   $('#sl').innerHTML = renderSL(data.sl);
   wireTips($('#ps5'));
@@ -290,15 +297,44 @@ function render() {
     dot.textContent = n; dot.classList.toggle('hidden', !n);
   });
 }
+// The GitHub API serves a new commit at once; Pages can lag a minute. Fall back to the Pages copy.
+const API = 'https://api.github.com/repos/prajyot2805/n8n-dashboard/contents/status.json?ref=main';
+async function fetchStatus() {
+  try {
+    const r = await fetch(API + '&t=' + Date.now(), { cache: 'no-store', headers: { Accept: 'application/vnd.github.raw+json' } });
+    if (r.ok) return await r.json();
+  } catch (e) {}
+  const r = await fetch('status.json?t=' + Date.now(), { cache: 'no-store' });
+  return await r.json();
+}
+let watching = null;
 async function load() {
   try {
-    const r = await fetch('status.json?t=' + Date.now(), { cache: 'no-store' });
-    data = await r.json();
+    const d = await fetchStatus();
+    if (watching && d.generated_at !== watching.since) { clearInterval(watching.timer); watching = null; }
+    data = d;
     render();
   } catch (e) {
     $('#updated').textContent = 'Could not load status.json';
   }
 }
+$('#refresh').onclick = async () => {
+  const b = $('#refresh');
+  b.disabled = true; b.textContent = '↻ Refreshing…';
+  await load();
+  b.disabled = false; b.textContent = '↻ Refresh';
+};
+// After you press Run workflow on GitHub, check every 20 s for up to 10 min and show the new data as soon as it lands.
+$('#pull').onclick = () => {
+  if (!data) return;
+  if (watching) clearInterval(watching.timer);
+  const until = Date.now() + 10 * 60e3;
+  watching = { since: data.generated_at, timer: setInterval(() => {
+    if (Date.now() > until) { clearInterval(watching.timer); watching = null; render(); return; }
+    load();
+  }, 20e3) };
+  render();
+};
 load();
 setInterval(load, 5 * 60e3);
 setInterval(render, 60e3);

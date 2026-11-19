@@ -15,6 +15,10 @@ One page, two tabs:
 
 The posting order shown under "Up next" follows the pipeline's own rules: a booked Short posts in its slot, an unbooked GTA 6 Short takes over a slot booked for another game, and open slots take the best unbooked Short (marked "Likely"). If the pipeline's slots change (`SLOT_JS` in the ps5-shorts repo), update `PS5_SLOTS_MIN` here too; same for `SL_SLOTS` and `SL_BUDGET`.
 
+## Refreshing
+
+GitHub runs the free 30-minute timer only every 6–8 hours, so the page says "data is old" after 90 minutes. **↻ Refresh** re-reads `status.json` straight from the GitHub API (no Pages cache). When the data is over 30 minutes old, **Pull new data on GitHub ↗** opens the workflow's Run workflow button; the page then checks every 20 s for up to 10 minutes and shows the new data when it lands. The page cannot start a run itself: that needs a token, and this page is public.
+
 ## Secrets
 
 GitHub repository secrets: `N8N_BASE_URL`, `N8N_API_KEY`. Nothing secret is committed. Run locally with `python3 update_dashboard.py` (reads `~/.config/n8n/api.env`), then `python3 -m http.server` and open http://localhost:8000.
