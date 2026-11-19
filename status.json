@@ -1,110 +1,12 @@
 {
- "generated_at": "2026-11-19T17:25:03.116184Z",
+ "generated_at": "2026-11-19T19:21:10.772292Z",
  "ps5": {
   "now": [],
   "today": {
-   "posted": [
-    {
-     "id": "y0DrBXmTtlg_01",
-     "title": "Helldivers 2: Just chilling before extraction",
-     "game": "Helldivers 2",
-     "at": "2026-11-18T21:30:28.215000Z",
-     "url": "https://youtube.com/shorts/lfx64AWbC9s",
-     "views": 272,
-     "score": 88,
-     "duration": 30,
-     "from": "Helldivers 2 good squad gameplay: what teamwork looks like"
-    },
-    {
-     "id": "iQcVhO4fyH0_02",
-     "title": "Helldivers 2: Testing how long a machine gun can fire continuously",
-     "game": "Helldivers 2",
-     "at": "2026-11-19T00:30:21.682000Z",
-     "url": "https://youtube.com/shorts/2-wNg1d5mvU",
-     "views": 268,
-     "score": 72,
-     "duration": 30,
-     "from": "Helldivers 2 machine gun shoots straight on target"
-    },
-    {
-     "id": "gTX0z2q4rXw_01",
-     "title": "Helldivers 2: why does the squad keep dying?",
-     "game": "Helldivers 2",
-     "at": "2026-11-19T07:30:20.821000Z",
-     "url": "https://youtube.com/shorts/d2dqCcDgHDo",
-     "views": 202,
-     "score": 82,
-     "duration": 22,
-     "from": "Helldivers 2: alone against Terminids, can I hold?"
-    },
-    {
-     "id": "IVZI7UfJkH4_01",
-     "title": "GTA 6: Will this dive tour go terribly wrong?",
-     "game": "GTA 6",
-     "at": "2026-11-19T11:30:21.124000Z",
-     "url": "https://youtube.com/shorts/MC4y5ZYRO3w",
-     "views": 380,
-     "score": 88,
-     "duration": 26,
-     "from": "Scuba diver checks how accurate GTA 6's dive mission is"
-    },
-    {
-     "id": "LB8-bROhsBA_02",
-     "title": "GTA 6: If the Kingfisher is dead, the job failed",
-     "game": "GTA 6",
-     "at": "2026-11-19T14:30:20.536000Z",
-     "url": "https://youtube.com/shorts/6_EZFFO1cc0",
-     "views": 140,
-     "score": 80,
-     "duration": 23,
-     "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6"
-    }
-   ],
-   "uploads": [
-    {
-     "title": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
-     "game": "GTA 6",
-     "url": "https://youtu.be/LB8-bROhsBA",
-     "at": "2026-11-18T20:40:11Z",
-     "status": "clipped"
-    },
-    {
-     "title": "GTA 6 Second Hour on PS5 | Story Mode",
-     "game": "GTA 6",
-     "url": "https://youtu.be/0U7r2RVi1TI",
-     "at": "2026-11-19T04:45:39Z",
-     "status": "clipped"
-    },
-    {
-     "title": "Scuba diver checks how accurate GTA 6's dive mission is",
-     "game": "GTA 6",
-     "url": "https://youtu.be/IVZI7UfJkH4",
-     "at": "2026-11-19T06:44:21Z",
-     "status": "clipped"
-    },
-    {
-     "title": "Playing the PS5 in J's room in GTA 6",
-     "game": "GTA 6",
-     "url": "https://youtu.be/Kpe0srbAOZc",
-     "at": "2026-11-19T11:15:32Z",
-     "status": "clipped"
-    },
-    {
-     "title": "GTA 6: Picking Up Lu From Prison",
-     "game": "GTA 6",
-     "url": "https://youtu.be/x6tnvdd_BCg",
-     "at": "2026-11-19T15:20:22Z",
-     "status": "clipped"
-    }
-   ],
-   "shorts_made": 38,
-   "clipped": [
-    "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
-    "GTA 6 Second Hour on PS5 | Story Mode",
-    "GTA 6: Picking Up Lu From Prison",
-    "Playing the PS5 in J's room in GTA 6",
-    "Scuba diver checks how accurate GTA 6's dive mission is"
-   ]
+   "posted": [],
+   "uploads": [],
+   "shorts_made": 0,
+   "clipped": []
   },
   "up_next": [
    {
@@ -303,7 +205,7 @@
     "status": "clipped",
     "shorts_made": 5,
     "shorts_posted": "",
-    "views": 13
+    "views": 16
    },
    {
     "title": "Scuba diver checks how accurate GTA 6's dive mission is",
@@ -313,7 +215,7 @@
     "status": "clipped",
     "shorts_made": 5,
     "shorts_posted": 1,
-    "views": 15
+    "views": 16
    },
    {
     "title": "GTA 6 Second Hour on PS5 | Story Mode",
@@ -369,15 +271,11 @@
   "issues": [],
   "totals": {
    "shorts_posted": 25,
-   "shorts_views": 16532,
+   "shorts_views": 16738,
    "videos": 18,
-   "video_views": 124
+   "video_views": 128
   },
   "per_day": [
-   {
-    "day": "2026-11-06",
-    "posted": 0
-   },
    {
     "day": "2026-11-07",
     "posted": 0
@@ -429,6 +327,10 @@
    {
     "day": "2026-11-19",
     "posted": 5
+   },
+   {
+    "day": "2026-11-20",
+    "posted": 0
    }
   ],
   "top_week": [
@@ -460,7 +362,7 @@
     "game": "Helldivers 2",
     "at": "2026-11-16T14:30:13.010000Z",
     "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
-    "views": 1286,
+    "views": 1284,
     "score": 66,
     "duration": 25,
     "from": "Helldivers 2 PS5 lag and glitches until extraction"
@@ -471,7 +373,7 @@
     "game": "Helldivers 2",
     "at": "2026-11-15T21:30:08.579000Z",
     "url": "https://youtube.com/shorts/qpcaqb9wPhE",
-    "views": 1285,
+    "views": 1282,
     "score": 88,
     "duration": 28,
     "from": "Helldivers 2 PS5 lag and glitches until extraction"
@@ -492,17 +394,12 @@
  },
  "sl": {
   "ok": true,
-  "now": [
-   {
-    "kind": "you",
-    "text": "Reel #7 is due Fri 20 Nov, 10:00: turn on the laptop (SL → Turn ON)"
-   }
-  ],
+  "now": [],
   "today": [
    {
-    "id": "r06",
-    "title": "THE WEAKEST HUNTER · Part 2/8: Rank Is Destiny (story-first, live-action cold open)",
-    "at": "2026-11-19T12:30:00Z",
+    "id": "r07",
+    "title": "THE WEAKEST HUNTER · Part 3/8: Left for Dead (story-first, live-action low-HP cold open)",
+    "at": "2026-11-20T04:30:00Z",
     "status": "scheduled",
     "url": "",
     "views": null,
@@ -533,10 +430,20 @@
     "state": "scheduled"
    },
    {
+    "id": "r07",
+    "title": "THE WEAKEST HUNTER · Part 3/8: Left for Dead (story-first, live-action low-HP cold open)",
     "at": "2026-11-20T04:30:00Z",
-    "title": "THE WEAKEST HUNTER · Part 3/8: Left for Dead",
-    "state": "pending",
-    "stage": "job_created"
+    "status": "scheduled",
+    "url": "",
+    "views": null,
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "skip_rate": null,
+    "avg_watch": null,
+    "score": null,
+    "state": "scheduled"
    },
    {
     "at": "2026-11-23T04:30:00Z",
@@ -560,12 +467,27 @@
    }
   ],
   "budget": {
-   "used": 5,
+   "used": 6,
    "limit": 20,
    "from": "2026-11-14",
    "to": "2026-12-13"
   },
   "reels": [
+   {
+    "id": "r07",
+    "title": "THE WEAKEST HUNTER · Part 3/8: Left for Dead (story-first, live-action low-HP cold open)",
+    "at": "2026-11-20T04:30:00Z",
+    "status": "scheduled",
+    "url": "",
+    "views": null,
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "skip_rate": null,
+    "avg_watch": null,
+    "score": null
+   },
    {
     "id": "r06",
     "title": "THE WEAKEST HUNTER · Part 2/8: Rank Is Destiny (story-first, live-action cold open)",
@@ -660,27 +582,27 @@
   "j10vRhfmPiI": 1241,
   "_bnDIO6ZOeo": 1409,
   "k3aeGtTL464": 815,
-  "U8i6h36yVDY": 167,
+  "U8i6h36yVDY": 170,
   "79_ZyoNT1jg": 925,
   "CrveKG32kqA": 599,
   "wJ5ODZSqqQ4": 296,
-  "6oNpggoXkXc": 625,
-  "S1yxC6H_lnE": 573,
+  "6oNpggoXkXc": 624,
+  "S1yxC6H_lnE": 572,
   "hLD165HKOws": 929,
   "Gt-k2NPMMQA": 352,
-  "6fQH2crY_UE": 269,
+  "6fQH2crY_UE": 270,
   "YM7R8U3VR9o": 816,
-  "qpcaqb9wPhE": 1285,
+  "qpcaqb9wPhE": 1282,
   "0fm5Jqik_gU": 328,
-  "YTVhAYM3Ftg": 1286,
+  "YTVhAYM3Ftg": 1284,
   "lfx64AWbC9s": 272,
   "8I9h6Bq48vY": 620,
   "VNBRgawVmE8": 871,
   "JY5Gays_MfQ": 430,
-  "2-wNg1d5mvU": 268,
-  "d2dqCcDgHDo": 202,
+  "2-wNg1d5mvU": 355,
+  "d2dqCcDgHDo": 283,
   "6_EZFFO1cc0": 140,
-  "MC4y5ZYRO3w": 380,
+  "MC4y5ZYRO3w": 421,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -696,8 +618,8 @@
   "gTX0z2q4rXw": 7,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 4,
-  "IVZI7UfJkH4": 15,
-  "Kpe0srbAOZc": 13,
+  "IVZI7UfJkH4": 16,
+  "Kpe0srbAOZc": 16,
   "x6tnvdd_BCg": 8
  }
 }
