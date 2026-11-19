@@ -1,36 +1,20 @@
-# 📊 n8n Real-Time Analytics & Performance Dashboard
+# Creator Ops dashboard
 
-An automated, self-updating analytics dashboard for cloud-hosted [n8n](https://n8n.io) instances.
+Live page: https://prajyot2805.github.io/n8n-dashboard/
 
-🔗 **Live Public Dashboard:** [https://prajyot2805.github.io/n8n-dashboard/](https://prajyot2805.github.io/n8n-dashboard/)
+One page, two tabs:
 
----
+- **PS5 Shorts** (n8n workflow "PS5 Shorts Pipeline"): what needs you right now, what went out today (Shorts posted, your videos, Shorts made), the next 12 posting slots with the Short that will post in each, the queue by game and days left, your latest videos, Shorts posted per day and this week's top Shorts.
+- **Shadow Legion** (n8n workflow "Shadow Legion Reels", Instagram via Metricool): what needs you, today's reel, the next reels, the Metricool budget (20 a month from the 14th), every reel's Instagram numbers and the latest lessons.
 
-## ⚡ Features
+## How it works
 
-- **Automated Hourly Sync:** Runs via GitHub Actions every hour (or manually on-demand).
-- **Execution Distribution:** Tracks execution counts, peak hours, and workload share across pipelines.
-- **Workflow Health Matrix:** Filter active vs. inactive pipelines, review node counts, average run durations, and trigger types.
-- **Error & Incident Diagnostics:** Automatic extraction of execution failures, failing node names, and root-cause error messages.
-- **Secure Architecture:** The n8n API key is stored securely in GitHub Repository Secrets (`N8N_API_KEY`) and is **never** committed or exposed in the public code.
+1. GitHub Actions (`.github/workflows/update.yml`) runs `update_dashboard.py` every 30 minutes.
+2. The script reads only the n8n API. The latest runs of each workflow already read the Google Sheets and the Issues data table, so it takes those node outputs (`Read Videos`, `Read Shorts L1`, `Read Issues V`, `Read Sheet`). YouTube view counts come from the public video pages; a failed read keeps the last known number.
+3. It writes `status.json` (only the fields the page shows) and commits it. `index.html` is a fixed page that renders `status.json` and re-checks it every 5 minutes.
 
----
+The posting order shown under "Up next" follows the pipeline's own rules: a booked Short posts in its slot, an unbooked GTA 6 Short takes over a slot booked for another game, and open slots take the best unbooked Short (marked "Likely"). If the pipeline's slots change (`SLOT_JS` in the ps5-shorts repo), update `PS5_SLOTS_MIN` here too; same for `SL_SLOTS` and `SL_BUDGET`.
 
-## 🛠️ How It Works
+## Secrets
 
-1. **GitHub Actions Workflow** (`.github/workflows/update.yml`) runs on an hourly cron schedule.
-2. `update_dashboard.py` queries the n8n REST API (`/api/v1/workflows` and `/api/v1/executions`).
-3. Aggregated metrics are pre-rendered into `index.html`.
-4. Changes are committed to `main` and automatically published to GitHub Pages.
-
----
-
-## 🔒 Configuration & Secrets
-
-This repository uses GitHub Secrets to connect to n8n:
-- `N8N_BASE_URL`: Base URL of your n8n instance (e.g. `https://n8n.srv992629.hstgr.cloud`).
-- `N8N_API_KEY`: API Key generated from n8n Settings → n8n API.
-
----
-
-*Generated and managed by Antigravity Assistant.*
+GitHub repository secrets: `N8N_BASE_URL`, `N8N_API_KEY`. Nothing secret is committed. Run locally with `python3 update_dashboard.py` (reads `~/.config/n8n/api.env`), then `python3 -m http.server` and open http://localhost:8000.

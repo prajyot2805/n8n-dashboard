@@ -1,0 +1,655 @@
+{
+ "generated_at": "2026-11-19T10:44:02.158451Z",
+ "ps5": {
+  "now": [
+   {
+    "kind": "you",
+    "text": "Title check waiting for you: “GTA 6: Can you buy a clean gun on a tight budget?” (posts Fri 06:00)"
+   }
+  ],
+  "today": {
+   "posted": [
+    {
+     "id": "y0DrBXmTtlg_01",
+     "title": "Helldivers 2: Just chilling before extraction",
+     "game": "Helldivers 2",
+     "at": "2026-11-18T21:30:28.215000Z",
+     "url": "https://youtube.com/shorts/lfx64AWbC9s",
+     "views": 172,
+     "score": 88,
+     "duration": 30,
+     "from": "Helldivers 2 good squad gameplay: what teamwork looks like"
+    },
+    {
+     "id": "iQcVhO4fyH0_02",
+     "title": "Helldivers 2: Testing how long a machine gun can fire continuously",
+     "game": "Helldivers 2",
+     "at": "2026-11-19T00:30:21.682000Z",
+     "url": "https://youtube.com/shorts/2-wNg1d5mvU",
+     "views": 157,
+     "score": 72,
+     "duration": 30,
+     "from": "Helldivers 2 machine gun shoots straight on target"
+    },
+    {
+     "id": "gTX0z2q4rXw_01",
+     "title": "Helldivers 2: why does the squad keep dying?",
+     "game": "Helldivers 2",
+     "at": "2026-11-19T07:30:20.821000Z",
+     "url": "https://youtube.com/shorts/d2dqCcDgHDo",
+     "views": 81,
+     "score": 82,
+     "duration": 22,
+     "from": "Helldivers 2: alone against Terminids, can I hold?"
+    }
+   ],
+   "uploads": [
+    {
+     "title": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
+     "game": "GTA 6",
+     "url": "https://youtu.be/LB8-bROhsBA",
+     "at": "2026-11-18T20:40:11Z",
+     "status": "clipped"
+    },
+    {
+     "title": "GTA 6 Second Hour on PS5 | Story Mode",
+     "game": "GTA 6",
+     "url": "https://youtu.be/0U7r2RVi1TI",
+     "at": "2026-11-19T04:45:39Z",
+     "status": "clipped"
+    },
+    {
+     "title": "Scuba diver checks how accurate GTA 6's dive mission is",
+     "game": "GTA 6",
+     "url": "https://youtu.be/IVZI7UfJkH4",
+     "at": "2026-11-19T06:44:21Z",
+     "status": "clipped"
+    }
+   ],
+   "shorts_made": 25,
+   "clipped": [
+    "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
+    "GTA 6 Second Hour on PS5 | Story Mode",
+    "Scuba diver checks how accurate GTA 6's dive mission is"
+   ]
+  },
+  "up_next": [
+   {
+    "id": "IVZI7UfJkH4_01",
+    "title": "GTA 6: Will this dive tour go terribly wrong?",
+    "game": "GTA 6",
+    "at": "2026-11-19T11:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 88,
+    "duration": 26,
+    "from": "Scuba diver checks how accurate GTA 6's dive mission is",
+    "guess": false,
+    "note": "Takes the slot booked for “Don't go solo vs Terminids in Helldivers 2”",
+    "title_state": "claude"
+   },
+   {
+    "id": "LB8-bROhsBA_02",
+    "title": "GTA 6: If the Kingfisher is dead, the job failed",
+    "game": "GTA 6",
+    "at": "2026-11-19T14:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 80,
+    "duration": 23,
+    "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
+    "guess": false,
+    "note": "Takes the slot booked for “Helldivers 2: alone on a mission that can't be won”",
+    "title_state": "claude"
+   },
+   {
+    "id": "LB8-bROhsBA_01",
+    "title": "GTA 6: Turn back or go after Donnie?",
+    "game": "GTA 6",
+    "at": "2026-11-19T21:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 88,
+    "duration": 27,
+    "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
+    "guess": false,
+    "note": "",
+    "title_state": "yours"
+   },
+   {
+    "id": "0U7r2RVi1TI_01",
+    "title": "GTA 6: Can you buy a clean gun on a tight budget?",
+    "game": "GTA 6",
+    "at": "2026-11-20T00:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 85,
+    "duration": 35,
+    "from": "GTA 6 Second Hour on PS5 | Story Mode",
+    "guess": false,
+    "note": "",
+    "title_state": "check_sent"
+   },
+   {
+    "id": "0U7r2RVi1TI_02",
+    "title": "GTA 6: Don't lie to Mandy about your ex in prison",
+    "game": "GTA 6",
+    "at": "2026-11-20T04:00:00Z",
+    "url": "",
+    "views": null,
+    "score": 80,
+    "duration": 28,
+    "from": "GTA 6 Second Hour on PS5 | Story Mode",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "LB8-bROhsBA_03",
+    "title": "GTA 6: Don't hand over the mula before the count",
+    "game": "GTA 6",
+    "at": "2026-11-20T07:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 76,
+    "duration": 24,
+    "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "0U7r2RVi1TI_03",
+    "title": "GTA 6: Mandy's fight turns into 'we were supposed to marry'",
+    "game": "GTA 6",
+    "at": "2026-11-20T11:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 74,
+    "duration": 21,
+    "from": "GTA 6 Second Hour on PS5 | Story Mode",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "0U7r2RVi1TI_04",
+    "title": "GTA 6: Forget the stolen truck and it hits impound",
+    "game": "GTA 6",
+    "at": "2026-11-20T14:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 70,
+    "duration": 35,
+    "from": "GTA 6 Second Hour on PS5 | Story Mode",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "LB8-bROhsBA_04",
+    "title": "GTA 6: Who wrecked the plane on the drop?",
+    "game": "GTA 6",
+    "at": "2026-11-20T21:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 68,
+    "duration": 27,
+    "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "IVZI7UfJkH4_02",
+    "title": "Don't try this underwater escape in GTA 6",
+    "game": "GTA 6",
+    "at": "2026-11-21T00:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 66,
+    "duration": 22,
+    "from": "Scuba diver checks how accurate GTA 6's dive mission is",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "LB8-bROhsBA_05",
+    "title": "GTA 6: Front hit fails on Donnie, find a sideways",
+    "game": "GTA 6",
+    "at": "2026-11-21T04:00:00Z",
+    "url": "",
+    "views": null,
+    "score": 62,
+    "duration": 16,
+    "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "0U7r2RVi1TI_05",
+    "title": "GTA 6: If Percival hires you, check his shady past",
+    "game": "GTA 6",
+    "at": "2026-11-21T07:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 60,
+    "duration": 30,
+    "from": "GTA 6 Second Hour on PS5 | Story Mode",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   }
+  ],
+  "queue": {
+   "total": 63,
+   "by_game": {
+    "Helldivers 2": 38,
+    "GTA 6": 25
+   },
+   "days_left": 10.5
+  },
+  "videos": [
+   {
+    "title": "Scuba diver checks how accurate GTA 6's dive mission is",
+    "game": "GTA 6",
+    "url": "https://youtu.be/IVZI7UfJkH4",
+    "at": "2026-11-19T06:44:21Z",
+    "status": "clipped",
+    "shorts_made": 5,
+    "shorts_posted": "",
+    "views": 10
+   },
+   {
+    "title": "GTA 6 Second Hour on PS5 | Story Mode",
+    "game": "GTA 6",
+    "url": "https://youtu.be/0U7r2RVi1TI",
+    "at": "2026-11-19T04:45:39Z",
+    "status": "clipped",
+    "shorts_made": 10,
+    "shorts_posted": "",
+    "views": 4
+   },
+   {
+    "title": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
+    "game": "GTA 6",
+    "url": "https://youtu.be/LB8-bROhsBA",
+    "at": "2026-11-18T20:40:11Z",
+    "status": "clipped",
+    "shorts_made": 10,
+    "shorts_posted": "",
+    "views": 8
+   },
+   {
+    "title": "Helldivers 2: alone against Terminids, can I hold?",
+    "game": "Helldivers 2",
+    "url": "https://youtu.be/gTX0z2q4rXw",
+    "at": "2026-11-18T12:56:39Z",
+    "status": "clipped",
+    "shorts_made": 7,
+    "shorts_posted": 1,
+    "views": 7
+   },
+   {
+    "title": "Helldivers 2: Activating Oil Pumps Under Spore Fog",
+    "game": "Helldivers 2",
+    "url": "https://youtu.be/NxiTPVTcvY0",
+    "at": "2026-11-17T10:40:06Z",
+    "status": "clipped",
+    "shorts_made": 4,
+    "shorts_posted": "",
+    "views": 5
+   },
+   {
+    "title": "Helldivers 2 machine gun shoots straight on target",
+    "game": "Helldivers 2",
+    "url": "https://youtu.be/iQcVhO4fyH0",
+    "at": "2026-11-17T09:49:03Z",
+    "status": "clipped",
+    "shorts_made": 5,
+    "shorts_posted": 1,
+    "views": 6
+   },
+   {
+    "title": "Helldivers 2: will the squad survive this fog?",
+    "game": "Helldivers 2",
+    "url": "https://youtu.be/XR8hMT8dmuQ",
+    "at": "2026-11-17T09:19:37Z",
+    "status": "clipped",
+    "shorts_made": 5,
+    "shorts_posted": 2,
+    "views": 5
+   },
+   {
+    "title": "Helldivers 2 good squad gameplay: what teamwork looks like",
+    "game": "Helldivers 2",
+    "url": "https://youtu.be/y0DrBXmTtlg",
+    "at": "2026-11-15T19:55:50Z",
+    "status": "clipped",
+    "shorts_made": 7,
+    "shorts_posted": 2,
+    "views": 1
+   }
+  ],
+  "issues": [],
+  "totals": {
+   "shorts_posted": 23,
+   "shorts_views": 15426,
+   "videos": 16,
+   "video_views": 98
+  },
+  "per_day": [
+   {
+    "day": "2026-11-06",
+    "posted": 0
+   },
+   {
+    "day": "2026-11-07",
+    "posted": 0
+   },
+   {
+    "day": "2026-11-08",
+    "posted": 0
+   },
+   {
+    "day": "2026-11-09",
+    "posted": 0
+   },
+   {
+    "day": "2026-11-10",
+    "posted": 0
+   },
+   {
+    "day": "2026-11-11",
+    "posted": 0
+   },
+   {
+    "day": "2026-11-12",
+    "posted": 0
+   },
+   {
+    "day": "2026-11-13",
+    "posted": 0
+   },
+   {
+    "day": "2026-11-14",
+    "posted": 0
+   },
+   {
+    "day": "2026-11-15",
+    "posted": 10
+   },
+   {
+    "day": "2026-11-16",
+    "posted": 3
+   },
+   {
+    "day": "2026-11-17",
+    "posted": 3
+   },
+   {
+    "day": "2026-11-18",
+    "posted": 4
+   },
+   {
+    "day": "2026-11-19",
+    "posted": 3
+   }
+  ],
+  "top_week": [
+   {
+    "id": "7OeDe1RP5LE_01",
+    "title": "Helldivers 2: Can we hold out until extraction?",
+    "game": "Helldivers 2",
+    "at": "2026-11-14T21:27:40.975000Z",
+    "url": "https://youtube.com/shorts/VZkMukyJZh4",
+    "views": 1434,
+    "score": 88,
+    "duration": 38,
+    "from": "Helldivers 2: the new green bug strain is tough"
+   },
+   {
+    "id": "7OeDe1RP5LE_03",
+    "title": "If bugs swarm your west flank in Helldivers 2",
+    "game": "Helldivers 2",
+    "at": "2026-11-15T04:30:53.830000Z",
+    "url": "https://youtube.com/shorts/_bnDIO6ZOeo",
+    "views": 1409,
+    "score": 72,
+    "duration": 34,
+    "from": "Helldivers 2: the new green bug strain is tough"
+   },
+   {
+    "id": "9fAiHB6V3pw_03",
+    "title": "Don't leave your sentry alone when Heavies close in",
+    "game": "Helldivers 2",
+    "at": "2026-11-16T14:30:13.010000Z",
+    "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
+    "views": 1284,
+    "score": 66,
+    "duration": 25,
+    "from": "Helldivers 2 PS5 lag and glitches until extraction"
+   },
+   {
+    "id": "9fAiHB6V3pw_01",
+    "title": "Helldivers 2: will Pelican One make it to extraction?",
+    "game": "Helldivers 2",
+    "at": "2026-11-15T21:30:08.579000Z",
+    "url": "https://youtube.com/shorts/qpcaqb9wPhE",
+    "views": 1279,
+    "score": 88,
+    "duration": 28,
+    "from": "Helldivers 2 PS5 lag and glitches until extraction"
+   },
+   {
+    "id": "7OeDe1RP5LE_02",
+    "title": "Don't quit Helldivers 2 before reinforcements land",
+    "game": "Helldivers 2",
+    "at": "2026-11-15T04:06:30.847000Z",
+    "url": "https://youtube.com/shorts/j10vRhfmPiI",
+    "views": 1240,
+    "score": 78,
+    "duration": 23,
+    "from": "Helldivers 2: the new green bug strain is tough"
+   }
+  ],
+  "ok": true
+ },
+ "sl": {
+  "ok": true,
+  "now": [],
+  "today": [
+   {
+    "id": "r06",
+    "title": "THE WEAKEST HUNTER · Part 2/8: Rank Is Destiny (story-first, live-action cold open)",
+    "at": "2026-11-19T12:30:00Z",
+    "status": "scheduled",
+    "url": "",
+    "views": null,
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "skip_rate": null,
+    "avg_watch": null,
+    "score": null
+   }
+  ],
+  "up_next": [
+   {
+    "id": "r06",
+    "title": "THE WEAKEST HUNTER · Part 2/8: Rank Is Destiny (story-first, live-action cold open)",
+    "at": "2026-11-19T12:30:00Z",
+    "status": "scheduled",
+    "url": "",
+    "views": null,
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "skip_rate": null,
+    "avg_watch": null,
+    "score": null,
+    "state": "scheduled"
+   },
+   {
+    "at": "2026-11-20T04:30:00Z",
+    "title": "THE WEAKEST HUNTER · Part 3/8: Left for Dead",
+    "state": "planned"
+   },
+   {
+    "at": "2026-11-23T04:30:00Z",
+    "title": "THE WEAKEST HUNTER · Part 4/8: Six Kills",
+    "state": "planned"
+   },
+   {
+    "at": "2026-11-24T12:30:00Z",
+    "title": "THE WEAKEST HUNTER · Part 5/8: The Dead Rise",
+    "state": "planned"
+   },
+   {
+    "at": "2026-11-25T04:30:00Z",
+    "title": "THE WEAKEST HUNTER · Part 6/8: The Gatekeepers",
+    "state": "planned"
+   }
+  ],
+  "budget": {
+   "used": 5,
+   "limit": 20,
+   "from": "2026-11-14",
+   "to": "2026-12-13"
+  },
+  "reels": [
+   {
+    "id": "r06",
+    "title": "THE WEAKEST HUNTER · Part 2/8: Rank Is Destiny (story-first, live-action cold open)",
+    "at": "2026-11-19T12:30:00Z",
+    "status": "scheduled",
+    "url": "",
+    "views": null,
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "skip_rate": null,
+    "avg_watch": null,
+    "score": null
+   },
+   {
+    "id": "r05",
+    "title": "THE WEAKEST HUNTER · Part 1/8: The Gates Opened (story-first, illustrated)",
+    "at": "2026-11-18T04:30:00Z",
+    "status": "posted",
+    "url": "https://www.instagram.com/reel/Df3ptbLAkuV/",
+    "views": 283.0,
+    "reach": 225.0,
+    "likes": 4.0,
+    "comments": 1.0,
+    "shares": 1.0,
+    "skip_rate": 67.2,
+    "avg_watch": 7.297,
+    "score": 40.0
+   },
+   {
+    "id": "r03",
+    "title": "Ladder: Lv 10 / 20 / 30 bosses, one attack each, then the Lv 34 return and raise",
+    "at": "2026-11-17T12:30:00Z",
+    "status": "posted",
+    "url": "https://www.instagram.com/reel/Df1767qjtpl/",
+    "views": 145.0,
+    "reach": 133.0,
+    "likes": 2.0,
+    "comments": 1.0,
+    "shares": 0.0,
+    "skip_rate": 52.6,
+    "avg_watch": 4.944,
+    "score": 30.1
+   },
+   {
+    "id": "r02",
+    "title": "Problem → idea → solution → gameplay: one tap, no install (v2 launch)",
+    "at": "2026-11-16T04:30:00Z",
+    "status": "posted",
+    "url": "https://www.instagram.com/reel/DfygIIYDtCD/",
+    "views": 134.0,
+    "reach": 114.0,
+    "likes": 4.0,
+    "comments": 1.0,
+    "shares": 0.0,
+    "skip_rate": 63.9,
+    "avg_watch": 4.305,
+    "score": 52.6
+   },
+   {
+    "id": "r01",
+    "title": "Rise close-up",
+    "at": "2026-11-15T14:00:00Z",
+    "status": "posted",
+    "url": "https://www.instagram.com/reel/Dfw87JDEZXG/",
+    "views": 158.0,
+    "reach": 136.0,
+    "likes": 6.0,
+    "comments": 1.0,
+    "shares": 0.0,
+    "skip_rate": 56.9,
+    "avg_watch": 4.864,
+    "score": 58.8
+   }
+  ],
+  "totals": {
+   "posted": 4,
+   "views": 720.0,
+   "reach": 608.0,
+   "likes": 16.0
+  },
+  "episodes_left": 14,
+  "lessons": [
+   "Response: r05 earned the first campaign share (1 on 225 reach); r01-r03 have 0 shares and 0 saves on 383 reach. A question tied to the viewer ('what rank would you awaken as?') draws more than a generic CTA.",
+   "Score: r01 58.8 (army-types, 19:30), r02 52.6 (intro, 10:00), r05 40.0 (series, 10:00), r03 30.1 (bosses, 18:00). Likes stay low (2-6) for every reel; too few reels to pick a better hour.",
+   "Maker story: non-campaign maker reels hold the longest watch (10.2 s and 10.5 s) with 28 likes on 293 reach. A first-person maker beat could fit a later episode."
+  ]
+ },
+ "views": {
+  "VZkMukyJZh4": 1434,
+  "j10vRhfmPiI": 1240,
+  "_bnDIO6ZOeo": 1409,
+  "k3aeGtTL464": 815,
+  "U8i6h36yVDY": 163,
+  "79_ZyoNT1jg": 922,
+  "CrveKG32kqA": 581,
+  "wJ5ODZSqqQ4": 296,
+  "6oNpggoXkXc": 625,
+  "S1yxC6H_lnE": 573,
+  "hLD165HKOws": 929,
+  "Gt-k2NPMMQA": 352,
+  "6fQH2crY_UE": 269,
+  "YM7R8U3VR9o": 815,
+  "qpcaqb9wPhE": 1279,
+  "0fm5Jqik_gU": 328,
+  "YTVhAYM3Ftg": 1284,
+  "lfx64AWbC9s": 172,
+  "8I9h6Bq48vY": 575,
+  "VNBRgawVmE8": 809,
+  "JY5Gays_MfQ": 318,
+  "2-wNg1d5mvU": 157,
+  "d2dqCcDgHDo": 81,
+  "7OeDe1RP5LE": 5,
+  "GULKBJ4BwHM": 4,
+  "YiFseOnuyq4": 6,
+  "TckgvttyfL4": 8,
+  "qIsrqx0nCrg": 12,
+  "ghHKWZuBD24": 3,
+  "onO8PXEPUSw": 9,
+  "9fAiHB6V3pw": 5,
+  "y0DrBXmTtlg": 1,
+  "XR8hMT8dmuQ": 5,
+  "iQcVhO4fyH0": 6,
+  "NxiTPVTcvY0": 5,
+  "gTX0z2q4rXw": 7,
+  "LB8-bROhsBA": 8,
+  "0U7r2RVi1TI": 4,
+  "IVZI7UfJkH4": 10
+ }
+}
