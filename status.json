@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T12:36:40.102680Z",
+ "generated_at": "2026-11-20T17:32:06.768210Z",
  "ps5": {
   "now": [],
   "today": {
@@ -10,7 +10,7 @@
      "game": "GTA 6",
      "at": "2026-11-19T21:30:25.521000Z",
      "url": "https://youtube.com/shorts/zgX33pMgAF0",
-     "views": 524,
+     "views": 533,
      "score": 88,
      "duration": 27,
      "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6"
@@ -32,7 +32,7 @@
      "game": "GTA 6",
      "at": "2026-11-20T07:30:21.118000Z",
      "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-     "views": 1423,
+     "views": 1582,
      "score": 85,
      "duration": 35,
      "from": "GTA 6 Second Hour on PS5 | Story Mode"
@@ -43,10 +43,21 @@
      "game": "GTA 6",
      "at": "2026-11-20T11:30:19.618000Z",
      "url": "https://youtube.com/shorts/HDrn8iS6MyU",
-     "views": 37,
+     "views": 117,
      "score": 82,
      "duration": 27,
      "from": "Playing the PS5 in J's room in GTA 6"
+    },
+    {
+     "id": "-3izYF6h_z8_01",
+     "title": "GTA 6: Will Jason survive bleeding out?",
+     "game": "GTA 6",
+     "at": "2026-11-20T14:30:24.492000Z",
+     "url": "https://youtube.com/shorts/qMA1R4vHCWs",
+     "views": 0,
+     "score": 88,
+     "duration": 27,
+     "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5"
     }
    ],
    "uploads": [
@@ -65,20 +76,6 @@
    ]
   },
   "up_next": [
-   {
-    "id": "-3izYF6h_z8_01",
-    "title": "GTA 6: Will Jason survive bleeding out?",
-    "game": "GTA 6",
-    "at": "2026-11-20T14:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 88,
-    "duration": 27,
-    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
    {
     "id": "x6tnvdd_BCg_01",
     "title": "GTA 6: Will the bar fight end in a getaway?",
@@ -232,15 +229,29 @@
     "guess": true,
     "note": "",
     "title_state": "claude"
+   },
+   {
+    "id": "-3izYF6h_z8_04",
+    "title": "GTA 6: Blaming a hunting accident buys only time",
+    "game": "GTA 6",
+    "at": "2026-11-22T14:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 70,
+    "duration": 21,
+    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
    }
   ],
   "queue": {
-   "total": 88,
+   "total": 87,
    "by_game": {
-    "GTA 6": 50,
+    "GTA 6": 49,
     "Helldivers 2": 38
    },
-   "days_left": 14.7
+   "days_left": 14.5
   },
   "videos": [
    {
@@ -250,8 +261,8 @@
     "at": "2026-11-19T22:46:35Z",
     "status": "clipped",
     "shorts_made": 9,
-    "shorts_posted": "",
-    "views": 3
+    "shorts_posted": 1,
+    "views": 4
    },
    {
     "title": "Random missions and chilling | GTA 6",
@@ -291,7 +302,7 @@
     "status": "clipped",
     "shorts_made": 5,
     "shorts_posted": 1,
-    "views": 283
+    "views": 308
    },
    {
     "title": "GTA 6 Second Hour on PS5 | Story Mode",
@@ -326,10 +337,10 @@
   ],
   "issues": [],
   "totals": {
-   "shorts_posted": 29,
-   "shorts_views": 21137,
+   "shorts_posted": 30,
+   "shorts_views": 21842,
    "videos": 20,
-   "video_views": 412
+   "video_views": 438
   },
   "per_day": [
    {
@@ -386,31 +397,31 @@
    },
    {
     "day": "2026-11-20",
-    "posted": 4
+    "posted": 5
    }
   ],
   "top_week": [
-   {
-    "id": "7OeDe1RP5LE_01",
-    "title": "Helldivers 2: Can we hold out until extraction?",
-    "game": "Helldivers 2",
-    "at": "2026-11-14T21:27:40.975000Z",
-    "url": "https://youtube.com/shorts/VZkMukyJZh4",
-    "views": 1435,
-    "score": 88,
-    "duration": 38,
-    "from": "Helldivers 2: the new green bug strain is tough"
-   },
    {
     "id": "0U7r2RVi1TI_01",
     "title": "GTA 6: The Ammunition salesman is achatter a chatterbox",
     "game": "GTA 6",
     "at": "2026-11-20T07:30:21.118000Z",
     "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-    "views": 1423,
+    "views": 1582,
     "score": 85,
     "duration": 35,
     "from": "GTA 6 Second Hour on PS5 | Story Mode"
+   },
+   {
+    "id": "7OeDe1RP5LE_01",
+    "title": "Helldivers 2: Can we hold out until extraction?",
+    "game": "Helldivers 2",
+    "at": "2026-11-14T21:27:40.975000Z",
+    "url": "https://youtube.com/shorts/VZkMukyJZh4",
+    "views": 1434,
+    "score": 88,
+    "duration": 38,
+    "from": "Helldivers 2: the new green bug strain is tough"
    },
    {
     "id": "7OeDe1RP5LE_03",
@@ -429,7 +440,7 @@
     "game": "Helldivers 2",
     "at": "2026-11-16T14:30:13.010000Z",
     "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
-    "views": 1291,
+    "views": 1294,
     "score": 66,
     "duration": 25,
     "from": "Helldivers 2 PS5 lag and glitches until extraction"
@@ -440,7 +451,7 @@
     "game": "Helldivers 2",
     "at": "2026-11-15T21:30:08.579000Z",
     "url": "https://youtube.com/shorts/qpcaqb9wPhE",
-    "views": 1285,
+    "views": 1286,
     "score": 88,
     "duration": 28,
     "from": "Helldivers 2 PS5 lag and glitches until extraction"
@@ -639,35 +650,36 @@
   ]
  },
  "views": {
-  "VZkMukyJZh4": 1435,
+  "VZkMukyJZh4": 1434,
   "j10vRhfmPiI": 1241,
   "_bnDIO6ZOeo": 1409,
   "k3aeGtTL464": 813,
   "U8i6h36yVDY": 170,
-  "79_ZyoNT1jg": 926,
-  "CrveKG32kqA": 604,
-  "wJ5ODZSqqQ4": 296,
+  "79_ZyoNT1jg": 924,
+  "CrveKG32kqA": 603,
+  "wJ5ODZSqqQ4": 295,
   "6oNpggoXkXc": 624,
   "S1yxC6H_lnE": 571,
   "hLD165HKOws": 928,
   "Gt-k2NPMMQA": 352,
   "6fQH2crY_UE": 270,
   "YM7R8U3VR9o": 814,
-  "qpcaqb9wPhE": 1285,
+  "qpcaqb9wPhE": 1286,
   "0fm5Jqik_gU": 328,
-  "YTVhAYM3Ftg": 1291,
-  "lfx64AWbC9s": 388,
-  "8I9h6Bq48vY": 663,
-  "VNBRgawVmE8": 985,
-  "JY5Gays_MfQ": 586,
-  "2-wNg1d5mvU": 986,
-  "d2dqCcDgHDo": 709,
-  "zgX33pMgAF0": 524,
-  "6_EZFFO1cc0": 351,
-  "DS9wb5_E3Cc": 1423,
+  "YTVhAYM3Ftg": 1294,
+  "lfx64AWbC9s": 414,
+  "8I9h6Bq48vY": 693,
+  "VNBRgawVmE8": 989,
+  "JY5Gays_MfQ": 660,
+  "2-wNg1d5mvU": 1114,
+  "d2dqCcDgHDo": 852,
+  "zgX33pMgAF0": 533,
+  "6_EZFFO1cc0": 403,
+  "DS9wb5_E3Cc": 1582,
   "FzJCVEwQA0g": 0,
-  "MC4y5ZYRO3w": 1128,
-  "HDrn8iS6MyU": 37,
+  "MC4y5ZYRO3w": 1129,
+  "HDrn8iS6MyU": 117,
+  "qMA1R4vHCWs": 0,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -683,10 +695,10 @@
   "gTX0z2q4rXw": 7,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 4,
-  "IVZI7UfJkH4": 283,
+  "IVZI7UfJkH4": 308,
   "Kpe0srbAOZc": 16,
   "x6tnvdd_BCg": 20,
   "AqVZGcqdjoI": 1,
-  "-3izYF6h_z8": 3
+  "-3izYF6h_z8": 4
  }
 }
