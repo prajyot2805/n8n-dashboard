@@ -1,42 +1,43 @@
 {
- "generated_at": "2026-11-19T19:21:10.772292Z",
+ "generated_at": "2026-11-20T01:23:30.884519Z",
  "ps5": {
-  "now": [],
+  "now": [
+   {
+    "kind": "work",
+    "text": "Mac is clipping “Random missions and chilling | GTA 6”"
+   },
+   {
+    "kind": "you",
+    "text": "Waiting for your brief on “GTA 6 Chapter 1 Ends: Last Mission on PS5”"
+   }
+  ],
   "today": {
-   "posted": [],
-   "uploads": [],
+   "posted": [
+    {
+     "id": "LB8-bROhsBA_01",
+     "title": "GTA 6: Turn back or go after Donnie?",
+     "game": "GTA 6",
+     "at": "2026-11-19T21:30:25.521000Z",
+     "url": "https://youtube.com/shorts/zgX33pMgAF0",
+     "views": 389,
+     "score": 88,
+     "duration": 27,
+     "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6"
+    }
+   ],
+   "uploads": [
+    {
+     "title": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+     "game": "GTA 6",
+     "url": "https://youtu.be/-3izYF6h_z8",
+     "at": "2026-11-19T22:46:35Z",
+     "status": "awaiting_brief"
+    }
+   ],
    "shorts_made": 0,
    "clipped": []
   },
   "up_next": [
-   {
-    "id": "LB8-bROhsBA_01",
-    "title": "GTA 6: Turn back or go after Donnie?",
-    "game": "GTA 6",
-    "at": "2026-11-19T21:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 88,
-    "duration": 27,
-    "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
-   {
-    "id": "0U7r2RVi1TI_01",
-    "title": "GTA 6: The Ammunition salesman is achatter a chatterbox",
-    "game": "GTA 6",
-    "at": "2026-11-20T00:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 85,
-    "duration": 35,
-    "from": "GTA 6 Second Hour on PS5 | Story Mode",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
    {
     "id": "0U7r2RVi1TI_02",
     "title": "GTA 6: Don't lie to Mandy about your ex in prison",
@@ -176,17 +177,65 @@
     "guess": true,
     "note": "",
     "title_state": "claude"
+   },
+   {
+    "id": "IVZI7UfJkH4_02",
+    "title": "Don't try this underwater escape in GTA 6",
+    "game": "GTA 6",
+    "at": "2026-11-21T21:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 66,
+    "duration": 22,
+    "from": "Scuba diver checks how accurate GTA 6's dive mission is",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "Kpe0srbAOZc_03",
+    "title": "GTA 6 mistake: the couch faces the bed in J's house",
+    "game": "GTA 6",
+    "at": "2026-11-22T00:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 66,
+    "duration": 35,
+    "from": "Playing the PS5 in J's room in GTA 6",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
    }
   ],
   "queue": {
-   "total": 74,
+   "total": 73,
    "by_game": {
     "Helldivers 2": 38,
-    "GTA 6": 36
+    "GTA 6": 35
    },
-   "days_left": 12.3
+   "days_left": 12.2
   },
   "videos": [
+   {
+    "title": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "game": "GTA 6",
+    "url": "https://youtu.be/-3izYF6h_z8",
+    "at": "2026-11-19T22:46:35Z",
+    "status": "awaiting_brief",
+    "shorts_made": "",
+    "shorts_posted": "",
+    "views": 0
+   },
+   {
+    "title": "Random missions and chilling | GTA 6",
+    "game": "GTA 6",
+    "url": "https://youtu.be/AqVZGcqdjoI",
+    "at": "2026-11-19T18:18:03Z",
+    "status": "clipping",
+    "shorts_made": "",
+    "shorts_posted": "",
+    "views": 0
+   },
    {
     "title": "GTA 6: Picking Up Lu From Prison",
     "game": "GTA 6",
@@ -195,7 +244,7 @@
     "status": "clipped",
     "shorts_made": 8,
     "shorts_posted": "",
-    "views": 8
+    "views": 20
    },
    {
     "title": "Playing the PS5 in J's room in GTA 6",
@@ -215,7 +264,7 @@
     "status": "clipped",
     "shorts_made": 5,
     "shorts_posted": 1,
-    "views": 16
+    "views": 169
    },
    {
     "title": "GTA 6 Second Hour on PS5 | Story Mode",
@@ -234,7 +283,7 @@
     "at": "2026-11-18T20:40:11Z",
     "status": "clipped",
     "shorts_made": 10,
-    "shorts_posted": 1,
+    "shorts_posted": 2,
     "views": 8
    },
    {
@@ -246,34 +295,14 @@
     "shorts_made": 7,
     "shorts_posted": 1,
     "views": 7
-   },
-   {
-    "title": "Helldivers 2: Activating Oil Pumps Under Spore Fog",
-    "game": "Helldivers 2",
-    "url": "https://youtu.be/NxiTPVTcvY0",
-    "at": "2026-11-17T10:40:06Z",
-    "status": "clipped",
-    "shorts_made": 4,
-    "shorts_posted": "",
-    "views": 5
-   },
-   {
-    "title": "Helldivers 2 machine gun shoots straight on target",
-    "game": "Helldivers 2",
-    "url": "https://youtu.be/iQcVhO4fyH0",
-    "at": "2026-11-17T09:49:03Z",
-    "status": "clipped",
-    "shorts_made": 5,
-    "shorts_posted": 1,
-    "views": 6
    }
   ],
   "issues": [],
   "totals": {
-   "shorts_posted": 25,
-   "shorts_views": 16738,
-   "videos": 18,
-   "video_views": 128
+   "shorts_posted": 26,
+   "shorts_views": 18195,
+   "videos": 20,
+   "video_views": 293
   },
   "per_day": [
    {
@@ -330,7 +359,7 @@
    },
    {
     "day": "2026-11-20",
-    "posted": 0
+    "posted": 1
    }
   ],
   "top_week": [
@@ -340,7 +369,7 @@
     "game": "Helldivers 2",
     "at": "2026-11-14T21:27:40.975000Z",
     "url": "https://youtube.com/shorts/VZkMukyJZh4",
-    "views": 1434,
+    "views": 1435,
     "score": 88,
     "duration": 38,
     "from": "Helldivers 2: the new green bug strain is tough"
@@ -362,7 +391,7 @@
     "game": "Helldivers 2",
     "at": "2026-11-16T14:30:13.010000Z",
     "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
-    "views": 1284,
+    "views": 1286,
     "score": 66,
     "duration": 25,
     "from": "Helldivers 2 PS5 lag and glitches until extraction"
@@ -373,7 +402,7 @@
     "game": "Helldivers 2",
     "at": "2026-11-15T21:30:08.579000Z",
     "url": "https://youtube.com/shorts/qpcaqb9wPhE",
-    "views": 1282,
+    "views": 1285,
     "score": 88,
     "duration": 28,
     "from": "Helldivers 2 PS5 lag and glitches until extraction"
@@ -578,31 +607,32 @@
   ]
  },
  "views": {
-  "VZkMukyJZh4": 1434,
+  "VZkMukyJZh4": 1435,
   "j10vRhfmPiI": 1241,
   "_bnDIO6ZOeo": 1409,
-  "k3aeGtTL464": 815,
-  "U8i6h36yVDY": 170,
+  "k3aeGtTL464": 813,
+  "U8i6h36yVDY": 172,
   "79_ZyoNT1jg": 925,
-  "CrveKG32kqA": 599,
+  "CrveKG32kqA": 601,
   "wJ5ODZSqqQ4": 296,
   "6oNpggoXkXc": 624,
-  "S1yxC6H_lnE": 572,
-  "hLD165HKOws": 929,
+  "S1yxC6H_lnE": 571,
+  "hLD165HKOws": 928,
   "Gt-k2NPMMQA": 352,
   "6fQH2crY_UE": 270,
   "YM7R8U3VR9o": 816,
-  "qpcaqb9wPhE": 1282,
+  "qpcaqb9wPhE": 1285,
   "0fm5Jqik_gU": 328,
-  "YTVhAYM3Ftg": 1284,
-  "lfx64AWbC9s": 272,
-  "8I9h6Bq48vY": 620,
-  "VNBRgawVmE8": 871,
-  "JY5Gays_MfQ": 430,
-  "2-wNg1d5mvU": 355,
-  "d2dqCcDgHDo": 283,
-  "6_EZFFO1cc0": 140,
-  "MC4y5ZYRO3w": 421,
+  "YTVhAYM3Ftg": 1286,
+  "lfx64AWbC9s": 326,
+  "8I9h6Bq48vY": 643,
+  "VNBRgawVmE8": 928,
+  "JY5Gays_MfQ": 493,
+  "2-wNg1d5mvU": 548,
+  "d2dqCcDgHDo": 451,
+  "zgX33pMgAF0": 389,
+  "6_EZFFO1cc0": 223,
+  "MC4y5ZYRO3w": 842,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -618,8 +648,10 @@
   "gTX0z2q4rXw": 7,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 4,
-  "IVZI7UfJkH4": 16,
+  "IVZI7UfJkH4": 169,
   "Kpe0srbAOZc": 16,
-  "x6tnvdd_BCg": 8
+  "x6tnvdd_BCg": 20,
+  "AqVZGcqdjoI": 0,
+  "-3izYF6h_z8": 0
  }
 }
