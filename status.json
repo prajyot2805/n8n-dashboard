@@ -1,12 +1,7 @@
 {
- "generated_at": "2026-11-20T08:52:04.612771Z",
+ "generated_at": "2026-11-20T12:36:40.102680Z",
  "ps5": {
-  "now": [
-   {
-    "kind": "work",
-    "text": "Mac is clipping “Random missions and chilling | GTA 6”"
-   }
-  ],
+  "now": [],
   "today": {
    "posted": [
     {
@@ -15,7 +10,7 @@
      "game": "GTA 6",
      "at": "2026-11-19T21:30:25.521000Z",
      "url": "https://youtube.com/shorts/zgX33pMgAF0",
-     "views": 498,
+     "views": 524,
      "score": 88,
      "duration": 27,
      "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6"
@@ -37,10 +32,21 @@
      "game": "GTA 6",
      "at": "2026-11-20T07:30:21.118000Z",
      "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-     "views": 599,
+     "views": 1423,
      "score": 85,
      "duration": 35,
      "from": "GTA 6 Second Hour on PS5 | Story Mode"
+    },
+    {
+     "id": "Kpe0srbAOZc_01",
+     "title": "GTA 6: Will J survive the zombie quarantine zone?",
+     "game": "GTA 6",
+     "at": "2026-11-20T11:30:19.618000Z",
+     "url": "https://youtube.com/shorts/HDrn8iS6MyU",
+     "views": 37,
+     "score": 82,
+     "duration": 27,
+     "from": "Playing the PS5 in J's room in GTA 6"
     }
    ],
    "uploads": [
@@ -52,26 +58,13 @@
      "status": "clipped"
     }
    ],
-   "shorts_made": 9,
+   "shorts_made": 18,
    "clipped": [
-    "GTA 6 Chapter 1 Ends: Last Mission on PS5"
+    "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "Random missions and chilling | GTA 6"
    ]
   },
   "up_next": [
-   {
-    "id": "Kpe0srbAOZc_01",
-    "title": "GTA 6: Will J survive the zombie quarantine zone?",
-    "game": "GTA 6",
-    "at": "2026-11-20T11:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 82,
-    "duration": 27,
-    "from": "Playing the PS5 in J's room in GTA 6",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
    {
     "id": "-3izYF6h_z8_01",
     "title": "GTA 6: Will Jason survive bleeding out?",
@@ -143,10 +136,38 @@
     "title_state": "claude"
    },
    {
+    "id": "AqVZGcqdjoI_01",
+    "title": "GTA 6: will Peggy ever let Jason talk?",
+    "game": "GTA 6",
+    "at": "2026-11-21T11:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 82,
+    "duration": 29,
+    "from": "Random missions and chilling | GTA 6",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "AqVZGcqdjoI_02",
+    "title": "Lucia goes from cooped up to free in GTA 6",
+    "game": "GTA 6",
+    "at": "2026-11-21T14:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 78,
+    "duration": 23,
+    "from": "Random missions and chilling | GTA 6",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
     "id": "0U7r2RVi1TI_03",
     "title": "GTA 6: Mandy's fight turns into 'we were supposed to marry'",
     "game": "GTA 6",
-    "at": "2026-11-21T11:30:00Z",
+    "at": "2026-11-21T21:30:00Z",
     "url": "",
     "views": null,
     "score": 74,
@@ -160,7 +181,7 @@
     "id": "Kpe0srbAOZc_02",
     "title": "GTA 6: don't stall, the zombie timer is ticking",
     "game": "GTA 6",
-    "at": "2026-11-21T14:30:00Z",
+    "at": "2026-11-22T00:30:00Z",
     "url": "",
     "views": null,
     "score": 74,
@@ -174,7 +195,7 @@
     "id": "x6tnvdd_BCg_03",
     "title": "Mistake: picking a fight outside the bar in GTA 6",
     "game": "GTA 6",
-    "at": "2026-11-21T21:30:00Z",
+    "at": "2026-11-22T04:00:00Z",
     "url": "",
     "views": null,
     "score": 74,
@@ -188,7 +209,7 @@
     "id": "-3izYF6h_z8_03",
     "title": "GTA 6: If your partner's hurt, wake them up",
     "game": "GTA 6",
-    "at": "2026-11-22T00:30:00Z",
+    "at": "2026-11-22T07:30:00Z",
     "url": "",
     "views": null,
     "score": 74,
@@ -202,7 +223,7 @@
     "id": "0U7r2RVi1TI_04",
     "title": "GTA 6: Forget the stolen truck and it hits impound",
     "game": "GTA 6",
-    "at": "2026-11-22T04:00:00Z",
+    "at": "2026-11-22T11:30:00Z",
     "url": "",
     "views": null,
     "score": 70,
@@ -211,29 +232,15 @@
     "guess": true,
     "note": "",
     "title_state": "claude"
-   },
-   {
-    "id": "-3izYF6h_z8_04",
-    "title": "GTA 6: Blaming a hunting accident buys only time",
-    "game": "GTA 6",
-    "at": "2026-11-22T07:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 70,
-    "duration": 21,
-    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
    }
   ],
   "queue": {
-   "total": 80,
+   "total": 88,
    "by_game": {
-    "GTA 6": 42,
+    "GTA 6": 50,
     "Helldivers 2": 38
    },
-   "days_left": 13.3
+   "days_left": 14.7
   },
   "videos": [
    {
@@ -251,8 +258,8 @@
     "game": "GTA 6",
     "url": "https://youtu.be/AqVZGcqdjoI",
     "at": "2026-11-19T18:18:03Z",
-    "status": "clipping",
-    "shorts_made": "",
+    "status": "clipped",
+    "shorts_made": 9,
     "shorts_posted": "",
     "views": 1
    },
@@ -273,7 +280,7 @@
     "at": "2026-11-19T11:15:32Z",
     "status": "clipped",
     "shorts_made": 5,
-    "shorts_posted": "",
+    "shorts_posted": 1,
     "views": 16
    },
    {
@@ -284,7 +291,7 @@
     "status": "clipped",
     "shorts_made": 5,
     "shorts_posted": 1,
-    "views": 256
+    "views": 283
    },
    {
     "title": "GTA 6 Second Hour on PS5 | Story Mode",
@@ -319,10 +326,10 @@
   ],
   "issues": [],
   "totals": {
-   "shorts_posted": 28,
-   "shorts_views": 19801,
+   "shorts_posted": 29,
+   "shorts_views": 21137,
    "videos": 20,
-   "video_views": 385
+   "video_views": 412
   },
   "per_day": [
    {
@@ -379,7 +386,7 @@
    },
    {
     "day": "2026-11-20",
-    "posted": 3
+    "posted": 4
    }
   ],
   "top_week": [
@@ -393,6 +400,17 @@
     "score": 88,
     "duration": 38,
     "from": "Helldivers 2: the new green bug strain is tough"
+   },
+   {
+    "id": "0U7r2RVi1TI_01",
+    "title": "GTA 6: The Ammunition salesman is achatter a chatterbox",
+    "game": "GTA 6",
+    "at": "2026-11-20T07:30:21.118000Z",
+    "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
+    "views": 1423,
+    "score": 85,
+    "duration": 35,
+    "from": "GTA 6 Second Hour on PS5 | Story Mode"
    },
    {
     "id": "7OeDe1RP5LE_03",
@@ -426,17 +444,6 @@
     "score": 88,
     "duration": 28,
     "from": "Helldivers 2 PS5 lag and glitches until extraction"
-   },
-   {
-    "id": "7OeDe1RP5LE_02",
-    "title": "Don't quit Helldivers 2 before reinforcements land",
-    "game": "Helldivers 2",
-    "at": "2026-11-15T04:06:30.847000Z",
-    "url": "https://youtube.com/shorts/j10vRhfmPiI",
-    "views": 1241,
-    "score": 78,
-    "duration": 23,
-    "from": "Helldivers 2: the new green bug strain is tough"
    }
   ],
   "ok": true
@@ -649,17 +656,18 @@
   "qpcaqb9wPhE": 1285,
   "0fm5Jqik_gU": 328,
   "YTVhAYM3Ftg": 1291,
-  "lfx64AWbC9s": 371,
-  "8I9h6Bq48vY": 652,
-  "VNBRgawVmE8": 975,
-  "JY5Gays_MfQ": 557,
-  "2-wNg1d5mvU": 718,
+  "lfx64AWbC9s": 388,
+  "8I9h6Bq48vY": 663,
+  "VNBRgawVmE8": 985,
+  "JY5Gays_MfQ": 586,
+  "2-wNg1d5mvU": 986,
   "d2dqCcDgHDo": 709,
-  "zgX33pMgAF0": 498,
+  "zgX33pMgAF0": 524,
   "6_EZFFO1cc0": 351,
-  "DS9wb5_E3Cc": 599,
+  "DS9wb5_E3Cc": 1423,
   "FzJCVEwQA0g": 0,
-  "MC4y5ZYRO3w": 1014,
+  "MC4y5ZYRO3w": 1128,
+  "HDrn8iS6MyU": 37,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -675,7 +683,7 @@
   "gTX0z2q4rXw": 7,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 4,
-  "IVZI7UfJkH4": 256,
+  "IVZI7UfJkH4": 283,
   "Kpe0srbAOZc": 16,
   "x6tnvdd_BCg": 20,
   "AqVZGcqdjoI": 1,
