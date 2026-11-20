@@ -1,14 +1,10 @@
 {
- "generated_at": "2026-11-20T01:23:30.884519Z",
+ "generated_at": "2026-11-20T08:52:04.612771Z",
  "ps5": {
   "now": [
    {
     "kind": "work",
     "text": "Mac is clipping “Random missions and chilling | GTA 6”"
-   },
-   {
-    "kind": "you",
-    "text": "Waiting for your brief on “GTA 6 Chapter 1 Ends: Last Mission on PS5”"
    }
   ],
   "today": {
@@ -19,10 +15,32 @@
      "game": "GTA 6",
      "at": "2026-11-19T21:30:25.521000Z",
      "url": "https://youtube.com/shorts/zgX33pMgAF0",
-     "views": 389,
+     "views": 498,
      "score": 88,
      "duration": 27,
      "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6"
+    },
+    {
+     "id": "0U7r2RVi1TI_02",
+     "title": "GTA 6: Don't lie to Mandy about your ex in prison",
+     "game": "GTA 6",
+     "at": "2026-11-20T04:00:23.084000Z",
+     "url": "https://youtube.com/shorts/FzJCVEwQA0g",
+     "views": 0,
+     "score": 80,
+     "duration": 28,
+     "from": "GTA 6 Second Hour on PS5 | Story Mode"
+    },
+    {
+     "id": "0U7r2RVi1TI_01",
+     "title": "GTA 6: The Ammunition salesman is achatter a chatterbox",
+     "game": "GTA 6",
+     "at": "2026-11-20T07:30:21.118000Z",
+     "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
+     "views": 599,
+     "score": 85,
+     "duration": 35,
+     "from": "GTA 6 Second Hour on PS5 | Story Mode"
     }
    ],
    "uploads": [
@@ -31,41 +49,15 @@
      "game": "GTA 6",
      "url": "https://youtu.be/-3izYF6h_z8",
      "at": "2026-11-19T22:46:35Z",
-     "status": "awaiting_brief"
+     "status": "clipped"
     }
    ],
-   "shorts_made": 0,
-   "clipped": []
+   "shorts_made": 9,
+   "clipped": [
+    "GTA 6 Chapter 1 Ends: Last Mission on PS5"
+   ]
   },
   "up_next": [
-   {
-    "id": "0U7r2RVi1TI_02",
-    "title": "GTA 6: Don't lie to Mandy about your ex in prison",
-    "game": "GTA 6",
-    "at": "2026-11-20T04:00:00Z",
-    "url": "",
-    "views": null,
-    "score": 80,
-    "duration": 28,
-    "from": "GTA 6 Second Hour on PS5 | Story Mode",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
-   {
-    "id": "x6tnvdd_BCg_01",
-    "title": "GTA 6: Will the bar fight end in a getaway?",
-    "game": "GTA 6",
-    "at": "2026-11-20T07:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 88,
-    "duration": 25,
-    "from": "GTA 6: Picking Up Lu From Prison",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
-   },
    {
     "id": "Kpe0srbAOZc_01",
     "title": "GTA 6: Will J survive the zombie quarantine zone?",
@@ -76,34 +68,76 @@
     "score": 82,
     "duration": 27,
     "from": "Playing the PS5 in J's room in GTA 6",
-    "guess": true,
+    "guess": false,
     "note": "",
-    "title_state": "claude"
+    "title_state": "yours"
+   },
+   {
+    "id": "-3izYF6h_z8_01",
+    "title": "GTA 6: Will Jason survive bleeding out?",
+    "game": "GTA 6",
+    "at": "2026-11-20T14:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 88,
+    "duration": 27,
+    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "guess": false,
+    "note": "",
+    "title_state": "yours"
+   },
+   {
+    "id": "x6tnvdd_BCg_01",
+    "title": "GTA 6: Will the bar fight end in a getaway?",
+    "game": "GTA 6",
+    "at": "2026-11-20T21:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 88,
+    "duration": 25,
+    "from": "GTA 6: Picking Up Lu From Prison",
+    "guess": false,
+    "note": "",
+    "title_state": "yours"
    },
    {
     "id": "x6tnvdd_BCg_02",
-    "title": "Warning: they're taking your table in GTA 6",
+    "title": "Playing pool in GTA 6",
     "game": "GTA 6",
-    "at": "2026-11-20T14:30:00Z",
+    "at": "2026-11-21T00:30:00Z",
     "url": "",
     "views": null,
     "score": 80,
     "duration": 34,
     "from": "GTA 6: Picking Up Lu From Prison",
-    "guess": true,
+    "guess": false,
     "note": "",
-    "title_state": "claude"
+    "title_state": "yours"
    },
    {
     "id": "LB8-bROhsBA_03",
     "title": "GTA 6: Don't hand over the mula before the count",
     "game": "GTA 6",
-    "at": "2026-11-20T21:30:00Z",
+    "at": "2026-11-21T04:00:00Z",
     "url": "",
     "views": null,
     "score": 76,
     "duration": 24,
     "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
+    "guess": false,
+    "note": "",
+    "title_state": "yours"
+   },
+   {
+    "id": "-3izYF6h_z8_02",
+    "title": "GTA 6: Don't stay put while gunmen hit the house",
+    "game": "GTA 6",
+    "at": "2026-11-21T07:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 85,
+    "duration": 33,
+    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
     "guess": true,
     "note": "",
     "title_state": "claude"
@@ -112,7 +146,7 @@
     "id": "0U7r2RVi1TI_03",
     "title": "GTA 6: Mandy's fight turns into 'we were supposed to marry'",
     "game": "GTA 6",
-    "at": "2026-11-21T00:30:00Z",
+    "at": "2026-11-21T11:30:00Z",
     "url": "",
     "views": null,
     "score": 74,
@@ -126,7 +160,7 @@
     "id": "Kpe0srbAOZc_02",
     "title": "GTA 6: don't stall, the zombie timer is ticking",
     "game": "GTA 6",
-    "at": "2026-11-21T04:00:00Z",
+    "at": "2026-11-21T14:30:00Z",
     "url": "",
     "views": null,
     "score": 74,
@@ -140,7 +174,7 @@
     "id": "x6tnvdd_BCg_03",
     "title": "Mistake: picking a fight outside the bar in GTA 6",
     "game": "GTA 6",
-    "at": "2026-11-21T07:30:00Z",
+    "at": "2026-11-21T21:30:00Z",
     "url": "",
     "views": null,
     "score": 74,
@@ -151,10 +185,24 @@
     "title_state": "claude"
    },
    {
+    "id": "-3izYF6h_z8_03",
+    "title": "GTA 6: If your partner's hurt, wake them up",
+    "game": "GTA 6",
+    "at": "2026-11-22T00:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 74,
+    "duration": 18,
+    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
     "id": "0U7r2RVi1TI_04",
     "title": "GTA 6: Forget the stolen truck and it hits impound",
     "game": "GTA 6",
-    "at": "2026-11-21T11:30:00Z",
+    "at": "2026-11-22T04:00:00Z",
     "url": "",
     "views": null,
     "score": 70,
@@ -165,55 +213,27 @@
     "title_state": "claude"
    },
    {
-    "id": "LB8-bROhsBA_04",
-    "title": "GTA 6: Who wrecked the plane on the drop?",
+    "id": "-3izYF6h_z8_04",
+    "title": "GTA 6: Blaming a hunting accident buys only time",
     "game": "GTA 6",
-    "at": "2026-11-21T14:30:00Z",
+    "at": "2026-11-22T07:30:00Z",
     "url": "",
     "views": null,
-    "score": 68,
-    "duration": 27,
-    "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
-   },
-   {
-    "id": "IVZI7UfJkH4_02",
-    "title": "Don't try this underwater escape in GTA 6",
-    "game": "GTA 6",
-    "at": "2026-11-21T21:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 66,
-    "duration": 22,
-    "from": "Scuba diver checks how accurate GTA 6's dive mission is",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
-   },
-   {
-    "id": "Kpe0srbAOZc_03",
-    "title": "GTA 6 mistake: the couch faces the bed in J's house",
-    "game": "GTA 6",
-    "at": "2026-11-22T00:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 66,
-    "duration": 35,
-    "from": "Playing the PS5 in J's room in GTA 6",
+    "score": 70,
+    "duration": 21,
+    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
     "guess": true,
     "note": "",
     "title_state": "claude"
    }
   ],
   "queue": {
-   "total": 73,
+   "total": 80,
    "by_game": {
-    "Helldivers 2": 38,
-    "GTA 6": 35
+    "GTA 6": 42,
+    "Helldivers 2": 38
    },
-   "days_left": 12.2
+   "days_left": 13.3
   },
   "videos": [
    {
@@ -221,10 +241,10 @@
     "game": "GTA 6",
     "url": "https://youtu.be/-3izYF6h_z8",
     "at": "2026-11-19T22:46:35Z",
-    "status": "awaiting_brief",
-    "shorts_made": "",
+    "status": "clipped",
+    "shorts_made": 9,
     "shorts_posted": "",
-    "views": 0
+    "views": 3
    },
    {
     "title": "Random missions and chilling | GTA 6",
@@ -234,7 +254,7 @@
     "status": "clipping",
     "shorts_made": "",
     "shorts_posted": "",
-    "views": 0
+    "views": 1
    },
    {
     "title": "GTA 6: Picking Up Lu From Prison",
@@ -264,7 +284,7 @@
     "status": "clipped",
     "shorts_made": 5,
     "shorts_posted": 1,
-    "views": 169
+    "views": 256
    },
    {
     "title": "GTA 6 Second Hour on PS5 | Story Mode",
@@ -273,7 +293,7 @@
     "at": "2026-11-19T04:45:39Z",
     "status": "clipped",
     "shorts_made": 10,
-    "shorts_posted": "",
+    "shorts_posted": 2,
     "views": 4
    },
    {
@@ -299,10 +319,10 @@
   ],
   "issues": [],
   "totals": {
-   "shorts_posted": 26,
-   "shorts_views": 18195,
+   "shorts_posted": 28,
+   "shorts_views": 19801,
    "videos": 20,
-   "video_views": 293
+   "video_views": 385
   },
   "per_day": [
    {
@@ -359,7 +379,7 @@
    },
    {
     "day": "2026-11-20",
-    "posted": 1
+    "posted": 3
    }
   ],
   "top_week": [
@@ -391,7 +411,7 @@
     "game": "Helldivers 2",
     "at": "2026-11-16T14:30:13.010000Z",
     "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
-    "views": 1286,
+    "views": 1291,
     "score": 66,
     "duration": 25,
     "from": "Helldivers 2 PS5 lag and glitches until extraction"
@@ -492,6 +512,11 @@
    {
     "at": "2026-11-26T12:30:00Z",
     "title": "THE WEAKEST HUNTER · Part 7/8: The Soul That Resisted",
+    "state": "planned"
+   },
+   {
+    "at": "2026-11-27T04:30:00Z",
+    "title": "THE WEAKEST HUNTER · Part 8/8: Toward Sovereign",
     "state": "planned"
    }
   ],
@@ -611,28 +636,30 @@
   "j10vRhfmPiI": 1241,
   "_bnDIO6ZOeo": 1409,
   "k3aeGtTL464": 813,
-  "U8i6h36yVDY": 172,
-  "79_ZyoNT1jg": 925,
-  "CrveKG32kqA": 601,
+  "U8i6h36yVDY": 170,
+  "79_ZyoNT1jg": 926,
+  "CrveKG32kqA": 604,
   "wJ5ODZSqqQ4": 296,
   "6oNpggoXkXc": 624,
   "S1yxC6H_lnE": 571,
   "hLD165HKOws": 928,
   "Gt-k2NPMMQA": 352,
   "6fQH2crY_UE": 270,
-  "YM7R8U3VR9o": 816,
+  "YM7R8U3VR9o": 814,
   "qpcaqb9wPhE": 1285,
   "0fm5Jqik_gU": 328,
-  "YTVhAYM3Ftg": 1286,
-  "lfx64AWbC9s": 326,
-  "8I9h6Bq48vY": 643,
-  "VNBRgawVmE8": 928,
-  "JY5Gays_MfQ": 493,
-  "2-wNg1d5mvU": 548,
-  "d2dqCcDgHDo": 451,
-  "zgX33pMgAF0": 389,
-  "6_EZFFO1cc0": 223,
-  "MC4y5ZYRO3w": 842,
+  "YTVhAYM3Ftg": 1291,
+  "lfx64AWbC9s": 371,
+  "8I9h6Bq48vY": 652,
+  "VNBRgawVmE8": 975,
+  "JY5Gays_MfQ": 557,
+  "2-wNg1d5mvU": 718,
+  "d2dqCcDgHDo": 709,
+  "zgX33pMgAF0": 498,
+  "6_EZFFO1cc0": 351,
+  "DS9wb5_E3Cc": 599,
+  "FzJCVEwQA0g": 0,
+  "MC4y5ZYRO3w": 1014,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -641,17 +668,17 @@
   "ghHKWZuBD24": 3,
   "onO8PXEPUSw": 9,
   "9fAiHB6V3pw": 5,
-  "y0DrBXmTtlg": 1,
+  "y0DrBXmTtlg": 2,
   "XR8hMT8dmuQ": 5,
   "iQcVhO4fyH0": 6,
   "NxiTPVTcvY0": 5,
   "gTX0z2q4rXw": 7,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 4,
-  "IVZI7UfJkH4": 169,
+  "IVZI7UfJkH4": 256,
   "Kpe0srbAOZc": 16,
   "x6tnvdd_BCg": 20,
-  "AqVZGcqdjoI": 0,
-  "-3izYF6h_z8": 0
+  "AqVZGcqdjoI": 1,
+  "-3izYF6h_z8": 3
  }
 }
