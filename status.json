@@ -1,102 +1,14 @@
 {
- "generated_at": "2026-11-21T14:12:11.238257Z",
+ "generated_at": "2026-11-21T20:37:34.154630Z",
  "ps5": {
   "now": [],
   "today": {
-   "posted": [
-    {
-     "id": "x6tnvdd_BCg_01",
-     "title": "GTA 6: Will the bar fight end in a getaway?",
-     "game": "GTA 6",
-     "at": "2026-11-20T21:30:24.395000Z",
-     "url": "https://youtube.com/shorts/OsI_r7G_WsI",
-     "views": 1057,
-     "score": 88,
-     "duration": 25,
-     "from": "GTA 6: Picking Up Lu From Prison"
-    },
-    {
-     "id": "x6tnvdd_BCg_02",
-     "title": "Playing pool in GTA 6",
-     "game": "GTA 6",
-     "at": "2026-11-21T00:30:22.494000Z",
-     "url": "https://youtube.com/shorts/-UhIaH95dhs",
-     "views": 53,
-     "score": 80,
-     "duration": 34,
-     "from": "GTA 6: Picking Up Lu From Prison"
-    },
-    {
-     "id": "LB8-bROhsBA_03",
-     "title": "GTA 6: Don't hand over the mula before the count",
-     "game": "GTA 6",
-     "at": "2026-11-21T04:00:21.394000Z",
-     "url": "https://youtube.com/shorts/xm3TQqlVM2c",
-     "views": 52,
-     "score": 76,
-     "duration": 24,
-     "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6"
-    },
-    {
-     "id": "AqVZGcqdjoI_01",
-     "title": "GTA 6: will Peggy ever let Jason talk?",
-     "game": "GTA 6",
-     "at": "2026-11-21T07:30:23.329000Z",
-     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-     "views": 1427,
-     "score": 82,
-     "duration": 29,
-     "from": "Random missions and chilling | GTA 6"
-    },
-    {
-     "id": "AqVZGcqdjoI_02",
-     "title": "Lucia goes from cooped up to free in GTA 6",
-     "game": "GTA 6",
-     "at": "2026-11-21T11:30:25.588000Z",
-     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-     "views": 533,
-     "score": 78,
-     "duration": 23,
-     "from": "Random missions and chilling | GTA 6"
-    }
-   ],
-   "uploads": [
-    {
-     "title": "GTA 6 drunk weekend gameplay: full of accidents",
-     "game": "GTA 6",
-     "url": "https://youtu.be/D9IwOx0XqNM",
-     "at": "2026-11-20T20:46:50Z",
-     "status": "clipped"
-    },
-    {
-     "title": "Finding the San Andreas House in GTA 6",
-     "game": "GTA 6",
-     "url": "https://youtu.be/xDW0dL14BXo",
-     "at": "2026-11-21T08:01:02Z",
-     "status": "clipped"
-    }
-   ],
-   "shorts_made": 15,
-   "clipped": [
-    "Finding the San Andreas House in GTA 6",
-    "GTA 6 drunk weekend gameplay: full of accidents"
-   ]
+   "posted": [],
+   "uploads": [],
+   "shorts_made": 0,
+   "clipped": []
   },
   "up_next": [
-   {
-    "id": "0U7r2RVi1TI_03",
-    "title": "GTA 6: Mandy's fight turns into 'we were supposed to marry'",
-    "game": "GTA 6",
-    "at": "2026-11-21T14:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 74,
-    "duration": 21,
-    "from": "GTA 6 Second Hour on PS5 | Story Mode",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
    {
     "id": "-3izYF6h_z8_02",
     "title": "GTA 6: Escaping the hospital. End of chapter 1",
@@ -250,6 +162,20 @@
     "guess": true,
     "note": "",
     "title_state": "claude"
+   },
+   {
+    "id": "LB8-bROhsBA_04",
+    "title": "GTA 6: Who wrecked the plane on the drop?",
+    "game": "GTA 6",
+    "at": "2026-11-23T14:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 68,
+    "duration": 27,
+    "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
    }
   ],
   "queue": {
@@ -262,6 +188,16 @@
   },
   "videos": [
    {
+    "title": "GTA 6 noise cancelling headphones: does it work?",
+    "game": "GTA 6",
+    "url": "https://youtu.be/p-VmW5hTenM",
+    "at": "2026-11-21T16:34:22Z",
+    "status": "clipped",
+    "shorts_made": 1,
+    "shorts_posted": "",
+    "views": 0
+   },
+   {
     "title": "Finding the San Andreas House in GTA 6",
     "game": "GTA 6",
     "url": "https://youtu.be/xDW0dL14BXo",
@@ -269,7 +205,7 @@
     "status": "clipped",
     "shorts_made": 5,
     "shorts_posted": "",
-    "views": null
+    "views": 3
    },
    {
     "title": "GTA 6 drunk weekend gameplay: full of accidents",
@@ -279,7 +215,7 @@
     "status": "clipped",
     "shorts_made": 10,
     "shorts_posted": "",
-    "views": 2
+    "views": 3
    },
    {
     "title": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
@@ -289,7 +225,7 @@
     "status": "clipped",
     "shorts_made": 9,
     "shorts_posted": 1,
-    "views": 12
+    "views": 15
    },
    {
     "title": "Random missions and chilling | GTA 6",
@@ -309,7 +245,7 @@
     "status": "clipped",
     "shorts_made": 8,
     "shorts_posted": 2,
-    "views": 22
+    "views": 23
    },
    {
     "title": "Playing the PS5 in J's room in GTA 6",
@@ -329,31 +265,17 @@
     "status": "clipped",
     "shorts_made": 5,
     "shorts_posted": 1,
-    "views": 353
-   },
-   {
-    "title": "GTA 6 Second Hour on PS5 | Story Mode",
-    "game": "GTA 6",
-    "url": "https://youtu.be/0U7r2RVi1TI",
-    "at": "2026-11-19T04:45:39Z",
-    "status": "clipped",
-    "shorts_made": 10,
-    "shorts_posted": 2,
-    "views": 4
+    "views": 356
    }
   ],
   "issues": [],
   "totals": {
-   "shorts_posted": 35,
-   "shorts_views": 25551,
-   "videos": 22,
-   "video_views": 497
+   "shorts_posted": 36,
+   "shorts_views": 30136,
+   "videos": 23,
+   "video_views": 509
   },
   "per_day": [
-   {
-    "day": "2026-11-08",
-    "posted": 0
-   },
    {
     "day": "2026-11-09",
     "posted": 0
@@ -404,20 +326,46 @@
    },
    {
     "day": "2026-11-21",
-    "posted": 5
+    "posted": 6
+   },
+   {
+    "day": "2026-11-22",
+    "posted": 0
    }
   ],
   "top_week": [
+   {
+    "id": "0U7r2RVi1TI_03",
+    "title": "GTA 6: Mandy's fight turns into 'we were supposed to marry'",
+    "game": "GTA 6",
+    "at": "2026-11-21T14:30:19.658000Z",
+    "url": "https://youtube.com/shorts/hFKKqp4URkA",
+    "views": 3844,
+    "score": 74,
+    "duration": 21,
+    "from": "GTA 6 Second Hour on PS5 | Story Mode"
+   },
    {
     "id": "0U7r2RVi1TI_01",
     "title": "GTA 6: The Ammunition salesman is achatter a chatterbox",
     "game": "GTA 6",
     "at": "2026-11-20T07:30:21.118000Z",
     "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-    "views": 1617,
+    "views": 1622,
     "score": 85,
     "duration": 35,
     "from": "GTA 6 Second Hour on PS5 | Story Mode"
+   },
+   {
+    "id": "AqVZGcqdjoI_01",
+    "title": "GTA 6: will Peggy ever let Jason talk?",
+    "game": "GTA 6",
+    "at": "2026-11-21T07:30:23.329000Z",
+    "url": "https://youtube.com/shorts/25MVUMhaLEc",
+    "views": 1524,
+    "score": 82,
+    "duration": 29,
+    "from": "Random missions and chilling | GTA 6"
    },
    {
     "id": "7OeDe1RP5LE_01",
@@ -431,17 +379,6 @@
     "from": "Helldivers 2: the new green bug strain is tough"
    },
    {
-    "id": "AqVZGcqdjoI_01",
-    "title": "GTA 6: will Peggy ever let Jason talk?",
-    "game": "GTA 6",
-    "at": "2026-11-21T07:30:23.329000Z",
-    "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1427,
-    "score": 82,
-    "duration": 29,
-    "from": "Random missions and chilling | GTA 6"
-   },
-   {
     "id": "7OeDe1RP5LE_03",
     "title": "If bugs swarm your west flank in Helldivers 2",
     "game": "Helldivers 2",
@@ -451,17 +388,6 @@
     "score": 72,
     "duration": 34,
     "from": "Helldivers 2: the new green bug strain is tough"
-   },
-   {
-    "id": "9fAiHB6V3pw_03",
-    "title": "Don't leave your sentry alone when Heavies close in",
-    "game": "Helldivers 2",
-    "at": "2026-11-16T14:30:13.010000Z",
-    "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
-    "views": 1294,
-    "score": 66,
-    "duration": 25,
-    "from": "Helldivers 2 PS5 lag and glitches until extraction"
    }
   ],
   "ok": true
@@ -645,10 +571,10 @@
   "j10vRhfmPiI": 1241,
   "_bnDIO6ZOeo": 1409,
   "k3aeGtTL464": 814,
-  "U8i6h36yVDY": 170,
-  "79_ZyoNT1jg": 924,
-  "CrveKG32kqA": 607,
-  "wJ5ODZSqqQ4": 295,
+  "U8i6h36yVDY": 172,
+  "79_ZyoNT1jg": 925,
+  "CrveKG32kqA": 609,
+  "wJ5ODZSqqQ4": 296,
   "6oNpggoXkXc": 624,
   "S1yxC6H_lnE": 571,
   "hLD165HKOws": 928,
@@ -657,25 +583,26 @@
   "YM7R8U3VR9o": 814,
   "qpcaqb9wPhE": 1286,
   "0fm5Jqik_gU": 328,
-  "YTVhAYM3Ftg": 1294,
-  "lfx64AWbC9s": 423,
-  "8I9h6Bq48vY": 693,
-  "VNBRgawVmE8": 987,
-  "JY5Gays_MfQ": 666,
-  "2-wNg1d5mvU": 1125,
-  "d2dqCcDgHDo": 1025,
-  "zgX33pMgAF0": 591,
-  "6_EZFFO1cc0": 636,
-  "xm3TQqlVM2c": 52,
-  "DS9wb5_E3Cc": 1617,
-  "FzJCVEwQA0g": 2,
-  "MC4y5ZYRO3w": 1131,
-  "HDrn8iS6MyU": 171,
-  "OsI_r7G_WsI": 1057,
-  "-UhIaH95dhs": 53,
-  "qMA1R4vHCWs": 1,
-  "25MVUMhaLEc": 1427,
-  "i8kqIJiEwe4": 533,
+  "YTVhAYM3Ftg": 1295,
+  "lfx64AWbC9s": 425,
+  "8I9h6Bq48vY": 692,
+  "VNBRgawVmE8": 989,
+  "JY5Gays_MfQ": 668,
+  "2-wNg1d5mvU": 1126,
+  "d2dqCcDgHDo": 1031,
+  "zgX33pMgAF0": 596,
+  "6_EZFFO1cc0": 639,
+  "xm3TQqlVM2c": 55,
+  "DS9wb5_E3Cc": 1622,
+  "FzJCVEwQA0g": 12,
+  "hFKKqp4URkA": 3844,
+  "MC4y5ZYRO3w": 1120,
+  "HDrn8iS6MyU": 198,
+  "OsI_r7G_WsI": 1044,
+  "-UhIaH95dhs": 70,
+  "qMA1R4vHCWs": 4,
+  "25MVUMhaLEc": 1524,
+  "i8kqIJiEwe4": 1109,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -688,14 +615,16 @@
   "XR8hMT8dmuQ": 5,
   "iQcVhO4fyH0": 6,
   "NxiTPVTcvY0": 5,
-  "gTX0z2q4rXw": 7,
+  "gTX0z2q4rXw": 8,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 4,
-  "IVZI7UfJkH4": 353,
+  "IVZI7UfJkH4": 356,
   "Kpe0srbAOZc": 17,
-  "x6tnvdd_BCg": 22,
+  "x6tnvdd_BCg": 23,
   "AqVZGcqdjoI": 1,
-  "-3izYF6h_z8": 12,
-  "D9IwOx0XqNM": 2
+  "-3izYF6h_z8": 15,
+  "D9IwOx0XqNM": 3,
+  "xDW0dL14BXo": 3,
+  "p-VmW5hTenM": 0
  }
 }
