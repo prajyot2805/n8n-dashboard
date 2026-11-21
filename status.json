@@ -1,12 +1,7 @@
 {
- "generated_at": "2026-11-21T05:37:27.718942Z",
+ "generated_at": "2026-11-21T14:12:11.238257Z",
  "ps5": {
-  "now": [
-   {
-    "kind": "work",
-    "text": "Mac is clipping “GTA 6 drunk weekend gameplay: full of accidents”"
-   }
-  ],
+  "now": [],
   "today": {
    "posted": [
     {
@@ -15,7 +10,7 @@
      "game": "GTA 6",
      "at": "2026-11-20T21:30:24.395000Z",
      "url": "https://youtube.com/shorts/OsI_r7G_WsI",
-     "views": 922,
+     "views": 1057,
      "score": 88,
      "duration": 25,
      "from": "GTA 6: Picking Up Lu From Prison"
@@ -26,7 +21,7 @@
      "game": "GTA 6",
      "at": "2026-11-21T00:30:22.494000Z",
      "url": "https://youtube.com/shorts/-UhIaH95dhs",
-     "views": 30,
+     "views": 53,
      "score": 80,
      "duration": 34,
      "from": "GTA 6: Picking Up Lu From Prison"
@@ -37,10 +32,32 @@
      "game": "GTA 6",
      "at": "2026-11-21T04:00:21.394000Z",
      "url": "https://youtube.com/shorts/xm3TQqlVM2c",
-     "views": 23,
+     "views": 52,
      "score": 76,
      "duration": 24,
      "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6"
+    },
+    {
+     "id": "AqVZGcqdjoI_01",
+     "title": "GTA 6: will Peggy ever let Jason talk?",
+     "game": "GTA 6",
+     "at": "2026-11-21T07:30:23.329000Z",
+     "url": "https://youtube.com/shorts/25MVUMhaLEc",
+     "views": 1427,
+     "score": 82,
+     "duration": 29,
+     "from": "Random missions and chilling | GTA 6"
+    },
+    {
+     "id": "AqVZGcqdjoI_02",
+     "title": "Lucia goes from cooped up to free in GTA 6",
+     "game": "GTA 6",
+     "at": "2026-11-21T11:30:25.588000Z",
+     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
+     "views": 533,
+     "score": 78,
+     "duration": 23,
+     "from": "Random missions and chilling | GTA 6"
     }
    ],
    "uploads": [
@@ -49,65 +66,103 @@
      "game": "GTA 6",
      "url": "https://youtu.be/D9IwOx0XqNM",
      "at": "2026-11-20T20:46:50Z",
-     "status": "clipping"
+     "status": "clipped"
+    },
+    {
+     "title": "Finding the San Andreas House in GTA 6",
+     "game": "GTA 6",
+     "url": "https://youtu.be/xDW0dL14BXo",
+     "at": "2026-11-21T08:01:02Z",
+     "status": "clipped"
     }
    ],
-   "shorts_made": 0,
-   "clipped": []
+   "shorts_made": 15,
+   "clipped": [
+    "Finding the San Andreas House in GTA 6",
+    "GTA 6 drunk weekend gameplay: full of accidents"
+   ]
   },
   "up_next": [
    {
-    "id": "AqVZGcqdjoI_01",
-    "title": "GTA 6: will Peggy ever let Jason talk?",
+    "id": "0U7r2RVi1TI_03",
+    "title": "GTA 6: Mandy's fight turns into 'we were supposed to marry'",
     "game": "GTA 6",
-    "at": "2026-11-21T07:30:00Z",
+    "at": "2026-11-21T14:30:00Z",
     "url": "",
     "views": null,
-    "score": 82,
-    "duration": 29,
-    "from": "Random missions and chilling | GTA 6",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
-   {
-    "id": "AqVZGcqdjoI_02",
-    "title": "Lucia goes from cooped up to free in GTA 6",
-    "game": "GTA 6",
-    "at": "2026-11-21T11:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 78,
-    "duration": 23,
-    "from": "Random missions and chilling | GTA 6",
+    "score": 74,
+    "duration": 21,
+    "from": "GTA 6 Second Hour on PS5 | Story Mode",
     "guess": false,
     "note": "",
     "title_state": "yours"
    },
    {
     "id": "-3izYF6h_z8_02",
-    "title": "GTA 6: Don't stay put while gunmen hit the house",
+    "title": "GTA 6: Escaping the hospital. End of chapter 1",
     "game": "GTA 6",
-    "at": "2026-11-21T14:30:00Z",
+    "at": "2026-11-21T21:30:00Z",
     "url": "",
     "views": null,
     "score": 85,
     "duration": 33,
     "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "guess": false,
+    "note": "",
+    "title_state": "yours"
+   },
+   {
+    "id": "x6tnvdd_BCg_03",
+    "title": "Let's take it outside tiny bro #barfight #GTA6",
+    "game": "GTA 6",
+    "at": "2026-11-22T00:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 74,
+    "duration": 30,
+    "from": "GTA 6: Picking Up Lu From Prison",
+    "guess": false,
+    "note": "",
+    "title_state": "yours"
+   },
+   {
+    "id": "-3izYF6h_z8_03",
+    "title": "GTA 6: If your partner's hurt, wake them up",
+    "game": "GTA 6",
+    "at": "2026-11-22T04:00:00Z",
+    "url": "",
+    "views": null,
+    "score": 74,
+    "duration": 18,
+    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "guess": false,
+    "note": "",
+    "title_state": "yours"
+   },
+   {
+    "id": "D9IwOx0XqNM_01",
+    "title": "GTA 6: Can the crew pull off an armored car grab?",
+    "game": "GTA 6",
+    "at": "2026-11-22T07:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 85,
+    "duration": 26,
+    "from": "GTA 6 drunk weekend gameplay: full of accidents",
     "guess": true,
     "note": "",
     "title_state": "claude"
    },
    {
-    "id": "0U7r2RVi1TI_03",
-    "title": "GTA 6: Mandy's fight turns into 'we were supposed to marry'",
+    "id": "xDW0dL14BXo_01",
+    "title": "GTA 6: Who cleans the messy house, Lucia or Mia?",
     "game": "GTA 6",
-    "at": "2026-11-21T21:30:00Z",
+    "at": "2026-11-22T11:30:00Z",
     "url": "",
     "views": null,
-    "score": 74,
-    "duration": 21,
-    "from": "GTA 6 Second Hour on PS5 | Story Mode",
+    "score": 84,
+    "duration": 23,
+    "from": "Finding the San Andreas House in GTA 6",
     "guess": true,
     "note": "",
     "title_state": "claude"
@@ -116,7 +171,7 @@
     "id": "Kpe0srbAOZc_02",
     "title": "GTA 6: don't stall, the zombie timer is ticking",
     "game": "GTA 6",
-    "at": "2026-11-22T00:30:00Z",
+    "at": "2026-11-22T14:30:00Z",
     "url": "",
     "views": null,
     "score": 74,
@@ -127,29 +182,29 @@
     "title_state": "claude"
    },
    {
-    "id": "x6tnvdd_BCg_03",
-    "title": "Mistake: picking a fight outside the bar in GTA 6",
+    "id": "D9IwOx0XqNM_02",
+    "title": "Nice or loud? GTA 6 crew debates the heist plan",
     "game": "GTA 6",
-    "at": "2026-11-22T04:00:00Z",
+    "at": "2026-11-22T21:30:00Z",
     "url": "",
     "views": null,
-    "score": 74,
-    "duration": 30,
-    "from": "GTA 6: Picking Up Lu From Prison",
+    "score": 72,
+    "duration": 25,
+    "from": "GTA 6 drunk weekend gameplay: full of accidents",
     "guess": true,
     "note": "",
     "title_state": "claude"
    },
    {
-    "id": "-3izYF6h_z8_03",
-    "title": "GTA 6: If your partner's hurt, wake them up",
+    "id": "xDW0dL14BXo_02",
+    "title": "GTA 6: Family fight at the house, then food run",
     "game": "GTA 6",
-    "at": "2026-11-22T07:30:00Z",
+    "at": "2026-11-23T00:30:00Z",
     "url": "",
     "views": null,
-    "score": 74,
-    "duration": 18,
-    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "score": 72,
+    "duration": 34,
+    "from": "Finding the San Andreas House in GTA 6",
     "guess": true,
     "note": "",
     "title_state": "claude"
@@ -158,7 +213,7 @@
     "id": "0U7r2RVi1TI_04",
     "title": "GTA 6: Forget the stolen truck and it hits impound",
     "game": "GTA 6",
-    "at": "2026-11-22T11:30:00Z",
+    "at": "2026-11-23T04:00:00Z",
     "url": "",
     "views": null,
     "score": 70,
@@ -172,7 +227,7 @@
     "id": "-3izYF6h_z8_04",
     "title": "GTA 6: Blaming a hunting accident buys only time",
     "game": "GTA 6",
-    "at": "2026-11-22T14:30:00Z",
+    "at": "2026-11-23T07:30:00Z",
     "url": "",
     "views": null,
     "score": 70,
@@ -186,7 +241,7 @@
     "id": "-3izYF6h_z8_05",
     "title": "GTA 6: Will the bag handover end in a shootout?",
     "game": "GTA 6",
-    "at": "2026-11-22T21:30:00Z",
+    "at": "2026-11-23T11:30:00Z",
     "url": "",
     "views": null,
     "score": 70,
@@ -195,52 +250,34 @@
     "guess": true,
     "note": "",
     "title_state": "claude"
-   },
-   {
-    "id": "LB8-bROhsBA_04",
-    "title": "GTA 6: Who wrecked the plane on the drop?",
-    "game": "GTA 6",
-    "at": "2026-11-23T00:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 68,
-    "duration": 27,
-    "from": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
-   },
-   {
-    "id": "IVZI7UfJkH4_02",
-    "title": "Don't try this underwater escape in GTA 6",
-    "game": "GTA 6",
-    "at": "2026-11-23T04:00:00Z",
-    "url": "",
-    "views": null,
-    "score": 66,
-    "duration": 22,
-    "from": "Scuba diver checks how accurate GTA 6's dive mission is",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
    }
   ],
   "queue": {
-   "total": 84,
+   "total": 97,
    "by_game": {
-    "GTA 6": 46,
+    "GTA 6": 59,
     "Helldivers 2": 38
    },
-   "days_left": 14.0
+   "days_left": 16.2
   },
   "videos": [
+   {
+    "title": "Finding the San Andreas House in GTA 6",
+    "game": "GTA 6",
+    "url": "https://youtu.be/xDW0dL14BXo",
+    "at": "2026-11-21T08:01:02Z",
+    "status": "clipped",
+    "shorts_made": 5,
+    "shorts_posted": "",
+    "views": null
+   },
    {
     "title": "GTA 6 drunk weekend gameplay: full of accidents",
     "game": "GTA 6",
     "url": "https://youtu.be/D9IwOx0XqNM",
     "at": "2026-11-20T20:46:50Z",
-    "status": "clipping",
-    "shorts_made": "",
+    "status": "clipped",
+    "shorts_made": 10,
     "shorts_posted": "",
     "views": 2
    },
@@ -261,7 +298,7 @@
     "at": "2026-11-19T18:18:03Z",
     "status": "clipped",
     "shorts_made": 9,
-    "shorts_posted": "",
+    "shorts_posted": 2,
     "views": 1
    },
    {
@@ -303,23 +340,13 @@
     "shorts_made": 10,
     "shorts_posted": 2,
     "views": 4
-   },
-   {
-    "title": "GTA 6 First Hour on PS5: Full Game Start | GTA 6",
-    "game": "GTA 6",
-    "url": "https://youtu.be/LB8-bROhsBA",
-    "at": "2026-11-18T20:40:11Z",
-    "status": "clipped",
-    "shorts_made": 10,
-    "shorts_posted": 3,
-    "views": 8
    }
   ],
   "issues": [],
   "totals": {
-   "shorts_posted": 33,
-   "shorts_views": 23300,
-   "videos": 21,
+   "shorts_posted": 35,
+   "shorts_views": 25551,
+   "videos": 22,
    "video_views": 497
   },
   "per_day": [
@@ -377,7 +404,7 @@
    },
    {
     "day": "2026-11-21",
-    "posted": 3
+    "posted": 5
    }
   ],
   "top_week": [
@@ -387,7 +414,7 @@
     "game": "GTA 6",
     "at": "2026-11-20T07:30:21.118000Z",
     "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-    "views": 1612,
+    "views": 1617,
     "score": 85,
     "duration": 35,
     "from": "GTA 6 Second Hour on PS5 | Story Mode"
@@ -402,6 +429,17 @@
     "score": 88,
     "duration": 38,
     "from": "Helldivers 2: the new green bug strain is tough"
+   },
+   {
+    "id": "AqVZGcqdjoI_01",
+    "title": "GTA 6: will Peggy ever let Jason talk?",
+    "game": "GTA 6",
+    "at": "2026-11-21T07:30:23.329000Z",
+    "url": "https://youtube.com/shorts/25MVUMhaLEc",
+    "views": 1427,
+    "score": 82,
+    "duration": 29,
+    "from": "Random missions and chilling | GTA 6"
    },
    {
     "id": "7OeDe1RP5LE_03",
@@ -423,17 +461,6 @@
     "views": 1294,
     "score": 66,
     "duration": 25,
-    "from": "Helldivers 2 PS5 lag and glitches until extraction"
-   },
-   {
-    "id": "9fAiHB6V3pw_01",
-    "title": "Helldivers 2: will Pelican One make it to extraction?",
-    "game": "Helldivers 2",
-    "at": "2026-11-15T21:30:08.579000Z",
-    "url": "https://youtube.com/shorts/qpcaqb9wPhE",
-    "views": 1286,
-    "score": 88,
-    "duration": 28,
     "from": "Helldivers 2 PS5 lag and glitches until extraction"
    }
   ],
@@ -620,7 +647,7 @@
   "k3aeGtTL464": 814,
   "U8i6h36yVDY": 170,
   "79_ZyoNT1jg": 924,
-  "CrveKG32kqA": 605,
+  "CrveKG32kqA": 607,
   "wJ5ODZSqqQ4": 295,
   "6oNpggoXkXc": 624,
   "S1yxC6H_lnE": 571,
@@ -636,17 +663,19 @@
   "VNBRgawVmE8": 987,
   "JY5Gays_MfQ": 666,
   "2-wNg1d5mvU": 1125,
-  "d2dqCcDgHDo": 1015,
-  "zgX33pMgAF0": 586,
-  "6_EZFFO1cc0": 591,
-  "xm3TQqlVM2c": 23,
-  "DS9wb5_E3Cc": 1612,
-  "FzJCVEwQA0g": 0,
+  "d2dqCcDgHDo": 1025,
+  "zgX33pMgAF0": 591,
+  "6_EZFFO1cc0": 636,
+  "xm3TQqlVM2c": 52,
+  "DS9wb5_E3Cc": 1617,
+  "FzJCVEwQA0g": 2,
   "MC4y5ZYRO3w": 1131,
-  "HDrn8iS6MyU": 137,
-  "OsI_r7G_WsI": 922,
-  "-UhIaH95dhs": 30,
-  "qMA1R4vHCWs": 0,
+  "HDrn8iS6MyU": 171,
+  "OsI_r7G_WsI": 1057,
+  "-UhIaH95dhs": 53,
+  "qMA1R4vHCWs": 1,
+  "25MVUMhaLEc": 1427,
+  "i8kqIJiEwe4": 533,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
