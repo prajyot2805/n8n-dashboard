@@ -1,140 +1,61 @@
 {
- "generated_at": "2026-11-22T16:36:49.551934Z",
+ "generated_at": "2026-11-22T21:31:10.320920Z",
  "ps5": {
-  "now": [],
+  "now": [
+   {
+    "kind": "you",
+    "text": "Waiting for your brief on “GTA 6: Lucia's Meditation Says 'Other Places I Can Go'”"
+   },
+   {
+    "kind": "wait",
+    "text": "3 more brief requests queued"
+   }
+  ],
   "today": {
-   "posted": [
-    {
-     "id": "-3izYF6h_z8_02",
-     "title": "GTA 6: Escaping the hospital. End of chapter 1",
-     "game": "GTA 6",
-     "at": "2026-11-21T21:30:21.160000Z",
-     "url": "https://youtube.com/shorts/-irOEWAmzaA",
-     "views": 1116,
-     "score": 85,
-     "duration": 33,
-     "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
-     "ig": false,
-     "fb_url": ""
-    },
-    {
-     "id": "x6tnvdd_BCg_03",
-     "title": "Let's take it outside tiny bro #barfight #GTA6",
-     "game": "GTA 6",
-     "at": "2026-11-22T00:30:21.701000Z",
-     "url": "https://youtube.com/shorts/Ea_2u5g1NQA",
-     "views": 1081,
-     "score": 74,
-     "duration": 30,
-     "from": "GTA 6: Picking Up Lu From Prison",
-     "ig": false,
-     "fb_url": ""
-    },
-    {
-     "id": "-3izYF6h_z8_03",
-     "title": "GTA 6: If your partner's hurt, wake them up",
-     "game": "GTA 6",
-     "at": "2026-11-22T04:00:27.347000Z",
-     "url": "https://youtube.com/shorts/zTLAoLn6blo",
-     "views": 1255,
-     "score": 74,
-     "duration": 18,
-     "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
-     "ig": false,
-     "fb_url": ""
-    },
-    {
-     "id": "xDW0dL14BXo_01",
-     "title": "GTA 6: Who cleans the messy house, Lucia or Mia?",
-     "game": "GTA 6",
-     "at": "2026-11-22T07:30:19.768000Z",
-     "url": "https://youtube.com/shorts/UYnx9kufBvE",
-     "views": 295,
-     "score": 84,
-     "duration": 23,
-     "from": "Finding the San Andreas House in GTA 6",
-     "ig": false,
-     "fb_url": ""
-    },
-    {
-     "id": "x6tnvdd_BCg_04",
-     "title": "GTA 6: Bar fights are soo fun",
-     "game": "GTA 6",
-     "at": "2026-11-22T11:30:21.725000Z",
-     "url": "https://youtube.com/shorts/08S4R_4k-s4",
-     "views": 84,
-     "score": 66,
-     "duration": 26,
-     "from": "GTA 6: Picking Up Lu From Prison",
-     "ig": true,
-     "fb_url": "https://www.facebook.com/reel/1172969188410542"
-    },
-    {
-     "id": "IVZI7UfJkH4_02",
-     "title": "Jumping on a boat with 15kg Scuba gear? GTA 6 GOT THIS WRONG",
-     "game": "GTA 6",
-     "at": "2026-11-22T14:30:21.793000Z",
-     "url": "https://youtube.com/shorts/BBrCI5sVRUY",
-     "views": 58,
-     "score": 66,
-     "duration": 22,
-     "from": "Scuba diver checks how accurate GTA 6's dive mission is",
-     "ig": true,
-     "fb_url": "https://www.facebook.com/reel/1149896314674683"
-    },
-    {
-     "id": "tip_T42_1_d762",
-     "title": "3 Ways Into Locked Buildings in GTA 6",
-     "game": "GTA 6",
-     "at": "2026-11-22T15:21:39.292000Z",
-     "url": "https://youtube.com/shorts/f-xZGpy8EkE",
-     "views": 149,
-     "score": "",
-     "duration": 23,
-     "from": "Raiding Illegal Spots and Grabbing the Loot | GTA 6",
-     "ig": false,
-     "fb_url": ""
-    }
-   ],
+   "posted": [],
    "uploads": [
     {
-     "title": "GTA 6: Buying Premium Car Delivery Membership",
+     "title": "GTA 6: Stealth robbery attempt goes wrong",
      "game": "GTA 6",
-     "url": "https://youtu.be/RshFk8YiAug",
-     "at": "2026-11-22T10:39:45Z",
+     "url": "https://youtu.be/TBCnWiMPW8w",
+     "at": "2026-11-22T19:05:36Z",
      "status": "clipped"
     },
     {
-     "title": "Raiding Illegal Spots and Grabbing the Loot | GTA 6",
+     "title": "GTA 6: Lucia's Meditation Says 'Other Places I Can Go'",
      "game": "GTA 6",
-     "url": "https://youtu.be/0aKodCItm7M",
-     "at": "2026-11-22T10:46:49Z",
-     "status": "clipped"
+     "url": "https://youtu.be/lJFbQ-MwiN0",
+     "at": "2026-11-22T19:43:11Z",
+     "status": "awaiting_brief"
+    },
+    {
+     "title": "GTA 6: Silver Audi Cruising Past a Maibatsu Truck",
+     "game": "GTA 6",
+     "url": "https://youtu.be/2nHYkY6wCog",
+     "at": "2026-11-22T19:45:31Z",
+     "status": "brief_queued"
+    },
+    {
+     "title": "GTA 6: Finding Kyle Among the Tanks?",
+     "game": "GTA 6",
+     "url": "https://youtu.be/k8wR7j19Zoo",
+     "at": "2026-11-22T19:52:34Z",
+     "status": "brief_queued"
+    },
+    {
+     "title": "GTA 6: Lucia's first robbery, \"You'll see.\"",
+     "game": "GTA 6",
+     "url": "https://youtu.be/Q24sdQY1_Tk",
+     "at": "2026-11-22T20:10:23Z",
+     "status": "brief_queued"
     }
    ],
-   "shorts_made": 3,
+   "shorts_made": 6,
    "clipped": [
-    "GTA 6: Buying Premium Car Delivery Membership",
-    "Raiding Illegal Spots and Grabbing the Loot | GTA 6"
+    "GTA 6: Stealth robbery attempt goes wrong"
    ]
   },
   "up_next": [
-   {
-    "id": "0U7r2RVi1TI_04",
-    "title": "GTA 6: Forget the stolen truck and it hits impound",
-    "game": "GTA 6",
-    "at": "2026-11-22T21:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 70,
-    "duration": 35,
-    "from": "GTA 6 Second Hour on PS5 | Story Mode",
-    "ig": false,
-    "fb_url": "",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
    {
     "id": "x6tnvdd_BCg_05",
     "title": "GTA 6: Who gets thrown out of the bar first?",
@@ -184,15 +105,15 @@
     "title_state": "claude"
    },
    {
-    "id": "D9IwOx0XqNM_01",
-    "title": "GTA 6: Can the crew pull off an armored car grab?",
+    "id": "TBCnWiMPW8w_05",
+    "title": "GTA 6: If you're pinned, clear patrols from the roof",
     "game": "GTA 6",
     "at": "2026-11-23T11:30:00Z",
     "url": "",
     "views": null,
-    "score": 85,
-    "duration": 26,
-    "from": "GTA 6 drunk weekend gameplay: full of accidents",
+    "score": 88,
+    "duration": 16,
+    "from": "GTA 6: Stealth robbery attempt goes wrong",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -200,15 +121,15 @@
     "title_state": "claude"
    },
    {
-    "id": "Kpe0srbAOZc_02",
-    "title": "GTA 6: don't stall, the zombie timer is ticking",
+    "id": "D9IwOx0XqNM_01",
+    "title": "GTA 6: Can the crew pull off an armored car grab?",
     "game": "GTA 6",
     "at": "2026-11-23T14:30:00Z",
     "url": "",
     "views": null,
-    "score": 74,
-    "duration": 25,
-    "from": "Playing the PS5 in J's room in GTA 6",
+    "score": 85,
+    "duration": 26,
+    "from": "GTA 6 drunk weekend gameplay: full of accidents",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -232,15 +153,15 @@
     "title_state": "yours"
    },
    {
-    "id": "D9IwOx0XqNM_02",
-    "title": "Nice or loud? GTA 6 crew debates the heist plan",
+    "id": "TBCnWiMPW8w_01",
+    "title": "GTA 6: Can Lucia crack the safe before cops arrive?",
     "game": "GTA 6",
     "at": "2026-11-24T00:30:00Z",
     "url": "",
     "views": null,
-    "score": 72,
-    "duration": 25,
-    "from": "GTA 6 drunk weekend gameplay: full of accidents",
+    "score": 79,
+    "duration": 18,
+    "from": "GTA 6: Stealth robbery attempt goes wrong",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -248,15 +169,15 @@
     "title_state": "claude"
    },
    {
-    "id": "xDW0dL14BXo_02",
-    "title": "GTA 6: Family fight at the house, then food run",
+    "id": "TBCnWiMPW8w_06",
+    "title": "GTA 6: Why is the safe code hidden in a laptop email?",
     "game": "GTA 6",
     "at": "2026-11-24T04:00:00Z",
     "url": "",
     "views": null,
-    "score": 72,
-    "duration": 34,
-    "from": "Finding the San Andreas House in GTA 6",
+    "score": 78,
+    "duration": 12,
+    "from": "GTA 6: Stealth robbery attempt goes wrong",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -280,15 +201,15 @@
     "title_state": "yours"
    },
    {
-    "id": "-3izYF6h_z8_04",
-    "title": "GTA 6: Blaming a hunting accident buys only time",
+    "id": "Kpe0srbAOZc_02",
+    "title": "GTA 6: don't stall, the zombie timer is ticking",
     "game": "GTA 6",
     "at": "2026-11-24T11:30:00Z",
     "url": "",
     "views": null,
-    "score": 70,
-    "duration": 21,
-    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "score": 74,
+    "duration": 25,
+    "from": "Playing the PS5 in J's room in GTA 6",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -296,15 +217,31 @@
     "title_state": "claude"
    },
    {
-    "id": "-3izYF6h_z8_05",
-    "title": "GTA 6: Will the bag handover end in a shootout?",
+    "id": "D9IwOx0XqNM_02",
+    "title": "Nice or loud? GTA 6 crew debates the heist plan",
     "game": "GTA 6",
     "at": "2026-11-24T14:30:00Z",
     "url": "",
     "views": null,
+    "score": 72,
+    "duration": 25,
+    "from": "GTA 6 drunk weekend gameplay: full of accidents",
+    "ig": false,
+    "fb_url": "",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "y0DrBXmTtlg_03",
+    "title": "Helldivers 2: Orbital strikes called, then reversed",
+    "game": "Helldivers 2",
+    "at": "2026-11-24T21:30:00Z",
+    "url": "",
+    "views": null,
     "score": 70,
-    "duration": 19,
-    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "duration": 15,
+    "from": "Helldivers 2 good squad gameplay: what teamwork looks like",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -317,14 +254,64 @@
    "G": 0
   },
   "queue": {
-   "total": 92,
+   "total": 98,
    "by_game": {
-    "GTA 6": 54,
+    "GTA 6": 60,
     "Helldivers 2": 38
    },
-   "days_left": 15.3
+   "days_left": 16.3
   },
   "videos": [
+   {
+    "title": "GTA 6: Lucia's first robbery, \"You'll see.\"",
+    "game": "GTA 6",
+    "url": "https://youtu.be/Q24sdQY1_Tk",
+    "at": "2026-11-22T20:10:23Z",
+    "status": "brief_queued",
+    "shorts_made": "",
+    "shorts_posted": "",
+    "views": 0
+   },
+   {
+    "title": "GTA 6: Finding Kyle Among the Tanks?",
+    "game": "GTA 6",
+    "url": "https://youtu.be/k8wR7j19Zoo",
+    "at": "2026-11-22T19:52:34Z",
+    "status": "brief_queued",
+    "shorts_made": "",
+    "shorts_posted": "",
+    "views": 0
+   },
+   {
+    "title": "GTA 6: Silver Audi Cruising Past a Maibatsu Truck",
+    "game": "GTA 6",
+    "url": "https://youtu.be/2nHYkY6wCog",
+    "at": "2026-11-22T19:45:31Z",
+    "status": "brief_queued",
+    "shorts_made": "",
+    "shorts_posted": "",
+    "views": 0
+   },
+   {
+    "title": "GTA 6: Lucia's Meditation Says 'Other Places I Can Go'",
+    "game": "GTA 6",
+    "url": "https://youtu.be/lJFbQ-MwiN0",
+    "at": "2026-11-22T19:43:11Z",
+    "status": "awaiting_brief",
+    "shorts_made": "",
+    "shorts_posted": "",
+    "views": 0
+   },
+   {
+    "title": "GTA 6: Stealth robbery attempt goes wrong",
+    "game": "GTA 6",
+    "url": "https://youtu.be/TBCnWiMPW8w",
+    "at": "2026-11-22T19:05:36Z",
+    "status": "clipped",
+    "shorts_made": 6,
+    "shorts_posted": "",
+    "views": 2
+   },
    {
     "title": "Raiding Illegal Spots and Grabbing the Loot | GTA 6",
     "game": "GTA 6",
@@ -333,7 +320,7 @@
     "status": "clipped",
     "shorts_made": 1,
     "shorts_posted": "",
-    "views": 0
+    "views": 2
    },
    {
     "title": "GTA 6: Buying Premium Car Delivery Membership",
@@ -343,7 +330,7 @@
     "status": "clipped",
     "shorts_made": 1,
     "shorts_posted": "",
-    "views": 0
+    "views": 2
    },
    {
     "title": "GTA 6 noise cancelling headphones: does it work?",
@@ -353,71 +340,17 @@
     "status": "clipped",
     "shorts_made": 1,
     "shorts_posted": "",
-    "views": 1
-   },
-   {
-    "title": "Finding the San Andreas House in GTA 6",
-    "game": "GTA 6",
-    "url": "https://youtu.be/xDW0dL14BXo",
-    "at": "2026-11-21T08:01:02Z",
-    "status": "clipped",
-    "shorts_made": 5,
-    "shorts_posted": 1,
-    "views": 5
-   },
-   {
-    "title": "GTA 6 drunk weekend gameplay: full of accidents",
-    "game": "GTA 6",
-    "url": "https://youtu.be/D9IwOx0XqNM",
-    "at": "2026-11-20T20:46:50Z",
-    "status": "clipped",
-    "shorts_made": 10,
-    "shorts_posted": "",
-    "views": 4
-   },
-   {
-    "title": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
-    "game": "GTA 6",
-    "url": "https://youtu.be/-3izYF6h_z8",
-    "at": "2026-11-19T22:46:35Z",
-    "status": "clipped",
-    "shorts_made": 9,
-    "shorts_posted": 3,
-    "views": 16
-   },
-   {
-    "title": "Random missions and chilling | GTA 6",
-    "game": "GTA 6",
-    "url": "https://youtu.be/AqVZGcqdjoI",
-    "at": "2026-11-19T18:18:03Z",
-    "status": "clipped",
-    "shorts_made": 9,
-    "shorts_posted": 2,
-    "views": 2
-   },
-   {
-    "title": "GTA 6: Picking Up Lu From Prison",
-    "game": "GTA 6",
-    "url": "https://youtu.be/x6tnvdd_BCg",
-    "at": "2026-11-19T15:20:22Z",
-    "status": "clipped",
-    "shorts_made": 8,
-    "shorts_posted": 4,
-    "views": 23
+    "views": 3
    }
   ],
   "issues": [],
   "totals": {
    "shorts_posted": 43,
-   "shorts_views": 46963,
-   "videos": 25,
-   "video_views": 515
+   "shorts_views": 49285,
+   "videos": 30,
+   "video_views": 543
   },
   "per_day": [
-   {
-    "day": "2026-11-09",
-    "posted": 0
-   },
    {
     "day": "2026-11-10",
     "posted": 0
@@ -469,23 +402,27 @@
    {
     "day": "2026-11-22",
     "posted": 7
+   },
+   {
+    "day": "2026-11-23",
+    "posted": 0
    }
   ],
   "platforms": {
    "youtube": {
     "posted": 43,
-    "views": 46963,
+    "views": 49285,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 5,
-    "waiting": 38,
+    "posted": 8,
+    "waiting": 35,
     "failed": 0,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 5,
-    "waiting": 38,
+    "posted": 8,
+    "waiting": 35,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
    }
@@ -497,7 +434,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 16078,
+    "views": 17919,
     "score": 74,
     "duration": 21,
     "from": "GTA 6 Second Hour on PS5 | Story Mode",
@@ -510,7 +447,7 @@
     "game": "GTA 6",
     "at": "2026-11-20T07:30:21.118000Z",
     "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-    "views": 1638,
+    "views": 1642,
     "score": 85,
     "duration": 35,
     "from": "GTA 6 Second Hour on PS5 | Story Mode",
@@ -523,7 +460,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1613,
+    "views": 1628,
     "score": 82,
     "duration": 29,
     "from": "Random missions and chilling | GTA 6",
@@ -536,25 +473,25 @@
     "game": "GTA 6",
     "at": "2026-11-21T11:30:25.588000Z",
     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1359,
+    "views": 1391,
     "score": 78,
     "duration": 23,
     "from": "Random missions and chilling | GTA 6",
-    "ig": false,
-    "fb_url": ""
+    "ig": true,
+    "fb_url": "https://www.facebook.com/reel/1134112265656526"
    },
    {
-    "id": "9fAiHB6V3pw_03",
-    "title": "Don't leave your sentry alone when Heavies close in",
-    "game": "Helldivers 2",
-    "at": "2026-11-16T14:30:13.010000Z",
-    "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
-    "views": 1296,
-    "score": 66,
-    "duration": 25,
-    "from": "Helldivers 2 PS5 lag and glitches until extraction",
-    "ig": false,
-    "fb_url": ""
+    "id": "-3izYF6h_z8_03",
+    "title": "GTA 6: If your partner's hurt, wake them up",
+    "game": "GTA 6",
+    "at": "2026-11-22T04:00:27.347000Z",
+    "url": "https://youtube.com/shorts/zTLAoLn6blo",
+    "views": 1371,
+    "score": 74,
+    "duration": 18,
+    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "ig": true,
+    "fb_url": "https://www.facebook.com/reel/2057633061869493"
    }
   ],
   "ok": true
@@ -562,7 +499,23 @@
  "sl": {
   "ok": true,
   "now": [],
-  "today": [],
+  "today": [
+   {
+    "id": "r08",
+    "title": "THE WEAKEST HUNTER · Part 4/8: Six Kills (story-first, live kill-counter cold open)",
+    "at": "2026-11-23T04:30:00Z",
+    "status": "scheduled",
+    "url": "",
+    "views": null,
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "skip_rate": null,
+    "avg_watch": null,
+    "score": null
+   }
+  ],
   "up_next": [
    {
     "id": "r08",
@@ -733,7 +686,7 @@
   "_bnDIO6ZOeo": 1413,
   "k3aeGtTL464": 814,
   "U8i6h36yVDY": 172,
-  "79_ZyoNT1jg": 925,
+  "79_ZyoNT1jg": 924,
   "CrveKG32kqA": 609,
   "wJ5ODZSqqQ4": 297,
   "6oNpggoXkXc": 624,
@@ -746,31 +699,31 @@
   "0fm5Jqik_gU": 328,
   "YTVhAYM3Ftg": 1296,
   "lfx64AWbC9s": 430,
-  "8I9h6Bq48vY": 693,
-  "VNBRgawVmE8": 990,
-  "JY5Gays_MfQ": 675,
-  "2-wNg1d5mvU": 1133,
-  "d2dqCcDgHDo": 1040,
+  "8I9h6Bq48vY": 692,
+  "VNBRgawVmE8": 985,
+  "JY5Gays_MfQ": 652,
+  "2-wNg1d5mvU": 1139,
+  "d2dqCcDgHDo": 1038,
   "zgX33pMgAF0": 606,
   "6_EZFFO1cc0": 646,
-  "xm3TQqlVM2c": 63,
-  "DS9wb5_E3Cc": 1638,
-  "FzJCVEwQA0g": 42,
-  "hFKKqp4URkA": 16078,
+  "xm3TQqlVM2c": 66,
+  "DS9wb5_E3Cc": 1642,
+  "FzJCVEwQA0g": 45,
+  "hFKKqp4URkA": 17919,
   "MC4y5ZYRO3w": 1123,
-  "BBrCI5sVRUY": 58,
-  "HDrn8iS6MyU": 208,
-  "OsI_r7G_WsI": 1104,
+  "BBrCI5sVRUY": 140,
+  "HDrn8iS6MyU": 210,
+  "OsI_r7G_WsI": 1152,
   "-UhIaH95dhs": 96,
-  "Ea_2u5g1NQA": 1081,
-  "08S4R_4k-s4": 84,
+  "Ea_2u5g1NQA": 1059,
+  "08S4R_4k-s4": 89,
   "qMA1R4vHCWs": 12,
-  "-irOEWAmzaA": 1116,
-  "zTLAoLn6blo": 1255,
-  "25MVUMhaLEc": 1613,
-  "i8kqIJiEwe4": 1359,
-  "UYnx9kufBvE": 295,
-  "f-xZGpy8EkE": 149,
+  "-irOEWAmzaA": 1152,
+  "zTLAoLn6blo": 1371,
+  "25MVUMhaLEc": 1628,
+  "i8kqIJiEwe4": 1391,
+  "UYnx9kufBvE": 301,
+  "f-xZGpy8EkE": 326,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -785,16 +738,21 @@
   "NxiTPVTcvY0": 5,
   "gTX0z2q4rXw": 8,
   "LB8-bROhsBA": 8,
-  "0U7r2RVi1TI": 4,
-  "IVZI7UfJkH4": 356,
+  "0U7r2RVi1TI": 6,
+  "IVZI7UfJkH4": 373,
   "Kpe0srbAOZc": 17,
   "x6tnvdd_BCg": 23,
   "AqVZGcqdjoI": 2,
-  "-3izYF6h_z8": 16,
+  "-3izYF6h_z8": 17,
   "D9IwOx0XqNM": 4,
   "xDW0dL14BXo": 5,
-  "p-VmW5hTenM": 1,
-  "RshFk8YiAug": 0,
-  "0aKodCItm7M": 0
+  "p-VmW5hTenM": 3,
+  "RshFk8YiAug": 2,
+  "0aKodCItm7M": 2,
+  "TBCnWiMPW8w": 2,
+  "lJFbQ-MwiN0": 0,
+  "2nHYkY6wCog": 0,
+  "k8wR7j19Zoo": 0,
+  "Q24sdQY1_Tk": 0
  }
 }
