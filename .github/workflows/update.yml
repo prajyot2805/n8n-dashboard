@@ -9,6 +9,7 @@ on:
       - main
     paths:
       - 'update_dashboard.py'
+      - 'alarm.py'
       - 'index.html'
       - '.github/workflows/**'
 
@@ -38,9 +39,21 @@ jobs:
         run: |
           python update_dashboard.py
 
+      - name: Outside alarm (Telegram)
+        if: always()
+        env:
+          N8N_BASE_URL: ${{ secrets.N8N_BASE_URL }}
+          N8N_API_KEY: ${{ secrets.N8N_API_KEY }}
+          TIPS_BOT_TOKEN: ${{ secrets.TIPS_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python test_alarm.py
+          python alarm.py alarm.json 1
+
       - name: Commit & Push Dashboard Updates
+        if: always()
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add status.json
+          git add status.json alarm.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: refresh dashboard status [skip ci]" && git push)
