@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T16:24:11.104993Z",
+ "generated_at": "2026-11-22T16:36:49.551934Z",
  "ps5": {
   "now": [],
   "today": {
@@ -10,7 +10,7 @@
      "game": "GTA 6",
      "at": "2026-11-21T21:30:21.160000Z",
      "url": "https://youtube.com/shorts/-irOEWAmzaA",
-     "views": 1118,
+     "views": 1116,
      "score": 85,
      "duration": 33,
      "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
@@ -23,7 +23,7 @@
      "game": "GTA 6",
      "at": "2026-11-22T00:30:21.701000Z",
      "url": "https://youtube.com/shorts/Ea_2u5g1NQA",
-     "views": 1058,
+     "views": 1081,
      "score": 74,
      "duration": 30,
      "from": "GTA 6: Picking Up Lu From Prison",
@@ -62,7 +62,7 @@
      "game": "GTA 6",
      "at": "2026-11-22T11:30:21.725000Z",
      "url": "https://youtube.com/shorts/08S4R_4k-s4",
-     "views": 70,
+     "views": 84,
      "score": 66,
      "duration": 26,
      "from": "GTA 6: Picking Up Lu From Prison",
@@ -75,7 +75,7 @@
      "game": "GTA 6",
      "at": "2026-11-22T14:30:21.793000Z",
      "url": "https://youtube.com/shorts/BBrCI5sVRUY",
-     "views": 47,
+     "views": 58,
      "score": 66,
      "duration": 22,
      "from": "Scuba diver checks how accurate GTA 6's dive mission is",
@@ -88,7 +88,7 @@
      "game": "GTA 6",
      "at": "2026-11-22T15:21:39.292000Z",
      "url": "https://youtube.com/shorts/f-xZGpy8EkE",
-     "views": 98,
+     "views": 149,
      "score": "",
      "duration": 23,
      "from": "Raiding Illegal Spots and Grabbing the Loot | GTA 6",
@@ -317,12 +317,12 @@
    "G": 0
   },
   "queue": {
-   "total": 93,
+   "total": 92,
    "by_game": {
-    "GTA 6": 55,
+    "GTA 6": 54,
     "Helldivers 2": 38
    },
-   "days_left": 15.5
+   "days_left": 15.3
   },
   "videos": [
    {
@@ -333,7 +333,7 @@
     "status": "clipped",
     "shorts_made": 1,
     "shorts_posted": "",
-    "views": 1
+    "views": 0
    },
    {
     "title": "GTA 6: Buying Premium Car Delivery Membership",
@@ -353,7 +353,7 @@
     "status": "clipped",
     "shorts_made": 1,
     "shorts_posted": "",
-    "views": 2
+    "views": 1
    },
    {
     "title": "Finding the San Andreas House in GTA 6",
@@ -409,9 +409,9 @@
   "issues": [],
   "totals": {
    "shorts_posted": 43,
-   "shorts_views": 46828,
+   "shorts_views": 46963,
    "videos": 25,
-   "video_views": 517
+   "video_views": 515
   },
   "per_day": [
    {
@@ -474,7 +474,7 @@
   "platforms": {
    "youtube": {
     "posted": 43,
-    "views": 46828,
+    "views": 46963,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
@@ -497,7 +497,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 16059,
+    "views": 16078,
     "score": 74,
     "duration": 21,
     "from": "GTA 6 Second Hour on PS5 | Story Mode",
@@ -523,7 +523,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1617,
+    "views": 1613,
     "score": 82,
     "duration": 29,
     "from": "Random missions and chilling | GTA 6",
@@ -536,7 +536,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T11:30:25.588000Z",
     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1341,
+    "views": 1359,
     "score": 78,
     "duration": 23,
     "from": "Random missions and chilling | GTA 6",
@@ -756,21 +756,21 @@
   "xm3TQqlVM2c": 63,
   "DS9wb5_E3Cc": 1638,
   "FzJCVEwQA0g": 42,
-  "hFKKqp4URkA": 16059,
+  "hFKKqp4URkA": 16078,
   "MC4y5ZYRO3w": 1123,
-  "BBrCI5sVRUY": 47,
+  "BBrCI5sVRUY": 58,
   "HDrn8iS6MyU": 208,
-  "OsI_r7G_WsI": 1099,
+  "OsI_r7G_WsI": 1104,
   "-UhIaH95dhs": 96,
-  "Ea_2u5g1NQA": 1058,
-  "08S4R_4k-s4": 70,
+  "Ea_2u5g1NQA": 1081,
+  "08S4R_4k-s4": 84,
   "qMA1R4vHCWs": 12,
-  "-irOEWAmzaA": 1118,
+  "-irOEWAmzaA": 1116,
   "zTLAoLn6blo": 1255,
-  "25MVUMhaLEc": 1617,
-  "i8kqIJiEwe4": 1341,
+  "25MVUMhaLEc": 1613,
+  "i8kqIJiEwe4": 1359,
   "UYnx9kufBvE": 295,
-  "f-xZGpy8EkE": 98,
+  "f-xZGpy8EkE": 149,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -793,8 +793,8 @@
   "-3izYF6h_z8": 16,
   "D9IwOx0XqNM": 4,
   "xDW0dL14BXo": 5,
-  "p-VmW5hTenM": 2,
+  "p-VmW5hTenM": 1,
   "RshFk8YiAug": 0,
-  "0aKodCItm7M": 1
+  "0aKodCItm7M": 0
  }
 }
