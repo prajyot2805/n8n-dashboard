@@ -106,7 +106,8 @@ def ps5(old_views):
     def short_card(s, at=None):
         return {'id': s['short_id'], 'title': s.get('short_title') or '', 'game': s.get('game') or '', 'at': iso(at or ts(s.get('posted_at'))),
                 'url': s.get('short_url') or '', 'views': views.get(s.get('short_video_id')), 'score': s.get('score') or '',
-                'duration': round(float(s.get('duration_sec') or 0)), 'from': vtitle.get(str(s.get('source_video_id')), '')}
+                'duration': round(float(s.get('duration_sec') or 0)), 'from': vtitle.get(str(s.get('source_video_id')), ''),
+                'ig': s.get('ig_status') == 'done', 'fb_url': 'https://www.facebook.com/reel/%s' % s['fb_id'] if s.get('fb_status') == 'done' and s.get('fb_id') else ''}
 
     # Up next: the poster's own rules (build.py Pick Short): the Short booked for a slot posts, except that an
     # unbooked GTA 6 Short takes over a slot booked for another game; open slots take the best unbooked Short.
@@ -191,6 +192,15 @@ def ps5(old_views):
         'totals': {'shorts_posted': len(posted), 'shorts_views': sum(views.get(s['short_video_id']) or 0 for s in posted),
                    'videos': len(videos), 'video_views': sum(views.get(str(v['video_id'])) or 0 for v in videos)},
         'per_day': [{'day': d, 'posted': per_day.get(d, 0)} for d in days14],
+        # Cross-poster workflow (22 Nov): Instagram/Facebook status per Short, from the Shorts tab. No Meta views here
+        # (that would need a Meta token in GitHub); counts only.
+        'platforms': {
+            'youtube': {'posted': len(posted), 'views': sum(views.get(s['short_video_id']) or 0 for s in posted), 'url': 'https://www.youtube.com/@ps5gamesonly95'},
+            'instagram': {'posted': sum(s.get('ig_status') == 'done' for s in posted), 'waiting': sum(s.get('ig_status') not in ('done', 'failed') for s in posted),
+                          'failed': sum(s.get('ig_status') == 'failed' for s in posted), 'url': 'https://www.instagram.com/ps5games_only/'},
+            'facebook': {'posted': sum(s.get('fb_status') == 'done' for s in posted), 'waiting': sum(s.get('fb_status') not in ('done', 'failed', 'skipped') for s in posted),
+                         'failed': sum(s.get('fb_status') == 'failed' for s in posted), 'url': 'https://www.facebook.com/ps5gamesonly'},
+        },
         'top_week': [short_card(s) for s in top],
         'ok': bool(videos and shorts),
     }, views

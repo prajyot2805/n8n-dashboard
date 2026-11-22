@@ -61,6 +61,8 @@ header h1 { font-size: 18px; margin: 0; font-weight: 700; letter-spacing: -.01em
 .kpi .sub { color: var(--ink-2); font-size: 13px; }
 .meter { height: 6px; background: var(--surface-2); border-radius: 3px; margin-top: 8px; overflow: hidden; }
 .meter > span { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.plats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.plat .label a { text-decoration: none; } .plat .label a:hover { text-decoration: underline; }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
 h2 { font-size: 15px; margin: 0 0 12px; font-weight: 700; display: flex; align-items: baseline; gap: 8px; }
 h2 small { color: var(--ink-3); font-weight: 500; font-size: 12px; }
@@ -107,7 +109,7 @@ tr:last-child td { border-bottom: 0; }
 .lessons { margin: 0; padding-left: 18px; color: var(--ink-2); } .lessons li { margin-bottom: 6px; }
 .hidden { display: none !important; }
 .err { padding: 14px; border-radius: 10px; background: var(--you-soft); color: var(--you); }
-@media (max-width: 860px) { .kpis { grid-template-columns: repeat(2, 1fr); } .grid2 { grid-template-columns: 1fr; } }
+@media (max-width: 860px) { .plats { grid-template-columns: 1fr; } .kpis { grid-template-columns: repeat(2, 1fr); } .grid2 { grid-template-columns: 1fr; } }
 @media (max-width: 420px) { .kpi .value { font-size: 24px; } .tab { padding: 8px 12px; } }
 </style>
 </head>
@@ -185,13 +187,26 @@ function wireTips(root) {
   });
 }
 
+// One tile per platform: Shorts/Reels posted, plus YouTube views or what still waits to be cross-posted.
+function platforms(pl) {
+  if (!pl) return '';
+  const wait = x => x.waiting ? `${nf(x.waiting)} waiting to go out` : 'All caught up';
+  const fail = x => x.failed ? ` · <span style="color:var(--you)">${nf(x.failed)} failed</span>` : '';
+  const tile = (name, x, sub) => `<div class="card kpi plat"><div class="label"><a href="${esc(x.url)}" target="_blank" rel="noopener">${name} ↗</a></div><div class="value">${nf(x.posted)}</div><div class="sub">${sub}</div></div>`;
+  return `<div class="plats">
+    ${tile('YouTube Shorts', pl.youtube, `${nf(pl.youtube.views)} views`)}
+    ${tile('Instagram Reels', pl.instagram, wait(pl.instagram) + fail(pl.instagram))}
+    ${tile('Facebook Reels', pl.facebook, wait(pl.facebook) + fail(pl.facebook))}
+  </div>`;
+}
+
 function renderPS5(p) {
   if (!p || !p.ok) return `<div class="err">No PS5 data in the latest n8n runs. It fills in again after the next 10-minute run.</div>`;
   const t = p.today, q = p.queue, next = p.up_next.find(u => !u.empty);
   const titleState = { yours: '<span class="pill good">Your title</span>', check_sent: '<span class="pill warn">Title check sent</span>', claude: '<span class="pill">Claude’s title</span>' };
   const gameColor = g => /gta/i.test(g) ? 'var(--gta)' : /helldivers/i.test(g) ? 'var(--hd)' : 'var(--ink-3)';
   const todayItems = [
-    ...t.posted.map(s => ({ at: s.at, html: `<div class="title">▶️ ${link(s.url, s.title)}</div><div class="meta">${gamePill(s.game)}<span>Short posted</span><span>· ${nf(s.views)} views</span></div>` })),
+    ...t.posted.map(s => ({ at: s.at, html: `<div class="title">▶️ ${link(s.url, s.title)}</div><div class="meta">${gamePill(s.game)}<span>Short posted</span><span>· ${nf(s.views)} views</span>${s.ig ? '<span class="pill good">Instagram</span>' : ''}${s.fb_url ? `<a class="pill good" href="${esc(s.fb_url)}" target="_blank" rel="noopener">Facebook</a>` : ''}</div>` })),
     ...t.uploads.map(v => ({ at: v.at, html: `<div class="title">📺 ${link(v.url, v.title)}</div><div class="meta">${gamePill(v.game)}<span>Your video</span><span>· ${esc(v.status.replace('_', ' '))}</span></div>` })),
   ].sort((a, b) => String(a.at).localeCompare(String(b.at)));
   return `
@@ -201,6 +216,7 @@ function renderPS5(p) {
     ${kpi('Made today', nf(t.shorts_made), t.clipped.length ? `from ${t.clipped.length} video${t.clipped.length > 1 ? 's' : ''}` : 'No clipping today')}
     ${kpi('Shorts views', nf(p.totals.shorts_views), `${nf(p.totals.shorts_posted)} Shorts · videos ${nf(p.totals.video_views)} views`)}
   </div>
+  ${platforms(p.platforms)}
   <div class="card section"><h2>Right now</h2>${nowList(p.now, 'Nothing needs you. Shorts post on their own.')}</div>
   <div class="grid2">
     <div class="card"><h2>Today <small>${new Date().toLocaleDateString('en-IN', { ...IST, weekday: 'long', day: 'numeric', month: 'short' })}</small></h2>
