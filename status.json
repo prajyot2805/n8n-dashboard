@@ -1,7 +1,12 @@
 {
- "generated_at": "2026-11-22T00:56:41.975259Z",
+ "generated_at": "2026-11-22T06:36:21.822319Z",
  "ps5": {
-  "now": [],
+  "now": [
+   {
+    "kind": "you",
+    "text": "Title check waiting for you: “GTA 6: Who cleans the messy house, Lucia or Mia?” (posts Sun 13:00)"
+   }
+  ],
   "today": {
    "posted": [
     {
@@ -10,7 +15,7 @@
      "game": "GTA 6",
      "at": "2026-11-21T21:30:21.160000Z",
      "url": "https://youtube.com/shorts/-irOEWAmzaA",
-     "views": 656,
+     "views": 1004,
      "score": 85,
      "duration": 33,
      "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5"
@@ -21,10 +26,21 @@
      "game": "GTA 6",
      "at": "2026-11-22T00:30:21.701000Z",
      "url": "https://youtube.com/shorts/Ea_2u5g1NQA",
-     "views": 2,
+     "views": 323,
      "score": 74,
      "duration": 30,
      "from": "GTA 6: Picking Up Lu From Prison"
+    },
+    {
+     "id": "-3izYF6h_z8_03",
+     "title": "GTA 6: If your partner's hurt, wake them up",
+     "game": "GTA 6",
+     "at": "2026-11-22T04:00:27.347000Z",
+     "url": "https://youtube.com/shorts/zTLAoLn6blo",
+     "views": 787,
+     "score": 74,
+     "duration": 18,
+     "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5"
     }
    ],
    "uploads": [],
@@ -33,43 +49,29 @@
   },
   "up_next": [
    {
-    "id": "-3izYF6h_z8_03",
-    "title": "GTA 6: If your partner's hurt, wake them up",
-    "game": "GTA 6",
-    "at": "2026-11-22T04:00:00Z",
-    "url": "",
-    "views": null,
-    "score": 74,
-    "duration": 18,
-    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
-   {
-    "id": "D9IwOx0XqNM_01",
-    "title": "GTA 6: Can the crew pull off an armored car grab?",
-    "game": "GTA 6",
-    "at": "2026-11-22T07:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 85,
-    "duration": 26,
-    "from": "GTA 6 drunk weekend gameplay: full of accidents",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
-   },
-   {
     "id": "xDW0dL14BXo_01",
     "title": "GTA 6: Who cleans the messy house, Lucia or Mia?",
     "game": "GTA 6",
-    "at": "2026-11-22T11:30:00Z",
+    "at": "2026-11-22T07:30:00Z",
     "url": "",
     "views": null,
     "score": 84,
     "duration": 23,
     "from": "Finding the San Andreas House in GTA 6",
+    "guess": false,
+    "note": "",
+    "title_state": "check_sent"
+   },
+   {
+    "id": "D9IwOx0XqNM_01",
+    "title": "GTA 6: Can the crew pull off an armored car grab?",
+    "game": "GTA 6",
+    "at": "2026-11-22T11:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 85,
+    "duration": 26,
+    "from": "GTA 6 drunk weekend gameplay: full of accidents",
     "guess": true,
     "note": "",
     "title_state": "claude"
@@ -199,15 +201,29 @@
     "guess": true,
     "note": "",
     "title_state": "claude"
+   },
+   {
+    "id": "Kpe0srbAOZc_03",
+    "title": "GTA 6 mistake: the couch faces the bed in J's house",
+    "game": "GTA 6",
+    "at": "2026-11-24T04:00:00Z",
+    "url": "",
+    "views": null,
+    "score": 66,
+    "duration": 35,
+    "from": "Playing the PS5 in J's room in GTA 6",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
    }
   ],
   "queue": {
-   "total": 95,
+   "total": 94,
    "by_game": {
-    "GTA 6": 57,
+    "GTA 6": 56,
     "Helldivers 2": 38
    },
-   "days_left": 15.8
+   "days_left": 15.7
   },
   "videos": [
    {
@@ -247,7 +263,7 @@
     "at": "2026-11-19T22:46:35Z",
     "status": "clipped",
     "shorts_made": 9,
-    "shorts_posted": 2,
+    "shorts_posted": 3,
     "views": 15
    },
    {
@@ -293,8 +309,8 @@
   ],
   "issues": [],
   "totals": {
-   "shorts_posted": 38,
-   "shorts_views": 35192,
+   "shorts_posted": 39,
+   "shorts_views": 40906,
    "videos": 23,
    "video_views": 510
   },
@@ -353,7 +369,7 @@
    },
    {
     "day": "2026-11-22",
-    "posted": 2
+    "posted": 3
    }
   ],
   "top_week": [
@@ -363,7 +379,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 8147,
+    "views": 12167,
     "score": 74,
     "duration": 21,
     "from": "GTA 6 Second Hour on PS5 | Story Mode"
@@ -374,7 +390,7 @@
     "game": "GTA 6",
     "at": "2026-11-20T07:30:21.118000Z",
     "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-    "views": 1627,
+    "views": 1634,
     "score": 85,
     "duration": 35,
     "from": "GTA 6 Second Hour on PS5 | Story Mode"
@@ -385,21 +401,10 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1557,
+    "views": 1585,
     "score": 82,
     "duration": 29,
     "from": "Random missions and chilling | GTA 6"
-   },
-   {
-    "id": "7OeDe1RP5LE_03",
-    "title": "If bugs swarm your west flank in Helldivers 2",
-    "game": "Helldivers 2",
-    "at": "2026-11-15T04:30:53.830000Z",
-    "url": "https://youtube.com/shorts/_bnDIO6ZOeo",
-    "views": 1410,
-    "score": 72,
-    "duration": 34,
-    "from": "Helldivers 2: the new green bug strain is tough"
    },
    {
     "id": "9fAiHB6V3pw_03",
@@ -407,9 +412,20 @@
     "game": "Helldivers 2",
     "at": "2026-11-16T14:30:13.010000Z",
     "url": "https://youtube.com/shorts/YTVhAYM3Ftg",
-    "views": 1295,
+    "views": 1296,
     "score": 66,
     "duration": 25,
+    "from": "Helldivers 2 PS5 lag and glitches until extraction"
+   },
+   {
+    "id": "9fAiHB6V3pw_01",
+    "title": "Helldivers 2: will Pelican One make it to extraction?",
+    "game": "Helldivers 2",
+    "at": "2026-11-15T21:30:08.579000Z",
+    "url": "https://youtube.com/shorts/qpcaqb9wPhE",
+    "views": 1286,
+    "score": 88,
+    "duration": 28,
     "from": "Helldivers 2 PS5 lag and glitches until extraction"
    }
   ],
@@ -590,9 +606,9 @@
   ]
  },
  "views": {
-  "VZkMukyJZh4": 1434,
+  "VZkMukyJZh4": 1435,
   "j10vRhfmPiI": 1241,
-  "_bnDIO6ZOeo": 1410,
+  "_bnDIO6ZOeo": 1411,
   "k3aeGtTL464": 814,
   "U8i6h36yVDY": 172,
   "79_ZyoNT1jg": 925,
@@ -606,28 +622,29 @@
   "YM7R8U3VR9o": 814,
   "qpcaqb9wPhE": 1286,
   "0fm5Jqik_gU": 328,
-  "YTVhAYM3Ftg": 1295,
-  "lfx64AWbC9s": 426,
-  "8I9h6Bq48vY": 692,
+  "YTVhAYM3Ftg": 1296,
+  "lfx64AWbC9s": 429,
+  "8I9h6Bq48vY": 693,
   "VNBRgawVmE8": 989,
-  "JY5Gays_MfQ": 669,
-  "2-wNg1d5mvU": 1126,
-  "d2dqCcDgHDo": 1034,
-  "zgX33pMgAF0": 598,
-  "6_EZFFO1cc0": 641,
-  "xm3TQqlVM2c": 57,
-  "DS9wb5_E3Cc": 1627,
-  "FzJCVEwQA0g": 16,
-  "hFKKqp4URkA": 8147,
-  "MC4y5ZYRO3w": 1122,
-  "HDrn8iS6MyU": 201,
-  "OsI_r7G_WsI": 1049,
-  "-UhIaH95dhs": 83,
-  "Ea_2u5g1NQA": 2,
-  "qMA1R4vHCWs": 7,
-  "-irOEWAmzaA": 656,
-  "25MVUMhaLEc": 1557,
-  "i8kqIJiEwe4": 1123,
+  "JY5Gays_MfQ": 670,
+  "2-wNg1d5mvU": 1130,
+  "d2dqCcDgHDo": 1039,
+  "zgX33pMgAF0": 600,
+  "6_EZFFO1cc0": 644,
+  "xm3TQqlVM2c": 59,
+  "DS9wb5_E3Cc": 1634,
+  "FzJCVEwQA0g": 29,
+  "hFKKqp4URkA": 12167,
+  "MC4y5ZYRO3w": 1123,
+  "HDrn8iS6MyU": 204,
+  "OsI_r7G_WsI": 1066,
+  "-UhIaH95dhs": 87,
+  "Ea_2u5g1NQA": 323,
+  "qMA1R4vHCWs": 9,
+  "-irOEWAmzaA": 1004,
+  "zTLAoLn6blo": 787,
+  "25MVUMhaLEc": 1585,
+  "i8kqIJiEwe4": 1262,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
