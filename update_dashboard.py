@@ -195,6 +195,7 @@ def ps5(old_views):
             'clipped': sorted({vtitle.get(str(s.get('source_video_id')), '') for s in made_today}),
         },
         'up_next': up_next,
+        'test': {k: sum(s.get('layout') == k for s in posted) for k in 'SG'},  # running test: speech vs Gemini picks, 15 each
         'queue': {'total': len(queued), 'by_game': dict(Counter(s.get('game') or 'Other' for s in queued).most_common()),
                   'days_left': round(len(queued) / len(PS5_SLOTS_MIN), 1)},
         'videos': [{'title': vtitle[str(v['video_id'])], 'game': v.get('game') or '', 'url': v.get('video_url') or '', 'at': iso(ts(v.get('published_at'))),
