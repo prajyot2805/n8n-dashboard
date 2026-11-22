@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T16:20:56.440785Z",
+ "generated_at": "2026-11-22T16:21:17.521104Z",
  "ps5": {
   "now": [],
   "today": {
@@ -23,7 +23,7 @@
      "game": "GTA 6",
      "at": "2026-11-22T00:30:21.701000Z",
      "url": "https://youtube.com/shorts/Ea_2u5g1NQA",
-     "views": 1029,
+     "views": 1081,
      "score": 74,
      "duration": 30,
      "from": "GTA 6: Picking Up Lu From Prison",
@@ -36,7 +36,7 @@
      "game": "GTA 6",
      "at": "2026-11-22T04:00:27.347000Z",
      "url": "https://youtube.com/shorts/zTLAoLn6blo",
-     "views": 1260,
+     "views": 1248,
      "score": 74,
      "duration": 18,
      "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
@@ -62,7 +62,7 @@
      "game": "GTA 6",
      "at": "2026-11-22T11:30:21.725000Z",
      "url": "https://youtube.com/shorts/08S4R_4k-s4",
-     "views": 87,
+     "views": 84,
      "score": 66,
      "duration": 26,
      "from": "GTA 6: Picking Up Lu From Prison",
@@ -75,7 +75,7 @@
      "game": "GTA 6",
      "at": "2026-11-22T14:30:21.793000Z",
      "url": "https://youtube.com/shorts/BBrCI5sVRUY",
-     "views": 45,
+     "views": 46,
      "score": 66,
      "duration": 22,
      "from": "Scuba diver checks how accurate GTA 6's dive mission is",
@@ -329,7 +329,7 @@
     "status": "clipped",
     "shorts_made": 1,
     "shorts_posted": "",
-    "views": 1
+    "views": 0
    },
    {
     "title": "GTA 6: Buying Premium Car Delivery Membership",
@@ -405,9 +405,9 @@
   "issues": [],
   "totals": {
    "shorts_posted": 43,
-   "shorts_views": 46845,
+   "shorts_views": 46874,
    "videos": 25,
-   "video_views": 516
+   "video_views": 515
   },
   "per_day": [
    {
@@ -470,7 +470,7 @@
   "platforms": {
    "youtube": {
     "posted": 43,
-    "views": 46845,
+    "views": 46874,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
@@ -519,7 +519,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1617,
+    "views": 1613,
     "score": 82,
     "duration": 29,
     "from": "Random missions and chilling | GTA 6",
@@ -532,7 +532,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T11:30:25.588000Z",
     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1359,
+    "views": 1361,
     "score": 78,
     "duration": 23,
     "from": "Random missions and chilling | GTA 6",
@@ -754,17 +754,17 @@
   "FzJCVEwQA0g": 42,
   "hFKKqp4URkA": 16059,
   "MC4y5ZYRO3w": 1123,
-  "BBrCI5sVRUY": 45,
+  "BBrCI5sVRUY": 46,
   "HDrn8iS6MyU": 208,
-  "OsI_r7G_WsI": 1111,
+  "OsI_r7G_WsI": 1104,
   "-UhIaH95dhs": 96,
-  "Ea_2u5g1NQA": 1029,
-  "08S4R_4k-s4": 87,
+  "Ea_2u5g1NQA": 1081,
+  "08S4R_4k-s4": 84,
   "qMA1R4vHCWs": 12,
   "-irOEWAmzaA": 1116,
-  "zTLAoLn6blo": 1260,
-  "25MVUMhaLEc": 1617,
-  "i8kqIJiEwe4": 1359,
+  "zTLAoLn6blo": 1248,
+  "25MVUMhaLEc": 1613,
+  "i8kqIJiEwe4": 1361,
   "UYnx9kufBvE": 295,
   "f-xZGpy8EkE": 96,
   "7OeDe1RP5LE": 5,
@@ -791,6 +791,6 @@
   "xDW0dL14BXo": 5,
   "p-VmW5hTenM": 1,
   "RshFk8YiAug": 0,
-  "0aKodCItm7M": 1
+  "0aKodCItm7M": 0
  }
 }
