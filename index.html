@@ -232,7 +232,7 @@ function renderPS5(p) {
     <div class="card"><h2>Queue <small>${nf(q.total)} Shorts ready in Drive</small></h2>
       <div class="qbar">${Object.entries(q.by_game).map(([g, n]) => `<span style="width:${n / q.total * 100}%;background:${gameColor(g)}" title="${esc(g)}: ${n}"></span>`).join('')}</div>
       <div class="legend">${Object.entries(q.by_game).map(([g, n]) => `<span><i style="background:${gameColor(g)}"></i>${esc(g)} <b>${n}</b></span>`).join('')}</div>
-      <div class="meta" style="margin-top:10px">GTA 6 Shorts post first while any are queued.</div>
+      <div class="meta" style="margin-top:10px">Two GTA 6 Shorts, then one of another game.</div>
     </div>
     <div class="card"><h2>Shorts posted per day <small>last 14 days</small></h2>${barChart(p.per_day, 'posted', 'Shorts posted')}</div>
   </div>

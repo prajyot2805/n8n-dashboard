@@ -109,13 +109,25 @@ def ps5(old_views):
                 'duration': round(float(s.get('duration_sec') or 0)), 'from': vtitle.get(str(s.get('source_video_id')), ''),
                 'ig': s.get('ig_status') == 'done', 'fb_url': 'https://www.facebook.com/reel/%s' % s['fb_id'] if s.get('fb_status') == 'done' and s.get('fb_id') else ''}
 
-    # Up next: the poster's own rules (build.py Pick Short): the Short booked for a slot posts, except that an
-    # unbooked GTA 6 Short takes over a slot booked for another game; open slots take the best unbooked Short.
+    # Up next: the poster's own rules (build.py Pick Short and QUEUE_JS pickOrder, 22 Nov): the Short booked for a slot posts;
+    # open slots take two GTA 6 Shorts, then one of another game, at most 2 of one source video a day, best score first.
     queued = [s for s in shorts if s.get('status') == 'queued' and s.get('drive_file_id')]
     missed = lambda s: ts(s.get('slot_at')) is not None and ts(s['slot_at']) < NOW - timedelta(hours=1)
     booked = {iso(ts(s['slot_at'])): s for s in queued if ts(s.get('slot_at')) and not missed(s)}
     pool = sorted([s for s in queued if not ts(s.get('slot_at')) or missed(s)],
-                  key=lambda s: (0 if is_gta(s.get('game')) else 1, -float(s.get('score') or 0), str(s.get('queued_at') or '')))
+                  key=lambda s: (-float(s.get('score') or 0), str(s.get('queued_at') or '')))
+    line = [(ts(s['posted_at']), s) for s in posted if s.get('layout') != 'T' and ts(s.get('posted_at'))] + [(ts(s['slot_at']), s) for s in booked.values()]
+
+    def next_short(t):
+        before = [s for at, s in sorted(((a, s) for a, s in line if a < t), key=lambda x: x[0], reverse=True)]
+        used = Counter(s.get('source_video_id') for at, s in line if ist_day(at) == ist_day(t))
+        base = [s for s in pool if used[s.get('source_video_id')] < 2] or pool
+        gta, rest = [s for s in base if is_gta(s.get('game'))], [s for s in base if not is_gta(s.get('game'))]
+        games = [s.get('game') for s in before]
+        rest.sort(key=lambda s: -(games.index(s.get('game')) if s.get('game') in games else 10 ** 9))
+        turn = len(before) >= 2 and all(is_gta(s.get('game')) for s in before[:2])
+        return (rest + gta if turn else gta + rest)[0]
+
     slots, day0 = [], datetime.combine(today, datetime.min.time(), IST)
     for k in range(3):
         for m in PS5_SLOTS_MIN:
@@ -125,12 +137,12 @@ def ps5(old_views):
     up_next = []
     for t in slots:
         b, note, guess = booked.get(iso(t)), '', False
-        if b and not is_gta(b.get('game')) and pool and is_gta(pool[0].get('game')):
-            s, note = pool.pop(0), 'Takes the slot booked for “%s”' % (b.get('short_title') or '')
-        elif b:
+        if b:
             s = b
         elif pool:
-            s, guess = pool.pop(0), True
+            s, guess = next_short(t), True
+            pool.remove(s)
+            line.append((t, s))
         else:
             up_next.append({'at': iso(t), 'empty': True})
             continue
