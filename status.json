@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-22T06:36:21.822319Z",
+ "generated_at": "2026-11-22T07:50:16.625606Z",
  "ps5": {
   "now": [
    {
     "kind": "you",
-    "text": "Title check waiting for you: “GTA 6: Who cleans the messy house, Lucia or Mia?” (posts Sun 13:00)"
+    "text": "Title check waiting for you: “If you take the bet in GTA 6, expect a fight” (posts Sun 17:00)"
    }
   ],
   "today": {
@@ -26,7 +26,7 @@
      "game": "GTA 6",
      "at": "2026-11-22T00:30:21.701000Z",
      "url": "https://youtube.com/shorts/Ea_2u5g1NQA",
-     "views": 323,
+     "views": 379,
      "score": 74,
      "duration": 30,
      "from": "GTA 6: Picking Up Lu From Prison"
@@ -37,10 +37,21 @@
      "game": "GTA 6",
      "at": "2026-11-22T04:00:27.347000Z",
      "url": "https://youtube.com/shorts/zTLAoLn6blo",
-     "views": 787,
+     "views": 877,
      "score": 74,
      "duration": 18,
      "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5"
+    },
+    {
+     "id": "xDW0dL14BXo_01",
+     "title": "GTA 6: Who cleans the messy house, Lucia or Mia?",
+     "game": "GTA 6",
+     "at": "2026-11-22T07:30:19.768000Z",
+     "url": "https://youtube.com/shorts/UYnx9kufBvE",
+     "views": 56,
+     "score": 84,
+     "duration": 23,
+     "from": "Finding the San Andreas House in GTA 6"
     }
    ],
    "uploads": [],
@@ -49,15 +60,15 @@
   },
   "up_next": [
    {
-    "id": "xDW0dL14BXo_01",
-    "title": "GTA 6: Who cleans the messy house, Lucia or Mia?",
+    "id": "x6tnvdd_BCg_04",
+    "title": "If you take the bet in GTA 6, expect a fight",
     "game": "GTA 6",
-    "at": "2026-11-22T07:30:00Z",
+    "at": "2026-11-22T11:30:00Z",
     "url": "",
     "views": null,
-    "score": 84,
-    "duration": 23,
-    "from": "Finding the San Andreas House in GTA 6",
+    "score": 66,
+    "duration": 26,
+    "from": "GTA 6: Picking Up Lu From Prison",
     "guess": false,
     "note": "",
     "title_state": "check_sent"
@@ -66,7 +77,7 @@
     "id": "D9IwOx0XqNM_01",
     "title": "GTA 6: Can the crew pull off an armored car grab?",
     "game": "GTA 6",
-    "at": "2026-11-22T11:30:00Z",
+    "at": "2026-11-22T14:30:00Z",
     "url": "",
     "views": null,
     "score": 85,
@@ -80,7 +91,7 @@
     "id": "Kpe0srbAOZc_02",
     "title": "GTA 6: don't stall, the zombie timer is ticking",
     "game": "GTA 6",
-    "at": "2026-11-22T14:30:00Z",
+    "at": "2026-11-22T21:30:00Z",
     "url": "",
     "views": null,
     "score": 74,
@@ -94,7 +105,7 @@
     "id": "D9IwOx0XqNM_02",
     "title": "Nice or loud? GTA 6 crew debates the heist plan",
     "game": "GTA 6",
-    "at": "2026-11-22T21:30:00Z",
+    "at": "2026-11-23T00:30:00Z",
     "url": "",
     "views": null,
     "score": 72,
@@ -108,7 +119,7 @@
     "id": "xDW0dL14BXo_02",
     "title": "GTA 6: Family fight at the house, then food run",
     "game": "GTA 6",
-    "at": "2026-11-23T00:30:00Z",
+    "at": "2026-11-23T04:00:00Z",
     "url": "",
     "views": null,
     "score": 72,
@@ -122,7 +133,7 @@
     "id": "0U7r2RVi1TI_04",
     "title": "GTA 6: Forget the stolen truck and it hits impound",
     "game": "GTA 6",
-    "at": "2026-11-23T04:00:00Z",
+    "at": "2026-11-23T07:30:00Z",
     "url": "",
     "views": null,
     "score": 70,
@@ -136,7 +147,7 @@
     "id": "-3izYF6h_z8_04",
     "title": "GTA 6: Blaming a hunting accident buys only time",
     "game": "GTA 6",
-    "at": "2026-11-23T07:30:00Z",
+    "at": "2026-11-23T11:30:00Z",
     "url": "",
     "views": null,
     "score": 70,
@@ -150,7 +161,7 @@
     "id": "-3izYF6h_z8_05",
     "title": "GTA 6: Will the bag handover end in a shootout?",
     "game": "GTA 6",
-    "at": "2026-11-23T11:30:00Z",
+    "at": "2026-11-23T14:30:00Z",
     "url": "",
     "views": null,
     "score": 70,
@@ -164,7 +175,7 @@
     "id": "LB8-bROhsBA_04",
     "title": "GTA 6: Who wrecked the plane on the drop?",
     "game": "GTA 6",
-    "at": "2026-11-23T14:30:00Z",
+    "at": "2026-11-23T21:30:00Z",
     "url": "",
     "views": null,
     "score": 68,
@@ -178,7 +189,7 @@
     "id": "D9IwOx0XqNM_03",
     "title": "Don't count the loot yet, cops are coming",
     "game": "GTA 6",
-    "at": "2026-11-23T21:30:00Z",
+    "at": "2026-11-24T00:30:00Z",
     "url": "",
     "views": null,
     "score": 68,
@@ -192,7 +203,7 @@
     "id": "IVZI7UfJkH4_02",
     "title": "Don't try this underwater escape in GTA 6",
     "game": "GTA 6",
-    "at": "2026-11-24T00:30:00Z",
+    "at": "2026-11-24T04:00:00Z",
     "url": "",
     "views": null,
     "score": 66,
@@ -206,7 +217,7 @@
     "id": "Kpe0srbAOZc_03",
     "title": "GTA 6 mistake: the couch faces the bed in J's house",
     "game": "GTA 6",
-    "at": "2026-11-24T04:00:00Z",
+    "at": "2026-11-24T07:30:00Z",
     "url": "",
     "views": null,
     "score": 66,
@@ -218,12 +229,12 @@
    }
   ],
   "queue": {
-   "total": 94,
+   "total": 93,
    "by_game": {
-    "GTA 6": 56,
+    "GTA 6": 55,
     "Helldivers 2": 38
    },
-   "days_left": 15.7
+   "days_left": 15.5
   },
   "videos": [
    {
@@ -234,7 +245,7 @@
     "status": "clipped",
     "shorts_made": 1,
     "shorts_posted": "",
-    "views": 0
+    "views": 1
    },
    {
     "title": "Finding the San Andreas House in GTA 6",
@@ -243,7 +254,7 @@
     "at": "2026-11-21T08:01:02Z",
     "status": "clipped",
     "shorts_made": 5,
-    "shorts_posted": "",
+    "shorts_posted": 1,
     "views": 3
    },
    {
@@ -274,7 +285,7 @@
     "status": "clipped",
     "shorts_made": 9,
     "shorts_posted": 2,
-    "views": 1
+    "views": 2
    },
    {
     "title": "GTA 6: Picking Up Lu From Prison",
@@ -309,10 +320,10 @@
   ],
   "issues": [],
   "totals": {
-   "shorts_posted": 39,
-   "shorts_views": 40906,
+   "shorts_posted": 40,
+   "shorts_views": 41750,
    "videos": 23,
-   "video_views": 510
+   "video_views": 512
   },
   "per_day": [
    {
@@ -369,7 +380,7 @@
    },
    {
     "day": "2026-11-22",
-    "posted": 3
+    "posted": 4
    }
   ],
   "top_week": [
@@ -379,7 +390,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 12167,
+    "views": 12792,
     "score": 74,
     "duration": 21,
     "from": "GTA 6 Second Hour on PS5 | Story Mode"
@@ -390,7 +401,7 @@
     "game": "GTA 6",
     "at": "2026-11-20T07:30:21.118000Z",
     "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-    "views": 1634,
+    "views": 1633,
     "score": 85,
     "duration": 35,
     "from": "GTA 6 Second Hour on PS5 | Story Mode"
@@ -401,7 +412,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1585,
+    "views": 1581,
     "score": 82,
     "duration": 29,
     "from": "Random missions and chilling | GTA 6"
@@ -617,7 +628,7 @@
   "6oNpggoXkXc": 624,
   "S1yxC6H_lnE": 571,
   "hLD165HKOws": 928,
-  "Gt-k2NPMMQA": 352,
+  "Gt-k2NPMMQA": 353,
   "6fQH2crY_UE": 270,
   "YM7R8U3VR9o": 814,
   "qpcaqb9wPhE": 1286,
@@ -626,25 +637,26 @@
   "lfx64AWbC9s": 429,
   "8I9h6Bq48vY": 693,
   "VNBRgawVmE8": 989,
-  "JY5Gays_MfQ": 670,
+  "JY5Gays_MfQ": 671,
   "2-wNg1d5mvU": 1130,
   "d2dqCcDgHDo": 1039,
   "zgX33pMgAF0": 600,
   "6_EZFFO1cc0": 644,
   "xm3TQqlVM2c": 59,
-  "DS9wb5_E3Cc": 1634,
-  "FzJCVEwQA0g": 29,
-  "hFKKqp4URkA": 12167,
+  "DS9wb5_E3Cc": 1633,
+  "FzJCVEwQA0g": 24,
+  "hFKKqp4URkA": 12792,
   "MC4y5ZYRO3w": 1123,
   "HDrn8iS6MyU": 204,
-  "OsI_r7G_WsI": 1066,
+  "OsI_r7G_WsI": 1077,
   "-UhIaH95dhs": 87,
-  "Ea_2u5g1NQA": 323,
+  "Ea_2u5g1NQA": 379,
   "qMA1R4vHCWs": 9,
   "-irOEWAmzaA": 1004,
-  "zTLAoLn6blo": 787,
-  "25MVUMhaLEc": 1585,
-  "i8kqIJiEwe4": 1262,
+  "zTLAoLn6blo": 877,
+  "25MVUMhaLEc": 1581,
+  "i8kqIJiEwe4": 1276,
+  "UYnx9kufBvE": 56,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -663,10 +675,10 @@
   "IVZI7UfJkH4": 356,
   "Kpe0srbAOZc": 17,
   "x6tnvdd_BCg": 23,
-  "AqVZGcqdjoI": 1,
+  "AqVZGcqdjoI": 2,
   "-3izYF6h_z8": 15,
   "D9IwOx0XqNM": 4,
   "xDW0dL14BXo": 3,
-  "p-VmW5hTenM": 0
+  "p-VmW5hTenM": 1
  }
 }
