@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T21:31:10.320920Z",
+ "generated_at": "2026-11-23T02:13:10.160263Z",
  "ps5": {
   "now": [
    {
@@ -56,22 +56,6 @@
    ]
   },
   "up_next": [
-   {
-    "id": "x6tnvdd_BCg_05",
-    "title": "GTA 6: Who gets thrown out of the bar first?",
-    "game": "GTA 6",
-    "at": "2026-11-23T00:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 58,
-    "duration": 28,
-    "from": "GTA 6: Picking Up Lu From Prison",
-    "ig": false,
-    "fb_url": "",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
    {
     "id": "IVZI7UfJkH4_03",
     "title": "If you dive in GTA 6, drop the anchor first",
@@ -247,6 +231,22 @@
     "guess": true,
     "note": "",
     "title_state": "claude"
+   },
+   {
+    "id": "TBCnWiMPW8w_02",
+    "title": "GTA 6: Don't storm the office once stealth fails",
+    "game": "GTA 6",
+    "at": "2026-11-25T00:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 74,
+    "duration": 24,
+    "from": "GTA 6: Stealth robbery attempt goes wrong",
+    "ig": false,
+    "fb_url": "",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
    }
   ],
   "test": {
@@ -340,15 +340,15 @@
     "status": "clipped",
     "shorts_made": 1,
     "shorts_posted": "",
-    "views": 3
+    "views": 4
    }
   ],
   "issues": [],
   "totals": {
    "shorts_posted": 43,
-   "shorts_views": 49285,
+   "shorts_views": 50580,
    "videos": 30,
-   "video_views": 543
+   "video_views": 574
   },
   "per_day": [
    {
@@ -411,18 +411,18 @@
   "platforms": {
    "youtube": {
     "posted": 43,
-    "views": 49285,
+    "views": 50580,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 8,
-    "waiting": 35,
+    "posted": 10,
+    "waiting": 33,
     "failed": 0,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 8,
-    "waiting": 35,
+    "posted": 10,
+    "waiting": 33,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
    }
@@ -434,7 +434,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 17919,
+    "views": 19017,
     "score": 74,
     "duration": 21,
     "from": "GTA 6 Second Hour on PS5 | Story Mode",
@@ -442,25 +442,12 @@
     "fb_url": "https://www.facebook.com/reel/1170463798669313"
    },
    {
-    "id": "0U7r2RVi1TI_01",
-    "title": "GTA 6: The Ammunition salesman is achatter a chatterbox",
-    "game": "GTA 6",
-    "at": "2026-11-20T07:30:21.118000Z",
-    "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-    "views": 1642,
-    "score": 85,
-    "duration": 35,
-    "from": "GTA 6 Second Hour on PS5 | Story Mode",
-    "ig": true,
-    "fb_url": "https://www.facebook.com/reel/1156291066761625"
-   },
-   {
     "id": "AqVZGcqdjoI_01",
     "title": "GTA 6: will Peggy ever let Jason talk?",
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1628,
+    "views": 1676,
     "score": 82,
     "duration": 29,
     "from": "Random missions and chilling | GTA 6",
@@ -468,12 +455,25 @@
     "fb_url": "https://www.facebook.com/reel/1192837739763746"
    },
    {
+    "id": "0U7r2RVi1TI_01",
+    "title": "GTA 6: The Ammunition salesman is achatter a chatterbox",
+    "game": "GTA 6",
+    "at": "2026-11-20T07:30:21.118000Z",
+    "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
+    "views": 1644,
+    "score": 85,
+    "duration": 35,
+    "from": "GTA 6 Second Hour on PS5 | Story Mode",
+    "ig": true,
+    "fb_url": "https://www.facebook.com/reel/1156291066761625"
+   },
+   {
     "id": "AqVZGcqdjoI_02",
     "title": "Lucia goes from cooped up to free in GTA 6",
     "game": "GTA 6",
     "at": "2026-11-21T11:30:25.588000Z",
     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1391,
+    "views": 1399,
     "score": 78,
     "duration": 23,
     "from": "Random missions and chilling | GTA 6",
@@ -486,7 +486,7 @@
     "game": "GTA 6",
     "at": "2026-11-22T04:00:27.347000Z",
     "url": "https://youtube.com/shorts/zTLAoLn6blo",
-    "views": 1371,
+    "views": 1398,
     "score": 74,
     "duration": 18,
     "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
@@ -694,36 +694,36 @@
   "hLD165HKOws": 928,
   "Gt-k2NPMMQA": 353,
   "6fQH2crY_UE": 270,
-  "YM7R8U3VR9o": 814,
+  "YM7R8U3VR9o": 813,
   "qpcaqb9wPhE": 1286,
   "0fm5Jqik_gU": 328,
   "YTVhAYM3Ftg": 1296,
-  "lfx64AWbC9s": 430,
+  "lfx64AWbC9s": 431,
   "8I9h6Bq48vY": 692,
   "VNBRgawVmE8": 985,
-  "JY5Gays_MfQ": 652,
-  "2-wNg1d5mvU": 1139,
-  "d2dqCcDgHDo": 1038,
-  "zgX33pMgAF0": 606,
-  "6_EZFFO1cc0": 646,
-  "xm3TQqlVM2c": 66,
-  "DS9wb5_E3Cc": 1642,
-  "FzJCVEwQA0g": 45,
-  "hFKKqp4URkA": 17919,
-  "MC4y5ZYRO3w": 1123,
-  "BBrCI5sVRUY": 140,
+  "JY5Gays_MfQ": 653,
+  "2-wNg1d5mvU": 1140,
+  "d2dqCcDgHDo": 1039,
+  "zgX33pMgAF0": 599,
+  "6_EZFFO1cc0": 648,
+  "xm3TQqlVM2c": 67,
+  "DS9wb5_E3Cc": 1644,
+  "FzJCVEwQA0g": 47,
+  "hFKKqp4URkA": 19017,
+  "MC4y5ZYRO3w": 1114,
+  "BBrCI5sVRUY": 212,
   "HDrn8iS6MyU": 210,
-  "OsI_r7G_WsI": 1152,
-  "-UhIaH95dhs": 96,
+  "OsI_r7G_WsI": 1169,
+  "-UhIaH95dhs": 97,
   "Ea_2u5g1NQA": 1059,
-  "08S4R_4k-s4": 89,
+  "08S4R_4k-s4": 94,
   "qMA1R4vHCWs": 12,
-  "-irOEWAmzaA": 1152,
-  "zTLAoLn6blo": 1371,
-  "25MVUMhaLEc": 1628,
-  "i8kqIJiEwe4": 1391,
-  "UYnx9kufBvE": 301,
-  "f-xZGpy8EkE": 326,
+  "-irOEWAmzaA": 1164,
+  "zTLAoLn6blo": 1398,
+  "25MVUMhaLEc": 1676,
+  "i8kqIJiEwe4": 1399,
+  "UYnx9kufBvE": 307,
+  "f-xZGpy8EkE": 333,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -739,14 +739,14 @@
   "gTX0z2q4rXw": 8,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 6,
-  "IVZI7UfJkH4": 373,
+  "IVZI7UfJkH4": 403,
   "Kpe0srbAOZc": 17,
   "x6tnvdd_BCg": 23,
   "AqVZGcqdjoI": 2,
   "-3izYF6h_z8": 17,
   "D9IwOx0XqNM": 4,
   "xDW0dL14BXo": 5,
-  "p-VmW5hTenM": 3,
+  "p-VmW5hTenM": 4,
   "RshFk8YiAug": 2,
   "0aKodCItm7M": 2,
   "TBCnWiMPW8w": 2,
