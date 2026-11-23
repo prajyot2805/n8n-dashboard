@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T18:11:10.472222Z",
+ "generated_at": "2026-11-23T18:27:11.435590Z",
  "ps5": {
   "now": [],
   "today": {
@@ -10,7 +10,7 @@
      "game": "Helldivers 2",
      "at": "2026-11-23T07:30:20.288000Z",
      "url": "https://youtube.com/shorts/Xl5h0OnkN74",
-     "views": 89,
+     "views": 217,
      "score": 88,
      "duration": 34,
      "from": "Helldivers 2 machine gun shoots straight on target",
@@ -306,7 +306,8 @@
     "GTA 6": 90,
     "Helldivers 2": 37
    },
-   "days_left": 21.2
+   "days_left": 21.2,
+   "per_day": 6
   },
   "videos": [
    {
@@ -393,9 +394,9 @@
   "issues": [],
   "totals": {
    "shorts_posted": 44,
-   "shorts_views": 52332,
+   "shorts_views": 52484,
    "videos": 35,
-   "video_views": 813
+   "video_views": 814
   },
   "per_day": [
    {
@@ -458,7 +459,7 @@
   "platforms": {
    "youtube": {
     "posted": 44,
-    "views": 52332,
+    "views": 52484,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
@@ -481,7 +482,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 20341,
+    "views": 20352,
     "score": 74,
     "duration": 21,
     "from": "GTA 6 Second Hour on PS5 | Story Mode",
@@ -533,7 +534,7 @@
     "game": "GTA 6",
     "at": "2026-11-22T04:00:27.347000Z",
     "url": "https://youtube.com/shorts/zTLAoLn6blo",
-    "views": 1423,
+    "views": 1424,
     "score": 74,
     "duration": 18,
     "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
@@ -589,7 +590,7 @@
     "at": "2026-11-24T12:30:00Z",
     "title": "THE WEAKEST HUNTER · Part 5/8: The Dead Rise",
     "state": "pending",
-    "stage": "job_created"
+    "stage": "claude_running"
    },
    {
     "at": "2026-11-25T04:30:00Z",
@@ -760,7 +761,7 @@
   "8I9h6Bq48vY": 692,
   "VNBRgawVmE8": 985,
   "JY5Gays_MfQ": 653,
-  "Xl5h0OnkN74": 89,
+  "Xl5h0OnkN74": 217,
   "2-wNg1d5mvU": 1140,
   "d2dqCcDgHDo": 1042,
   "zgX33pMgAF0": 599,
@@ -768,21 +769,21 @@
   "xm3TQqlVM2c": 69,
   "DS9wb5_E3Cc": 1662,
   "FzJCVEwQA0g": 49,
-  "hFKKqp4URkA": 20341,
+  "hFKKqp4URkA": 20352,
   "MC4y5ZYRO3w": 1115,
-  "BBrCI5sVRUY": 267,
+  "BBrCI5sVRUY": 258,
   "HDrn8iS6MyU": 212,
   "OsI_r7G_WsI": 1168,
   "-UhIaH95dhs": 97,
   "Ea_2u5g1NQA": 1084,
   "08S4R_4k-s4": 96,
   "qMA1R4vHCWs": 12,
-  "-irOEWAmzaA": 1261,
-  "zTLAoLn6blo": 1423,
+  "-irOEWAmzaA": 1262,
+  "zTLAoLn6blo": 1424,
   "25MVUMhaLEc": 1706,
   "i8kqIJiEwe4": 1438,
   "UYnx9kufBvE": 313,
-  "f-xZGpy8EkE": 364,
+  "f-xZGpy8EkE": 384,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -798,7 +799,7 @@
   "gTX0z2q4rXw": 8,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 7,
-  "IVZI7UfJkH4": 459,
+  "IVZI7UfJkH4": 460,
   "Kpe0srbAOZc": 17,
   "x6tnvdd_BCg": 23,
   "AqVZGcqdjoI": 3,
