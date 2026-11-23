@@ -27,8 +27,8 @@ def problems(now, up, wf, last_run, shorts):
     ts = lambda v: datetime.fromisoformat(str(v).replace('Z', '+00:00'))
     posted = [ts(s['posted_at']) for s in shorts if s.get('status') == 'posted' and s.get('posted_at') and s.get('layout') != 'T']
     q = sum(1 for s in shorts if s.get('status') == 'queued' and s.get('drive_file_id'))
-    away = ((wf.get('staticData') or {}).get('global') or {}).get('away') or {}
-    slow = q < 18 or float(away.get('until') or 0) / 1000 > now.timestamp()  # 1 to 5 a day: gaps of up to a day are normal
+    daily = ((wf.get('staticData') or {}).get('global') or {}).get('daily') or 6
+    slow = q < 18 or str(daily) != '6'  # 1 to 5 a day (/dailycount or a short queue): gaps of up to a day are normal
     if posted and q and now - max(posted) > timedelta(hours=30 if slow else 14):
         out['nopost'] = TEXT['nopost'].format(h=(now - max(posted)).total_seconds() / 3600, q=q)
     return out

@@ -212,8 +212,8 @@ function renderPS5(p) {
   ].sort((a, b) => String(a.at).localeCompare(String(b.at)));
   return `
   <div class="kpis kpis3">
-    ${kpi('Posted today', `${t.posted.length}<span class="muted" style="font-size:16px"> / 6</span>`, next ? `Next at ${hm(next.at)} ${dayLabel(next.at).toLowerCase()}` : 'No slot booked', t.posted.length / 6 * 100)}
-    ${kpi('In queue', nf(q.total), `${q.days_left} days of Shorts at 6 a day`)}
+    ${kpi('Posted today', `${t.posted.length}<span class="muted" style="font-size:16px"> / ${q.per_day || 6}</span>`, next ? `Next at ${hm(next.at)} ${dayLabel(next.at).toLowerCase()}` : 'No slot booked', t.posted.length / (q.per_day || 6) * 100)}
+    ${kpi('In queue', nf(q.total), `${q.days_left} days of Shorts at ${q.per_day || 6} a day`)}
     ${kpi('Made today', nf(t.shorts_made), t.clipped.length ? `from ${t.clipped.length} video${t.clipped.length > 1 ? 's' : ''}` : 'No clipping today')}
   </div>
   ${platforms(p.platforms)}

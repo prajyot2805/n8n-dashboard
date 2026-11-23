@@ -10,7 +10,7 @@ keys = lambda *x: sorted(a.problems(now, *x))
 assert keys(True, ON, run, Q + [P(7)]) == [] and keys(True, ON, run, Q + [P(13.9)]) == []
 assert keys(True, ON, run, Q + [P(15)]) == ['nopost'] and keys(True, ON, run, [P(99)]) == []             # empty queue is not a fault
 assert keys(True, ON, run, Q[:5] + [P(20)]) == [] and keys(True, ON, run, Q[:5] + [P(31)]) == ['nopost']  # slow days
-aw = {**ON, 'staticData': {'global': {'away': {'until': (now.timestamp() + 999) * 1000}}}}
+aw = {**ON, 'staticData': {'global': {'daily': 3}}}
 assert keys(True, aw, run, Q + [P(20)]) == [] and keys(True, {**ON, 'staticData': None}, run, Q + [P(20)]) == ['nopost']
 assert keys(True, ON, run, Q + [P(20), P(1, layout='T')]) == ['nopost']                                   # a commentary Short hides nothing
 assert keys(False, {}, None, []) == ['down'] and keys(True, {'active': False}, run, Q) == ['off']

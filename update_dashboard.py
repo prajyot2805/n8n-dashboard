@@ -22,7 +22,7 @@ if not API_KEY:
 PS5_WF, RESOLVER_WF, SL_WF = 'NyqkzRSDWYbzusW8', 'WnWMAtnb8XPD91yd', 'rhOGUhnDmE2iaQgX'
 IST = timezone(timedelta(hours=5, minutes=30))
 NOW = datetime.now(timezone.utc)
-PS5_SLOTS_MIN = [180, 360, 570, 780, 1020, 1200]          # 03:00 06:00 09:30 13:00 17:00 20:00 IST (build.py SLOT_JS)
+PS5_SLOT_PRIO = [1200, 180, 780, 1020, 360, 570]         # keep order, build.py SLOT_JS SLOT_PRIO; /dailycount n keeps the first n
 SL_SLOTS = {0: (10, 0), 1: (18, 0), 2: (10, 0), 3: (18, 0), 4: (10, 0)}  # Mon/Wed/Fri 10:00, Tue/Thu 18:00 IST
 SL_BUDGET = 20                                            # Metricool free plan, per month from the 14th
 OUT = 'status.json'
@@ -91,6 +91,16 @@ def youtube_views(ids, old):
 
 
 # ---------------------------------------------------------------- PS5 Shorts
+def ps5_per_day(q):
+    """Shorts a day, as build.py perDay(): /dailycount (pipeline static data, default 6), slower when under 3 days are queued."""
+    st = ((api(f'workflows/{PS5_WF}').get('staticData') or {}).get('global') or {})
+    try:
+        n = min(6, max(1, int(st.get('daily') or 6)))
+    except (TypeError, ValueError):
+        n = 6
+    return n if q >= 3 * n else max(1, min(n, q // 3))
+
+
 def ps5(old_views):
     videos = node_output(PS5_WF, ['Read Videos', 'Read Videos NA', 'Read Videos A']) or []
     shorts = node_output(PS5_WF, ['Read Shorts L1', 'Read Shorts NA', 'Read Shorts']) or []
@@ -99,6 +109,9 @@ def ps5(old_views):
     shorts = [s for s in shorts if s.get('short_id')]
     vtitle = {str(v['video_id']): v.get('new_title') or v.get('old_title') or '' for v in videos}
     today = NOW.astimezone(IST).date()
+    queued_n = sum(1 for s in shorts if s.get('status') == 'queued' and s.get('drive_file_id'))
+    daily = ps5_per_day(queued_n)
+    slots_min = sorted(PS5_SLOT_PRIO[:daily])
 
     posted = [s for s in shorts if s.get('status') == 'posted' and s.get('short_video_id')]
     views = youtube_views([(s['short_video_id'], True) for s in posted] + [(str(v['video_id']), False) for v in videos], old_views)
@@ -130,7 +143,7 @@ def ps5(old_views):
 
     slots, day0 = [], datetime.combine(today, datetime.min.time(), IST)
     for k in range(3):
-        for m in PS5_SLOTS_MIN:
+        for m in slots_min:
             t = day0 + timedelta(days=k, minutes=m)
             if t > NOW and len(slots) < 12:
                 slots.append(t)
@@ -197,7 +210,7 @@ def ps5(old_views):
         'up_next': up_next,
         'test': {k: sum(s.get('layout') == k for s in posted) for k in 'SG'},  # running test: speech vs Gemini picks, 15 each
         'queue': {'total': len(queued), 'by_game': dict(Counter(s.get('game') or 'Other' for s in queued).most_common()),
-                  'days_left': round(len(queued) / len(PS5_SLOTS_MIN), 1)},
+                  'days_left': round(len(queued) / daily, 1), 'per_day': daily},
         'videos': [{'title': vtitle[str(v['video_id'])], 'game': v.get('game') or '', 'url': v.get('video_url') or '', 'at': iso(ts(v.get('published_at'))),
                     'status': v.get('clip_status') or '', 'shorts_made': v.get('shorts_made') or '', 'shorts_posted': v.get('shorts_posted') or '',
                     'views': views.get(str(v['video_id']))} for v in pipeline],
