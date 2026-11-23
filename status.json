@@ -1,156 +1,28 @@
 {
- "generated_at": "2026-11-23T18:27:11.435590Z",
+ "generated_at": "2026-11-23T22:49:22.520224Z",
  "ps5": {
   "now": [],
   "today": {
    "posted": [
     {
-     "id": "iQcVhO4fyH0_01",
-     "title": "Helldivers 2: Autocannon + machine Gun and bugs so Off",
-     "game": "Helldivers 2",
-     "at": "2026-11-23T07:30:20.288000Z",
-     "url": "https://youtube.com/shorts/Xl5h0OnkN74",
-     "views": 217,
-     "score": 88,
-     "duration": 34,
-     "from": "Helldivers 2 machine gun shoots straight on target",
-     "ig": true,
-     "fb_url": "https://www.facebook.com/reel/1362648945836988"
+     "id": "0U7r2RVi1TI_05",
+     "title": "GTA 6: Jason tell about his past : Ex Military",
+     "game": "GTA 6",
+     "at": "2026-11-23T21:30:25.436000Z",
+     "url": "https://youtube.com/shorts/Lo4ewxWzn18",
+     "views": 81,
+     "score": 60,
+     "duration": 30,
+     "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
+     "ig": false,
+     "fb_url": ""
     }
    ],
-   "uploads": [
-    {
-     "title": "GTA 6: Stealth robbery attempt goes wrong",
-     "game": "GTA 6",
-     "url": "https://youtu.be/TBCnWiMPW8w",
-     "at": "2026-11-22T19:05:36Z",
-     "status": "clipped"
-    },
-    {
-     "title": "Jay and Lu Trance Meditate in the Jungle | GTA 6",
-     "game": "GTA 6",
-     "url": "https://youtu.be/lJFbQ-MwiN0",
-     "at": "2026-11-22T19:43:11Z",
-     "status": "clipped"
-    },
-    {
-     "title": "GTA 6: Silver Audi Cruising Past a Maibatsu Truck",
-     "game": "GTA 6",
-     "url": "https://youtu.be/2nHYkY6wCog",
-     "at": "2026-11-22T19:45:31Z",
-     "status": "clipped"
-    },
-    {
-     "title": "Kyle Turned Hulk and Ran Away From Me | GTA 6",
-     "game": "GTA 6",
-     "url": "https://youtu.be/k8wR7j19Zoo",
-     "at": "2026-11-22T19:52:34Z",
-     "status": "no_clips"
-    },
-    {
-     "title": "Kyle turned into a Hulk and wiped the robbery | GTA 6",
-     "game": "GTA 6",
-     "url": "https://youtu.be/Q24sdQY1_Tk",
-     "at": "2026-11-22T20:10:23Z",
-     "status": "clipped"
-    },
-    {
-     "title": "GTA 6: First delivery and using the key cloner",
-     "game": "GTA 6",
-     "url": "https://youtu.be/6o5GZ3asbBE",
-     "at": "2026-11-23T08:24:08Z",
-     "status": "clipped"
-    },
-    {
-     "title": "Touching a dangerous jellyfish in GTA 6",
-     "game": "GTA 6",
-     "url": "https://youtu.be/rkWNpsjlNNw",
-     "at": "2026-11-23T08:25:01Z",
-     "status": "not_needed"
-    },
-    {
-     "title": "GTA 6: Destroying the drug lab and running away",
-     "game": "GTA 6",
-     "url": "https://youtu.be/boGdpefjrVE",
-     "at": "2026-11-23T10:36:31Z",
-     "status": "clipped"
-    },
-    {
-     "title": "GTA 6: Failed Attempt at Stealing a Police Parking Car",
-     "game": "GTA 6",
-     "url": "https://youtu.be/QG0axa1AAx8",
-     "at": "2026-11-23T10:55:01Z",
-     "status": "clipped"
-    },
-    {
-     "title": "Losing Cops in GTA 6 Is Way Too Easy",
-     "game": "GTA 6",
-     "url": "https://youtu.be/ePh0EqtZRf4",
-     "at": "2026-11-23T11:30:24Z",
-     "status": "clipped"
-    }
-   ],
-   "shorts_made": 36,
-   "clipped": [
-    "GTA 6: Destroying the drug lab and running away",
-    "GTA 6: Failed Attempt at Stealing a Police Parking Car",
-    "GTA 6: First delivery and using the key cloner",
-    "GTA 6: Silver Audi Cruising Past a Maibatsu Truck",
-    "GTA 6: Stealth robbery attempt goes wrong",
-    "Jay and Lu Trance Meditate in the Jungle | GTA 6",
-    "Kyle turned into a Hulk and wiped the robbery | GTA 6",
-    "Losing Cops in GTA 6 Is Way Too Easy"
-   ]
+   "uploads": [],
+   "shorts_made": 0,
+   "clipped": []
   },
   "up_next": [
-   {
-    "id": "0U7r2RVi1TI_05",
-    "title": "GTA 6: Jason tell about his past : Ex Military",
-    "game": "GTA 6",
-    "at": "2026-11-23T21:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 60,
-    "duration": 30,
-    "from": "GTA 6 Second Hour on PS5 | Story Mode",
-    "ig": false,
-    "fb_url": "",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
-   {
-    "id": "gTX0z2q4rXw_02",
-    "title": "Don't go solo vs Terminids in Helldivers 2",
-    "game": "Helldivers 2",
-    "at": "2026-11-24T00:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 78,
-    "duration": 24,
-    "from": "Helldivers 2: alone against Terminids, can I hold?",
-    "ig": false,
-    "fb_url": "",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
-   {
-    "id": "x6tnvdd_BCg_05",
-    "title": "GTA 6: Who gets thrown out of the bar first?",
-    "game": "GTA 6",
-    "at": "2026-11-24T04:00:00Z",
-    "url": "",
-    "views": null,
-    "score": 58,
-    "duration": 28,
-    "from": "GTA 6: Picking Up Lu From Prison",
-    "ig": false,
-    "fb_url": "",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
    {
     "id": "Q24sdQY1_Tk_01",
     "title": "Pressing a hostage who begs for his life in GTA 6",
@@ -160,7 +32,7 @@
     "views": null,
     "score": 95,
     "duration": 19,
-    "from": "Kyle turned into a Hulk and wiped the robbery | GTA 6",
+    "from": "Kyle Went Full Hulk and Wiped the Robbery | GTA 6 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -176,7 +48,7 @@
     "views": null,
     "score": 74,
     "duration": 22,
-    "from": "Helldivers 2: alone against Terminids, can I hold?",
+    "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -192,7 +64,7 @@
     "views": null,
     "score": 95,
     "duration": 34,
-    "from": "GTA 6: First delivery and using the key cloner",
+    "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -208,7 +80,7 @@
     "views": null,
     "score": 95,
     "duration": 14,
-    "from": "GTA 6: First delivery and using the key cloner",
+    "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -219,12 +91,12 @@
     "id": "y0DrBXmTtlg_03",
     "title": "Helldivers 2: Orbital strikes called, then reversed",
     "game": "Helldivers 2",
-    "at": "2026-11-25T00:30:00Z",
+    "at": "2026-11-25T07:30:00Z",
     "url": "",
     "views": null,
     "score": 70,
     "duration": 15,
-    "from": "Helldivers 2 good squad gameplay: what teamwork looks like",
+    "from": "Splitting Up in Pairs Beats Staying Together | Helldivers 2 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -235,12 +107,12 @@
     "id": "Q24sdQY1_Tk_03",
     "title": "Confronting a driver at the getaway car in GTA 6",
     "game": "GTA 6",
-    "at": "2026-11-25T04:00:00Z",
+    "at": "2026-11-25T11:30:00Z",
     "url": "",
     "views": null,
     "score": 93,
     "duration": 25,
-    "from": "Kyle turned into a Hulk and wiped the robbery | GTA 6",
+    "from": "Kyle Went Full Hulk and Wiped the Robbery | GTA 6 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -251,12 +123,12 @@
     "id": "6o5GZ3asbBE_07",
     "title": "Finding Andy using an aromatherapy Manifestick in GTA 6",
     "game": "GTA 6",
-    "at": "2026-11-25T07:30:00Z",
+    "at": "2026-11-25T14:30:00Z",
     "url": "",
     "views": null,
     "score": 93,
     "duration": 35,
-    "from": "GTA 6: First delivery and using the key cloner",
+    "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -267,12 +139,12 @@
     "id": "gTX0z2q4rXw_04",
     "title": "Helldivers 2 mistake: staying put as Terminids swarm",
     "game": "Helldivers 2",
-    "at": "2026-11-25T11:30:00Z",
+    "at": "2026-11-25T21:30:00Z",
     "url": "",
     "views": null,
     "score": 66,
     "duration": 17,
-    "from": "Helldivers 2: alone against Terminids, can I hold?",
+    "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -283,12 +155,44 @@
     "id": "ePh0EqtZRf4_03",
     "title": "Taking off a face wrap while a cop watches in GTA 6",
     "game": "GTA 6",
-    "at": "2026-11-25T14:30:00Z",
+    "at": "2026-11-26T07:30:00Z",
     "url": "",
     "views": null,
     "score": 92,
     "duration": 12,
-    "from": "Losing Cops in GTA 6 Is Way Too Easy",
+    "from": "Losing Cops in GTA 6 Is Way Too Easy | PS5",
+    "ig": false,
+    "fb_url": "",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "Q24sdQY1_Tk_02",
+    "title": "Shouting threats as a standoff breaks down in GTA 6",
+    "game": "GTA 6",
+    "at": "2026-11-26T11:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 91,
+    "duration": 28,
+    "from": "Kyle Went Full Hulk and Wiped the Robbery | GTA 6 PS5 4K",
+    "ig": false,
+    "fb_url": "",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "XR8hMT8dmuQ_03",
+    "title": "Helldivers 2: if bugs charge in a line, burn them",
+    "game": "Helldivers 2",
+    "at": "2026-11-26T14:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 64,
+    "duration": 27,
+    "from": "Fire Is the Best Weapon Against Bugs | Helldivers 2 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -301,17 +205,17 @@
    "G": 0
   },
   "queue": {
-   "total": 127,
+   "total": 126,
    "by_game": {
-    "GTA 6": 90,
+    "GTA 6": 89,
     "Helldivers 2": 37
    },
-   "days_left": 21.2,
-   "per_day": 6
+   "days_left": 31.5,
+   "per_day": 4
   },
   "videos": [
    {
-    "title": "Losing Cops in GTA 6 Is Way Too Easy",
+    "title": "Losing Cops in GTA 6 Is Way Too Easy | PS5",
     "game": "GTA 6",
     "url": "https://youtu.be/ePh0EqtZRf4",
     "at": "2026-11-23T11:30:24Z",
@@ -321,7 +225,7 @@
     "views": 1
    },
    {
-    "title": "GTA 6: Failed Attempt at Stealing a Police Parking Car",
+    "title": "Stealing a Police Car Is Almost Impossible | GTA 6 PS5 4K",
     "game": "GTA 6",
     "url": "https://youtu.be/QG0axa1AAx8",
     "at": "2026-11-23T10:55:01Z",
@@ -351,7 +255,7 @@
     "views": 170
    },
    {
-    "title": "GTA 6: First delivery and using the key cloner",
+    "title": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
     "game": "GTA 6",
     "url": "https://youtu.be/6o5GZ3asbBE",
     "at": "2026-11-23T08:24:08Z",
@@ -361,7 +265,7 @@
     "views": 3
    },
    {
-    "title": "Kyle turned into a Hulk and wiped the robbery | GTA 6",
+    "title": "Kyle Went Full Hulk and Wiped the Robbery | GTA 6 PS5 4K",
     "game": "GTA 6",
     "url": "https://youtu.be/Q24sdQY1_Tk",
     "at": "2026-11-22T20:10:23Z",
@@ -371,7 +275,7 @@
     "views": 0
    },
    {
-    "title": "Kyle Turned Hulk and Ran Away From Me | GTA 6",
+    "title": "Kyle Turned Hulk and Ran Away From Me | GTA 6 PS5 4K",
     "game": "GTA 6",
     "url": "https://youtu.be/k8wR7j19Zoo",
     "at": "2026-11-22T19:52:34Z",
@@ -381,7 +285,7 @@
     "views": 0
    },
    {
-    "title": "GTA 6: Silver Audi Cruising Past a Maibatsu Truck",
+    "title": "Rooftop Parkour Is the Best Way to Lose Cops | GTA 6 PS5 4K",
     "game": "GTA 6",
     "url": "https://youtu.be/2nHYkY6wCog",
     "at": "2026-11-22T19:45:31Z",
@@ -393,16 +297,12 @@
   ],
   "issues": [],
   "totals": {
-   "shorts_posted": 44,
-   "shorts_views": 52484,
+   "shorts_posted": 45,
+   "shorts_views": 52718,
    "videos": 35,
    "video_views": 814
   },
   "per_day": [
-   {
-    "day": "2026-11-10",
-    "posted": 0
-   },
    {
     "day": "2026-11-11",
     "posted": 0
@@ -454,23 +354,27 @@
    {
     "day": "2026-11-23",
     "posted": 1
+   },
+   {
+    "day": "2026-11-24",
+    "posted": 1
    }
   ],
   "platforms": {
    "youtube": {
-    "posted": 44,
-    "views": 52484,
+    "posted": 45,
+    "views": 52718,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 18,
-    "waiting": 26,
+    "posted": 20,
+    "waiting": 25,
     "failed": 0,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 18,
-    "waiting": 26,
+    "posted": 20,
+    "waiting": 25,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
    }
@@ -482,10 +386,10 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 20352,
+    "views": 20417,
     "score": 74,
     "duration": 21,
-    "from": "GTA 6 Second Hour on PS5 | Story Mode",
+    "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
     "ig": true,
     "fb_url": "https://www.facebook.com/reel/1170463798669313"
    },
@@ -495,10 +399,10 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1706,
+    "views": 1701,
     "score": 82,
     "duration": 29,
-    "from": "Random missions and chilling | GTA 6",
+    "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
     "ig": true,
     "fb_url": "https://www.facebook.com/reel/1192837739763746"
    },
@@ -508,10 +412,10 @@
     "game": "GTA 6",
     "at": "2026-11-20T07:30:21.118000Z",
     "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-    "views": 1662,
+    "views": 1666,
     "score": 85,
     "duration": 35,
-    "from": "GTA 6 Second Hour on PS5 | Story Mode",
+    "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
     "ig": true,
     "fb_url": "https://www.facebook.com/reel/1156291066761625"
    },
@@ -521,10 +425,10 @@
     "game": "GTA 6",
     "at": "2026-11-21T11:30:25.588000Z",
     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1438,
+    "views": 1455,
     "score": 78,
     "duration": 23,
-    "from": "Random missions and chilling | GTA 6",
+    "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
     "ig": true,
     "fb_url": "https://www.facebook.com/reel/1134112265656526"
    },
@@ -537,7 +441,7 @@
     "views": 1424,
     "score": 74,
     "duration": 18,
-    "from": "GTA 6 Chapter 1 Ends: Last Mission on PS5",
+    "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
     "ig": true,
     "fb_url": "https://www.facebook.com/reel/2057633061869493"
    }
@@ -546,17 +450,12 @@
  },
  "sl": {
   "ok": true,
-  "now": [
-   {
-    "kind": "you",
-    "text": "Reel #9 is due Tue 24 Nov, 18:00: turn on the laptop (SL → Turn ON)"
-   }
-  ],
+  "now": [],
   "today": [
    {
-    "id": "r08",
-    "title": "THE WEAKEST HUNTER · Part 4/8: Six Kills (story-first, live kill-counter cold open)",
-    "at": "2026-11-23T04:30:00Z",
+    "id": "r09",
+    "title": "THE WEAKEST HUNTER · Part 5/8: The Dead Rise (story-first, live mass-rise cold open, army counter 3/5/8)",
+    "at": "2026-11-24T12:30:00Z",
     "status": "scheduled",
     "url": "",
     "views": null,
@@ -587,10 +486,20 @@
     "state": "scheduled"
    },
    {
+    "id": "r09",
+    "title": "THE WEAKEST HUNTER · Part 5/8: The Dead Rise (story-first, live mass-rise cold open, army counter 3/5/8)",
     "at": "2026-11-24T12:30:00Z",
-    "title": "THE WEAKEST HUNTER · Part 5/8: The Dead Rise",
-    "state": "pending",
-    "stage": "claude_running"
+    "status": "scheduled",
+    "url": "",
+    "views": null,
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "skip_rate": null,
+    "avg_watch": null,
+    "score": null,
+    "state": "scheduled"
    },
    {
     "at": "2026-11-25T04:30:00Z",
@@ -614,12 +523,27 @@
    }
   ],
   "budget": {
-   "used": 7,
+   "used": 8,
    "limit": 20,
    "from": "2026-11-14",
    "to": "2026-12-13"
   },
   "reels": [
+   {
+    "id": "r09",
+    "title": "THE WEAKEST HUNTER · Part 5/8: The Dead Rise (story-first, live mass-rise cold open, army counter 3/5/8)",
+    "at": "2026-11-24T12:30:00Z",
+    "status": "scheduled",
+    "url": "",
+    "views": null,
+    "reach": null,
+    "likes": null,
+    "comments": null,
+    "shares": null,
+    "skip_rate": null,
+    "avg_watch": null,
+    "score": null
+   },
    {
     "id": "r08",
     "title": "THE WEAKEST HUNTER · Part 4/8: Six Kills (story-first, live kill-counter cold open)",
@@ -757,33 +681,34 @@
   "qpcaqb9wPhE": 1286,
   "0fm5Jqik_gU": 328,
   "YTVhAYM3Ftg": 1296,
-  "lfx64AWbC9s": 431,
+  "lfx64AWbC9s": 432,
   "8I9h6Bq48vY": 692,
   "VNBRgawVmE8": 985,
   "JY5Gays_MfQ": 653,
-  "Xl5h0OnkN74": 217,
-  "2-wNg1d5mvU": 1140,
-  "d2dqCcDgHDo": 1042,
-  "zgX33pMgAF0": 599,
-  "6_EZFFO1cc0": 650,
+  "Xl5h0OnkN74": 219,
+  "2-wNg1d5mvU": 1142,
+  "d2dqCcDgHDo": 1043,
+  "zgX33pMgAF0": 600,
+  "6_EZFFO1cc0": 651,
   "xm3TQqlVM2c": 69,
-  "DS9wb5_E3Cc": 1662,
-  "FzJCVEwQA0g": 49,
-  "hFKKqp4URkA": 20352,
-  "MC4y5ZYRO3w": 1115,
-  "BBrCI5sVRUY": 258,
+  "DS9wb5_E3Cc": 1666,
+  "FzJCVEwQA0g": 50,
+  "hFKKqp4URkA": 20417,
+  "Lo4ewxWzn18": 81,
+  "MC4y5ZYRO3w": 1116,
+  "BBrCI5sVRUY": 299,
   "HDrn8iS6MyU": 212,
-  "OsI_r7G_WsI": 1168,
+  "OsI_r7G_WsI": 1165,
   "-UhIaH95dhs": 97,
-  "Ea_2u5g1NQA": 1084,
+  "Ea_2u5g1NQA": 1086,
   "08S4R_4k-s4": 96,
   "qMA1R4vHCWs": 12,
-  "-irOEWAmzaA": 1262,
+  "-irOEWAmzaA": 1269,
   "zTLAoLn6blo": 1424,
-  "25MVUMhaLEc": 1706,
-  "i8kqIJiEwe4": 1438,
+  "25MVUMhaLEc": 1701,
+  "i8kqIJiEwe4": 1455,
   "UYnx9kufBvE": 313,
-  "f-xZGpy8EkE": 384,
+  "f-xZGpy8EkE": 399,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
