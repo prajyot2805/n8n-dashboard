@@ -135,6 +135,7 @@ def ps5(old_views):
         before = [s for at, s in sorted(((a, s) for a, s in line if a < t), key=lambda x: x[0], reverse=True)]
         used = Counter(s.get('source_video_id') for at, s in line if ist_day(at) == ist_day(t))
         base = [s for s in pool if used[s.get('source_video_id')] < 2] or pool
+        base = sorted(base, key=lambda s: s.get('layout') not in ('S', 'G', 'B'))  # full-screen layouts first (build.py QUEUE_JS, 25 Nov)
         gta, rest = [s for s in base if is_gta(s.get('game'))], [s for s in base if not is_gta(s.get('game'))]
         games = [s.get('game') for s in before]
         rest.sort(key=lambda s: -(games.index(s.get('game')) if s.get('game') in games else 10 ** 9))
