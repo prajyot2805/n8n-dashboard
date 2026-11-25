@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T12:09:08.343952Z",
+ "generated_at": "2026-11-25T16:07:58.770546Z",
  "ps5": {
   "now": [
    {
@@ -19,7 +19,7 @@
      "game": "Helldivers 2",
      "at": "2026-11-24T21:30:20.683000Z",
      "url": "https://youtube.com/shorts/TMISUcXKju0",
-     "views": 97,
+     "views": 152,
      "score": 74,
      "duration": 22,
      "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
@@ -32,7 +32,7 @@
      "game": "GTA 6",
      "at": "2026-11-25T07:30:28.779000Z",
      "url": "https://youtube.com/shorts/zh9x3Jg0Uxs",
-     "views": 418,
+     "views": 482,
      "score": 58,
      "duration": 29,
      "from": "A Real Diver Judges GTA 6's Dive Mission | PS5 4K",
@@ -45,35 +45,47 @@
      "game": "GTA 6",
      "at": "2026-11-25T11:30:20.484000Z",
      "url": "https://youtube.com/shorts/cOlK11j-8lc",
-     "views": 11,
+     "views": 156,
      "score": 55,
      "duration": 28,
      "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
+     "ig": true,
+     "fb_url": "https://www.facebook.com/reel/1659857109213444"
+    },
+    {
+     "id": "tip_T48_1_8cb0",
+     "title": "GTA 6 Fishing: How to Catch a Stoplight Parrotfish",
+     "game": "GTA 6",
+     "at": "2026-11-25T13:07:45.225000Z",
+     "url": "https://youtube.com/shorts/Z6EL8f1oW4w",
+     "views": 243,
+     "score": "",
+     "duration": 26,
+     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
      "ig": false,
      "fb_url": ""
+    },
+    {
+     "id": "gTX0z2q4rXw_04",
+     "title": "Helldivers 2 mistake: jumping late infront of a charger",
+     "game": "Helldivers 2",
+     "at": "2026-11-25T14:30:19.951000Z",
+     "url": "https://youtube.com/shorts/ZUnaB_uRHbw",
+     "views": 31,
+     "score": 66,
+     "duration": 17,
+     "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
+     "ig": true,
+     "fb_url": "https://www.facebook.com/reel/2323533961713585"
     }
    ],
    "uploads": [],
-   "shorts_made": 0,
-   "clipped": []
+   "shorts_made": 1,
+   "clipped": [
+    "Looting Bodies Is Weirdly Addictive | GTA 6 PS5"
+   ]
   },
   "up_next": [
-   {
-    "id": "gTX0z2q4rXw_04",
-    "title": "Helldivers 2 mistake: jumping late infront of a charger",
-    "game": "Helldivers 2",
-    "at": "2026-11-25T14:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 66,
-    "duration": 17,
-    "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
-    "ig": false,
-    "fb_url": "",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
    {
     "id": "x6tnvdd_BCg_06",
     "title": "GTA 6: Lu's prison pickup ends in a bar fight",
@@ -208,12 +220,12 @@
    "G": 0
   },
   "queue": {
-   "total": 120,
+   "total": 119,
    "by_game": {
     "GTA 6": 85,
-    "Helldivers 2": 35
+    "Helldivers 2": 34
    },
-   "days_left": 30.0,
+   "days_left": 29.8,
    "per_day": 4
   },
   "videos": [
@@ -307,10 +319,10 @@
    }
   ],
   "totals": {
-   "shorts_posted": 51,
-   "shorts_views": 55592,
+   "shorts_posted": 53,
+   "shorts_views": 56308,
    "videos": 35,
-   "video_views": 1100
+   "video_views": 1116
   },
   "per_day": [
    {
@@ -367,23 +379,23 @@
    },
    {
     "day": "2026-11-25",
-    "posted": 3
+    "posted": 5
    }
   ],
   "platforms": {
    "youtube": {
-    "posted": 51,
-    "views": 55592,
+    "posted": 53,
+    "views": 56308,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 39,
+    "posted": 41,
     "waiting": 12,
     "failed": 0,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 39,
+    "posted": 41,
     "waiting": 12,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
@@ -396,7 +408,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 20802,
+    "views": 20943,
     "score": 74,
     "duration": 21,
     "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
@@ -435,7 +447,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T11:30:25.588000Z",
     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1518,
+    "views": 1519,
     "score": 78,
     "duration": 23,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
@@ -693,33 +705,35 @@
   "Xl5h0OnkN74": 229,
   "2-wNg1d5mvU": 1142,
   "d2dqCcDgHDo": 1044,
-  "CdoYaivQ-6g": 222,
-  "TMISUcXKju0": 97,
+  "CdoYaivQ-6g": 236,
+  "TMISUcXKju0": 152,
+  "ZUnaB_uRHbw": 31,
   "zgX33pMgAF0": 599,
   "6_EZFFO1cc0": 652,
   "xm3TQqlVM2c": 69,
   "DS9wb5_E3Cc": 1677,
   "FzJCVEwQA0g": 50,
-  "hFKKqp4URkA": 20802,
-  "6yDBHnQN7Tw": 150,
-  "Lo4ewxWzn18": 268,
-  "cOlK11j-8lc": 11,
+  "hFKKqp4URkA": 20943,
+  "6yDBHnQN7Tw": 160,
+  "Lo4ewxWzn18": 270,
+  "cOlK11j-8lc": 156,
   "MC4y5ZYRO3w": 1116,
   "BBrCI5sVRUY": 316,
-  "zh9x3Jg0Uxs": 418,
+  "zh9x3Jg0Uxs": 482,
   "HDrn8iS6MyU": 213,
   "OsI_r7G_WsI": 1181,
   "-UhIaH95dhs": 97,
   "Ea_2u5g1NQA": 1082,
   "08S4R_4k-s4": 96,
-  "1AcbgLBQeCw": 1135,
+  "1AcbgLBQeCw": 1141,
   "qMA1R4vHCWs": 13,
-  "-irOEWAmzaA": 1298,
+  "-irOEWAmzaA": 1300,
   "zTLAoLn6blo": 1444,
   "25MVUMhaLEc": 1720,
-  "i8kqIJiEwe4": 1518,
+  "i8kqIJiEwe4": 1519,
   "UYnx9kufBvE": 318,
-  "f-xZGpy8EkE": 478,
+  "f-xZGpy8EkE": 480,
+  "Z6EL8f1oW4w": 243,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -735,7 +749,7 @@
   "gTX0z2q4rXw": 8,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 7,
-  "IVZI7UfJkH4": 620,
+  "IVZI7UfJkH4": 636,
   "Kpe0srbAOZc": 17,
   "x6tnvdd_BCg": 24,
   "AqVZGcqdjoI": 3,
