@@ -1,30 +1,28 @@
 {
- "generated_at": "2026-11-24T18:37:30.935140Z",
+ "generated_at": "2026-11-25T02:55:36.221014Z",
  "ps5": {
   "now": [],
   "today": {
-   "posted": [],
+   "posted": [
+    {
+     "id": "gTX0z2q4rXw_03",
+     "title": "Helldivers 2: alone on a mission that can't be won",
+     "game": "Helldivers 2",
+     "at": "2026-11-24T21:30:20.683000Z",
+     "url": "https://youtube.com/shorts/TMISUcXKju0",
+     "views": 43,
+     "score": 74,
+     "duration": 22,
+     "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
+     "ig": true,
+     "fb_url": "https://www.facebook.com/reel/30353063064280512"
+    }
+   ],
    "uploads": [],
    "shorts_made": 0,
    "clipped": []
   },
   "up_next": [
-   {
-    "id": "gTX0z2q4rXw_03",
-    "title": "Helldivers 2: alone on a mission that can't be won",
-    "game": "Helldivers 2",
-    "at": "2026-11-24T21:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 74,
-    "duration": 22,
-    "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
-    "ig": false,
-    "fb_url": "",
-    "guess": false,
-    "note": "",
-    "title_state": "yours"
-   },
    {
     "id": "Q24sdQY1_Tk_01",
     "title": "Pressing a hostage who begs for his life in GTA 6",
@@ -207,12 +205,12 @@
    "G": 0
   },
   "queue": {
-   "total": 123,
+   "total": 122,
    "by_game": {
     "GTA 6": 87,
-    "Helldivers 2": 36
+    "Helldivers 2": 35
    },
-   "days_left": 30.8,
+   "days_left": 30.5,
    "per_day": 4
   },
   "videos": [
@@ -244,7 +242,7 @@
     "status": "clipped",
     "shorts_made": 1,
     "shorts_posted": "",
-    "views": 4
+    "views": 5
    },
    {
     "title": "Touching a dangerous jellyfish in GTA 6",
@@ -254,7 +252,7 @@
     "status": "not_needed",
     "shorts_made": "",
     "shorts_posted": "",
-    "views": 271
+    "views": 289
    },
    {
     "title": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
@@ -299,10 +297,10 @@
   ],
   "issues": [],
   "totals": {
-   "shorts_posted": 48,
-   "shorts_views": 53934,
+   "shorts_posted": 49,
+   "shorts_views": 54586,
    "videos": 35,
-   "video_views": 1032
+   "video_views": 1076
   },
   "per_day": [
    {
@@ -359,24 +357,24 @@
    },
    {
     "day": "2026-11-25",
-    "posted": 0
+    "posted": 1
    }
   ],
   "platforms": {
    "youtube": {
-    "posted": 48,
-    "views": 53934,
+    "posted": 49,
+    "views": 54586,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 30,
-    "waiting": 18,
+    "posted": 34,
+    "waiting": 15,
     "failed": 0,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 30,
-    "waiting": 18,
+    "posted": 34,
+    "waiting": 15,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
    }
@@ -388,7 +386,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 20632,
+    "views": 20695,
     "score": 74,
     "duration": 21,
     "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
@@ -401,7 +399,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1717,
+    "views": 1716,
     "score": 82,
     "duration": 29,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
@@ -427,7 +425,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T11:30:25.588000Z",
     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1479,
+    "views": 1498,
     "score": 78,
     "duration": 23,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
@@ -440,7 +438,7 @@
     "game": "GTA 6",
     "at": "2026-11-22T04:00:27.347000Z",
     "url": "https://youtube.com/shorts/zTLAoLn6blo",
-    "views": 1434,
+    "views": 1438,
     "score": 74,
     "duration": 18,
     "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
@@ -496,7 +494,7 @@
     "at": "2026-11-25T04:30:00Z",
     "title": "THE WEAKEST HUNTER · Part 6/8: The Gatekeepers",
     "state": "pending",
-    "stage": "job_created"
+    "stage": "reminder_sent"
    },
    {
     "at": "2026-11-26T12:30:00Z",
@@ -681,34 +679,35 @@
   "lfx64AWbC9s": 429,
   "8I9h6Bq48vY": 692,
   "VNBRgawVmE8": 985,
-  "JY5Gays_MfQ": 654,
-  "Xl5h0OnkN74": 228,
+  "JY5Gays_MfQ": 655,
+  "Xl5h0OnkN74": 229,
   "2-wNg1d5mvU": 1142,
-  "d2dqCcDgHDo": 1043,
-  "CdoYaivQ-6g": 51,
+  "d2dqCcDgHDo": 1044,
+  "CdoYaivQ-6g": 157,
+  "TMISUcXKju0": 43,
   "zgX33pMgAF0": 599,
   "6_EZFFO1cc0": 652,
   "xm3TQqlVM2c": 69,
   "DS9wb5_E3Cc": 1677,
   "FzJCVEwQA0g": 50,
-  "hFKKqp4URkA": 20632,
-  "6yDBHnQN7Tw": 133,
-  "Lo4ewxWzn18": 249,
+  "hFKKqp4URkA": 20695,
+  "6yDBHnQN7Tw": 145,
+  "Lo4ewxWzn18": 265,
   "MC4y5ZYRO3w": 1116,
   "BBrCI5sVRUY": 316,
-  "HDrn8iS6MyU": 210,
-  "OsI_r7G_WsI": 1174,
+  "HDrn8iS6MyU": 211,
+  "OsI_r7G_WsI": 1179,
   "-UhIaH95dhs": 97,
-  "Ea_2u5g1NQA": 1086,
+  "Ea_2u5g1NQA": 1082,
   "08S4R_4k-s4": 96,
-  "1AcbgLBQeCw": 489,
+  "1AcbgLBQeCw": 852,
   "qMA1R4vHCWs": 13,
-  "-irOEWAmzaA": 1287,
-  "zTLAoLn6blo": 1434,
-  "25MVUMhaLEc": 1717,
-  "i8kqIJiEwe4": 1479,
-  "UYnx9kufBvE": 316,
-  "f-xZGpy8EkE": 445,
+  "-irOEWAmzaA": 1296,
+  "zTLAoLn6blo": 1438,
+  "25MVUMhaLEc": 1716,
+  "i8kqIJiEwe4": 1498,
+  "UYnx9kufBvE": 318,
+  "f-xZGpy8EkE": 456,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -724,14 +723,14 @@
   "gTX0z2q4rXw": 8,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 7,
-  "IVZI7UfJkH4": 575,
+  "IVZI7UfJkH4": 597,
   "Kpe0srbAOZc": 17,
-  "x6tnvdd_BCg": 23,
+  "x6tnvdd_BCg": 24,
   "AqVZGcqdjoI": 3,
   "-3izYF6h_z8": 17,
   "D9IwOx0XqNM": 4,
   "xDW0dL14BXo": 5,
-  "p-VmW5hTenM": 6,
+  "p-VmW5hTenM": 8,
   "RshFk8YiAug": 3,
   "0aKodCItm7M": 2,
   "TBCnWiMPW8w": 2,
@@ -740,8 +739,8 @@
   "k8wR7j19Zoo": 0,
   "Q24sdQY1_Tk": 0,
   "6o5GZ3asbBE": 3,
-  "rkWNpsjlNNw": 271,
-  "boGdpefjrVE": 4,
+  "rkWNpsjlNNw": 289,
+  "boGdpefjrVE": 5,
   "QG0axa1AAx8": 2,
   "ePh0EqtZRf4": 1
  }
