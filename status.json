@@ -1,11 +1,7 @@
 {
- "generated_at": "2026-11-25T16:07:58.770546Z",
+ "generated_at": "2026-11-25T17:37:32.315395Z",
  "ps5": {
   "now": [
-   {
-    "kind": "you",
-    "text": "Title check waiting for you: “GTA 6: Lu's prison pickup ends in a bar fight” (posts Thu 03:00)"
-   },
    {
     "kind": "you",
     "text": "Issue: Sheets read quota hit repeatedly (needs claude)"
@@ -19,7 +15,7 @@
      "game": "Helldivers 2",
      "at": "2026-11-24T21:30:20.683000Z",
      "url": "https://youtube.com/shorts/TMISUcXKju0",
-     "views": 152,
+     "views": 175,
      "score": 74,
      "duration": 22,
      "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
@@ -45,7 +41,7 @@
      "game": "GTA 6",
      "at": "2026-11-25T11:30:20.484000Z",
      "url": "https://youtube.com/shorts/cOlK11j-8lc",
-     "views": 156,
+     "views": 245,
      "score": 55,
      "duration": 28,
      "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
@@ -62,8 +58,8 @@
      "score": "",
      "duration": 26,
      "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
-     "ig": false,
-     "fb_url": ""
+     "ig": true,
+     "fb_url": "https://www.facebook.com/reel/1684894716691965"
     },
     {
      "id": "gTX0z2q4rXw_04",
@@ -71,7 +67,7 @@
      "game": "Helldivers 2",
      "at": "2026-11-25T14:30:19.951000Z",
      "url": "https://youtube.com/shorts/ZUnaB_uRHbw",
-     "views": 31,
+     "views": 80,
      "score": 66,
      "duration": 17,
      "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
@@ -100,7 +96,7 @@
     "fb_url": "",
     "guess": false,
     "note": "",
-    "title_state": "check_sent"
+    "title_state": "yours"
    },
    {
     "id": "Q24sdQY1_Tk_01",
@@ -122,7 +118,7 @@
     "id": "y0DrBXmTtlg_03",
     "title": "Helldivers 2: Orbital strikes called, then reversed",
     "game": "Helldivers 2",
-    "at": "2026-11-26T11:30:00Z",
+    "at": "2026-11-26T14:30:00Z",
     "url": "",
     "views": null,
     "score": 70,
@@ -138,7 +134,7 @@
     "id": "6o5GZ3asbBE_05",
     "title": "Taking a buyer's payout and a warning to work fast in GTA 6",
     "game": "GTA 6",
-    "at": "2026-11-26T14:30:00Z",
+    "at": "2026-11-26T21:30:00Z",
     "url": "",
     "views": null,
     "score": 95,
@@ -154,7 +150,7 @@
     "id": "6o5GZ3asbBE_06",
     "title": "Silently unlocking a locked Vapid Stanier G2 in GTA 6",
     "game": "GTA 6",
-    "at": "2026-11-26T21:30:00Z",
+    "at": "2026-11-27T07:30:00Z",
     "url": "",
     "views": null,
     "score": 95,
@@ -170,44 +166,12 @@
     "id": "XR8hMT8dmuQ_03",
     "title": "Helldivers 2: if bugs charge in a line, burn them",
     "game": "Helldivers 2",
-    "at": "2026-11-27T07:30:00Z",
+    "at": "2026-11-27T14:30:00Z",
     "url": "",
     "views": null,
     "score": 64,
     "duration": 27,
     "from": "Fire Is the Best Weapon Against Bugs | Helldivers 2 PS5 4K",
-    "ig": false,
-    "fb_url": "",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
-   },
-   {
-    "id": "Q24sdQY1_Tk_03",
-    "title": "Confronting a driver at the getaway car in GTA 6",
-    "game": "GTA 6",
-    "at": "2026-11-27T11:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 93,
-    "duration": 25,
-    "from": "Kyle Went Full Hulk and Wiped the Robbery | GTA 6 PS5 4K",
-    "ig": false,
-    "fb_url": "",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
-   },
-   {
-    "id": "6o5GZ3asbBE_07",
-    "title": "Finding Andy using an aromatherapy Manifestick in GTA 6",
-    "game": "GTA 6",
-    "at": "2026-11-27T14:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 93,
-    "duration": 35,
-    "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -225,8 +189,8 @@
     "GTA 6": 85,
     "Helldivers 2": 34
    },
-   "days_left": 29.8,
-   "per_day": 4
+   "days_left": 39.7,
+   "per_day": 3
   },
   "videos": [
    {
@@ -320,7 +284,7 @@
   ],
   "totals": {
    "shorts_posted": 53,
-   "shorts_views": 56308,
+   "shorts_views": 56563,
    "videos": 35,
    "video_views": 1116
   },
@@ -385,18 +349,18 @@
   "platforms": {
    "youtube": {
     "posted": 53,
-    "views": 56308,
+    "views": 56563,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 41,
-    "waiting": 12,
+    "posted": 42,
+    "waiting": 11,
     "failed": 0,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 41,
-    "waiting": 12,
+    "posted": 42,
+    "waiting": 11,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
    }
@@ -408,7 +372,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 20943,
+    "views": 21035,
     "score": 74,
     "duration": 21,
     "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
@@ -516,7 +480,7 @@
     "at": "2026-11-26T12:30:00Z",
     "title": "THE WEAKEST HUNTER · Part 6/8: The Gatekeepers",
     "state": "pending",
-    "stage": "moved"
+    "stage": "agent_off"
    },
    {
     "at": "2026-11-27T04:30:00Z",
@@ -705,18 +669,18 @@
   "Xl5h0OnkN74": 229,
   "2-wNg1d5mvU": 1142,
   "d2dqCcDgHDo": 1044,
-  "CdoYaivQ-6g": 236,
-  "TMISUcXKju0": 152,
-  "ZUnaB_uRHbw": 31,
+  "CdoYaivQ-6g": 238,
+  "TMISUcXKju0": 175,
+  "ZUnaB_uRHbw": 80,
   "zgX33pMgAF0": 599,
   "6_EZFFO1cc0": 652,
   "xm3TQqlVM2c": 69,
   "DS9wb5_E3Cc": 1677,
   "FzJCVEwQA0g": 50,
-  "hFKKqp4URkA": 20943,
+  "hFKKqp4URkA": 21035,
   "6yDBHnQN7Tw": 160,
   "Lo4ewxWzn18": 270,
-  "cOlK11j-8lc": 156,
+  "cOlK11j-8lc": 245,
   "MC4y5ZYRO3w": 1116,
   "BBrCI5sVRUY": 316,
   "zh9x3Jg0Uxs": 482,
