@@ -2,7 +2,7 @@
 
 Runs in GitHub Actions after every dashboard refresh (GitHub starts those only every 3 to 9 h) and on the Mac every 30 min
 while it is on (ps5-shorts automation/tips/tips.py). Each place keeps its own state, one message per problem and one when it ends.
-Env: TIPS_BOT_TOKEN, TELEGRAM_CHAT_ID. Usage: python3 alarm.py <state file> <checks in a row that must fail>
+Env: TIPS_BOT_TOKEN, TELEGRAM_CHAT_ID, optional TELEGRAM_THREAD_ID (topic in a group). Usage: python3 alarm.py <state file> <checks in a row that must fail>
 """
 import json, os, sys, time, urllib.request
 from datetime import datetime, timedelta, timezone
@@ -52,7 +52,10 @@ def step(state, bad, need):
 
 
 def send(text):
-    body = json.dumps({'chat_id': os.environ['TELEGRAM_CHAT_ID'], 'text': text}).encode()
+    msg = {'chat_id': os.environ['TELEGRAM_CHAT_ID'], 'text': text}
+    if os.environ.get('TELEGRAM_THREAD_ID'):  # the 🚨 Alerts topic of the PS5 Shorts group (26 Nov)
+        msg['message_thread_id'] = int(os.environ['TELEGRAM_THREAD_ID'])
+    body = json.dumps(msg).encode()
     req = urllib.request.Request('https://api.telegram.org/bot%s/sendMessage' % os.environ['TIPS_BOT_TOKEN'], data=body, headers={'Content-Type': 'application/json'})
     try:
         urllib.request.urlopen(req, timeout=20).read()

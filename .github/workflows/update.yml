@@ -46,6 +46,7 @@ jobs:
           N8N_API_KEY: ${{ secrets.N8N_API_KEY }}
           TIPS_BOT_TOKEN: ${{ secrets.TIPS_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
         run: |
           python test_alarm.py
           python alarm.py alarm.json 1
