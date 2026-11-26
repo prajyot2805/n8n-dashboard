@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T21:54:36.737502Z",
+ "generated_at": "2026-11-26T03:56:23.400317Z",
  "ps5": {
   "now": [
    {
@@ -15,12 +15,12 @@
      "game": "GTA 6",
      "at": "2026-11-25T21:30:20.434000Z",
      "url": "https://youtube.com/shorts/QfSO1UXKkwU",
-     "views": 0,
+     "views": 467,
      "score": 52,
      "duration": 23,
      "from": "Lucia Steals the Show From Prison to the Bar | GTA 6 PS5 4K",
-     "ig": false,
-     "fb_url": ""
+     "ig": true,
+     "fb_url": "https://www.facebook.com/reel/1457114485922858"
     }
    ],
    "uploads": [
@@ -272,9 +272,9 @@
   ],
   "totals": {
    "shorts_posted": 54,
-   "shorts_views": 56861,
+   "shorts_views": 57766,
    "videos": 36,
-   "video_views": 1165
+   "video_views": 1189
   },
   "per_day": [
    {
@@ -337,18 +337,18 @@
   "platforms": {
    "youtube": {
     "posted": 54,
-    "views": 56861,
+    "views": 57766,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 43,
-    "waiting": 11,
+    "posted": 46,
+    "waiting": 8,
     "failed": 0,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 43,
-    "waiting": 11,
+    "posted": 46,
+    "waiting": 8,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
    }
@@ -360,7 +360,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 21066,
+    "views": 21122,
     "score": 74,
     "duration": 21,
     "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
@@ -373,7 +373,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1720,
+    "views": 1721,
     "score": 82,
     "duration": 29,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
@@ -412,7 +412,7 @@
     "game": "GTA 6",
     "at": "2026-11-22T04:00:27.347000Z",
     "url": "https://youtube.com/shorts/zTLAoLn6blo",
-    "views": 1451,
+    "views": 1458,
     "score": 74,
     "duration": 18,
     "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
@@ -657,36 +657,36 @@
   "Xl5h0OnkN74": 229,
   "2-wNg1d5mvU": 1142,
   "d2dqCcDgHDo": 1044,
-  "CdoYaivQ-6g": 260,
-  "TMISUcXKju0": 236,
-  "ZUnaB_uRHbw": 88,
+  "CdoYaivQ-6g": 271,
+  "TMISUcXKju0": 247,
+  "ZUnaB_uRHbw": 264,
   "zgX33pMgAF0": 599,
   "6_EZFFO1cc0": 652,
   "xm3TQqlVM2c": 69,
   "DS9wb5_E3Cc": 1677,
   "FzJCVEwQA0g": 50,
-  "hFKKqp4URkA": 21066,
-  "6yDBHnQN7Tw": 161,
-  "Lo4ewxWzn18": 276,
-  "cOlK11j-8lc": 254,
+  "hFKKqp4URkA": 21122,
+  "6yDBHnQN7Tw": 162,
+  "Lo4ewxWzn18": 277,
+  "cOlK11j-8lc": 300,
   "MC4y5ZYRO3w": 1116,
-  "BBrCI5sVRUY": 316,
-  "zh9x3Jg0Uxs": 514,
-  "HDrn8iS6MyU": 213,
+  "BBrCI5sVRUY": 315,
+  "zh9x3Jg0Uxs": 539,
+  "HDrn8iS6MyU": 216,
   "OsI_r7G_WsI": 1182,
   "-UhIaH95dhs": 97,
   "Ea_2u5g1NQA": 1082,
   "08S4R_4k-s4": 96,
-  "1AcbgLBQeCw": 1196,
-  "QfSO1UXKkwU": 0,
+  "1AcbgLBQeCw": 1213,
+  "QfSO1UXKkwU": 467,
   "qMA1R4vHCWs": 13,
   "-irOEWAmzaA": 1304,
-  "zTLAoLn6blo": 1451,
-  "25MVUMhaLEc": 1720,
+  "zTLAoLn6blo": 1458,
+  "25MVUMhaLEc": 1721,
   "i8kqIJiEwe4": 1519,
   "UYnx9kufBvE": 318,
-  "f-xZGpy8EkE": 484,
-  "Z6EL8f1oW4w": 300,
+  "f-xZGpy8EkE": 495,
+  "Z6EL8f1oW4w": 373,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -702,7 +702,7 @@
   "gTX0z2q4rXw": 8,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 7,
-  "IVZI7UfJkH4": 676,
+  "IVZI7UfJkH4": 700,
   "Kpe0srbAOZc": 17,
   "x6tnvdd_BCg": 24,
   "AqVZGcqdjoI": 3,
