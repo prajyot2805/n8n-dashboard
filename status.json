@@ -1,7 +1,11 @@
 {
- "generated_at": "2026-11-26T22:48:04.852534Z",
+ "generated_at": "2026-11-27T04:46:42.567682Z",
  "ps5": {
   "now": [
+   {
+    "kind": "you",
+    "text": "Title check waiting for you: “Silently unlocking a locked Vapid Stanier G2 in GTA 6” (posts Fri 13:00)"
+   },
    {
     "kind": "you",
     "text": "Issue: Sheets read quota hit repeatedly (needs claude)"
@@ -15,12 +19,12 @@
      "game": "GTA 6",
      "at": "2026-11-26T21:30:22.826000Z",
      "url": "https://youtube.com/shorts/F5NfeWwub0E",
-     "views": 0,
+     "views": 1,
      "score": 95,
      "duration": 34,
      "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
-     "ig": false,
-     "fb_url": ""
+     "ig": true,
+     "fb_url": "https://www.facebook.com/reel/3153877758297060"
     }
    ],
    "uploads": [],
@@ -40,9 +44,9 @@
     "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
     "ig": false,
     "fb_url": "",
-    "guess": true,
+    "guess": false,
     "note": "",
-    "title_state": "claude"
+    "title_state": "check_sent"
    },
    {
     "id": "y0DrBXmTtlg_03",
@@ -229,7 +233,7 @@
     "status": "not_needed",
     "shorts_made": "",
     "shorts_posted": "",
-    "views": 291
+    "views": 294
    },
    {
     "title": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
@@ -262,9 +266,9 @@
   ],
   "totals": {
    "shorts_posted": 58,
-   "shorts_views": 59617,
+   "shorts_views": 59753,
    "videos": 37,
-   "video_views": 1256
+   "video_views": 1284
   },
   "per_day": [
    {
@@ -327,18 +331,18 @@
   "platforms": {
    "youtube": {
     "posted": 58,
-    "views": 59617,
+    "views": 59753,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 53,
-    "waiting": 5,
-    "failed": 0,
+    "posted": 54,
+    "waiting": 3,
+    "failed": 1,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 54,
-    "waiting": 4,
+    "posted": 55,
+    "waiting": 3,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
    }
@@ -350,7 +354,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 21554,
+    "views": 21594,
     "score": 74,
     "duration": 21,
     "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
@@ -363,7 +367,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1722,
+    "views": 1726,
     "score": 82,
     "duration": 29,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
@@ -389,7 +393,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T11:30:25.588000Z",
     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1519,
+    "views": 1520,
     "score": 78,
     "duration": 23,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
@@ -402,7 +406,7 @@
     "game": "GTA 6",
     "at": "2026-11-22T04:00:27.347000Z",
     "url": "https://youtube.com/shorts/zTLAoLn6blo",
-    "views": 1457,
+    "views": 1462,
     "score": 74,
     "duration": 18,
     "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
@@ -423,27 +427,27 @@
   "today": [],
   "up_next": [
    {
-    "at": "2026-11-27T04:30:00Z",
+    "at": "2026-11-30T04:30:00Z",
     "title": "THE WEAKEST HUNTER · Part 7/8: The Soul That Resisted",
     "state": "planned"
    },
    {
-    "at": "2026-11-30T04:30:00Z",
+    "at": "2026-12-01T12:30:00Z",
     "title": "THE WEAKEST HUNTER · Part 8/8: Toward Sovereign",
     "state": "planned"
    },
    {
-    "at": "2026-12-01T12:30:00Z",
+    "at": "2026-12-02T04:30:00Z",
     "title": "HUNTER'S MANUAL · Part 1/8: One Thumb Each",
     "state": "planned"
    },
    {
-    "at": "2026-12-02T04:30:00Z",
+    "at": "2026-12-03T12:30:00Z",
     "title": "HUNTER'S MANUAL · Part 2/8: Unlock the Dead",
     "state": "planned"
    },
    {
-    "at": "2026-12-03T12:30:00Z",
+    "at": "2026-12-04T04:30:00Z",
     "title": "HUNTER'S MANUAL · Part 3/8: Raising a Boss",
     "state": "planned"
    }
@@ -590,64 +594,64 @@
   ]
  },
  "views": {
-  "VZkMukyJZh4": 1435,
+  "VZkMukyJZh4": 1436,
   "j10vRhfmPiI": 1241,
-  "_bnDIO6ZOeo": 1413,
+  "_bnDIO6ZOeo": 1415,
   "k3aeGtTL464": 814,
-  "U8i6h36yVDY": 172,
+  "U8i6h36yVDY": 173,
   "79_ZyoNT1jg": 924,
-  "CrveKG32kqA": 610,
+  "CrveKG32kqA": 611,
   "wJ5ODZSqqQ4": 297,
   "6oNpggoXkXc": 624,
   "S1yxC6H_lnE": 571,
-  "hLD165HKOws": 928,
+  "hLD165HKOws": 929,
   "Gt-k2NPMMQA": 353,
   "6fQH2crY_UE": 270,
   "YM7R8U3VR9o": 813,
-  "qpcaqb9wPhE": 1286,
+  "qpcaqb9wPhE": 1287,
   "0fm5Jqik_gU": 328,
   "YTVhAYM3Ftg": 1297,
   "lfx64AWbC9s": 429,
   "8I9h6Bq48vY": 692,
   "VNBRgawVmE8": 985,
-  "JY5Gays_MfQ": 656,
+  "JY5Gays_MfQ": 657,
   "Xl5h0OnkN74": 228,
   "2-wNg1d5mvU": 1142,
-  "d2dqCcDgHDo": 1044,
+  "d2dqCcDgHDo": 1045,
   "CdoYaivQ-6g": 282,
   "TMISUcXKju0": 280,
   "ZUnaB_uRHbw": 267,
-  "7muW9nuzBqM": 215,
-  "zgX33pMgAF0": 599,
+  "7muW9nuzBqM": 230,
+  "zgX33pMgAF0": 600,
   "6_EZFFO1cc0": 652,
   "xm3TQqlVM2c": 69,
   "DS9wb5_E3Cc": 1677,
   "FzJCVEwQA0g": 50,
-  "hFKKqp4URkA": 21554,
+  "hFKKqp4URkA": 21594,
   "6yDBHnQN7Tw": 163,
   "Lo4ewxWzn18": 278,
-  "cOlK11j-8lc": 368,
+  "cOlK11j-8lc": 369,
   "MC4y5ZYRO3w": 1116,
-  "BBrCI5sVRUY": 317,
+  "BBrCI5sVRUY": 320,
   "zh9x3Jg0Uxs": 556,
-  "HDrn8iS6MyU": 225,
+  "HDrn8iS6MyU": 227,
   "OsI_r7G_WsI": 1183,
   "-UhIaH95dhs": 98,
-  "Ea_2u5g1NQA": 1082,
+  "Ea_2u5g1NQA": 1083,
   "08S4R_4k-s4": 96,
   "1AcbgLBQeCw": 1221,
   "QfSO1UXKkwU": 468,
   "qMA1R4vHCWs": 13,
-  "-irOEWAmzaA": 1307,
-  "zTLAoLn6blo": 1457,
-  "25MVUMhaLEc": 1722,
-  "i8kqIJiEwe4": 1519,
+  "-irOEWAmzaA": 1308,
+  "zTLAoLn6blo": 1462,
+  "25MVUMhaLEc": 1726,
+  "i8kqIJiEwe4": 1520,
   "UYnx9kufBvE": 321,
-  "f-xZGpy8EkE": 502,
+  "f-xZGpy8EkE": 503,
   "z4xVd8EoXw8": 1,
-  "F5NfeWwub0E": 0,
-  "Z6EL8f1oW4w": 699,
-  "yofz293U4d4": 708,
+  "F5NfeWwub0E": 1,
+  "Z6EL8f1oW4w": 731,
+  "yofz293U4d4": 727,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -663,15 +667,15 @@
   "gTX0z2q4rXw": 8,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 7,
-  "IVZI7UfJkH4": 760,
+  "IVZI7UfJkH4": 783,
   "Kpe0srbAOZc": 17,
   "x6tnvdd_BCg": 25,
   "AqVZGcqdjoI": 3,
   "-3izYF6h_z8": 18,
   "D9IwOx0XqNM": 4,
   "xDW0dL14BXo": 5,
-  "p-VmW5hTenM": 16,
-  "RshFk8YiAug": 3,
+  "p-VmW5hTenM": 17,
+  "RshFk8YiAug": 4,
   "0aKodCItm7M": 2,
   "TBCnWiMPW8w": 2,
   "lJFbQ-MwiN0": 0,
@@ -679,7 +683,7 @@
   "k8wR7j19Zoo": 0,
   "Q24sdQY1_Tk": 0,
   "6o5GZ3asbBE": 3,
-  "rkWNpsjlNNw": 291,
+  "rkWNpsjlNNw": 294,
   "boGdpefjrVE": 6,
   "QG0axa1AAx8": 2,
   "ePh0EqtZRf4": 1,
