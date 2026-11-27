@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-27T04:46:42.567682Z",
+ "generated_at": "2026-11-27T14:41:37.842935Z",
  "ps5": {
   "now": [
    {
     "kind": "you",
-    "text": "Title check waiting for you: “Silently unlocking a locked Vapid Stanier G2 in GTA 6” (posts Fri 13:00)"
+    "text": "Title check waiting for you: “Confronting a driver at the getaway car in GTA 6” (posts Sat 03:00)"
    },
    {
     "kind": "you",
@@ -19,51 +19,60 @@
      "game": "GTA 6",
      "at": "2026-11-26T21:30:22.826000Z",
      "url": "https://youtube.com/shorts/F5NfeWwub0E",
-     "views": 1,
+     "views": 4,
      "score": 95,
      "duration": 34,
      "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
      "ig": true,
      "fb_url": "https://www.facebook.com/reel/3153877758297060"
+    },
+    {
+     "id": "tip_T46_1_6ee2",
+     "title": "GTA 6: Lose the Cops by Climbing Over Obstacles",
+     "game": "GTA 6",
+     "at": "2026-11-27T06:22:49.109000Z",
+     "url": "https://youtube.com/shorts/N60lR8pEwhg",
+     "views": 786,
+     "score": "",
+     "duration": 21,
+     "from": "Rooftop Parkour Is the Best Way to Lose Cops | GTA 6 PS5 4K",
+     "ig": true,
+     "fb_url": "https://www.facebook.com/reel/1730037435217972"
+    },
+    {
+     "id": "6o5GZ3asbBE_06",
+     "title": "Silently unlocking a locked Vapid Stanier G2 in GTA 6",
+     "game": "GTA 6",
+     "at": "2026-11-27T07:30:18.694000Z",
+     "url": "https://youtube.com/shorts/KNAcM9F2tUI",
+     "views": 44,
+     "score": 95,
+     "duration": 14,
+     "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
+     "ig": true,
+     "fb_url": "https://www.facebook.com/reel/1126541626842742"
+    },
+    {
+     "id": "gTX0z2q4rXw_06",
+     "title": "Helldivers 2: Trying to find that charger",
+     "game": "Helldivers 2",
+     "at": "2026-11-27T14:30:24.565000Z",
+     "url": "https://youtube.com/shorts/G-lFBOoijAE",
+     "views": 1,
+     "score": 60,
+     "duration": 25,
+     "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
+     "ig": false,
+     "fb_url": ""
     }
    ],
    "uploads": [],
-   "shorts_made": 0,
-   "clipped": []
+   "shorts_made": 1,
+   "clipped": [
+    "Rooftop Parkour Is the Best Way to Lose Cops | GTA 6 PS5 4K"
+   ]
   },
   "up_next": [
-   {
-    "id": "6o5GZ3asbBE_06",
-    "title": "Silently unlocking a locked Vapid Stanier G2 in GTA 6",
-    "game": "GTA 6",
-    "at": "2026-11-27T07:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 95,
-    "duration": 14,
-    "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
-    "ig": false,
-    "fb_url": "",
-    "guess": false,
-    "note": "",
-    "title_state": "check_sent"
-   },
-   {
-    "id": "y0DrBXmTtlg_03",
-    "title": "Helldivers 2: Orbital strikes called, then reversed",
-    "game": "Helldivers 2",
-    "at": "2026-11-27T14:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 70,
-    "duration": 15,
-    "from": "Splitting Up in Pairs Beats Staying Together | Helldivers 2 PS5 4K",
-    "ig": false,
-    "fb_url": "",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
-   },
    {
     "id": "Q24sdQY1_Tk_03",
     "title": "Confronting a driver at the getaway car in GTA 6",
@@ -76,9 +85,9 @@
     "from": "Kyle Went Full Hulk and Wiped the Robbery | GTA 6 PS5 4K",
     "ig": false,
     "fb_url": "",
-    "guess": true,
+    "guess": false,
     "note": "",
-    "title_state": "claude"
+    "title_state": "check_sent"
    },
    {
     "id": "6o5GZ3asbBE_07",
@@ -97,15 +106,15 @@
     "title_state": "claude"
    },
    {
-    "id": "XR8hMT8dmuQ_03",
-    "title": "Helldivers 2: if bugs charge in a line, burn them",
+    "id": "y0DrBXmTtlg_03",
+    "title": "Helldivers 2: Orbital strikes called, then reversed",
     "game": "Helldivers 2",
     "at": "2026-11-28T14:30:00Z",
     "url": "",
     "views": null,
-    "score": 64,
-    "duration": 27,
-    "from": "Fire Is the Best Weapon Against Bugs | Helldivers 2 PS5 4K",
+    "score": 70,
+    "duration": 15,
+    "from": "Splitting Up in Pairs Beats Staying Together | Helldivers 2 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -145,15 +154,15 @@
     "title_state": "claude"
    },
    {
-    "id": "y0DrBXmTtlg_04",
-    "title": "Helldivers 2: Can a grenade stop a Heavy up close?",
+    "id": "XR8hMT8dmuQ_03",
+    "title": "Helldivers 2: if bugs charge in a line, burn them",
     "game": "Helldivers 2",
     "at": "2026-11-29T14:30:00Z",
     "url": "",
     "views": null,
-    "score": 62,
-    "duration": 22,
-    "from": "Splitting Up in Pairs Beats Staying Together | Helldivers 2 PS5 4K",
+    "score": 64,
+    "duration": 27,
+    "from": "Fire Is the Best Weapon Against Bugs | Helldivers 2 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -163,15 +172,15 @@
   ],
   "test": {
    "S": 2,
-   "G": 0
+   "G": 1
   },
   "queue": {
-   "total": 129,
+   "total": 127,
    "by_game": {
-    "GTA 6": 96,
-    "Helldivers 2": 33
+    "GTA 6": 95,
+    "Helldivers 2": 32
    },
-   "days_left": 43.0,
+   "days_left": 42.3,
    "per_day": 3
   },
   "videos": [
@@ -242,7 +251,7 @@
     "at": "2026-11-23T08:24:08Z",
     "status": "clipped",
     "shorts_made": 7,
-    "shorts_posted": 1,
+    "shorts_posted": 2,
     "views": 3
    },
    {
@@ -265,10 +274,10 @@
    }
   ],
   "totals": {
-   "shorts_posted": 58,
-   "shorts_views": 59753,
+   "shorts_posted": 61,
+   "shorts_views": 61155,
    "videos": 37,
-   "video_views": 1284
+   "video_views": 1323
   },
   "per_day": [
    {
@@ -325,24 +334,24 @@
    },
    {
     "day": "2026-11-27",
-    "posted": 1
+    "posted": 4
    }
   ],
   "platforms": {
    "youtube": {
-    "posted": 58,
-    "views": 59753,
+    "posted": 61,
+    "views": 61155,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 54,
+    "posted": 57,
     "waiting": 3,
     "failed": 1,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 55,
-    "waiting": 3,
+    "posted": 59,
+    "waiting": 2,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
    }
@@ -354,7 +363,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 21594,
+    "views": 21968,
     "score": 74,
     "duration": 21,
     "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
@@ -367,25 +376,12 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1726,
+    "views": 1730,
     "score": 82,
     "duration": 29,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
     "ig": true,
     "fb_url": "https://www.facebook.com/reel/1192837739763746"
-   },
-   {
-    "id": "0U7r2RVi1TI_01",
-    "title": "GTA 6: The Ammunition salesman is achatter a chatterbox",
-    "game": "GTA 6",
-    "at": "2026-11-20T07:30:21.118000Z",
-    "url": "https://youtube.com/shorts/DS9wb5_E3Cc",
-    "views": 1677,
-    "score": 85,
-    "duration": 35,
-    "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
-    "ig": true,
-    "fb_url": "https://www.facebook.com/reel/1156291066761625"
    },
    {
     "id": "AqVZGcqdjoI_02",
@@ -406,12 +402,25 @@
     "game": "GTA 6",
     "at": "2026-11-22T04:00:27.347000Z",
     "url": "https://youtube.com/shorts/zTLAoLn6blo",
-    "views": 1462,
+    "views": 1463,
     "score": 74,
     "duration": 18,
     "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
     "ig": true,
     "fb_url": "https://www.facebook.com/reel/2057633061869493"
+   },
+   {
+    "id": "-3izYF6h_z8_02",
+    "title": "GTA 6: Escaping the hospital. End of chapter 1",
+    "game": "GTA 6",
+    "at": "2026-11-21T21:30:21.160000Z",
+    "url": "https://youtube.com/shorts/-irOEWAmzaA",
+    "views": 1317,
+    "score": 85,
+    "duration": 33,
+    "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
+    "ig": true,
+    "fb_url": "https://www.facebook.com/reel/1493189139379095"
    }
   ],
   "ok": true
@@ -600,7 +609,7 @@
   "k3aeGtTL464": 814,
   "U8i6h36yVDY": 173,
   "79_ZyoNT1jg": 924,
-  "CrveKG32kqA": 611,
+  "CrveKG32kqA": 612,
   "wJ5ODZSqqQ4": 297,
   "6oNpggoXkXc": 624,
   "S1yxC6H_lnE": 571,
@@ -617,41 +626,44 @@
   "JY5Gays_MfQ": 657,
   "Xl5h0OnkN74": 228,
   "2-wNg1d5mvU": 1142,
-  "d2dqCcDgHDo": 1045,
-  "CdoYaivQ-6g": 282,
+  "d2dqCcDgHDo": 1047,
+  "CdoYaivQ-6g": 284,
   "TMISUcXKju0": 280,
-  "ZUnaB_uRHbw": 267,
-  "7muW9nuzBqM": 230,
+  "ZUnaB_uRHbw": 268,
+  "7muW9nuzBqM": 269,
+  "G-lFBOoijAE": 1,
   "zgX33pMgAF0": 600,
-  "6_EZFFO1cc0": 652,
+  "6_EZFFO1cc0": 653,
   "xm3TQqlVM2c": 69,
-  "DS9wb5_E3Cc": 1677,
+  "DS9wb5_E3Cc": 1678,
   "FzJCVEwQA0g": 50,
-  "hFKKqp4URkA": 21594,
+  "hFKKqp4URkA": 21968,
   "6yDBHnQN7Tw": 163,
   "Lo4ewxWzn18": 278,
-  "cOlK11j-8lc": 369,
+  "cOlK11j-8lc": 373,
   "MC4y5ZYRO3w": 1116,
   "BBrCI5sVRUY": 320,
   "zh9x3Jg0Uxs": 556,
-  "HDrn8iS6MyU": 227,
-  "OsI_r7G_WsI": 1183,
+  "HDrn8iS6MyU": 232,
+  "OsI_r7G_WsI": 1184,
   "-UhIaH95dhs": 98,
   "Ea_2u5g1NQA": 1083,
   "08S4R_4k-s4": 96,
   "1AcbgLBQeCw": 1221,
-  "QfSO1UXKkwU": 468,
+  "QfSO1UXKkwU": 469,
   "qMA1R4vHCWs": 13,
-  "-irOEWAmzaA": 1308,
-  "zTLAoLn6blo": 1462,
-  "25MVUMhaLEc": 1726,
+  "-irOEWAmzaA": 1317,
+  "zTLAoLn6blo": 1463,
+  "25MVUMhaLEc": 1730,
   "i8kqIJiEwe4": 1520,
   "UYnx9kufBvE": 321,
-  "f-xZGpy8EkE": 503,
-  "z4xVd8EoXw8": 1,
-  "F5NfeWwub0E": 1,
-  "Z6EL8f1oW4w": 731,
-  "yofz293U4d4": 727,
+  "f-xZGpy8EkE": 506,
+  "z4xVd8EoXw8": 2,
+  "F5NfeWwub0E": 4,
+  "KNAcM9F2tUI": 44,
+  "Z6EL8f1oW4w": 829,
+  "yofz293U4d4": 747,
+  "N60lR8pEwhg": 786,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -667,14 +679,14 @@
   "gTX0z2q4rXw": 8,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 7,
-  "IVZI7UfJkH4": 783,
+  "IVZI7UfJkH4": 816,
   "Kpe0srbAOZc": 17,
-  "x6tnvdd_BCg": 25,
+  "x6tnvdd_BCg": 26,
   "AqVZGcqdjoI": 3,
   "-3izYF6h_z8": 18,
   "D9IwOx0XqNM": 4,
   "xDW0dL14BXo": 5,
-  "p-VmW5hTenM": 17,
+  "p-VmW5hTenM": 22,
   "RshFk8YiAug": 4,
   "0aKodCItm7M": 2,
   "TBCnWiMPW8w": 2,
