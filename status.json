@@ -1,11 +1,7 @@
 {
- "generated_at": "2026-11-27T14:41:37.842935Z",
+ "generated_at": "2026-11-27T23:13:11.197272Z",
  "ps5": {
   "now": [
-   {
-    "kind": "you",
-    "text": "Title check waiting for you: “Confronting a driver at the getaway car in GTA 6” (posts Sat 03:00)"
-   },
    {
     "kind": "you",
     "text": "Issue: Sheets read quota hit repeatedly (needs claude)"
@@ -14,81 +10,24 @@
   "today": {
    "posted": [
     {
-     "id": "6o5GZ3asbBE_05",
-     "title": "Taking a buyer's payout and a warning to work fast in GTA 6",
+     "id": "Q24sdQY1_Tk_03",
+     "title": "Confronting a driver at the getaway car in GTA 6",
      "game": "GTA 6",
-     "at": "2026-11-26T21:30:22.826000Z",
-     "url": "https://youtube.com/shorts/F5NfeWwub0E",
-     "views": 4,
-     "score": 95,
-     "duration": 34,
-     "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
-     "ig": true,
-     "fb_url": "https://www.facebook.com/reel/3153877758297060"
-    },
-    {
-     "id": "tip_T46_1_6ee2",
-     "title": "GTA 6: Lose the Cops by Climbing Over Obstacles",
-     "game": "GTA 6",
-     "at": "2026-11-27T06:22:49.109000Z",
-     "url": "https://youtube.com/shorts/N60lR8pEwhg",
-     "views": 786,
-     "score": "",
-     "duration": 21,
-     "from": "Rooftop Parkour Is the Best Way to Lose Cops | GTA 6 PS5 4K",
-     "ig": true,
-     "fb_url": "https://www.facebook.com/reel/1730037435217972"
-    },
-    {
-     "id": "6o5GZ3asbBE_06",
-     "title": "Silently unlocking a locked Vapid Stanier G2 in GTA 6",
-     "game": "GTA 6",
-     "at": "2026-11-27T07:30:18.694000Z",
-     "url": "https://youtube.com/shorts/KNAcM9F2tUI",
-     "views": 44,
-     "score": 95,
-     "duration": 14,
-     "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
-     "ig": true,
-     "fb_url": "https://www.facebook.com/reel/1126541626842742"
-    },
-    {
-     "id": "gTX0z2q4rXw_06",
-     "title": "Helldivers 2: Trying to find that charger",
-     "game": "Helldivers 2",
-     "at": "2026-11-27T14:30:24.565000Z",
-     "url": "https://youtube.com/shorts/G-lFBOoijAE",
-     "views": 1,
-     "score": 60,
+     "at": "2026-11-27T21:30:24.335000Z",
+     "url": "https://youtube.com/shorts/7nSocWH7sz0",
+     "views": 10,
+     "score": 93,
      "duration": 25,
-     "from": "Terminids Overwhelmed Our Entire Squad | Helldivers 2 PS5",
-     "ig": false,
-     "fb_url": ""
+     "from": "Kyle Went Full Hulk and Wiped the Robbery | GTA 6 PS5 4K",
+     "ig": true,
+     "fb_url": "https://www.facebook.com/reel/1436998821749530"
     }
    ],
    "uploads": [],
-   "shorts_made": 1,
-   "clipped": [
-    "Rooftop Parkour Is the Best Way to Lose Cops | GTA 6 PS5 4K"
-   ]
+   "shorts_made": 0,
+   "clipped": []
   },
   "up_next": [
-   {
-    "id": "Q24sdQY1_Tk_03",
-    "title": "Confronting a driver at the getaway car in GTA 6",
-    "game": "GTA 6",
-    "at": "2026-11-27T21:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 93,
-    "duration": 25,
-    "from": "Kyle Went Full Hulk and Wiped the Robbery | GTA 6 PS5 4K",
-    "ig": false,
-    "fb_url": "",
-    "guess": false,
-    "note": "",
-    "title_state": "check_sent"
-   },
    {
     "id": "6o5GZ3asbBE_07",
     "title": "Finding Andy using an aromatherapy Manifestick in GTA 6",
@@ -168,19 +107,67 @@
     "guess": true,
     "note": "",
     "title_state": "claude"
+   },
+   {
+    "id": "ePh0EqtZRf4_05",
+    "title": "Police ordering a stop as the chase escalates in GTA 6",
+    "game": "GTA 6",
+    "at": "2026-11-29T21:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 91,
+    "duration": 24,
+    "from": "Losing Cops in GTA 6 Is Way Too Easy | PS5",
+    "ig": false,
+    "fb_url": "",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "3OAzMSdZzg8_08",
+    "title": "Scanning for points of interest near cops in GTA 6",
+    "game": "GTA 6",
+    "at": "2026-11-30T07:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 91,
+    "duration": 33,
+    "from": "The Cops Locked Down the Whole Area | GTA 6 PS5 4K",
+    "ig": false,
+    "fb_url": "",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
+   },
+   {
+    "id": "y0DrBXmTtlg_04",
+    "title": "Helldivers 2: Can a grenade stop a Heavy up close?",
+    "game": "Helldivers 2",
+    "at": "2026-11-30T14:30:00Z",
+    "url": "",
+    "views": null,
+    "score": 62,
+    "duration": 22,
+    "from": "Splitting Up in Pairs Beats Staying Together | Helldivers 2 PS5 4K",
+    "ig": false,
+    "fb_url": "",
+    "guess": true,
+    "note": "",
+    "title_state": "claude"
    }
   ],
   "test": {
-   "S": 2,
+   "S": 3,
    "G": 1
   },
   "queue": {
-   "total": 127,
+   "total": 126,
    "by_game": {
-    "GTA 6": 95,
+    "GTA 6": 94,
     "Helldivers 2": 32
    },
-   "days_left": 42.3,
+   "days_left": 42.0,
    "per_day": 3
   },
   "videos": [
@@ -261,7 +248,7 @@
     "at": "2026-11-22T20:10:23Z",
     "status": "clipped",
     "shorts_made": 5,
-    "shorts_posted": 1,
+    "shorts_posted": 2,
     "views": 0
    }
   ],
@@ -274,16 +261,12 @@
    }
   ],
   "totals": {
-   "shorts_posted": 61,
-   "shorts_views": 61155,
+   "shorts_posted": 62,
+   "shorts_views": 61744,
    "videos": 37,
-   "video_views": 1323
+   "video_views": 1342
   },
   "per_day": [
-   {
-    "day": "2026-11-14",
-    "posted": 0
-   },
    {
     "day": "2026-11-15",
     "posted": 10
@@ -335,23 +318,27 @@
    {
     "day": "2026-11-27",
     "posted": 4
+   },
+   {
+    "day": "2026-11-28",
+    "posted": 1
    }
   ],
   "platforms": {
    "youtube": {
-    "posted": 61,
-    "views": 61155,
+    "posted": 62,
+    "views": 61744,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 57,
-    "waiting": 3,
+    "posted": 61,
+    "waiting": 0,
     "failed": 1,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 59,
-    "waiting": 2,
+    "posted": 62,
+    "waiting": 0,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
    }
@@ -363,7 +350,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 21968,
+    "views": 22218,
     "score": 74,
     "duration": 21,
     "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
@@ -376,7 +363,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1730,
+    "views": 1731,
     "score": 82,
     "duration": 29,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
@@ -389,7 +376,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T11:30:25.588000Z",
     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1520,
+    "views": 1521,
     "score": 78,
     "duration": 23,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
@@ -402,7 +389,7 @@
     "game": "GTA 6",
     "at": "2026-11-22T04:00:27.347000Z",
     "url": "https://youtube.com/shorts/zTLAoLn6blo",
-    "views": 1463,
+    "views": 1464,
     "score": 74,
     "duration": 18,
     "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
@@ -415,7 +402,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T21:30:21.160000Z",
     "url": "https://youtube.com/shorts/-irOEWAmzaA",
-    "views": 1317,
+    "views": 1325,
     "score": 85,
     "duration": 33,
     "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
@@ -627,43 +614,44 @@
   "Xl5h0OnkN74": 228,
   "2-wNg1d5mvU": 1142,
   "d2dqCcDgHDo": 1047,
-  "CdoYaivQ-6g": 284,
+  "CdoYaivQ-6g": 287,
   "TMISUcXKju0": 280,
   "ZUnaB_uRHbw": 268,
-  "7muW9nuzBqM": 269,
-  "G-lFBOoijAE": 1,
+  "7muW9nuzBqM": 293,
+  "G-lFBOoijAE": 35,
   "zgX33pMgAF0": 600,
   "6_EZFFO1cc0": 653,
   "xm3TQqlVM2c": 69,
-  "DS9wb5_E3Cc": 1678,
+  "DS9wb5_E3Cc": 1679,
   "FzJCVEwQA0g": 50,
-  "hFKKqp4URkA": 21968,
-  "6yDBHnQN7Tw": 163,
+  "hFKKqp4URkA": 22218,
+  "6yDBHnQN7Tw": 164,
   "Lo4ewxWzn18": 278,
-  "cOlK11j-8lc": 373,
+  "cOlK11j-8lc": 375,
   "MC4y5ZYRO3w": 1116,
   "BBrCI5sVRUY": 320,
-  "zh9x3Jg0Uxs": 556,
+  "zh9x3Jg0Uxs": 558,
   "HDrn8iS6MyU": 232,
-  "OsI_r7G_WsI": 1184,
+  "OsI_r7G_WsI": 1189,
   "-UhIaH95dhs": 98,
   "Ea_2u5g1NQA": 1083,
   "08S4R_4k-s4": 96,
-  "1AcbgLBQeCw": 1221,
+  "1AcbgLBQeCw": 1224,
   "QfSO1UXKkwU": 469,
   "qMA1R4vHCWs": 13,
-  "-irOEWAmzaA": 1317,
-  "zTLAoLn6blo": 1463,
-  "25MVUMhaLEc": 1730,
-  "i8kqIJiEwe4": 1520,
-  "UYnx9kufBvE": 321,
-  "f-xZGpy8EkE": 506,
-  "z4xVd8EoXw8": 2,
+  "-irOEWAmzaA": 1325,
+  "zTLAoLn6blo": 1464,
+  "25MVUMhaLEc": 1731,
+  "i8kqIJiEwe4": 1521,
+  "UYnx9kufBvE": 323,
+  "f-xZGpy8EkE": 514,
+  "z4xVd8EoXw8": 3,
+  "7nSocWH7sz0": 10,
   "F5NfeWwub0E": 4,
-  "KNAcM9F2tUI": 44,
-  "Z6EL8f1oW4w": 829,
-  "yofz293U4d4": 747,
-  "N60lR8pEwhg": 786,
+  "KNAcM9F2tUI": 52,
+  "Z6EL8f1oW4w": 922,
+  "yofz293U4d4": 759,
+  "N60lR8pEwhg": 905,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
@@ -679,14 +667,14 @@
   "gTX0z2q4rXw": 8,
   "LB8-bROhsBA": 8,
   "0U7r2RVi1TI": 7,
-  "IVZI7UfJkH4": 816,
+  "IVZI7UfJkH4": 833,
   "Kpe0srbAOZc": 17,
-  "x6tnvdd_BCg": 26,
+  "x6tnvdd_BCg": 27,
   "AqVZGcqdjoI": 3,
   "-3izYF6h_z8": 18,
   "D9IwOx0XqNM": 4,
   "xDW0dL14BXo": 5,
-  "p-VmW5hTenM": 22,
+  "p-VmW5hTenM": 23,
   "RshFk8YiAug": 4,
   "0aKodCItm7M": 2,
   "TBCnWiMPW8w": 2,
