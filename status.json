@@ -1,14 +1,18 @@
 {
- "generated_at": "2026-11-28T04:51:35.051214Z",
+ "generated_at": "2026-11-28T13:52:45.981699Z",
  "ps5": {
   "now": [
    {
     "kind": "you",
-    "text": "Title check waiting for you: “Finding Andy using an aromatherapy Manifestick in GTA 6” (posts Sat 13:00)"
+    "text": "Title check waiting for you: “Helldivers 2: If a Swarm Closes In, Drop a Sentry” (posts Sat 20:00)"
    },
    {
     "kind": "you",
     "text": "Issue: Sheets read quota hit repeatedly (needs claude)"
+   },
+   {
+    "kind": "you",
+    "text": "Issue: Facebook Reel upload rejected with 400 (needs you)"
    }
   ],
   "today": {
@@ -19,7 +23,7 @@
      "game": "GTA 6",
      "at": "2026-11-27T21:30:24.335000Z",
      "url": "https://youtube.com/shorts/7nSocWH7sz0",
-     "views": 35,
+     "views": 38,
      "score": 93,
      "duration": 25,
      "from": "Kyle Went Full Hulk and Wiped the Robbery | GTA 6 PS5 4K",
@@ -32,12 +36,25 @@
      "game": "GTA 6",
      "at": "2026-11-28T02:24:36.010000Z",
      "url": "https://youtube.com/shorts/ydWLSGs5KcU",
-     "views": 16,
+     "views": 43,
      "score": "",
      "duration": 26,
      "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
      "ig": true,
      "fb_url": "https://www.facebook.com/reel/997746616253573"
+    },
+    {
+     "id": "6o5GZ3asbBE_07",
+     "title": "Finding Andy using an aromatherapy Manifestick in GTA 6",
+     "game": "GTA 6",
+     "at": "2026-11-28T07:30:21.266000Z",
+     "url": "https://youtube.com/shorts/ytX9zD08n-Q",
+     "views": 973,
+     "score": 93,
+     "duration": 35,
+     "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
+     "ig": true,
+     "fb_url": ""
     }
    ],
    "uploads": [],
@@ -48,36 +65,20 @@
   },
   "up_next": [
    {
-    "id": "6o5GZ3asbBE_07",
-    "title": "Finding Andy using an aromatherapy Manifestick in GTA 6",
-    "game": "GTA 6",
-    "at": "2026-11-28T07:30:00Z",
+    "id": "iQcVhO4fyH0_03",
+    "title": "Helldivers 2: If a Swarm Closes In, Drop a Sentry",
+    "game": "Helldivers 2",
+    "at": "2026-11-28T14:30:00Z",
     "url": "",
     "views": null,
-    "score": 93,
-    "duration": 35,
-    "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
+    "score": 60,
+    "duration": 22,
+    "from": "Machine Gun Sentry Build Never Misses | Helldivers 2 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": false,
     "note": "",
     "title_state": "check_sent"
-   },
-   {
-    "id": "y0DrBXmTtlg_03",
-    "title": "Helldivers 2: Orbital strikes called, then reversed",
-    "game": "Helldivers 2",
-    "at": "2026-11-28T14:30:00Z",
-    "url": "",
-    "views": null,
-    "score": 70,
-    "duration": 15,
-    "from": "Splitting Up in Pairs Beats Staying Together | Helldivers 2 PS5 4K",
-    "ig": false,
-    "fb_url": "",
-    "guess": true,
-    "note": "",
-    "title_state": "claude"
    },
    {
     "id": "ePh0EqtZRf4_03",
@@ -112,15 +113,15 @@
     "title_state": "claude"
    },
    {
-    "id": "XR8hMT8dmuQ_03",
-    "title": "Helldivers 2: if bugs charge in a line, burn them",
+    "id": "y0DrBXmTtlg_03",
+    "title": "Helldivers 2: Orbital strikes called, then reversed",
     "game": "Helldivers 2",
     "at": "2026-11-29T14:30:00Z",
     "url": "",
     "views": null,
-    "score": 64,
-    "duration": 27,
-    "from": "Fire Is the Best Weapon Against Bugs | Helldivers 2 PS5 4K",
+    "score": 70,
+    "duration": 15,
+    "from": "Splitting Up in Pairs Beats Staying Together | Helldivers 2 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -160,15 +161,15 @@
     "title_state": "claude"
    },
    {
-    "id": "y0DrBXmTtlg_04",
-    "title": "Helldivers 2: Can a grenade stop a Heavy up close?",
+    "id": "XR8hMT8dmuQ_03",
+    "title": "Helldivers 2: if bugs charge in a line, burn them",
     "game": "Helldivers 2",
     "at": "2026-11-30T14:30:00Z",
     "url": "",
     "views": null,
-    "score": 62,
-    "duration": 22,
-    "from": "Splitting Up in Pairs Beats Staying Together | Helldivers 2 PS5 4K",
+    "score": 64,
+    "duration": 27,
+    "from": "Fire Is the Best Weapon Against Bugs | Helldivers 2 PS5 4K",
     "ig": false,
     "fb_url": "",
     "guess": true,
@@ -178,15 +179,15 @@
   ],
   "test": {
    "S": 3,
-   "G": 1
+   "G": 2
   },
   "queue": {
-   "total": 126,
+   "total": 125,
    "by_game": {
-    "GTA 6": 94,
+    "GTA 6": 93,
     "Helldivers 2": 32
    },
-   "days_left": 42.0,
+   "days_left": 41.7,
    "per_day": 3
   },
   "videos": [
@@ -257,7 +258,7 @@
     "at": "2026-11-23T08:24:08Z",
     "status": "clipped",
     "shorts_made": 7,
-    "shorts_posted": 2,
+    "shorts_posted": 4,
     "views": 3
    },
    {
@@ -277,11 +278,17 @@
     "title": "Sheets read quota hit repeatedly",
     "status": "needs_claude",
     "at": "2026-11-25T05:32:06.229Z"
+   },
+   {
+    "id": "ISS-261128125020-hu4",
+    "title": "Facebook Reel upload rejected with 400",
+    "status": "needs_you",
+    "at": "2026-11-28T12:50:20.766Z"
    }
   ],
   "totals": {
-   "shorts_posted": 63,
-   "shorts_views": 62015,
+   "shorts_posted": 64,
+   "shorts_views": 63587,
    "videos": 37,
    "video_views": 1342
   },
@@ -340,17 +347,17 @@
    },
    {
     "day": "2026-11-28",
-    "posted": 2
+    "posted": 3
    }
   ],
   "platforms": {
    "youtube": {
-    "posted": 63,
-    "views": 62015,
+    "posted": 64,
+    "views": 63587,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 62,
+    "posted": 63,
     "waiting": 0,
     "failed": 1,
     "url": "https://www.instagram.com/ps5games_only/"
@@ -358,7 +365,7 @@
    "facebook": {
     "posted": 63,
     "waiting": 0,
-    "failed": 0,
+    "failed": 1,
     "url": "https://www.facebook.com/ps5gamesonly"
    }
   },
@@ -369,7 +376,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 22305,
+    "views": 22749,
     "score": 74,
     "duration": 21,
     "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
@@ -377,38 +384,12 @@
     "fb_url": "https://www.facebook.com/reel/1170463798669313"
    },
    {
-    "id": "AqVZGcqdjoI_01",
-    "title": "GTA 6: will Peggy ever let Jason talk?",
-    "game": "GTA 6",
-    "at": "2026-11-21T07:30:23.329000Z",
-    "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1733,
-    "score": 82,
-    "duration": 29,
-    "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
-    "ig": true,
-    "fb_url": "https://www.facebook.com/reel/1192837739763746"
-   },
-   {
-    "id": "AqVZGcqdjoI_02",
-    "title": "Lucia goes from cooped up to free in GTA 6",
-    "game": "GTA 6",
-    "at": "2026-11-21T11:30:25.588000Z",
-    "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1522,
-    "score": 78,
-    "duration": 23,
-    "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
-    "ig": true,
-    "fb_url": "https://www.facebook.com/reel/1134112265656526"
-   },
-   {
     "id": "-3izYF6h_z8_03",
     "title": "GTA 6: If your partner's hurt, wake them up",
     "game": "GTA 6",
     "at": "2026-11-22T04:00:27.347000Z",
     "url": "https://youtube.com/shorts/zTLAoLn6blo",
-    "views": 1465,
+    "views": 1466,
     "score": 74,
     "duration": 18,
     "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
@@ -421,12 +402,38 @@
     "game": "GTA 6",
     "at": "2026-11-21T21:30:21.160000Z",
     "url": "https://youtube.com/shorts/-irOEWAmzaA",
-    "views": 1328,
+    "views": 1329,
     "score": 85,
     "duration": 33,
     "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
     "ig": true,
     "fb_url": "https://www.facebook.com/reel/1493189139379095"
+   },
+   {
+    "id": "x6tnvdd_BCg_05",
+    "title": "GTA 6: Who gets thrown out of the bar first?",
+    "game": "GTA 6",
+    "at": "2026-11-24T14:30:20.836000Z",
+    "url": "https://youtube.com/shorts/1AcbgLBQeCw",
+    "views": 1225,
+    "score": 58,
+    "duration": 28,
+    "from": "Lucia Steals the Show From Prison to the Bar | GTA 6 PS5 4K",
+    "ig": true,
+    "fb_url": "https://www.facebook.com/reel/1536990388259032"
+   },
+   {
+    "id": "x6tnvdd_BCg_03",
+    "title": "Let's take it outside tiny bro #barfight #GTA6",
+    "game": "GTA 6",
+    "at": "2026-11-22T00:30:21.701000Z",
+    "url": "https://youtube.com/shorts/Ea_2u5g1NQA",
+    "views": 1083,
+    "score": 74,
+    "duration": 30,
+    "from": "Lucia Steals the Show From Prison to the Bar | GTA 6 PS5 4K",
+    "ig": true,
+    "fb_url": "https://www.facebook.com/reel/1656276699612325"
    }
   ],
   "ok": true
@@ -636,14 +643,14 @@
   "CdoYaivQ-6g": 287,
   "TMISUcXKju0": 280,
   "ZUnaB_uRHbw": 268,
-  "7muW9nuzBqM": 297,
+  "7muW9nuzBqM": 313,
   "G-lFBOoijAE": 35,
   "zgX33pMgAF0": 600,
-  "6_EZFFO1cc0": 653,
+  "6_EZFFO1cc0": 655,
   "xm3TQqlVM2c": 69,
   "DS9wb5_E3Cc": 1680,
   "FzJCVEwQA0g": 50,
-  "hFKKqp4URkA": 22305,
+  "hFKKqp4URkA": 22749,
   "6yDBHnQN7Tw": 164,
   "Lo4ewxWzn18": 279,
   "cOlK11j-8lc": 375,
@@ -655,23 +662,24 @@
   "-UhIaH95dhs": 98,
   "Ea_2u5g1NQA": 1083,
   "08S4R_4k-s4": 96,
-  "1AcbgLBQeCw": 1224,
+  "1AcbgLBQeCw": 1225,
   "QfSO1UXKkwU": 471,
   "qMA1R4vHCWs": 13,
-  "-irOEWAmzaA": 1328,
-  "zTLAoLn6blo": 1465,
-  "25MVUMhaLEc": 1733,
+  "-irOEWAmzaA": 1329,
+  "zTLAoLn6blo": 1466,
+  "25MVUMhaLEc": 1736,
   "i8kqIJiEwe4": 1522,
   "UYnx9kufBvE": 323,
-  "f-xZGpy8EkE": 519,
+  "f-xZGpy8EkE": 532,
   "z4xVd8EoXw8": 4,
-  "7nSocWH7sz0": 35,
-  "F5NfeWwub0E": 4,
-  "KNAcM9F2tUI": 59,
-  "Z6EL8f1oW4w": 966,
-  "yofz293U4d4": 764,
-  "N60lR8pEwhg": 969,
-  "ydWLSGs5KcU": 16,
+  "7nSocWH7sz0": 38,
+  "F5NfeWwub0E": 6,
+  "KNAcM9F2tUI": 71,
+  "ytX9zD08n-Q": 973,
+  "Z6EL8f1oW4w": 1011,
+  "yofz293U4d4": 779,
+  "N60lR8pEwhg": 983,
+  "ydWLSGs5KcU": 43,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
