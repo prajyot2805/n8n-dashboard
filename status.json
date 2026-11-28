@@ -1,7 +1,11 @@
 {
- "generated_at": "2026-11-27T23:13:11.197272Z",
+ "generated_at": "2026-11-28T04:51:35.051214Z",
  "ps5": {
   "now": [
+   {
+    "kind": "you",
+    "text": "Title check waiting for you: “Finding Andy using an aromatherapy Manifestick in GTA 6” (posts Sat 13:00)"
+   },
    {
     "kind": "you",
     "text": "Issue: Sheets read quota hit repeatedly (needs claude)"
@@ -15,17 +19,32 @@
      "game": "GTA 6",
      "at": "2026-11-27T21:30:24.335000Z",
      "url": "https://youtube.com/shorts/7nSocWH7sz0",
-     "views": 10,
+     "views": 35,
      "score": 93,
      "duration": 25,
      "from": "Kyle Went Full Hulk and Wiped the Robbery | GTA 6 PS5 4K",
      "ig": true,
      "fb_url": "https://www.facebook.com/reel/1436998821749530"
+    },
+    {
+     "id": "tip_T39_1_bc52",
+     "title": "Three ways to use vehicle storage in GTA 6",
+     "game": "GTA 6",
+     "at": "2026-11-28T02:24:36.010000Z",
+     "url": "https://youtube.com/shorts/ydWLSGs5KcU",
+     "views": 16,
+     "score": "",
+     "duration": 26,
+     "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
+     "ig": true,
+     "fb_url": "https://www.facebook.com/reel/997746616253573"
     }
    ],
    "uploads": [],
-   "shorts_made": 0,
-   "clipped": []
+   "shorts_made": 1,
+   "clipped": [
+    "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K"
+   ]
   },
   "up_next": [
    {
@@ -40,9 +59,9 @@
     "from": "Key Cloner Makes Supercar Theft Way Too Easy | GTA 6 PS5 4K",
     "ig": false,
     "fb_url": "",
-    "guess": true,
+    "guess": false,
     "note": "",
-    "title_state": "claude"
+    "title_state": "check_sent"
    },
    {
     "id": "y0DrBXmTtlg_03",
@@ -261,8 +280,8 @@
    }
   ],
   "totals": {
-   "shorts_posted": 62,
-   "shorts_views": 61744,
+   "shorts_posted": 63,
+   "shorts_views": 62015,
    "videos": 37,
    "video_views": 1342
   },
@@ -321,23 +340,23 @@
    },
    {
     "day": "2026-11-28",
-    "posted": 1
+    "posted": 2
    }
   ],
   "platforms": {
    "youtube": {
-    "posted": 62,
-    "views": 61744,
+    "posted": 63,
+    "views": 62015,
     "url": "https://www.youtube.com/@ps5gamesonly95"
    },
    "instagram": {
-    "posted": 61,
+    "posted": 62,
     "waiting": 0,
     "failed": 1,
     "url": "https://www.instagram.com/ps5games_only/"
    },
    "facebook": {
-    "posted": 62,
+    "posted": 63,
     "waiting": 0,
     "failed": 0,
     "url": "https://www.facebook.com/ps5gamesonly"
@@ -350,7 +369,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T14:30:19.658000Z",
     "url": "https://youtube.com/shorts/hFKKqp4URkA",
-    "views": 22218,
+    "views": 22305,
     "score": 74,
     "duration": 21,
     "from": "The Second Hour Hooks Harder Than Expected | GTA 6 PS5 4K",
@@ -363,7 +382,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T07:30:23.329000Z",
     "url": "https://youtube.com/shorts/25MVUMhaLEc",
-    "views": 1731,
+    "views": 1733,
     "score": 82,
     "duration": 29,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
@@ -376,7 +395,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T11:30:25.588000Z",
     "url": "https://youtube.com/shorts/i8kqIJiEwe4",
-    "views": 1521,
+    "views": 1522,
     "score": 78,
     "duration": 23,
     "from": "Looting Bodies Is Weirdly Addictive | GTA 6 PS5",
@@ -389,7 +408,7 @@
     "game": "GTA 6",
     "at": "2026-11-22T04:00:27.347000Z",
     "url": "https://youtube.com/shorts/zTLAoLn6blo",
-    "views": 1464,
+    "views": 1465,
     "score": 74,
     "duration": 18,
     "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
@@ -402,7 +421,7 @@
     "game": "GTA 6",
     "at": "2026-11-21T21:30:21.160000Z",
     "url": "https://youtube.com/shorts/-irOEWAmzaA",
-    "views": 1325,
+    "views": 1328,
     "score": 85,
     "duration": 33,
     "from": "Chapter 1's Ending Hits Way Too Hard | GTA 6 PS5",
@@ -617,41 +636,42 @@
   "CdoYaivQ-6g": 287,
   "TMISUcXKju0": 280,
   "ZUnaB_uRHbw": 268,
-  "7muW9nuzBqM": 293,
+  "7muW9nuzBqM": 297,
   "G-lFBOoijAE": 35,
   "zgX33pMgAF0": 600,
   "6_EZFFO1cc0": 653,
   "xm3TQqlVM2c": 69,
-  "DS9wb5_E3Cc": 1679,
+  "DS9wb5_E3Cc": 1680,
   "FzJCVEwQA0g": 50,
-  "hFKKqp4URkA": 22218,
+  "hFKKqp4URkA": 22305,
   "6yDBHnQN7Tw": 164,
-  "Lo4ewxWzn18": 278,
+  "Lo4ewxWzn18": 279,
   "cOlK11j-8lc": 375,
   "MC4y5ZYRO3w": 1116,
   "BBrCI5sVRUY": 320,
   "zh9x3Jg0Uxs": 558,
   "HDrn8iS6MyU": 232,
-  "OsI_r7G_WsI": 1189,
+  "OsI_r7G_WsI": 1191,
   "-UhIaH95dhs": 98,
   "Ea_2u5g1NQA": 1083,
   "08S4R_4k-s4": 96,
   "1AcbgLBQeCw": 1224,
-  "QfSO1UXKkwU": 469,
+  "QfSO1UXKkwU": 471,
   "qMA1R4vHCWs": 13,
-  "-irOEWAmzaA": 1325,
-  "zTLAoLn6blo": 1464,
-  "25MVUMhaLEc": 1731,
-  "i8kqIJiEwe4": 1521,
+  "-irOEWAmzaA": 1328,
+  "zTLAoLn6blo": 1465,
+  "25MVUMhaLEc": 1733,
+  "i8kqIJiEwe4": 1522,
   "UYnx9kufBvE": 323,
-  "f-xZGpy8EkE": 514,
-  "z4xVd8EoXw8": 3,
-  "7nSocWH7sz0": 10,
+  "f-xZGpy8EkE": 519,
+  "z4xVd8EoXw8": 4,
+  "7nSocWH7sz0": 35,
   "F5NfeWwub0E": 4,
-  "KNAcM9F2tUI": 52,
-  "Z6EL8f1oW4w": 922,
-  "yofz293U4d4": 759,
-  "N60lR8pEwhg": 905,
+  "KNAcM9F2tUI": 59,
+  "Z6EL8f1oW4w": 966,
+  "yofz293U4d4": 764,
+  "N60lR8pEwhg": 969,
+  "ydWLSGs5KcU": 16,
   "7OeDe1RP5LE": 5,
   "GULKBJ4BwHM": 4,
   "YiFseOnuyq4": 6,
